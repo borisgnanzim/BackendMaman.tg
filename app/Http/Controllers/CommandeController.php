@@ -1,48 +1,57 @@
 <?php
-
 namespace App\Http\Controllers;
 
+use App\Models\Commande;
 use Illuminate\Http\Request;
 
 class CommandeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        return Commande::all();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'titre' => 'required|string|max:255',
+            'date' => 'required|date',
+            'montant' => 'required|numeric',
+            'statut' => 'required|string|max:255',
+            'reference' => 'required|string|max:255',
+            'user_id' => 'required|exists:users,id'
+        ]);
+
+        $commande = Commande::create($validatedData);
+
+        return response()->json($commande, 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function show(Commande $commande)
     {
-        //
+        return $commande;
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Commande $commande)
     {
-        //
+        $validatedData = $request->validate([
+            'titre' => 'sometimes|required|string|max:255',
+            'date' => 'sometimes|required|date',
+            'montant' => 'sometimes|required|numeric',
+            'statut' => 'sometimes|required|string|max:255',
+            'reference' => 'sometimes|required|string|max:255',
+            'user_id' => 'sometimes|required|exists:users,id'
+        ]);
+
+        $commande->update($validatedData);
+
+        return response()->json($commande, 200);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    public function destroy(Commande $commande)
     {
-        //
+        $commande->delete();
+
+        return response()->json(null, 204);
     }
 }
