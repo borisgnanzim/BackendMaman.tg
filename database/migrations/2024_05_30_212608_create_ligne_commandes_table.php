@@ -18,8 +18,8 @@ return new class extends Migration
             $table->float('prix');
             //$table->unsignedBigInteger('article_id');
             //$table->unsignedBigInteger('commande_id');
-            $table->foreignId('article_id')->constrained('articles');
-            $table->foreignId('commande_id')->constrained('commandes');
+            $table->foreignId('article_id')->constrained('articles')->onDelete('cascade');
+            $table->foreignId('commande_id')->constrained('commandes')->onDelete('cascade');
             $table->timestamps();
         });
     }

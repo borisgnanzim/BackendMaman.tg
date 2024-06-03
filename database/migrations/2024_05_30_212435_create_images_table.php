@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->string('path');
             //$table->unsignedBigInteger('article_id');
-            $table->foreignId('article_id')->constrained('articles');
+            $table->foreignId('article_id')->constrained('articles')->onDelete('cascade');
             $table->timestamps();
         });
     }

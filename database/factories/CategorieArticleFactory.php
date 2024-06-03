@@ -2,6 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Article;
+use App\Models\Categorie;
+use App\Models\CategorieArticle;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -14,10 +17,15 @@ class CategorieArticleFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+    protected $model = CategorieArticle::class;
+
     public function definition(): array
     {
         return [
             //
+            'categorie_id' => Categorie::factory(),
+            'article_id' => Article::factory(),
         ];
     }
 }

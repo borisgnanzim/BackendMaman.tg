@@ -20,7 +20,7 @@ return new class extends Migration
             //$table->unsignedBigInteger('commande_id');
             //$table->unsignedBigInteger('user_id');
             $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('commande_id')->constrained('commandes');
+            $table->foreignId('commande_id')->constrained('commandes')->onDelete('cascade');
             $table->timestamps();
         });
     }

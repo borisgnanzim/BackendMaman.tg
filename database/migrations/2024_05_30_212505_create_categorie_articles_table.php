@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('titre');
             //$table->unsignedBigInteger('categorie_id');
             //$table->unsignedBigInteger('article_id');
-            $table->foreignId('categorie_id')->constrained('categories');
-            $table->foreignId('article_id')->constrained('articles');
+            $table->foreignId('categorie_id')->constrained('categories')->onDelete('cascade');
+            $table->foreignId('article_id')->constrained('articles')->onDelete('cascade');
             $table->timestamps();
         });
     }

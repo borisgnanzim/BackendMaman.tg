@@ -19,7 +19,7 @@ return new class extends Migration
             $table->enum('statut', ['non paye', 'paye', 'livré'])->default('non paye');
             $table->string('reference')->unique();
             //$table->unsignedBigInteger('user_id');
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

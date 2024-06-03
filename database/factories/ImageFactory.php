@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Article;
+use App\Models\Image;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -14,10 +16,14 @@ class ImageFactory extends Factory
      *
      * @return array<string, mixed>
      */
+    protected $model = Image::class;
+
     public function definition(): array
     {
         return [
             //
+            'chemin' => $this->faker->imageUrl,
+            'article_id' => Article::factory()
         ];
     }
 }

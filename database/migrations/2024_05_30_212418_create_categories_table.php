@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nom');
             $table->text('description')->nullable();
             //$table->unsignedBigInteger('superCategorie_id');
-            $table->foreignId('superCategorie_id')->nullable()->constrained('categories');
+            $table->foreignId('superCategorie_id')->nullable()->constrained('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }

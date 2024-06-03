@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Commande;
+use App\Models\Livraison;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +11,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class LivraisonFactory extends Factory
 {
+    protected $model = Livraison::class;
+
     /**
      * Define the model's default state.
      *
@@ -18,6 +22,11 @@ class LivraisonFactory extends Factory
     {
         return [
             //
+            'titre' => $this->faker->sentence,
+            'date' => $this->faker->date,
+            'nomClient' => $this->faker->name,
+            'adresse' => $this->faker->address,
+            'commande_id' => Commande::factory()
         ];
     }
 }

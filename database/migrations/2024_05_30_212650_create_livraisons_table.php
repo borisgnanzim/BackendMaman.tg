@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('adresse');
             $table->string('reference')->unique();
             //$table->unsignedBigInteger('commande_id');
-            $table->foreignId('commande_id')->constrained('commandes');
+            $table->foreignId('commande_id')->constrained('commandes')->onDelete('cascade');
             $table->timestamps();
         });
     }
