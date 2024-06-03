@@ -1,70 +1,87 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
         return Image::all();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
         $validatedData = $request->validate([
-            'path' => 'required|string',
-            'article_id' => 'required|exists:articles,id'
+            'titre' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'article_id' => 'required|exists:articles,id',
         ]);
 
-        $image = Image::create($validatedData);
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('images', 'public');
+            $image = Image::create([
+                'titre' => $request->titre,
+                'description' => $request->description,
+                'path' => $path,
+                'article_id' => $request->article_id,
+            ]);
 
-        return response()->json($image, 201);
+            return response()->json($image, 201);
+        }
+
+        return response()->json(['error' => 'Image not uploaded'], 400);
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Image $image)
     {
-        //
-        return $image;
+        return response()->json($image);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, Image $image)
     {
-        //
         $validatedData = $request->validate([
-            'path' => 'sometimes|required|string',
-            'article_id' => 'sometimes|required|exists:articles,id'
+            'titre' => 'sometimes|required|string|max:255',
+            'description' => 'nullable|string',
+            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'article_id' => 'sometimes|required|exists:articles,id',
         ]);
 
-        $image->update($validatedData);
+        if ($request->hasFile('image')) {
+            Storage::disk('public')->delete($image->path);
+            $path = $request->file('image')->store('images', 'public');
+            $image->update([
+                'titre' => $request->titre ?? $image->titre,
+                'description' => $request->description ?? $image->description,
+                'path' => $path,
+                'article_id' => $request->article_id ?? $image->article_id,
+            ]);
+        } else {
+            $image->update($request->only(['titre', 'description', 'article_id']));
+        }
 
         return response()->json($image, 200);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Image $image)
     {
-        //
+        Storage::disk('public')->delete($image->path);
         $image->delete();
 
         return response()->json(null, 204);
+    }
+
+    public function download(Image $image)
+    {
+        $filePath = storage_path('app/public/' . $image->path);
+
+        if (file_exists($filePath)) {
+            return response()->download($filePath);
+        } else {
+            return response()->json(['error' => 'File not found'], 404);
+        }
     }
 }

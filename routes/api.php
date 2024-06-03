@@ -36,3 +36,5 @@ Route::apiResource('commandes', CommandeController::class);
 Route::apiResource('payements', PayementController::class);
 Route::apiResource('users', UserController::class);
 Route::apiResource('livraisons', LivraisonController::class);
+//
+Route::get('images/{image}/download', [ImageController::class, 'download'])->name('images.download');
