@@ -24,7 +24,7 @@ class LigneCommandeFactory extends Factory
         return [
             //
             'titre' => $this->faker->sentence,
-            'quantité' => $this->faker->numberBetween(1, 10),
+            'quantite' => $this->faker->numberBetween(1, 10),
             'prix' => $this->faker->randomFloat(2, 10, 100),
             'commande_id' => Commande::factory(),
             'article_id' => Article::factory()

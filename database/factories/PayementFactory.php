@@ -25,7 +25,7 @@ class PayementFactory extends Factory
             //
             'titre' => $this->faker->sentence,
             'solde' => $this->faker->randomFloat(2, 50, 500),
-            'mode_de_paiment' => $this->faker->word,
+            'modePayement' => $this->faker->word,
             'date' => $this->faker->date,
             'user_id' => User::factory(),
             'commande_id' => Commande::factory()

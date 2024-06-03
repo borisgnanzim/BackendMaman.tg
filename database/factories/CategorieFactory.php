@@ -5,6 +5,8 @@ namespace Database\Factories;
 use App\Models\Categorie;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
+use function PHPUnit\Framework\isNull;
+
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Categorie>
  */
@@ -23,8 +25,15 @@ class CategorieFactory extends Factory
             //
             'nom' => $this->faker->word,
             'description' => $this->faker->sentence,
-            'super_categorie' => function () {
-                return Categorie::factory()->create()->id;
+            'superCategorie_id' => function () {
+                // $cat=Categorie::all();
+                // if (isNull($cat)) {
+                //     return null;
+                // }
+                // else
+                //  return Categorie::factory()->create()->id;
+                $categorie = Categorie::inRandomOrder()->first();
+                return optional($categorie)->id;
             }
         ];
     }

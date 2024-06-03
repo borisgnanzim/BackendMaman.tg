@@ -25,8 +25,8 @@ class CommandeFactory extends Factory
             'titre' => $this->faker->sentence,
             'date' => $this->faker->date,
             'montant' => $this->faker->randomFloat(2, 50, 500),
-            'statut' => $this->faker->word,
-            'référence' => $this->faker->uuid,
+            'statut' => $this->faker->randomElement(['attente', 'paye', 'livre']),
+            'reference' => $this->faker->uuid,
             'user_id' => User::factory()
         ];
     }

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('titre');
             $table->dateTime('date');
             $table->float('montant');
-            $table->enum('statut', ['non paye', 'paye', 'livré'])->default('non paye');
+            $table->enum('statut', ['attente', 'paye', 'livre'])->default('attente');
             $table->string('reference')->unique();
             //$table->unsignedBigInteger('user_id');
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');

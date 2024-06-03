@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('nom');
             $table->text('description');
-            $table->float('ancPrix');
+            $table->float('ancienPrix');
             $table->float('prix');
-            $table->unsignedInteger('quantité');
+            $table->unsignedInteger('quantite');
             $table->timestamps();
         });
     }

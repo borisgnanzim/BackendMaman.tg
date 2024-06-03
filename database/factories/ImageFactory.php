@@ -22,7 +22,9 @@ class ImageFactory extends Factory
     {
         return [
             //
-            'chemin' => $this->faker->imageUrl,
+            'titre' => $this->faker->sentence,
+            'description' => $this->faker->sentence,
+            'path' => $this->faker->imageUrl,
             'article_id' => Article::factory()
         ];
     }

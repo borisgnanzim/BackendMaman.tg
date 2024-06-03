@@ -24,6 +24,7 @@ class CategorieArticleFactory extends Factory
     {
         return [
             //
+            'titre' => $this->faker->sentence,
             'categorie_id' => Categorie::factory(),
             'article_id' => Article::factory(),
         ];

@@ -26,7 +26,7 @@ class ArticleFactory extends Factory
             'ancienPrix' => $this->faker->randomFloat(2, 10, 100),
             'prix' => $this->faker->randomFloat(2, 10, 100),
             'quantite' => $this->faker->numberBetween(1, 100),
-            'categorieArticle_id' => Categorie::factory()
+           // 'categorieArticle_id' => Categorie::factory()
         ];
     }
 }
