@@ -38,3 +38,9 @@ Route::apiResource('users', UserController::class);
 Route::apiResource('livraisons', LivraisonController::class);
 //
 Route::get('images/{image}/download', [ImageController::class, 'download'])->name('images.download');
+//
+Route::get('articles/{article}/images', [ArticleController::class, 'getImages'])->name('articles.images');
+//
+Route::get('articles/{article}/categories', [ArticleController::class, 'getCategories'])->name('articles.categories');
+
+Route::get('categories/{categorie}/articles',[CategorieController::class, 'getArticles'])->name('categorie.articles');

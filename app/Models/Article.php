@@ -18,10 +18,14 @@ class Article extends Model
      }
  
      // Define the relationship with Categorie
-     public function categorie()
+     public function categories()
     {
-        return $this->belongsTo(Categorie::class, 'categorieArticle_id');
+        return $this->belongsToMany(Categorie::class, 'categorie_articles');
     }
+    // public function categorieArticles()
+    // {
+    //     return $this->hasMany(CategorieArticle::class, 'categorieArticle_id');
+    // }
  
      // Define the relationship with LigneCommande
      public function ligneCommandes()

@@ -70,4 +70,10 @@ class CategorieController extends Controller
 
         return response()->json(null, 204);
     }
+    public function getArticles($categorie_id)
+    {
+        $categorie = Categorie::findOrFail($categorie_id);
+        return response()->json($categorie->articles);
+    }
+
 }

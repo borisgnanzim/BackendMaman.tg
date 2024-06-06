@@ -27,5 +27,9 @@ class Categorie extends Model
     {
         return $this->hasMany(Categorie::class, 'superCategorie_id');
     }
+    public function articles()
+    {
+        return $this->belongsToMany(Article::class, 'categorie_articles');
+    }
 
 }

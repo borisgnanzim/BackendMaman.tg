@@ -4,11 +4,28 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
-
+/**
+ * @group Articles
+ *
+ * API pour gérer les articles
+ */
 class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
+     */
+
+    /**
+     * Lister tous les articles
+     *
+     * @response 200 [
+     *   {
+     *     "id": 1,
+     *     "nom": "Sample Article",
+     *     "description": "This is a sample article."
+     * 
+     *   }
+     * ]
      */
     public function index()
     {
@@ -76,5 +93,17 @@ class ArticleController extends Controller
         $article->delete();
 
         return response()->json(null, 204);
+    }
+
+    public function getImages($article_id)
+    {
+        $article = Article::findOrFail($article_id);
+        return response()->json($article->images);
+    }
+
+    public function getCategories($article_id)
+    {
+        $article = Article::findOrFail($article_id);
+        return response()->json($article->categories);
     }
 }
