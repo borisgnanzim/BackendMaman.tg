@@ -10,6 +10,20 @@ class CategorieController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+     /**
+     * Lister tous les categories
+     *
+     * @response 200 [
+     *   {
+     *     "id": 1,
+     *     "nom": "Sample Categorie",
+     *     "description": "This is a sample desscription."
+     *     "super_categorie": "categorie mère"
+     * 
+     *   }
+     * ]
+     */
     public function index()
     {
         //

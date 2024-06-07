@@ -21,4 +21,8 @@ class Commande extends Model
     {
         return $this->hasMany(LigneCommande::class);
     }
+    public function livraisons()
+    {
+        return $this->hasMany(Livraison::class);
+    }
 }

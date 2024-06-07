@@ -44,3 +44,7 @@ Route::get('articles/{article}/images', [ArticleController::class, 'getImages'])
 Route::get('articles/{article}/categories', [ArticleController::class, 'getCategories'])->name('articles.categories');
 
 Route::get('categories/{categorie}/articles',[CategorieController::class, 'getArticles'])->name('categorie.articles');
+
+Route::get('commandes/{commande}/lignescommande',[CommandeController::class, 'getLignesCommande'])->name('commande.lignescommande');
+
+Route::get('livraisons/{livraison}/commande',[LivraisonController::class,'getCommande'])->name('livraison.commande');

@@ -49,7 +49,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Display a listing of the resource.'
+      title: 'Lister tous les categories'
       description: ''
       authenticated: false
       custom: []
@@ -66,14 +66,18 @@ endpoints:
     responses:
       -
         status: 200
-        content: '[{"id":1,"nom":"voluptatem","description":"Nesciunt molestias eos eveniet dolores aut qui odio similique.","superCategorie_id":null,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":2,"nom":"repudiandae","description":"Ipsa fugiat qui tempora.","superCategorie_id":null,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":3,"nom":"harum","description":"Atque omnis ullam voluptas omnis et modi totam.","superCategorie_id":null,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":4,"nom":"est","description":"Sed blanditiis eum aliquid nesciunt nobis iure earum.","superCategorie_id":null,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":5,"nom":"culpa","description":"Nihil et doloribus asperiores.","superCategorie_id":null,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":6,"nom":"consequatur","description":"Sint est sed aut non molestias.","superCategorie_id":null,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":7,"nom":"tempore","description":"Porro repellendus aut repudiandae tenetur ab rerum perspiciatis.","superCategorie_id":null,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":8,"nom":"mollitia","description":"Saepe magnam consequatur quis.","superCategorie_id":null,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":9,"nom":"qui","description":"Labore similique expedita consequatur velit.","superCategorie_id":null,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":10,"nom":"natus","description":"Sed earum porro eaque neque.","superCategorie_id":null,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":11,"nom":"quod","description":"Voluptates corporis hic quis cupiditate.","superCategorie_id":8,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":12,"nom":"minima","description":"Accusamus a eligendi cum assumenda nemo ab aut voluptatum.","superCategorie_id":10,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":13,"nom":"culpa","description":"Ducimus officia deleniti dolor est.","superCategorie_id":10,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":14,"nom":"numquam","description":"Ea voluptates in consequatur.","superCategorie_id":9,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":15,"nom":"nesciunt","description":"Ut non explicabo rerum qui laudantium at.","superCategorie_id":11,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":16,"nom":"esse","description":"Reprehenderit sunt necessitatibus hic ab animi rerum consequatur quis.","superCategorie_id":8,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":17,"nom":"autem","description":"Asperiores architecto qui distinctio fuga.","superCategorie_id":7,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":18,"nom":"ducimus","description":"Commodi non beatae voluptatem.","superCategorie_id":7,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":19,"nom":"magni","description":"Velit quas vitae distinctio.","superCategorie_id":5,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"},{"id":20,"nom":"nostrum","description":"Quia amet tempora voluptatem et illo.","superCategorie_id":4,"created_at":"2024-06-06T12:19:02.000000Z","updated_at":"2024-06-06T12:19:02.000000Z"}]'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
-          access-control-allow-origin: '*'
-        description: null
+        content: |-
+          [
+            {
+              "id": 1,
+              "nom": "Sample Categorie",
+              "description": "This is a sample desscription."
+              "super_categorie": "categorie mère"
+
+            }
+          ]
+        headers: []
+        description: ''
         custom: []
     responseFields: []
     auth: []
@@ -106,7 +110,7 @@ endpoints:
         name: nom
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: e
+        example: oohsjvbpcnnaw
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -115,7 +119,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Omnis et sit expedita maiores vel eius.'
+        example: 'Est quia sint veritatis nesciunt et sint et et.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -130,8 +134,8 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      nom: e
-      description: 'Omnis et sit expedita maiores vel eius.'
+      nom: oohsjvbpcnnaw
+      description: 'Est quia sint veritatis nesciunt et sint et et.'
     fileParameters: []
     responses: []
     responseFields: []
@@ -181,7 +185,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '58'
+          x-ratelimit-remaining: '59'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -227,7 +231,7 @@ endpoints:
         name: nom
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: picfmsmawj
+        example: z
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -236,7 +240,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Non sunt facere ad velit suscipit.'
+        example: 'Ut praesentium reiciendis impedit ut dolorem voluptatem corrupti illo.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -251,8 +255,8 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      nom: picfmsmawj
-      description: 'Non sunt facere ad velit suscipit.'
+      nom: z
+      description: 'Ut praesentium reiciendis impedit ut dolorem voluptatem corrupti illo.'
     fileParameters: []
     responses: []
     responseFields: []
@@ -332,7 +336,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '57'
+          x-ratelimit-remaining: '58'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -367,7 +371,7 @@ endpoints:
         name: titre
         description: "'titre'=>'required|string|max:255',. Must not be greater than 255 characters."
         required: false
-        example: dkvor
+        example: gtzexwsodd
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -376,7 +380,7 @@ endpoints:
         name: article_id
         description: ''
         required: true
-        example: voluptas
+        example: quo
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -385,15 +389,15 @@ endpoints:
         name: categorie_id
         description: ''
         required: true
-        example: ipsa
+        example: molestias
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: dkvor
-      article_id: voluptas
-      categorie_id: ipsa
+      titre: gtzexwsodd
+      article_id: quo
+      categorie_id: molestias
     fileParameters: []
     responses: []
     responseFields: []
@@ -443,7 +447,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '56'
+          x-ratelimit-remaining: '57'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -489,7 +493,7 @@ endpoints:
         name: titre
         description: "'titre'=>'required|string|max:255',. Must not be greater than 255 characters."
         required: false
-        example: myhzjjftqqkl
+        example: hswordixbnjevjasbvux
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -498,7 +502,7 @@ endpoints:
         name: article_id
         description: ''
         required: true
-        example: et
+        example: vitae
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -507,15 +511,15 @@ endpoints:
         name: categorie_id
         description: ''
         required: true
-        example: odit
+        example: ipsam
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: myhzjjftqqkl
-      article_id: et
-      categorie_id: odit
+      titre: hswordixbnjevjasbvux
+      article_id: vitae
+      categorie_id: ipsam
     fileParameters: []
     responses: []
     responseFields: []
@@ -595,7 +599,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '54'
+          x-ratelimit-remaining: '55'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -630,7 +634,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: xvijvqtneercyjkegphhmkp
+        example: yydorbgfegciflooniaoroymp
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -639,7 +643,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Aliquam molestiae est officiis et ea id alias saepe.'
+        example: 'Occaecati ipsam vitae voluptatem laborum.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -657,15 +661,15 @@ endpoints:
         name: article_id
         description: ''
         required: true
-        example: assumenda
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: xvijvqtneercyjkegphhmkp
-      description: 'Aliquam molestiae est officiis et ea id alias saepe.'
-      article_id: assumenda
+      titre: yydorbgfegciflooniaoroymp
+      description: 'Occaecati ipsam vitae voluptatem laborum.'
+      article_id: sed
     fileParameters:
       image: null
     responses: []
@@ -716,7 +720,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '53'
+          x-ratelimit-remaining: '54'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -762,7 +766,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: bbrrecdg
+        example: ypzpmhqpajxtmznnwmcr
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -771,7 +775,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Voluptatem dolores repellendus et iste possimus.'
+        example: 'Eligendi iusto aliquid aut quasi est quis.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -789,15 +793,15 @@ endpoints:
         name: article_id
         description: ''
         required: true
-        example: tenetur
+        example: repellat
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: bbrrecdg
-      description: 'Voluptatem dolores repellendus et iste possimus.'
-      article_id: tenetur
+      titre: ypzpmhqpajxtmznnwmcr
+      description: 'Eligendi iusto aliquid aut quasi est quis.'
+      article_id: repellat
     fileParameters:
       image: null
     responses: []
@@ -878,7 +882,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '52'
+          x-ratelimit-remaining: '53'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -913,7 +917,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: qawlcamoumdqyjcvcamvmo
+        example: spqozliiahgdsirzlbuia
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -922,7 +926,7 @@ endpoints:
         name: quantite
         description: ''
         required: true
-        example: 8
+        example: 2
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -931,7 +935,7 @@ endpoints:
         name: prix
         description: ''
         required: true
-        example: 44406416.18
+        example: 73788.99
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -940,7 +944,7 @@ endpoints:
         name: article_id
         description: ''
         required: true
-        example: dolorem
+        example: corporis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -949,17 +953,17 @@ endpoints:
         name: commande_id
         description: ''
         required: true
-        example: perferendis
+        example: delectus
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: qawlcamoumdqyjcvcamvmo
-      quantite: 8
-      prix: 44406416.18
-      article_id: dolorem
-      commande_id: perferendis
+      titre: spqozliiahgdsirzlbuia
+      quantite: 2
+      prix: 73788.99
+      article_id: corporis
+      commande_id: delectus
     fileParameters: []
     responses: []
     responseFields: []
@@ -1009,7 +1013,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '51'
+          x-ratelimit-remaining: '52'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -1055,7 +1059,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: gvolvvak
+        example: fwnkinnxgocsayawmc
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1064,7 +1068,7 @@ endpoints:
         name: quantite
         description: ''
         required: true
-        example: 2
+        example: 4
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -1073,7 +1077,7 @@ endpoints:
         name: prix
         description: ''
         required: true
-        example: 5913.0
+        example: 412127.31
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1082,7 +1086,7 @@ endpoints:
         name: article_id
         description: ''
         required: true
-        example: a
+        example: iste
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1091,17 +1095,17 @@ endpoints:
         name: commande_id
         description: ''
         required: true
-        example: quibusdam
+        example: dolor
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: gvolvvak
-      quantite: 2
-      prix: 5913.0
-      article_id: a
-      commande_id: quibusdam
+      titre: fwnkinnxgocsayawmc
+      quantite: 4
+      prix: 412127.31
+      article_id: iste
+      commande_id: dolor
     fileParameters: []
     responses: []
     responseFields: []
@@ -1181,7 +1185,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '50'
+          x-ratelimit-remaining: '51'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -1216,7 +1220,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: ipnxabqlmhhbmqkbry
+        example: ustzynhhayqkoabfsfsjsrtxa
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1225,7 +1229,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2024-06-06T15:32:59'
+        example: '2024-06-07T08:53:11'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1234,7 +1238,7 @@ endpoints:
         name: montant
         description: ''
         required: true
-        example: 38562102.347749
+        example: 38.15595
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1243,7 +1247,7 @@ endpoints:
         name: statut
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: gezggfqsckjef
+        example: hptrtmvqjbyhyggtchhxne
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1252,7 +1256,7 @@ endpoints:
         name: reference
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: qzfifl
+        example: rjpkhnwahiewnbecagujoylqt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1261,18 +1265,18 @@ endpoints:
         name: user_id
         description: ''
         required: true
-        example: ex
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: ipnxabqlmhhbmqkbry
-      date: '2024-06-06T15:32:59'
-      montant: 38562102.347749
-      statut: gezggfqsckjef
-      reference: qzfifl
-      user_id: ex
+      titre: ustzynhhayqkoabfsfsjsrtxa
+      date: '2024-06-07T08:53:11'
+      montant: 38.15595
+      statut: hptrtmvqjbyhyggtchhxne
+      reference: rjpkhnwahiewnbecagujoylqt
+      user_id: qui
     fileParameters: []
     responses: []
     responseFields: []
@@ -1322,7 +1326,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '49'
+          x-ratelimit-remaining: '50'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -1368,7 +1372,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: a
+        example: zfjkgkkoj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1377,7 +1381,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2024-06-06T15:32:59'
+        example: '2024-06-07T08:53:11'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1386,7 +1390,7 @@ endpoints:
         name: montant
         description: ''
         required: true
-        example: 283.2705
+        example: 5606710.03
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1395,7 +1399,7 @@ endpoints:
         name: statut
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: uoedhi
+        example: ukvjqfymuyttewpannlw
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1404,7 +1408,7 @@ endpoints:
         name: reference
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: kpthaj
+        example: ktlrqpyuwmi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1413,18 +1417,18 @@ endpoints:
         name: user_id
         description: ''
         required: true
-        example: nihil
+        example: libero
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: a
-      date: '2024-06-06T15:32:59'
-      montant: 283.2705
-      statut: uoedhi
-      reference: kpthaj
-      user_id: nihil
+      titre: zfjkgkkoj
+      date: '2024-06-07T08:53:11'
+      montant: 5606710.03
+      statut: ukvjqfymuyttewpannlw
+      reference: ktlrqpyuwmi
+      user_id: libero
     fileParameters: []
     responses: []
     responseFields: []
@@ -1504,7 +1508,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '48'
+          x-ratelimit-remaining: '49'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -1539,7 +1543,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: ghwtoqkdrfdijyifa
+        example: zwyjwgnefdenlsueltptgdzwe
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1548,7 +1552,7 @@ endpoints:
         name: solde
         description: ''
         required: true
-        example: 8236678.97771
+        example: 17717037.400149
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1557,7 +1561,7 @@ endpoints:
         name: mode_de_paiment
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: xtuidgwvesaerkdxlv
+        example: ikxmnyh
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1566,7 +1570,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2024-06-06T15:32:59'
+        example: '2024-06-07T08:53:11'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1575,7 +1579,7 @@ endpoints:
         name: client_id
         description: ''
         required: true
-        example: eligendi
+        example: ratione
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1584,18 +1588,18 @@ endpoints:
         name: commande_id
         description: ''
         required: true
-        example: nemo
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: ghwtoqkdrfdijyifa
-      solde: 8236678.97771
-      mode_de_paiment: xtuidgwvesaerkdxlv
-      date: '2024-06-06T15:32:59'
-      client_id: eligendi
-      commande_id: nemo
+      titre: zwyjwgnefdenlsueltptgdzwe
+      solde: 17717037.400149
+      mode_de_paiment: ikxmnyh
+      date: '2024-06-07T08:53:11'
+      client_id: ratione
+      commande_id: ut
     fileParameters: []
     responses: []
     responseFields: []
@@ -1645,7 +1649,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '47'
+          x-ratelimit-remaining: '48'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -1691,7 +1695,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: wrm
+        example: sdqb
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1700,7 +1704,7 @@ endpoints:
         name: solde
         description: ''
         required: true
-        example: 2.2
+        example: 13.6455662
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -1709,7 +1713,7 @@ endpoints:
         name: mode_de_paiment
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: ypbefpnxiyiumjheno
+        example: qhugeodhpuganxlrkmqos
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1718,7 +1722,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2024-06-06T15:32:59'
+        example: '2024-06-07T08:53:11'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1727,7 +1731,7 @@ endpoints:
         name: client_id
         description: ''
         required: true
-        example: esse
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1736,18 +1740,18 @@ endpoints:
         name: commande_id
         description: ''
         required: true
-        example: sit
+        example: sint
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: wrm
-      solde: 2.2
-      mode_de_paiment: ypbefpnxiyiumjheno
-      date: '2024-06-06T15:32:59'
-      client_id: esse
-      commande_id: sit
+      titre: sdqb
+      solde: 13.6455662
+      mode_de_paiment: qhugeodhpuganxlrkmqos
+      date: '2024-06-07T08:53:11'
+      client_id: voluptas
+      commande_id: sint
     fileParameters: []
     responses: []
     responseFields: []
@@ -1827,7 +1831,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '46'
+          x-ratelimit-remaining: '47'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -1862,7 +1866,7 @@ endpoints:
         name: nom
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: yuzrgxsmtxdnuwcdxf
+        example: xaqpgwgridazbdhqnjqxsilna
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1871,7 +1875,7 @@ endpoints:
         name: prenom
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: gsrczxsce
+        example: nkopg
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1880,7 +1884,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: reichert.jett@example.org
+        example: deion64@example.net
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1889,7 +1893,7 @@ endpoints:
         name: adresse
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: r
+        example: hximwpankhazdptv
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1898,7 +1902,7 @@ endpoints:
         name: coordonne_geographique
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: dhmlggilhrbz
+        example: bhyjijecbyltjjosnilfsjzab
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1907,7 +1911,7 @@ endpoints:
         name: role
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: pgvjqstspu
+        example: cbndvw
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1916,7 +1920,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: whgdzvqpgrtgsafi
+        example: dpd
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1925,20 +1929,20 @@ endpoints:
         name: password
         description: 'Must be at least 8 characters.'
         required: true
-        example: UJoqrvJ.5A
+        example: '@4kS}<DNE1'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      nom: yuzrgxsmtxdnuwcdxf
-      prenom: gsrczxsce
-      email: reichert.jett@example.org
-      adresse: r
-      coordonne_geographique: dhmlggilhrbz
-      role: pgvjqstspu
-      name: whgdzvqpgrtgsafi
-      password: UJoqrvJ.5A
+      nom: xaqpgwgridazbdhqnjqxsilna
+      prenom: nkopg
+      email: deion64@example.net
+      adresse: hximwpankhazdptv
+      coordonne_geographique: bhyjijecbyltjjosnilfsjzab
+      role: cbndvw
+      name: dpd
+      password: '@4kS}<DNE1'
     fileParameters: []
     responses: []
     responseFields: []
@@ -1988,7 +1992,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '45'
+          x-ratelimit-remaining: '46'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -2034,7 +2038,7 @@ endpoints:
         name: nom
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: fcnijrisdllfugcwly
+        example: uba
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2043,7 +2047,7 @@ endpoints:
         name: prenom
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: jeilgjpgtqedmlfwvwa
+        example: ijlkldgfcfyyolpq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2061,7 +2065,7 @@ endpoints:
         name: adresse
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: iwmesxvhtkxqgxvanezx
+        example: b
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2070,7 +2074,7 @@ endpoints:
         name: coordonne_geographique
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: jyicwwnapvcrhtggxoior
+        example: egzeiwa
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2079,7 +2083,7 @@ endpoints:
         name: role
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: kmivqdocvveib
+        example: olxfov
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2097,18 +2101,18 @@ endpoints:
         name: password
         description: 'Must be at least 8 characters.'
         required: false
-        example: ']Jl6o]\S'
+        example: ';m#*!#|kqt:Y+7xXvU'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      nom: fcnijrisdllfugcwly
-      prenom: jeilgjpgtqedmlfwvwa
-      adresse: iwmesxvhtkxqgxvanezx
-      coordonne_geographique: jyicwwnapvcrhtggxoior
-      role: kmivqdocvveib
-      password: ']Jl6o]\S'
+      nom: uba
+      prenom: ijlkldgfcfyyolpq
+      adresse: b
+      coordonne_geographique: egzeiwa
+      role: olxfov
+      password: ';m#*!#|kqt:Y+7xXvU'
     fileParameters: []
     responses: []
     responseFields: []
@@ -2188,7 +2192,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '44'
+          x-ratelimit-remaining: '45'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -2223,7 +2227,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: wqzxwuwxxv
+        example: ccljooepgnyaxvzjq
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2232,7 +2236,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2024-06-06T15:33:00'
+        example: '2024-06-07T08:53:12'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2241,7 +2245,7 @@ endpoints:
         name: nomClient
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: afqzkykhkxullfk
+        example: kn
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2250,7 +2254,7 @@ endpoints:
         name: adresse
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: enhbdyrnlqfxhmhrlvbjp
+        example: bwzgikpvhktkiyofj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2259,17 +2263,17 @@ endpoints:
         name: commande_id
         description: ''
         required: true
-        example: ea
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: wqzxwuwxxv
-      date: '2024-06-06T15:33:00'
-      nomClient: afqzkykhkxullfk
-      adresse: enhbdyrnlqfxhmhrlvbjp
-      commande_id: ea
+      titre: ccljooepgnyaxvzjq
+      date: '2024-06-07T08:53:12'
+      nomClient: kn
+      adresse: bwzgikpvhktkiyofj
+      commande_id: est
     fileParameters: []
     responses: []
     responseFields: []
@@ -2299,13 +2303,13 @@ endpoints:
         name: id
         description: 'The ID of the livraison.'
         required: true
-        example: 17
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 17
+      id: 20
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2316,7 +2320,7 @@ endpoints:
         status: 404
         content: |-
           {
-              "message": "No query results for model [App\\Models\\Livraison] 17",
+              "message": "No query results for model [App\\Models\\Livraison] 20",
               "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
               "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php",
               "line": 487,
@@ -2726,7 +2730,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '43'
+          x-ratelimit-remaining: '44'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -2758,13 +2762,13 @@ endpoints:
         name: id
         description: 'The ID of the livraison.'
         required: true
-        example: 1
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: 16
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -2772,7 +2776,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: wkficmfqppjnwqhdczumdyq
+        example: firmrdgsworysxisqntsxi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2781,7 +2785,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2024-06-06T15:33:00'
+        example: '2024-06-07T08:53:12'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2790,7 +2794,7 @@ endpoints:
         name: nomClient
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: aoplutvkulvc
+        example: fegvuhmlwduawnur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2799,7 +2803,7 @@ endpoints:
         name: adresse
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: rbeiort
+        example: hjfjscexgjzsntvvxhmdzrt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2808,7 +2812,7 @@ endpoints:
         name: reference
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: syefzjyl
+        example: vxpitra
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -2817,18 +2821,18 @@ endpoints:
         name: commande_id
         description: ''
         required: true
-        example: nulla
+        example: a
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: wkficmfqppjnwqhdczumdyq
-      date: '2024-06-06T15:33:00'
-      nomClient: aoplutvkulvc
-      adresse: rbeiort
-      reference: syefzjyl
-      commande_id: nulla
+      titre: firmrdgsworysxisqntsxi
+      date: '2024-06-07T08:53:12'
+      nomClient: fegvuhmlwduawnur
+      adresse: hjfjscexgjzsntvvxhmdzrt
+      reference: vxpitra
+      commande_id: a
     fileParameters: []
     responses: []
     responseFields: []
@@ -2858,13 +2862,13 @@ endpoints:
         name: id
         description: 'The ID of the livraison.'
         required: true
-        example: 18
+        example: 5
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 18
+      id: 5
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2918,7 +2922,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '42'
+          x-ratelimit-remaining: '43'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -2949,13 +2953,13 @@ endpoints:
         name: categorie
         description: ''
         required: true
-        example: qui
+        example: fuga
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      categorie: qui
+      categorie: fuga
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -2966,7 +2970,7 @@ endpoints:
         status: 404
         content: |-
           {
-              "message": "No query results for model [App\\Models\\Categorie] qui",
+              "message": "No query results for model [App\\Models\\Categorie] fuga",
               "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
               "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php",
               "line": 487,
@@ -3386,6 +3390,57 @@ endpoints:
                   }
               ]
           }
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '40'
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/commandes/{commande}/lignescommande'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      commande:
+        name: commande
+        description: 'The commande.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      commande: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 200
+        content: '[{"id":1,"titre":"Consequatur voluptate et ducimus nobis optio.","quantite":3,"prix":99.68,"article_id":161,"commande_id":1,"created_at":"2024-06-06T12:19:04.000000Z","updated_at":"2024-06-06T12:19:04.000000Z"}]'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json

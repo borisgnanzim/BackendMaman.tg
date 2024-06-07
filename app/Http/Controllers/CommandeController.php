@@ -54,4 +54,10 @@ class CommandeController extends Controller
 
         return response()->json(null, 204);
     }
+    
+    public function getLignesCommande($categorie_id)
+    {
+        $commande = Commande::findOrFail($categorie_id);
+        return response()->json($commande->lignesCommande);
+    }
 }

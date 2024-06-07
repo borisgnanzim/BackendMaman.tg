@@ -18,6 +18,7 @@ class LivraisonController extends Controller
             'date' => 'required|date',
             'nomClient' => 'required|string|max:255',
             'adresse' => 'required|string|max:255',
+            'reference' => 'sometimes|required|string|max:255',
             'commande_id' => 'required|exists:commandes,id'
         ]);
 
@@ -52,5 +53,12 @@ class LivraisonController extends Controller
         $livraison->delete();
 
         return response()->json(null, 204);
+    }
+
+    public function getCommande($livraison_id)
+    {
+        $livraison = Livraison::findOrFail($livraison_id);
+
+        return response()->json($livraison->commande);
     }
 }

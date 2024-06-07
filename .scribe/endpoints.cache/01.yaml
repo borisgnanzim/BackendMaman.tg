@@ -78,7 +78,7 @@ endpoints:
         name: nom
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: fcskfuztajzwaoplft
+        example: kcgojfmccli
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -87,7 +87,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Sint officiis voluptatum voluptas et.'
+        example: 'Et facilis nulla est rerum laborum facilis.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -96,7 +96,7 @@ endpoints:
         name: ancienPrix
         description: ''
         required: false
-        example: 0.37774
+        example: 286813878.9471
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -105,7 +105,7 @@ endpoints:
         name: prix
         description: ''
         required: true
-        example: 3036.661694167
+        example: 47746.0
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -114,7 +114,7 @@ endpoints:
         name: quantité
         description: ''
         required: true
-        example: 8
+        example: 11
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -123,18 +123,18 @@ endpoints:
         name: categorieArticle_id
         description: ''
         required: true
-        example: ut
+        example: enim
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      nom: fcskfuztajzwaoplft
-      description: 'Sint officiis voluptatum voluptas et.'
-      ancienPrix: 0.37774
-      prix: 3036.661694167
-      quantité: 8
-      categorieArticle_id: ut
+      nom: kcgojfmccli
+      description: 'Et facilis nulla est rerum laborum facilis.'
+      ancienPrix: 286813878.9471
+      prix: 47746.0
+      quantité: 11
+      categorieArticle_id: enim
     fileParameters: []
     responses: []
     responseFields: []
@@ -186,7 +186,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '55'
+          x-ratelimit-remaining: '56'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -234,7 +234,7 @@ endpoints:
         name: nom
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: qoklwnvmrabddrsyo
+        example: vysnektlapuwsgnpqab
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -243,7 +243,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Sunt nemo enim ipsa sapiente non quia placeat in.'
+        example: 'Tempore praesentium alias nisi inventore iure ullam eum repellat.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -252,7 +252,7 @@ endpoints:
         name: ancienPrix
         description: ''
         required: false
-        example: 197600234.27048
+        example: 486.0
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -261,7 +261,7 @@ endpoints:
         name: prix
         description: ''
         required: true
-        example: 5659269.177843
+        example: 815438143.79114
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -270,7 +270,7 @@ endpoints:
         name: quantité
         description: ''
         required: true
-        example: 13
+        example: 10
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -279,18 +279,18 @@ endpoints:
         name: categorieArticle_id
         description: ''
         required: true
-        example: ea
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      nom: qoklwnvmrabddrsyo
-      description: 'Sunt nemo enim ipsa sapiente non quia placeat in.'
-      ancienPrix: 197600234.27048
-      prix: 5659269.177843
-      quantité: 13
-      categorieArticle_id: ea
+      nom: vysnektlapuwsgnpqab
+      description: 'Tempore praesentium alias nisi inventore iure ullam eum repellat.'
+      ancienPrix: 486.0
+      prix: 815438143.79114
+      quantité: 10
+      categorieArticle_id: sit
     fileParameters: []
     responses: []
     responseFields: []
@@ -384,7 +384,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '41'
+          x-ratelimit-remaining: '42'
           access-control-allow-origin: '*'
         description: null
         custom: []
@@ -437,7 +437,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '40'
+          x-ratelimit-remaining: '41'
           access-control-allow-origin: '*'
         description: null
         custom: []

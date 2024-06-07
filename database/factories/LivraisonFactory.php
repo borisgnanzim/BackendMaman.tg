@@ -5,6 +5,8 @@ namespace Database\Factories;
 use App\Models\Commande;
 use App\Models\Livraison;
 use Illuminate\Database\Eloquent\Factories\Factory;
+//
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Livraison>
@@ -26,7 +28,9 @@ class LivraisonFactory extends Factory
             'date' => $this->faker->date,
             'nomClient' => $this->faker->name,
             'adresse' => $this->faker->address,
-            'commande_id' => Commande::factory()
+            //'reference' => Str::random(10),
+            'reference' => $this->faker->unique()->regexify('[A-Z0-9]{8}'), // Génère une chaîne unique de 8 caractères alphanumériques
+            'commande_id' => Commande::factory(),
         ];
     }
 }

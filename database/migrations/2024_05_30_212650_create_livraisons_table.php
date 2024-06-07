@@ -17,7 +17,8 @@ return new class extends Migration
             $table->dateTime('date');
             $table->string('nomClient');
             $table->string('adresse');
-            $table->string('reference')->unique();
+            $table->string('reference');
+            //$table->string('reference');
             //$table->unsignedBigInteger('commande_id');
             $table->foreignId('commande_id')->constrained('commandes')->onDelete('cascade');
             $table->timestamps();

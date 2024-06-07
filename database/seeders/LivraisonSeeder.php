@@ -14,6 +14,6 @@ class LivraisonSeeder extends Seeder
     public function run(): void
     {
         //
-        Livraison::factory(20);
+        Livraison::factory(10)->create();
     }
 }

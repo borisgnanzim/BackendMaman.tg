@@ -48,27 +48,27 @@ paths:
                 nom:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: fcskfuztajzwaoplft
+                  example: kcgojfmccli
                 description:
                   type: string
                   description: ''
-                  example: 'Sint officiis voluptatum voluptas et.'
+                  example: 'Et facilis nulla est rerum laborum facilis.'
                 ancienPrix:
                   type: number
                   description: ''
-                  example: 0.37774
+                  example: 286813878.9471
                 prix:
                   type: number
                   description: ''
-                  example: 3036.661694167
+                  example: 47746.0
                 quantité:
                   type: integer
                   description: ''
-                  example: 8
+                  example: 11
                 categorieArticle_id:
                   type: string
                   description: ''
-                  example: ut
+                  example: enim
               required:
                 - nom
                 - prix
@@ -143,27 +143,27 @@ paths:
                 nom:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: qoklwnvmrabddrsyo
+                  example: vysnektlapuwsgnpqab
                 description:
                   type: string
                   description: ''
-                  example: 'Sunt nemo enim ipsa sapiente non quia placeat in.'
+                  example: 'Tempore praesentium alias nisi inventore iure ullam eum repellat.'
                 ancienPrix:
                   type: number
                   description: ''
-                  example: 197600234.27048
+                  example: 486.0
                 prix:
                   type: number
                   description: ''
-                  example: 5659269.177843
+                  example: 815438143.79114
                 quantité:
                   type: integer
                   description: ''
-                  example: 13
+                  example: 10
                 categorieArticle_id:
                   type: string
                   description: ''
-                  example: ea
+                  example: sit
               required:
                 - nom
                 - prix
@@ -278,160 +278,18 @@ paths:
       security: []
   /api/categories:
     get:
-      summary: 'Display a listing of the resource.'
-      operationId: displayAListingOfTheResource
+      summary: 'Lister tous les categories'
+      operationId: listerTousLesCategories
       description: ''
       parameters: []
       responses:
         200:
           description: ''
           content:
-            application/json:
+            text/plain:
               schema:
-                type: array
-                items:
-                  type: object
-                example:
-                  -
-                    id: 1
-                    nom: voluptatem
-                    description: 'Nesciunt molestias eos eveniet dolores aut qui odio similique.'
-                    superCategorie_id: null
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 2
-                    nom: repudiandae
-                    description: 'Ipsa fugiat qui tempora.'
-                    superCategorie_id: null
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 3
-                    nom: harum
-                    description: 'Atque omnis ullam voluptas omnis et modi totam.'
-                    superCategorie_id: null
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 4
-                    nom: est
-                    description: 'Sed blanditiis eum aliquid nesciunt nobis iure earum.'
-                    superCategorie_id: null
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 5
-                    nom: culpa
-                    description: 'Nihil et doloribus asperiores.'
-                    superCategorie_id: null
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 6
-                    nom: consequatur
-                    description: 'Sint est sed aut non molestias.'
-                    superCategorie_id: null
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 7
-                    nom: tempore
-                    description: 'Porro repellendus aut repudiandae tenetur ab rerum perspiciatis.'
-                    superCategorie_id: null
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 8
-                    nom: mollitia
-                    description: 'Saepe magnam consequatur quis.'
-                    superCategorie_id: null
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 9
-                    nom: qui
-                    description: 'Labore similique expedita consequatur velit.'
-                    superCategorie_id: null
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 10
-                    nom: natus
-                    description: 'Sed earum porro eaque neque.'
-                    superCategorie_id: null
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 11
-                    nom: quod
-                    description: 'Voluptates corporis hic quis cupiditate.'
-                    superCategorie_id: 8
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 12
-                    nom: minima
-                    description: 'Accusamus a eligendi cum assumenda nemo ab aut voluptatum.'
-                    superCategorie_id: 10
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 13
-                    nom: culpa
-                    description: 'Ducimus officia deleniti dolor est.'
-                    superCategorie_id: 10
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 14
-                    nom: numquam
-                    description: 'Ea voluptates in consequatur.'
-                    superCategorie_id: 9
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 15
-                    nom: nesciunt
-                    description: 'Ut non explicabo rerum qui laudantium at.'
-                    superCategorie_id: 11
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 16
-                    nom: esse
-                    description: 'Reprehenderit sunt necessitatibus hic ab animi rerum consequatur quis.'
-                    superCategorie_id: 8
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 17
-                    nom: autem
-                    description: 'Asperiores architecto qui distinctio fuga.'
-                    superCategorie_id: 7
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 18
-                    nom: ducimus
-                    description: 'Commodi non beatae voluptatem.'
-                    superCategorie_id: 7
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 19
-                    nom: magni
-                    description: 'Velit quas vitae distinctio.'
-                    superCategorie_id: 5
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
-                  -
-                    id: 20
-                    nom: nostrum
-                    description: 'Quia amet tempora voluptatem et illo.'
-                    superCategorie_id: 4
-                    created_at: '2024-06-06T12:19:02.000000Z'
-                    updated_at: '2024-06-06T12:19:02.000000Z'
+                type: string
+                example: "[\n  {\n    \"id\": 1,\n    \"nom\": \"Sample Categorie\",\n    \"description\": \"This is a sample desscription.\"\n    \"super_categorie\": \"categorie mère\"\n\n  }\n]"
       tags:
         - Endpoints
       security: []
@@ -453,11 +311,11 @@ paths:
                 nom:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: e
+                  example: oohsjvbpcnnaw
                 description:
                   type: string
                   description: ''
-                  example: 'Omnis et sit expedita maiores vel eius.'
+                  example: 'Est quia sint veritatis nesciunt et sint et et.'
                 super_categorie:
                   type: string
                   description: ''
@@ -502,11 +360,11 @@ paths:
                 nom:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: picfmsmawj
+                  example: z
                 description:
                   type: string
                   description: ''
-                  example: 'Non sunt facere ad velit suscipit.'
+                  example: 'Ut praesentium reiciendis impedit ut dolorem voluptatem corrupti illo.'
                 super_categorie:
                   type: string
                   description: ''
@@ -660,15 +518,15 @@ paths:
                 titre:
                   type: string
                   description: "'titre'=>'required|string|max:255',. Must not be greater than 255 characters."
-                  example: dkvor
+                  example: gtzexwsodd
                 article_id:
                   type: string
                   description: ''
-                  example: voluptas
+                  example: quo
                 categorie_id:
                   type: string
                   description: ''
-                  example: ipsa
+                  example: molestias
               required:
                 - article_id
                 - categorie_id
@@ -733,15 +591,15 @@ paths:
                 titre:
                   type: string
                   description: "'titre'=>'required|string|max:255',. Must not be greater than 255 characters."
-                  example: myhzjjftqqkl
+                  example: hswordixbnjevjasbvux
                 article_id:
                   type: string
                   description: ''
-                  example: et
+                  example: vitae
                 categorie_id:
                   type: string
                   description: ''
-                  example: odit
+                  example: ipsam
               required:
                 - article_id
                 - categorie_id
@@ -1601,11 +1459,11 @@ paths:
                 titre:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: xvijvqtneercyjkegphhmkp
+                  example: yydorbgfegciflooniaoroymp
                 description:
                   type: string
                   description: ''
-                  example: 'Aliquam molestiae est officiis et ea id alias saepe.'
+                  example: 'Occaecati ipsam vitae voluptatem laborum.'
                 image:
                   type: string
                   format: binary
@@ -1613,7 +1471,7 @@ paths:
                 article_id:
                   type: string
                   description: ''
-                  example: assumenda
+                  example: sed
               required:
                 - titre
                 - image
@@ -1683,11 +1541,11 @@ paths:
                 titre:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: bbrrecdg
+                  example: ypzpmhqpajxtmznnwmcr
                 description:
                   type: string
                   description: ''
-                  example: 'Voluptatem dolores repellendus et iste possimus.'
+                  example: 'Eligendi iusto aliquid aut quasi est quis.'
                 image:
                   type: string
                   format: binary
@@ -1695,7 +1553,7 @@ paths:
                 article_id:
                   type: string
                   description: ''
-                  example: tenetur
+                  example: repellat
               required:
                 - titre
                 - article_id
@@ -2295,23 +2153,23 @@ paths:
                 titre:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: qawlcamoumdqyjcvcamvmo
+                  example: spqozliiahgdsirzlbuia
                 quantite:
                   type: integer
                   description: ''
-                  example: 8
+                  example: 2
                 prix:
                   type: number
                   description: ''
-                  example: 44406416.18
+                  example: 73788.99
                 article_id:
                   type: string
                   description: ''
-                  example: dolorem
+                  example: corporis
                 commande_id:
                   type: string
                   description: ''
-                  example: perferendis
+                  example: delectus
               required:
                 - titre
                 - quantite
@@ -2387,23 +2245,23 @@ paths:
                 titre:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: gvolvvak
+                  example: fwnkinnxgocsayawmc
                 quantite:
                   type: integer
                   description: ''
-                  example: 2
+                  example: 4
                 prix:
                   type: number
                   description: ''
-                  example: 5913.0
+                  example: 412127.31
                 article_id:
                   type: string
                   description: ''
-                  example: a
+                  example: iste
                 commande_id:
                   type: string
                   description: ''
-                  example: quibusdam
+                  example: dolor
               required:
                 - titre
                 - quantite
@@ -3616,27 +3474,27 @@ paths:
                 titre:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ipnxabqlmhhbmqkbry
+                  example: ustzynhhayqkoabfsfsjsrtxa
                 date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-06T15:32:59'
+                  example: '2024-06-07T08:53:11'
                 montant:
                   type: number
                   description: ''
-                  example: 38562102.347749
+                  example: 38.15595
                 statut:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: gezggfqsckjef
+                  example: hptrtmvqjbyhyggtchhxne
                 reference:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: qzfifl
+                  example: rjpkhnwahiewnbecagujoylqt
                 user_id:
                   type: string
                   description: ''
-                  example: ex
+                  example: qui
               required:
                 - titre
                 - date
@@ -3717,27 +3575,27 @@ paths:
                 titre:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: a
+                  example: zfjkgkkoj
                 date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-06T15:32:59'
+                  example: '2024-06-07T08:53:11'
                 montant:
                   type: number
                   description: ''
-                  example: 283.2705
+                  example: 5606710.03
                 statut:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: uoedhi
+                  example: ukvjqfymuyttewpannlw
                 reference:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: kpthaj
+                  example: ktlrqpyuwmi
                 user_id:
                   type: string
                   description: ''
-                  example: nihil
+                  example: libero
               required:
                 - titre
                 - date
@@ -4051,27 +3909,27 @@ paths:
                 titre:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ghwtoqkdrfdijyifa
+                  example: zwyjwgnefdenlsueltptgdzwe
                 solde:
                   type: number
                   description: ''
-                  example: 8236678.97771
+                  example: 17717037.400149
                 mode_de_paiment:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: xtuidgwvesaerkdxlv
+                  example: ikxmnyh
                 date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-06T15:32:59'
+                  example: '2024-06-07T08:53:11'
                 client_id:
                   type: string
                   description: ''
-                  example: eligendi
+                  example: ratione
                 commande_id:
                   type: string
                   description: ''
-                  example: nemo
+                  example: ut
               required:
                 - titre
                 - solde
@@ -4152,27 +4010,27 @@ paths:
                 titre:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: wrm
+                  example: sdqb
                 solde:
                   type: number
                   description: ''
-                  example: 2.2
+                  example: 13.6455662
                 mode_de_paiment:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: ypbefpnxiyiumjheno
+                  example: qhugeodhpuganxlrkmqos
                 date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-06T15:32:59'
+                  example: '2024-06-07T08:53:11'
                 client_id:
                   type: string
                   description: ''
-                  example: esse
+                  example: voluptas
                 commande_id:
                   type: string
                   description: ''
-                  example: sit
+                  example: sint
               required:
                 - titre
                 - solde
@@ -6036,35 +5894,35 @@ paths:
                 nom:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: yuzrgxsmtxdnuwcdxf
+                  example: xaqpgwgridazbdhqnjqxsilna
                 prenom:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: gsrczxsce
+                  example: nkopg
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: reichert.jett@example.org
+                  example: deion64@example.net
                 adresse:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: r
+                  example: hximwpankhazdptv
                 coordonne_geographique:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: dhmlggilhrbz
+                  example: bhyjijecbyltjjosnilfsjzab
                 role:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: pgvjqstspu
+                  example: cbndvw
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: whgdzvqpgrtgsafi
+                  example: dpd
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: UJoqrvJ.5A
+                  example: '@4kS}<DNE1'
               required:
                 - nom
                 - prenom
@@ -6152,11 +6010,11 @@ paths:
                 nom:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: fcnijrisdllfugcwly
+                  example: uba
                 prenom:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: jeilgjpgtqedmlfwvwa
+                  example: ijlkldgfcfyyolpq
                 email:
                   type: string
                   description: ''
@@ -6164,15 +6022,15 @@ paths:
                 adresse:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: iwmesxvhtkxqgxvanezx
+                  example: b
                 coordonne_geographique:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: jyicwwnapvcrhtggxoior
+                  example: egzeiwa
                 role:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: kmivqdocvveib
+                  example: olxfov
                 name:
                   type: string
                   description: ''
@@ -6180,7 +6038,7 @@ paths:
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: ']Jl6o]\S'
+                  example: ';m#*!#|kqt:Y+7xXvU'
               required:
                 - nom
                 - prenom
@@ -6240,23 +6098,23 @@ paths:
                 titre:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: wqzxwuwxxv
+                  example: ccljooepgnyaxvzjq
                 date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-06T15:33:00'
+                  example: '2024-06-07T08:53:12'
                 nomClient:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: afqzkykhkxullfk
+                  example: kn
                 adresse:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: enhbdyrnlqfxhmhrlvbjp
+                  example: bwzgikpvhktkiyofj
                 commande_id:
                   type: string
                   description: ''
-                  example: ea
+                  example: est
               required:
                 - titre
                 - date
@@ -6278,7 +6136,7 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'No query results for model [App\Models\Livraison] 17'
+                  message: 'No query results for model [App\Models\Livraison] 20'
                   exception: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
                   file: 'C:\laragon\www\BackendMaman.tg\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions\Handler.php'
                   line: 487
@@ -6628,7 +6486,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: 'No query results for model [App\Models\Livraison] 17'
+                    example: 'No query results for model [App\Models\Livraison] 20'
                   exception:
                     type: string
                     example: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
@@ -7022,27 +6880,27 @@ paths:
                 titre:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: wkficmfqppjnwqhdczumdyq
+                  example: firmrdgsworysxisqntsxi
                 date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2024-06-06T15:33:00'
+                  example: '2024-06-07T08:53:12'
                 nomClient:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: aoplutvkulvc
+                  example: fegvuhmlwduawnur
                 adresse:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: rbeiort
+                  example: hjfjscexgjzsntvvxhmdzrt
                 reference:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: syefzjyl
+                  example: vxpitra
                 commande_id:
                   type: string
                   description: ''
-                  example: nulla
+                  example: a
               required:
                 - titre
                 - date
@@ -7065,7 +6923,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the livraison.'
-        example: 17
+        example: 20
         required: true
         schema:
           type: integer
@@ -7114,7 +6972,7 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'No query results for model [App\Models\Categorie] qui'
+                  message: 'No query results for model [App\Models\Categorie] fuga'
                   exception: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
                   file: 'C:\laragon\www\BackendMaman.tg\vendor\laravel\framework\src\Illuminate\Foundation\Exceptions\Handler.php'
                   line: 487
@@ -7476,7 +7334,7 @@ paths:
                 properties:
                   message:
                     type: string
-                    example: 'No query results for model [App\Models\Categorie] qui'
+                    example: 'No query results for model [App\Models\Categorie] fuga'
                   exception:
                     type: string
                     example: Symfony\Component\HttpKernel\Exception\NotFoundHttpException
@@ -7869,10 +7727,47 @@ paths:
         in: path
         name: categorie
         description: ''
-        example: qui
+        example: fuga
         required: true
         schema:
           type: string
+  '/api/commandes/{commande}/lignescommande':
+    get:
+      summary: ''
+      operationId: getApiCommandesCommandeLignescommande
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                example:
+                  -
+                    id: 1
+                    titre: 'Consequatur voluptate et ducimus nobis optio.'
+                    quantite: 3
+                    prix: 99.68
+                    article_id: 161
+                    commande_id: 1
+                    created_at: '2024-06-06T12:19:04.000000Z'
+                    updated_at: '2024-06-06T12:19:04.000000Z'
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: commande
+        description: 'The commande.'
+        example: 1
+        required: true
+        schema:
+          type: integer
 tags:
   -
     name: Articles
