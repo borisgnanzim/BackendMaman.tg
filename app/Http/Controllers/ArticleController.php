@@ -44,8 +44,8 @@ class ArticleController extends Controller
             'description' => 'nullable|string',
             'ancienPrix' => 'nullable|numeric',
             'prix' => 'required|numeric',
-            'quantité' => 'required|integer',
-            'categorieArticle_id' => 'required|exists:categories,id'
+            'quantite' => 'required|integer',
+            //'categorieArticle_id' => 'required|exists:categories,id'
         ]);
 
         $article = Article::create($validatedData);
