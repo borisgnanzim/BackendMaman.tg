@@ -9,7 +9,7 @@ class Payement extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'titre', 'solde', 'modePaiment', 'date', 'user_id', 'commande_id'
+        'titre', 'solde', 'modePayement', 'date', 'user_id', 'commande_id'
     ];
 
     public function user()

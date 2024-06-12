@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Events\PayementReceived;
 use App\Models\Payement;
 use Illuminate\Http\Request;
 
@@ -16,15 +17,22 @@ class PayementController extends Controller
         $validatedData = $request->validate([
             'titre' => 'required|string|max:255',
             'solde' => 'required|numeric',
-            'mode_de_paiment' => 'required|string|max:255',
+            'modePayement' => 'required|string|max:255',
             'date' => 'required|date',
-            'client_id' => 'required|exists:users,id',
+            'user_id' => 'required|exists:users,id',
             'commande_id' => 'required|exists:commandes,id'
         ]);
 
         $payement = Payement::create($validatedData);
+        event(new PayementReceived($payement->commande_id));
 
-        return response()->json($payement, 201);
+
+        // return response()->json($payement, 201);
+        return response()->json([
+            'message' => 'Payment received and status updated.',
+            'payement' => $payement], 
+            201);
+
     }
 
     public function show(Payement $payement)
@@ -37,9 +45,9 @@ class PayementController extends Controller
         $validatedData = $request->validate([
             'titre' => 'sometimes|required|string|max:255',
             'solde' => 'sometimes|required|numeric',
-            'mode_de_paiment' => 'sometimes|required|string|max:255',
+            'modePaiment' => 'sometimes|required|string|max:255',
             'date' => 'sometimes|required|date',
-            'client_id' => 'sometimes|required|exists:users,id',
+            'user_id' => 'sometimes|required|exists:users,id',
             'commande_id' => 'sometimes|required|exists:commandes,id'
         ]);
 
