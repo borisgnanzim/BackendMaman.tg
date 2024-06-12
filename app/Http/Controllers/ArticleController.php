@@ -30,7 +30,9 @@ class ArticleController extends Controller
     public function index()
     {
         //
-        return Article::all();
+        //return Article::all();
+        $articles = Article::with('images')->get();
+        return response()->json($articles);
     }
 
     /**
