@@ -61,6 +61,8 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         //
+        // Charger les images avec l'article
+        $article->load('images');
         return $article;
 
     }
