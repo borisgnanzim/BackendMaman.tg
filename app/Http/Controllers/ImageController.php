@@ -21,13 +21,28 @@ class ImageController extends Controller
             'article_id' => 'required|exists:articles,id',
         ]);
 
+        // if ($request->hasFile('image')) {
+        //     $path = $request->file('image')->store('images', 'public');
+        //     $image = Image::create([
+        //         'titre' => $request->titre,
+        //         'description' => $request->description,
+        //         'path' => $path,
+        //         'article_id' => $request->article_id,
+        //     ]);
+
+        //     return response()->json($image, 201);
+        // }
+
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('images', 'public');
+            $article_id = $request->article_id;
+            // Stocker l'image dans un dossier basé sur l'ID de l'article
+            $path = $request->file('image')->store("images/{$article_id}", 'public');
+
             $image = Image::create([
                 'titre' => $request->titre,
                 'description' => $request->description,
                 'path' => $path,
-                'article_id' => $request->article_id,
+                'article_id' => $article_id,
             ]);
 
             return response()->json($image, 201);
@@ -50,14 +65,30 @@ class ImageController extends Controller
             'article_id' => 'sometimes|required|exists:articles,id',
         ]);
 
+        // if ($request->hasFile('image')) {
+        //     Storage::disk('public')->delete($image->path);
+        //     $path = $request->file('image')->store('images', 'public');
+        //     $image->update([
+        //         'titre' => $request->titre ?? $image->titre,
+        //         'description' => $request->description ?? $image->description,
+        //         'path' => $path,
+        //         'article_id' => $request->article_id ?? $image->article_id,
+        //     ]);
+        // } else {
+        //     $image->update($request->only(['titre', 'description', 'article_id']));
+        // }
+
         if ($request->hasFile('image')) {
+            // Supprimer l'ancienne image
             Storage::disk('public')->delete($image->path);
-            $path = $request->file('image')->store('images', 'public');
+            $article_id = $request->article_id ?? $image->article_id;
+            // Stocker la nouvelle image dans le bon dossier
+            $path = $request->file('image')->store("images/{$article_id}", 'public');
             $image->update([
                 'titre' => $request->titre ?? $image->titre,
                 'description' => $request->description ?? $image->description,
                 'path' => $path,
-                'article_id' => $request->article_id ?? $image->article_id,
+                'article_id' => $article_id,
             ]);
         } else {
             $image->update($request->only(['titre', 'description', 'article_id']));

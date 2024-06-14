@@ -101,8 +101,14 @@ class ArticleController extends Controller
 
     public function getImages($article_id)
     {
+        // $article = Article::findOrFail($article_id);
+        // return response()->json($article->images);
+
         $article = Article::findOrFail($article_id);
-        return response()->json($article->images);
+        $images = $article->images()->get();
+
+        // L'URL publique est déjà ajoutée par l'accessor dans le modèle Image
+        return response()->json($images);
     }
 
     public function getCategories($article_id)
