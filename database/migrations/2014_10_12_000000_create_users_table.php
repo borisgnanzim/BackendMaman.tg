@@ -18,11 +18,11 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('adresse')->nullable();
-            $table->string('coordonne_geographique')->nullable();
-            $table->string('role');
+            $table->string('nom')->default('');  // Ajout d'une valeur par défaut
+            $table->string('prenom')->default('');  // Ajout d'une valeur par défaut
+            $table->string('adresse')->default('');  // Ajout d'une valeur par défaut
+            $table->string('coordonne_geographique')->default('');  // Ajout d'une valeur par défaut
+            //$table->string('role');
             $table->timestamps();
         });
     }

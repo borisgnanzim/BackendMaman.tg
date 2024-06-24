@@ -25,6 +25,7 @@ class ImageFactory extends Factory
             'titre' => $this->faker->sentence,
             'description' => $this->faker->sentence,
             'path' => $this->faker->imageUrl,
+            //'url' => $this->faker->imageUrl,
             'article_id' => Article::factory()
         ];
     }

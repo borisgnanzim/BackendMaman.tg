@@ -581,6 +581,7 @@ class ComposerStaticInitc314e10fb7bde8d460c16240cf790577
 
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Events\\PayementReceived' => __DIR__ . '/../..' . '/app/Events/PayementReceived.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\ArticleController' => __DIR__ . '/../..' . '/app/Http/Controllers/ArticleController.php',
         'App\\Http\\Controllers\\CategorieArticleController' => __DIR__ . '/../..' . '/app/Http/Controllers/CategorieArticleController.php',
@@ -602,6 +603,7 @@ class ComposerStaticInitc314e10fb7bde8d460c16240cf790577
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Listeners\\UpdateCommandeStatus' => __DIR__ . '/../..' . '/app/Listeners/UpdateCommandeStatus.php',
         'App\\Models\\Article' => __DIR__ . '/../..' . '/app/Models/Article.php',
         'App\\Models\\Categorie' => __DIR__ . '/../..' . '/app/Models/Categorie.php',
         'App\\Models\\CategorieArticle' => __DIR__ . '/../..' . '/app/Models/CategorieArticle.php',
@@ -6785,6 +6787,7 @@ class ComposerStaticInitc314e10fb7bde8d460c16240cf790577
         'Termwind\\ValueObjects\\Styles' => __DIR__ . '/..' . '/nunomaduro/termwind/src/ValueObjects/Styles.php',
         'Tests\\CreatesApplication' => __DIR__ . '/../..' . '/tests/CreatesApplication.php',
         'Tests\\Feature\\ExampleTest' => __DIR__ . '/../..' . '/tests/Feature/ExampleTest.php',
+        'Tests\\Feature\\LivraisonFactoryTest' => __DIR__ . '/../..' . '/tests/Feature/LivraisonFactoryTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
         'Tests\\Unit\\ExampleTest' => __DIR__ . '/../..' . '/tests/Unit/ExampleTest.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',

@@ -14,7 +14,7 @@ class Article extends Model
      // Define the relationship with Image
      public function images()
      {
-         return $this->hasMany(Image::class);
+        return $this->hasMany(Image::class);
      }
  
      // Define the relationship with Categorie

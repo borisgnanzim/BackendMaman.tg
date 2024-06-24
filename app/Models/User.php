@@ -25,7 +25,7 @@ class User extends Authenticatable
         'prenom', 
         'adresse', 
         'coordonne_geographique', 
-        'role'
+        'role_id'
     ];
 
     /**
@@ -58,4 +58,25 @@ class User extends Authenticatable
     {
         return $this->hasMany(Payement::class, 'user_id');
     }
+    //
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    public function isAdmin()
+    {
+        return $this->role->name === 'admin';
+    }
+
+    public function isUser()
+    {
+        return $this->role->name === 'user';
+    }
+
+    public function isGuest()
+    {
+        return $this->role->name === 'guest';
+    }
 }
+

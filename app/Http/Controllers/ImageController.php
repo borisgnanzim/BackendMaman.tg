@@ -21,18 +21,6 @@ class ImageController extends Controller
             'article_id' => 'required|exists:articles,id',
         ]);
 
-        // if ($request->hasFile('image')) {
-        //     $path = $request->file('image')->store('images', 'public');
-        //     $image = Image::create([
-        //         'titre' => $request->titre,
-        //         'description' => $request->description,
-        //         'path' => $path,
-        //         'article_id' => $request->article_id,
-        //     ]);
-
-        //     return response()->json($image, 201);
-        // }
-
         if ($request->hasFile('image')) {
             $article_id = $request->article_id;
             // Stocker l'image dans un dossier basé sur l'ID de l'article
@@ -53,8 +41,21 @@ class ImageController extends Controller
 
     public function show(Image $image)
     {
-        return response()->json($image);
+        // Chemin relatif de l'image dans le stockage public
+        $relativePath = $image->path;
+    
+        // Vérifier si l'image existe dans le stockage
+        if (!Storage::exists($relativePath)) {
+            return response()->json(['message' => 'Image not found'], 404);
+        }
+    
+        // Construire le chemin complet du fichier image
+        $filePath = storage_path('app/public/' . $relativePath);
+    
+        // Renvoyer le fichier image
+        return response()->file($filePath);
     }
+
 
     public function update(Request $request, Image $image)
     {
