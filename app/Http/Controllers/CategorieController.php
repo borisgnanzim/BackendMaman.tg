@@ -27,7 +27,13 @@ class CategorieController extends Controller
     public function index()
     {
         //
-        return Categorie::all();
+        //return Categorie::all();
+        // Récupérer toutes les catégories avec leurs sous-catégories
+        $categories = Categorie::whereNull('superCategorie_id')
+            ->with('sousCategories')
+            ->get();
+
+        return response()->json($categories);
     }
 
     /**
