@@ -125,6 +125,7 @@ Route::get('articles/{article}/categories', [ArticleController::class, 'getCateg
 
 Route::get('categories/{categorie}/articles',[CategorieController::class, 'getArticles'])->name('categorie.articles');
 
+Route::get('/categories',[CategorieController::class,'index']);
 
 Route::post('/commandes', [CommandeController::class, 'store']);
 
@@ -133,13 +134,6 @@ Route::post('/lignecommandes',[LigneCommandeController::class,'store']);
 Route::post('/payements',[PayementController::class, 'store']);
 
 
-//Route::get('commandes/{commande}/lignescommande',[CommandeController::class, 'getLignesCommande'])->name('commande.lignescommande');
-
-//Route::get('livraisons/{livraison}/commande',[LivraisonController::class,'getCommande'])->name('livraison.commande');
-//Route::post('/cart', [CartController::class, 'store']);
-//Route::post('/checkout', [CheckoutController::class, 'store']);
-
-//
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
