@@ -9,7 +9,7 @@ class Livraison extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'titre', 'date', 'nomClient', 'adresse','reference', 'commande_id'
+        'titre', 'date', 'nomClient','ville', 'adresse','reference', 'commande_id'
     ];
 
     public function commande()

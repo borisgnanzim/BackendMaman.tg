@@ -27,6 +27,7 @@ class LivraisonFactory extends Factory
             'titre' => $this->faker->sentence,
             'date' => $this->faker->date,
             'nomClient' => $this->faker->name,
+            'ville' => $this->faker->optional($weight = 0.5)->city,
             'adresse' => $this->faker->address,
             //'reference' => Str::random(10),
             'reference' => $this->faker->unique()->regexify('[A-Z0-9]{8}'), // Génère une chaîne unique de 8 caractères alphanumériques

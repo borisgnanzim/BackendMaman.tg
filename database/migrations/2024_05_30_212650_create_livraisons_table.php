@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('titre');
             $table->dateTime('date');
             $table->string('nomClient');
+            $table->string('ville')->nullable();
             $table->string('adresse');
             $table->string('reference');
             //$table->string('reference');

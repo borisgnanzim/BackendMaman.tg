@@ -17,6 +17,7 @@ class LivraisonController extends Controller
             'titre' => 'required|string|max:255',
             'date' => 'required|date',
             'nomClient' => 'required|string|max:255',
+            'ville' => 'nullable|string|max:255', // Permettre à ville d'être null
             'adresse' => 'required|string|max:255',
             'reference' => 'sometimes|required|string|max:255',
             'commande_id' => 'required|exists:commandes,id'
@@ -38,6 +39,7 @@ class LivraisonController extends Controller
             'titre' => 'sometimes|required|string|max:255',
             'date' => 'sometimes|required|date',
             'nomClient' => 'sometimes|required|string|max:255',
+            'ville' => 'nullable|string|max:255', // Permettre à ville d'être null
             'adresse' => 'sometimes|required|string|max:255',
             'reference' => 'sometimes|required|string|max:255',
             'commande_id' => 'sometimes|required|exists:commandes,id'
