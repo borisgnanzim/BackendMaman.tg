@@ -45,7 +45,7 @@ class UserController extends Controller
             'email' => 'sometimes|required|string|email|max:255|unique:users,email,' . $user->id,
             'adresse' => 'nullable|string|max:255',
             'coordonne_geographique' => 'nullable|string|max:255',
-            'role' => 'nullable|string|max:255',
+            //'role' => 'nullable|string|max:255',
             'name' => 'sometimes|required|string|max:255|unique:users,login,' . $user->id,
             'password' => 'nullable|string|min:8'
         ]);

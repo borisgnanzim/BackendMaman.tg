@@ -35,7 +35,7 @@ class CommandeController extends Controller
             'titre' => 'required|string|max:255',
             'date' => 'required|date',
             'montant' => 'required|numeric',
-            'statut' => 'required|string|max:255',
+            'statut' => 'required|string|max:25',
             'reference' => 'required|string|max:255',
             'user_id' => 'required|exists:users,id',
             'articles' => 'required|array',

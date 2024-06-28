@@ -30,6 +30,7 @@ class LivraisonFactory extends Factory
             'ville' => $this->faker->optional($weight = 0.5)->city,
             'adresse' => $this->faker->address,
             //'reference' => Str::random(10),
+            'destinataire' =>'moi',
             'reference' => $this->faker->unique()->regexify('[A-Z0-9]{8}'), // Génère une chaîne unique de 8 caractères alphanumériques
             'commande_id' => Commande::factory(),
         ];

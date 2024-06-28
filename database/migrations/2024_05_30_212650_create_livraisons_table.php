@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('ville')->nullable();
             $table->string('adresse');
             $table->string('reference');
+            $table->enum('destinataire', ['moi', 'autre'])->default('moi');
             //$table->string('reference');
             //$table->unsignedBigInteger('commande_id');
             $table->foreignId('commande_id')->constrained('commandes')->onDelete('cascade');

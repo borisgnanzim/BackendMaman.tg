@@ -133,8 +133,6 @@ Route::post('/lignecommandes',[LigneCommandeController::class,'store']);
 
 Route::post('/payements',[PayementController::class, 'store']);
 
-
-
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
