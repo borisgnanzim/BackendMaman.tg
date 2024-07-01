@@ -5,8 +5,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
-
-use function PHPUnit\Framework\isNull;
+use Illuminate\Support\Facades\Cookie;
+use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
@@ -15,18 +15,26 @@ class AuthController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string',
-            //'password' => 'required|string|min:8|confirmed',
+            'password' => 'required|string|min:8', // Vérification de la longueur du mot de passe
         ]);
 
         $user = User::create([
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'password' => Hash::make($validatedData['password']),
-            'role_id' => 2, // User role by default
+            'role_id' => 2, // Rôle utilisateur par défaut
         ]);
-            
-        return response()->json(['message' => 'User registered successfully','user' => $user], 201);
+
+        $token = $user->createToken('auth_token')->plainTextToken;
+
+        return response()->json([
+            'message' => 'User registered successfully',
+            'user' => [
+                'name' => $user->name,
+                'email' => $user->email
+            ],
+            'token' => $token
+        ], 201);
     }
 
     public function login(Request $request)
@@ -37,19 +45,30 @@ class AuthController extends Controller
         ]);
 
         if (!Auth::attempt($credentials)) {
-            return response()->json(['message' => 'Invalid credentials'], 401);
+            throw ValidationException::withMessages([
+                'email' => ['The provided credentials are incorrect.'],
+            ]);
         }
 
         $user = $request->user();
         $token = $user->createToken('auth_token')->plainTextToken;
 
-        return response()->json(['token' => $token, 'user' => $user]);
+        $cookie = cookie('auth_token', $token, 1440, null, null, false, true); // Sécuriser le cookie
+
+        return response()->json([
+            'user' => [
+                'name' => $user->name,
+                'email' => $user->email
+            ]
+        ])->cookie($cookie);
     }
 
     public function logout(Request $request)
     {
         $request->user()->tokens()->delete();
 
-        return response()->json(['message' => 'Logged out successfully']);
+        $cookie = Cookie::forget('auth_token');
+
+        return response()->json(['message' => 'Logged out successfully'])->withCookie($cookie);
     }
 }

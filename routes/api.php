@@ -139,3 +139,16 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanc
 
 //Route::apiResource('images', ImageController::class);
 Route::get('/images/{image}', [ImageController::class, 'show']);
+
+
+// temp
+    Route::apiResource('categories', CategorieController::class);
+    Route::apiResource('categorieArticles', CategorieArticleController::class);
+    Route::apiResource('articles', ArticleController::class);
+    Route::apiResource('images', ImageController::class);
+    Route::apiResource('ligneCommandes', LigneCommandeController::class);
+    Route::apiResource('commandes', CommandeController::class);
+    Route::apiResource('payements', PayementController::class);
+    Route::apiResource('users', UserController::class);
+    Route::apiResource('livraisons', LivraisonController::class);
+// temp
