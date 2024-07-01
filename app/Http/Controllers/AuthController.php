@@ -56,10 +56,14 @@ class AuthController extends Controller
         $cookie = cookie('auth_token', $token, 1440, null, null, false, true); // Sécuriser le cookie
 
         return response()->json([
+            'message' => 'User logged successfully',
             'user' => [
                 'name' => $user->name,
                 'email' => $user->email
-            ]
+            ],
+            'token' => $token,
+            'cookie' => $cookie,
+        
         ])->cookie($cookie);
     }
 
