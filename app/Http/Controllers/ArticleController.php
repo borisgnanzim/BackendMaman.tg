@@ -45,7 +45,7 @@ class ArticleController extends Controller
             'nom' => 'required|string|max:255',
             'description' => 'nullable|string',
             'mini_description' => 'nullable|string',
-            'ancienPrix' => 'nullable|numeric',
+            // 'ancienPrix' => 'nullable|numeric',
             'prix' => 'required|numeric',
             'quantite' => 'required|integer',
             //'categorieArticle_id' => 'required|exists:categories,id'
@@ -78,12 +78,16 @@ class ArticleController extends Controller
             'nom' => 'sometimes|required|string|max:255',
             'description' => 'nullable|string',
             'mini_description' => 'nullable|string',
-            'ancienPrix' => 'nullable|numeric',
+            //'ancienPrix' => 'nullable|numeric',
             'prix' => 'sometimes|required|numeric',
             'quantite' => 'sometimes|required|integer',
             //'categorieArticle_id' => 'sometimes|required|exists:categories,id'
         ]);
-
+        // Vérifiez si le prix a changé
+        if ($request->has('prix') && $article->prix != $validatedData['prix']) {
+            // Mettre à jour ancienPrix avec la valeur actuelle de prix
+            $article->ancienPrix = $article->prix;
+        }
         $article->update($validatedData);
 
         return response()->json($article, 200);

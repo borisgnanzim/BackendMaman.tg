@@ -17,6 +17,7 @@ class PayementController extends Controller
         $payements = $payements->map(function($payement) {
             return [
                 'id' => $payement->id,
+                'reference' => $payement->reference,
                 'titre' => $payement->titre,
                 'solde' => $payement->solde,
                 'modePayement' => $payement->modePayement,

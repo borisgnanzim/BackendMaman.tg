@@ -11,8 +11,32 @@ class CommandeController extends Controller
 {
     public function index()
     {
-        $commandes = Commande::with('user')->get();
-        return response()->json($commandes);
+        // $commandes = Commande::with('user')->get();
+        // return response()->json($commandes);
+        // Récupérer toutes les commandes avec les informations spécifiques de l'utilisateur
+    $commandes = Commande::with(['user:id,nom,prenom,adresse,email'])->get();
+
+    // Transformer les données pour inclure uniquement les attributs nécessaires de l'utilisateur
+    $commandes = $commandes->map(function($commande) {
+        return [
+            'id' => $commande->id,
+            'titre' => $commande->titre,
+            'date' => $commande->date,
+            'montant' => $commande->montant,
+            'statut' => $commande->statut,
+            'reference' => $commande->reference,
+            'latitude' => $commande->latitude,
+            'longitude' => $commande->longitude,
+            'user' => [
+                'nom' => $commande->user->nom,
+                'prenom' => $commande->user->prenom,
+                'adresse' => $commande->user->adresse,
+                'email' => $commande->user->email,
+            ]
+        ];
+    });
+
+    return response()->json($commandes);
     }
 
     // public function store(Request $request)
@@ -38,7 +62,7 @@ class CommandeController extends Controller
             'date' => 'required|date',
             'montant' => 'required|numeric',
             'statut' => 'required|string|max:25',
-            'reference' => 'required|string|max:255',
+            //'reference' => 'required|string|max:255',
             'latitude' => 'nullable|numeric',
             'longitude' => 'nullable|numeric',
             //'user_id' => 'required|exists:users,id',
@@ -67,7 +91,7 @@ class CommandeController extends Controller
             'date' => $validatedData['date'],
             'montant' => $validatedData['montant'],
             'statut' => $validatedData['statut'],
-            'reference' => $validatedData['reference'],
+            //'reference' => $validatedData['reference'],
             'latitude' => $validatedData['latitude'],
             'longitude' => $validatedData['longitude'],
             'user_id' => Auth::id(),

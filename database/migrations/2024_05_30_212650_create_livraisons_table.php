@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nomClient');
             $table->string('ville')->nullable();
             $table->string('adresse');
-            $table->string('reference');
+            $table->string('reference')->unique();
             $table->enum('destinataire', ['moi', 'autre'])->default('moi');
             //$table->string('reference');
             //$table->unsignedBigInteger('commande_id');

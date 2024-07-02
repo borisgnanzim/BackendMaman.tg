@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nom');
             $table->text('description')->nullable();
             $table->text('mini_description')->nullable();
-            $table->float('ancienPrix');
+            $table->float('ancienPrix')->nullable();
             $table->float('prix');
             $table->unsignedInteger('quantite');
             $table->timestamps();

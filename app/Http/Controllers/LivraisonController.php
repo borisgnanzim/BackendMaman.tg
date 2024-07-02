@@ -20,7 +20,7 @@ class LivraisonController extends Controller
             'ville' => 'nullable|string|max:255', // Permettre à ville d'être null
             'adresse' => 'required|string|max:255',
             'destinataire' => 'nullable|string|max:10',
-            'reference' => 'sometimes|required|string|max:255',
+           // 'reference' => 'sometimes|required|string|max:255',
             'commande_id' => 'required|exists:commandes,id'
         ]);
 
@@ -43,7 +43,7 @@ class LivraisonController extends Controller
             'ville' => 'nullable|string|max:255', // Permettre à ville d'être null
             'adresse' => 'sometimes|required|string|max:255',
             'destinataire' => 'nullable|string|max:10',
-            'reference' => 'sometimes|required|string|max:255',
+            //'reference' => 'sometimes|required|string|max:255',
             'commande_id' => 'sometimes|required|exists:commandes,id'
         ]);
 

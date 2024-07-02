@@ -26,7 +26,7 @@ class CommandeFactory extends Factory
             'date' => $this->faker->date,
             'montant' => $this->faker->randomFloat(2, 50, 500),
             'statut' => $this->faker->randomElement(['attente', 'paye', 'livre']),
-            'reference' => $this->faker->uuid,
+            //'reference' => $this->faker->uuid,
             'latitude' => $this->faker->optional()->latitude,
             'longitude' => $this->faker->optional()->longitude,
             'user_id' => User::factory()
