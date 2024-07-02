@@ -23,6 +23,7 @@ class ArticleFactory extends Factory
             //
             'nom' => $this->faker->word,
             'description' => $this->faker->sentence,
+            'mini_description' => $this->faker->sentence,
             'ancienPrix' => $this->faker->randomFloat(2, 10, 100),
             'prix' => $this->faker->randomFloat(2, 10, 100),
             'quantite' => $this->faker->numberBetween(1, 100),

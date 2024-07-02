@@ -44,6 +44,7 @@ class ArticleController extends Controller
         $validatedData = $request->validate([
             'nom' => 'required|string|max:255',
             'description' => 'nullable|string',
+            'mini_description' => 'nullable|string',
             'ancienPrix' => 'nullable|numeric',
             'prix' => 'required|numeric',
             'quantite' => 'required|integer',
@@ -76,6 +77,7 @@ class ArticleController extends Controller
         $validatedData = $request->validate([
             'nom' => 'sometimes|required|string|max:255',
             'description' => 'nullable|string',
+            'mini_description' => 'nullable|string',
             'ancienPrix' => 'nullable|numeric',
             'prix' => 'sometimes|required|numeric',
             'quantite' => 'sometimes|required|integer',

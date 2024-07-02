@@ -9,7 +9,7 @@ class Article extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nom', 'description', 'ancienPrix', 'prix', 'quantite'
+        'nom', 'description','mini_description', 'ancienPrix', 'prix', 'quantite'
     ];
      // Define the relationship with Image
      public function images()

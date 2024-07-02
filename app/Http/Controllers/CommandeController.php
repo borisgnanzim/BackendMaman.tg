@@ -5,12 +5,14 @@ use App\Models\Article;
 use App\Models\Commande;
 use App\Models\LigneCommande;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommandeController extends Controller
 {
     public function index()
     {
-        return Commande::all();
+        $commandes = Commande::with('user')->get();
+        return response()->json($commandes);
     }
 
     // public function store(Request $request)
@@ -37,7 +39,9 @@ class CommandeController extends Controller
             'montant' => 'required|numeric',
             'statut' => 'required|string|max:25',
             'reference' => 'required|string|max:255',
-            'user_id' => 'required|exists:users,id',
+            'latitude' => 'nullable|numeric',
+            'longitude' => 'nullable|numeric',
+            //'user_id' => 'required|exists:users,id',
             'articles' => 'required|array',
             'articles.*.article_id' => 'required|exists:articles,id',
             'articles.*.quantite' => 'required|integer|min=1',
@@ -64,7 +68,9 @@ class CommandeController extends Controller
             'montant' => $validatedData['montant'],
             'statut' => $validatedData['statut'],
             'reference' => $validatedData['reference'],
-            'user_id' => $validatedData['user_id'],
+            'latitude' => $validatedData['latitude'],
+            'longitude' => $validatedData['longitude'],
+            'user_id' => Auth::id(),
         ]);
 
         // Parcourir les articles commandés pour créer les lignes de commande et mettre à jour les quantités
@@ -101,7 +107,7 @@ class CommandeController extends Controller
             'montant' => 'sometimes|required|numeric',
             'statut' => 'sometimes|required|string|max:255',
             'reference' => 'sometimes|required|string|max:255',
-            'user_id' => 'sometimes|required|exists:users,id'
+            'user_id' => Auth::id(),
         ]);
 
         $commande->update($validatedData);

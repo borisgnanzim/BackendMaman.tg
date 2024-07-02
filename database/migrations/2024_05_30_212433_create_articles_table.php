@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->text('description');
+            $table->text('description')->nullable();
+            $table->text('mini_description')->nullable();
             $table->float('ancienPrix');
             $table->float('prix');
             $table->unsignedInteger('quantite');

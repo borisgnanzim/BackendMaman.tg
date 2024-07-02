@@ -18,7 +18,8 @@ return new class extends Migration
             $table->float('montant');
             $table->enum('statut', ['attente', 'paye', 'livre'])->default('attente');
             $table->string('reference')->unique();
-            //$table->unsignedBigInteger('user_id');
+            $table->decimal('latitude', 10, 7)->nullable(); // geoloc
+            $table->decimal('longitude', 10, 7)->nullable(); // geoloc
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
