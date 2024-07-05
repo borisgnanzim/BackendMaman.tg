@@ -2,124 +2,58 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
-use Illuminate\Http\Request;
-/**
- * @group Articles
- *
- * API pour gérer les articles
- */
+use App\Repositories\ArticleRepositoryInterface;
+use App\Http\Requests\StoreArticleRequest;
+use App\Http\Requests\UpdateArticleRequest;
+
 class ArticleController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    protected $articleRepository;
 
-    /**
-     * Lister tous les articles
-     *
-     * @response 200 [
-     *   {
-     *     "id": 1,
-     *     "nom": "Sample Article",
-     *     "description": "This is a sample article."
-     * 
-     *   }
-     * ]
-     */
+    public function __construct(ArticleRepositoryInterface $articleRepository)
+    {
+        $this->articleRepository = $articleRepository;
+    }
+
     public function index()
     {
-        //
-        //return Article::all();
-        $articles = Article::with('images')->get();
+        $articles = $this->articleRepository->all();
         return response()->json($articles);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function store(StoreArticleRequest $request)
     {
-        //
-        $validatedData = $request->validate([
-            'nom' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'mini_description' => 'nullable|string',
-            // 'ancienPrix' => 'nullable|numeric',
-            'prix' => 'required|numeric',
-            'quantite' => 'required|integer',
-            //'categorieArticle_id' => 'required|exists:categories,id'
-        ]);
-
-        $article = Article::create($validatedData);
-
+        $article = $this->articleRepository->create($request->validated());
         return response()->json($article, 201);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Article $article)
+    public function show($id)
     {
-        //
-        // Charger les images avec l'article
-        $article->load('images');
-        return $article;
-
+        $article = $this->articleRepository->find($id);
+        return response()->json($article);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Article $article)
+    public function update(UpdateArticleRequest $request, $id)
     {
-        //
-        $validatedData = $request->validate([
-            'nom' => 'sometimes|required|string|max:255',
-            'description' => 'nullable|string',
-            'mini_description' => 'nullable|string',
-            //'ancienPrix' => 'nullable|numeric',
-            'prix' => 'sometimes|required|numeric',
-            'quantite' => 'sometimes|required|integer',
-            //'categorieArticle_id' => 'sometimes|required|exists:categories,id'
-        ]);
-        // Vérifiez si le prix a changé
-        if ($request->has('prix') && $article->prix != $validatedData['prix']) {
-            // Mettre à jour ancienPrix avec la valeur actuelle de prix
-            $article->ancienPrix = $article->prix;
-        }
-        $article->update($validatedData);
-
+        $article = $this->articleRepository->update($id, $request->validated());
         return response()->json($article, 200);
-        
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Article $article )
+    public function destroy($id)
     {
-        //
-        $article->delete();
-
+        $this->articleRepository->delete($id);
         return response()->json(null, 204);
     }
 
     public function getImages($article_id)
     {
-        // $article = Article::findOrFail($article_id);
-        // return response()->json($article->images);
-
-        $article = Article::findOrFail($article_id);
-        $images = $article->images()->get();
-
-        // L'URL publique est déjà ajoutée par l'accessor dans le modèle Image
-        return response()->json($images);
+        $article = $this->articleRepository->find($article_id);
+        return response()->json($article->images);
     }
 
     public function getCategories($article_id)
     {
-        $article = Article::findOrFail($article_id);
+        $article = $this->articleRepository->find($article_id);
         return response()->json($article->categories);
     }
 }

@@ -9,7 +9,23 @@ class UserController extends Controller
 {
     public function index()
     {
-        return User::all();
+        $users = User::with('role')->get();
+        $users = $users->map(function($user) {
+            return [
+                'id' => $user->id,
+                'name'=> $user->name,
+                'email'=> $user->email,
+                'nom'=> $user->nom,
+                'prenom'=> $user->prenom,
+                'adresse'=> $user->adresse,
+                'role' => [
+                    'id'=> $user->role->id,
+                    'name'=> $user->role->name,
+                ]
+
+            ];
+        });
+        return response()->json($users);
     }
 
     public function store(Request $request)

@@ -8,7 +8,26 @@ class LivraisonController extends Controller
 {
     public function index()
     {
-        return Livraison::all();
+        $livraisons = Livraison::with(['commande:id,reference'])->get();
+        $livraisons = $livraisons->map(function($livraison){
+            return [
+                'id' => $livraison->id,
+                "titre" =>$livraison->titre,
+                "date" =>$livraison->date,
+                "nomClient"=>$livraison->nomClient,
+                "ville"=>$livraison->ville,
+                "adresse" =>$livraison->adresse,
+                "reference" =>$livraison->reference,
+                "destinataire" =>$livraison->destinataire,
+                "commande" =>[
+                    'commande_id' => $livraison->commande->id,
+                    'commande_reference' => $livraison-> commande->reference, 
+                ]
+                
+            ];
+        });
+
+        return response()->json($livraisons);
     }
 
     public function store(Request $request)

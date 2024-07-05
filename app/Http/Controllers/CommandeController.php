@@ -6,8 +6,8 @@ use App\Models\Commande;
 use App\Models\LigneCommande;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
-class CommandeController extends Controller
+use App\Http\Requests\StoreCommandeRequest;
+use App\Http\Requests\UpdateCommandeRequest;class CommandeController extends Controller
 {
     public function index()
     {
@@ -54,22 +54,21 @@ class CommandeController extends Controller
 
     //     return response()->json($commande, 201);
     // }
-    public function store(Request $request)
+    public function store(StoreCommandeRequest $request)
     {
         // Validation de la commande
-        $validatedData = $request->validate([
-            'titre' => 'required|string|max:255',
-            'date' => 'required|date',
-            'montant' => 'required|numeric',
-            'statut' => 'required|string|max:25',
-            //'reference' => 'required|string|max:255',
-            'latitude' => 'nullable|numeric',
-            'longitude' => 'nullable|numeric',
-            //'user_id' => 'required|exists:users,id',
-            'articles' => 'required|array',
-            'articles.*.article_id' => 'required|exists:articles,id',
-            'articles.*.quantite' => 'required|integer|min=1',
-        ]);
+        // $validatedData = $request->validate([
+        //     'titre' => 'required|string|max:255',
+        //     'date' => 'required|date',
+        //     'montant' => 'required|numeric',
+        //     'statut' => 'required|string|max:25',
+        //     'latitude' => 'nullable|numeric',
+        //     'longitude' => 'nullable|numeric',
+        //     'articles' => 'required|array',
+        //     'articles.*.article_id' => 'required|exists:articles,id',
+        //     'articles.*.quantite' => 'required|integer|min=1',
+        // ]);
+        $validatedData = $request->validated();
 
         // Parcourir les articles commandés pour vérifier les quantités
         foreach ($validatedData['articles'] as $articleData) {
@@ -91,7 +90,6 @@ class CommandeController extends Controller
             'date' => $validatedData['date'],
             'montant' => $validatedData['montant'],
             'statut' => $validatedData['statut'],
-            //'reference' => $validatedData['reference'],
             'latitude' => $validatedData['latitude'],
             'longitude' => $validatedData['longitude'],
             'user_id' => Auth::id(),
@@ -123,19 +121,13 @@ class CommandeController extends Controller
         return $commande;
     }
 
-    public function update(Request $request, Commande $commande)
+    public function update(UpdateCommandeRequest $request, Commande $commande)
     {
-        $validatedData = $request->validate([
-            'titre' => 'sometimes|required|string|max:255',
-            'date' => 'sometimes|required|date',
-            'montant' => 'sometimes|required|numeric',
-            'statut' => 'sometimes|required|string|max:255',
-            'reference' => 'sometimes|required|string|max:255',
-            'user_id' => Auth::id(),
-        ]);
+        
+        $validatedData = $request->validated();
 
-        $commande->update($validatedData);
-
+        $commande->update($validatedData + ['user_id' => Auth::id()]);
+        
         return response()->json($commande, 200);
     }
 
