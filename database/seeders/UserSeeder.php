@@ -23,6 +23,13 @@ class UserSeeder extends Seeder
             'password' => Hash::make('password'),
             'role_id' => 3,
         ]);
+
+        User::create([
+            'name' => 'Qwerty',
+            'email' => 'qwertydom296@gmail.com',
+            'password' => Hash::make('password'),
+            'role_id' => 2,
+        ]);
         User::factory()->count(5)->create();
     }
 }

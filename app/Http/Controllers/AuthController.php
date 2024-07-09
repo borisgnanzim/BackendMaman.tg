@@ -13,6 +13,8 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $validatedData = $request->validate([
+            'nom' => 'required|string|max:255',
+            'prenom' => 'required|string|max:255',
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8', // Vérification de la longueur du mot de passe
@@ -75,4 +77,7 @@ class AuthController extends Controller
 
         return response()->json(['message' => 'Logged out successfully'])->withCookie($cookie);
     }
+
+    // aspect mot de passe oublie 
+
 }

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\CategorieArticleController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\CommandeController;
@@ -109,6 +110,8 @@ Route::middleware(['role:user'])->group(function () {
     Route::post('/payements',[PayementController::class, 'store'])->name('post.payements.forRoleUser');
 
     Route::get('/images/{image}', [ImageController::class, 'show'])->name('get.image.forRoleUser');
+    //
+    
 
 });
 
@@ -152,3 +155,9 @@ Route::get('/images/{image}', [ImageController::class, 'show']);
     Route::apiResource('users', UserController::class);
     Route::apiResource('livraisons', LivraisonController::class);
 // temp
+
+// routes pour mot de passe oublié 
+Route::post('forgot-password', [PasswordResetController::class, 'sendResetLinkEmail']);
+Route::post('reset-password', [PasswordResetController::class, 'reset']);
+
+//
