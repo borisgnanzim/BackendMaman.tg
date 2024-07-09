@@ -2,6 +2,8 @@
 namespace App\Http\Controllers;
 
 use App\Events\PayementReceived;
+use App\Http\Requests\StorePayementRequest;
+use App\Http\Requests\UpdatePayementRequest;
 use App\Models\Payement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -32,16 +34,9 @@ class PayementController extends Controller
         return response()->json($payements);
     }
 
-    public function store(Request $request)
+    public function store(StorePayementRequest $request)
     {
-        $validatedData = $request->validate([
-            'titre' => 'required|string|max:255',
-            'solde' => 'required|numeric',
-            'modePayement' => 'required|string|max:255',
-            'date' => 'required|date',
-            'user_id' => Auth::id(),
-            'commande_id' => 'required|exists:commandes,id'
-        ]);
+        $validatedData = $request->validated();
 
         $payement = Payement::create($validatedData);
         event(new PayementReceived($payement->commande_id));
@@ -60,16 +55,9 @@ class PayementController extends Controller
         return $payement;
     }
 
-    public function update(Request $request, Payement $payement)
+    public function update(UpdatePayementRequest $request, Payement $payement)
     {
-        $validatedData = $request->validate([
-            'titre' => 'sometimes|required|string|max:255',
-            'solde' => 'sometimes|required|numeric',
-            'modePaiment' => 'sometimes|required|string|max:255',
-            'date' => 'sometimes|required|date',
-            'user_id' => 'sometimes|required|exists:users,id',
-            'commande_id' => 'sometimes|required|exists:commandes,id'
-        ]);
+        $validatedData = $request->validated();
 
         $payement->update($validatedData);
 

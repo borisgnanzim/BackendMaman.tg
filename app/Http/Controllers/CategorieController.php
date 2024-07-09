@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCategorieRequest;
+use App\Http\Requests\UpdateCategorieRequest;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
 
@@ -39,14 +41,10 @@ class CategorieController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCategorieRequest $request)
     {
         //
-        $validatedData = $request->validate([
-            'nom' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'super_categorie' => 'nullable|exists:categories,id'
-        ]);
+        $validatedData = $request->validated();
 
         $categorie = Categorie::create($validatedData);
 
@@ -66,14 +64,10 @@ class CategorieController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Categorie $categorie)
+    public function update(UpdateCategorieRequest $request, Categorie $categorie)
     {
         //
-        $validatedData = $request->validate([
-            'nom' => 'sometimes|required|string|max:255',
-            'description' => 'nullable|string',
-            'super_categorie' => 'nullable|exists:categories,id'
-        ]);
+        $validatedData = $request->validated();
 
         $categorie->update($validatedData);
 

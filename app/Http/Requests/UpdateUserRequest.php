@@ -4,8 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
-
-class UpdateArticleRequest extends FormRequest
+class UpdateUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,10 +25,13 @@ class UpdateArticleRequest extends FormRequest
         return [
             //
             'nom' => 'sometimes|required|string|max:255',
-            'description' => 'nullable|string',
-            'mini_description' => 'nullable|string',
-            'prix' => 'sometimes|required|numeric',
-            'quantite' => 'sometimes|required|integer',
+            'prenom' => 'sometimes|required|string|max:255',
+            'email' => 'sometimes|required|string|email|max:255|unique:users,email,',
+            'adresse' => 'nullable|string|max:255',
+            'coordonne_geographique' => 'nullable|string|max:255',
+            //'role' => 'nullable|string|max:255',
+            'name' => 'sometimes|required|string|max:255|unique:users,login,',
+            'password' => 'nullable|string|min:8'
         ];
     }
 }

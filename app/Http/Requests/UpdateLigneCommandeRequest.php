@@ -4,16 +4,15 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
-
-class StoreArticleRequest extends FormRequest
+class UpdateLigneCommandeRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        // Autoriser uniquement les utilisateurs authentifiés
-        return Auth::check();
+        $user = Auth::user();
+        return $user && $user->role->name =='admin' ;
     }
 
     /**
@@ -25,11 +24,11 @@ class StoreArticleRequest extends FormRequest
     {
         return [
             //
-            'nom' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'mini_description' => 'nullable|string',
-            'prix' => 'required|numeric',
-            'quantite' => 'required|integer',
+            'titre' => 'sometimes|required|string|max:255',
+            'quantite' => 'sometimes|required|integer',
+            'prix' => 'sometimes|required|numeric',
+            'article_id' => 'required|exists:articles,id',
+            'commande_id' => 'sometimes|required|exists:commandes,id'
         ];
     }
 }

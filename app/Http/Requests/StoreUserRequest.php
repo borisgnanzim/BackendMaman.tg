@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
 
-class StoreArticleRequest extends FormRequest
+class StoreUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,10 +26,13 @@ class StoreArticleRequest extends FormRequest
         return [
             //
             'nom' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'mini_description' => 'nullable|string',
-            'prix' => 'required|numeric',
-            'quantite' => 'required|integer',
+            'prenom' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'adresse' => 'nullable|string|max:255',
+            'coordonne_geographique' => 'nullable|string|max:255',
+            'role' => 'nullable|string|max:255',
+            'name' => 'required|string|max:255|unique:users',
+            'password' => 'required|string|min:8'
         ];
     }
 }

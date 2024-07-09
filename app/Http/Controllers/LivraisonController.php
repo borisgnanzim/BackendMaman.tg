@@ -1,87 +1,59 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use App\Models\Livraison;
+use App\Http\Requests\StoreLivraisonRequest;
+use App\Http\Requests\UpdateLivraisonRequest;
+use App\Http\Resources\LivraisonResource;
+use App\Repositories\LivraisonRepositoryInterface;
 use Illuminate\Http\Request;
 
 class LivraisonController extends Controller
 {
+    protected $livraisonRepository;
+
+    public function __construct(LivraisonRepositoryInterface $livraisonRepository)
+    {
+        $this->livraisonRepository = $livraisonRepository;
+    }
+
     public function index()
     {
-        $livraisons = Livraison::with(['commande:id,reference'])->get();
-        $livraisons = $livraisons->map(function($livraison){
-            return [
-                'id' => $livraison->id,
-                "titre" =>$livraison->titre,
-                "date" =>$livraison->date,
-                "nomClient"=>$livraison->nomClient,
-                "ville"=>$livraison->ville,
-                "adresse" =>$livraison->adresse,
-                "reference" =>$livraison->reference,
-                "destinataire" =>$livraison->destinataire,
-                "commande" =>[
-                    'commande_id' => $livraison->commande->id,
-                    'commande_reference' => $livraison-> commande->reference, 
-                ]
-                
-            ];
-        });
-
-        return response()->json($livraisons);
+        $livraisons = $this->livraisonRepository->all();
+        return LivraisonResource::collection($livraisons);
     }
 
-    public function store(Request $request)
+    public function store(StoreLivraisonRequest $request)
     {
-        $validatedData = $request->validate([
-            'titre' => 'required|string|max:255',
-            'date' => 'required|date',
-            'nomClient' => 'required|string|max:255',
-            'ville' => 'nullable|string|max:255', // Permettre à ville d'être null
-            'adresse' => 'required|string|max:255',
-            'destinataire' => 'nullable|string|max:10',
-           // 'reference' => 'sometimes|required|string|max:255',
-            'commande_id' => 'required|exists:commandes,id'
-        ]);
-
-        $livraison = Livraison::create($validatedData);
-
-        return response()->json($livraison, 201);
+        $validatedData = $request->validated();
+        $livraison = $this->livraisonRepository->create($validatedData);
+        return new LivraisonResource($livraison);
     }
 
-    public function show(Livraison $livraison)
+    public function show($id)
     {
-        return $livraison;
+        $livraison = $this->livraisonRepository->find($id);
+        return new LivraisonResource($livraison);
     }
 
-    public function update(Request $request, Livraison $livraison)
+    public function update(UpdateLivraisonRequest $request, $id)
     {
-        $validatedData = $request->validate([
-            'titre' => 'sometimes|required|string|max:255',
-            'date' => 'sometimes|required|date',
-            'nomClient' => 'sometimes|required|string|max:255',
-            'ville' => 'nullable|string|max:255', // Permettre à ville d'être null
-            'adresse' => 'sometimes|required|string|max:255',
-            'destinataire' => 'nullable|string|max:10',
-            //'reference' => 'sometimes|required|string|max:255',
-            'commande_id' => 'sometimes|required|exists:commandes,id'
-        ]);
-
-        $livraison->update($validatedData);
-
-        return response()->json($livraison, 200);
+        $validatedData = $request->validated();
+        $livraison = $this->livraisonRepository->find($id);
+        $updatedLivraison = $this->livraisonRepository->update($livraison, $validatedData);
+        return new LivraisonResource($updatedLivraison);
     }
 
-    public function destroy(Livraison $livraison)
+    public function destroy($id)
     {
-        $livraison->delete();
-
+        $livraison = $this->livraisonRepository->find($id);
+        $this->livraisonRepository->delete($livraison);
         return response()->json(null, 204);
     }
 
     public function getCommande($livraison_id)
     {
-        $livraison = Livraison::findOrFail($livraison_id);
-
+        $livraison = $this->livraisonRepository->find($livraison_id);
         return response()->json($livraison->commande);
     }
 }

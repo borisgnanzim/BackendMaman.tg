@@ -1,6 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreLigneCommandeRequest;
+use App\Http\Requests\UpdateCommandeRequest;
+use App\Http\Requests\UpdateLigneCommandeRequest;
 use App\Models\LigneCommande;
 use Illuminate\Http\Request;
 
@@ -11,15 +14,9 @@ class LigneCommandeController extends Controller
         return LigneCommande::all();
     }
 
-    public function store(Request $request)
+    public function store(StoreLigneCommandeRequest $request)
     {
-        $validatedData = $request->validate([
-            'titre' => 'required|string|max:255',
-            'quantite' => 'required|integer',
-            'prix' => 'required|numeric',
-            'article_id' => 'required|exists:articles,id',
-            'commande_id' => 'required|exists:commandes,id'
-        ]);
+        $validatedData = $request->validated();
 
         $ligneCommande = LigneCommande::create($validatedData);
 
@@ -31,15 +28,9 @@ class LigneCommandeController extends Controller
         return $ligneCommande;
     }
 
-    public function update(Request $request, LigneCommande $ligneCommande)
+    public function update(UpdateLigneCommandeRequest $request, LigneCommande $ligneCommande)
     {
-        $validatedData = $request->validate([
-            'titre' => 'sometimes|required|string|max:255',
-            'quantite' => 'sometimes|required|integer',
-            'prix' => 'sometimes|required|numeric',
-            'article_id' => 'required|exists:articles,id',
-            'commande_id' => 'sometimes|required|exists:commandes,id'
-        ]);
+        $validatedData = $request->validated();
 
         $ligneCommande->update($validatedData);
 

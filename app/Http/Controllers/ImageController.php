@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreImageRequest;
+use App\Http\Requests\UpdateImageRequest;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -12,14 +14,9 @@ class ImageController extends Controller
         return Image::all();
     }
 
-    public function store(Request $request)
+    public function store(StoreImageRequest $request)
     {
-        $validatedData = $request->validate([
-            'titre' => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'article_id' => 'required|exists:articles,id',
-        ]);
+        $validatedData = $request->validated();
 
         if ($request->hasFile('image')) {
             $article_id = $request->article_id;
@@ -57,14 +54,9 @@ class ImageController extends Controller
     }
 
 
-    public function update(Request $request, Image $image)
+    public function update(UpdateImageRequest $request, Image $image)
     {
-        $validatedData = $request->validate([
-            'titre' => 'sometimes|required|string|max:255',
-            'description' => 'nullable|string',
-            'image' => 'sometimes|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'article_id' => 'sometimes|required|exists:articles,id',
-        ]);
+        $validatedData = $request->validated();
 
         // if ($request->hasFile('image')) {
         //     Storage::disk('public')->delete($image->path);

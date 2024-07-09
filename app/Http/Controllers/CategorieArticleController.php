@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCategorieArticleRequest;
+use App\Http\Requests\UpdateCategorieArticleRequest;
 use App\Models\CategorieArticle;
 use Illuminate\Http\Request;
 
@@ -19,15 +21,10 @@ class CategorieArticleController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCategorieArticleRequest $request)
     {
         //
-        $validateData = $request->validate([
-            //'titre'=>'required|string|max:255',
-            'titre'=>'string|max:255',
-            'article_id' => 'required|exists:articles,id',
-            'categorie_id' => 'required|exists:categories,id'
-        ]);
+        $validateData = $request->validated();
         $categorieArticle = CategorieArticle::create($validateData);
         return response()->json($categorieArticle, 201);
     }
@@ -44,15 +41,10 @@ class CategorieArticleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CategorieArticle $categorieArticle)
+    public function update(UpdateCategorieArticleRequest $request, CategorieArticle $categorieArticle)
     {
         //
-        $validateData = $request->validate([
-            //'titre'=>'required|string|max:255',
-            'titre'=>'string|max:255',
-            'article_id' => 'required|exists:articles,id',
-            'categorie_id' => 'required|exists:categories,id'
-        ]);
+        $validateData = $request->validated();
         $categorieArticle -> update($validateData);
         return response()->json($categorieArticle, 201);
     }
