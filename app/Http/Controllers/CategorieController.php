@@ -4,38 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCategorieRequest;
 use App\Http\Requests\UpdateCategorieRequest;
+use App\Http\Resources\ArticleResource;
 use App\Models\Categorie;
+use App\Traits\JsonResponseTrait;
 use Illuminate\Http\Request;
+use App\Http\Resources\CategorieResource;
 
 class CategorieController extends Controller
 {
+    use JsonResponseTrait;
+
     /**
      * Display a listing of the resource.
      */
-
-     /**
-     * Lister tous les categories
-     *
-     * @response 200 [
-     *   {
-     *     "id": 1,
-     *     "nom": "Sample Categorie",
-     *     "description": "This is a sample desscription."
-     *     "super_categorie": "categorie mère"
-     * 
-     *   }
-     * ]
-     */
     public function index()
     {
-        //
-        //return Categorie::all();
-        // Récupérer toutes les catégories avec leurs sous-catégories
         $categories = Categorie::whereNull('superCategorie_id')
             ->with('sousCategories')
             ->get();
-
-        return response()->json($categories);
+        return $this->successResponse(CategorieResource::collection($categories));
     }
 
     /**
@@ -43,12 +30,9 @@ class CategorieController extends Controller
      */
     public function store(StoreCategorieRequest $request)
     {
-        //
         $validatedData = $request->validated();
-
         $categorie = Categorie::create($validatedData);
-
-        return response()->json($categorie, 201);
+        return $this->successResponse(new CategorieResource($categorie), 'Categorie created successfully.', 201);
     }
 
     /**
@@ -56,9 +40,7 @@ class CategorieController extends Controller
      */
     public function show(Categorie $categorie)
     {
-        //
-        return $categorie ;
-
+        return $this->successResponse(new CategorieResource($categorie));
     }
 
     /**
@@ -66,12 +48,9 @@ class CategorieController extends Controller
      */
     public function update(UpdateCategorieRequest $request, Categorie $categorie)
     {
-        //
         $validatedData = $request->validated();
-
         $categorie->update($validatedData);
-
-        return response()->json($categorie, 200);
+        return $this->successResponse(new CategorieResource($categorie), 'Categorie updated successfully.', 200);
     }
 
     /**
@@ -79,15 +58,13 @@ class CategorieController extends Controller
      */
     public function destroy(Categorie $categorie)
     {
-        //
         $categorie->delete();
-
-        return response()->json(null, 204);
+        return $this->successResponse(null, 'Categorie deleted successfully.', 204);
     }
+
     public function getArticles($categorie_id)
     {
         $categorie = Categorie::findOrFail($categorie_id);
-        return response()->json($categorie->articles);
+        return $this->successResponse(ArticleResource::collection($categorie->articles));
     }
-
 }

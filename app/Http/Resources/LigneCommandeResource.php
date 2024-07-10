@@ -14,6 +14,21 @@ class LigneCommandeResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'titre' => $this->titre,
+            'quantité' => $this->quantité,
+            'prix' => $this->prix,
+            'article' => [
+                'id' => $this->id,
+                'nom' => $this->article->nom
+            ],
+           'commande' => [ 
+            'id' => $this->id,
+            'reference' => $this->commande->reference, 
+           ],
+            'created_at' => $this->created_at,
+            //'updated_at' => $this->updated_at,
+        ];
     }
 }

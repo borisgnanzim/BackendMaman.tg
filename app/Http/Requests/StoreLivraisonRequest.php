@@ -30,7 +30,7 @@ class StoreLivraisonRequest extends FormRequest
             'nomClient' => 'required|string|max:255',
             'ville' => 'nullable|string|max:255', // Permettre à ville d'être null
             'adresse' => 'required|string|max:255',
-            'destinataire' => 'nullable|string|max:10',
+            'destinataire' => 'required|string|max:10',
             'commande_id' => 'required|exists:commandes,id'
         ];
     }

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Events\PayementReceived;
@@ -7,9 +8,13 @@ use App\Http\Requests\UpdatePayementRequest;
 use App\Models\Payement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Traits\JsonResponseTrait;
+use App\Http\Resources\PayementResource;
 
 class PayementController extends Controller
 {
+    use JsonResponseTrait;
+
     public function index()
     {
         // Récupérer tous les paiements avec les informations utilisateur et commande
@@ -17,21 +22,10 @@ class PayementController extends Controller
 
         // Transformer les données pour inclure le nom de l'utilisateur et la référence de la commande
         $payements = $payements->map(function($payement) {
-            return [
-                'id' => $payement->id,
-                'reference' => $payement->reference,
-                'titre' => $payement->titre,
-                'solde' => $payement->solde,
-                'modePayement' => $payement->modePayement,
-                'date' => $payement->date,
-                'user_id' => $payement->user->id,
-                'user_nom_complet' => $payement->user->nom . ' ' . $payement->user->prenom,
-                'commande_id' => $payement->commande->id,
-                'commande_reference' => $payement->commande->reference, // Assurez-vous que la commande a un champ 'reference'
-            ];
+            return new PayementResource($payement);
         });
 
-        return response()->json($payements);
+        return $this->successResponse($payements);
     }
 
     public function store(StorePayementRequest $request)
@@ -41,18 +35,12 @@ class PayementController extends Controller
         $payement = Payement::create($validatedData);
         event(new PayementReceived($payement->commande_id));
 
-
-        // return response()->json($payement, 201);
-        return response()->json([
-            'message' => 'Payment received and status updated.',
-            'payement' => $payement], 
-            201);
-
+        return $this->successResponse(new PayementResource($payement), 'Payment received and status updated.', 201);
     }
 
     public function show(Payement $payement)
     {
-        return $payement;
+        return $this->successResponse(new PayementResource($payement));
     }
 
     public function update(UpdatePayementRequest $request, Payement $payement)
@@ -61,13 +49,13 @@ class PayementController extends Controller
 
         $payement->update($validatedData);
 
-        return response()->json($payement, 200);
+        return $this->successResponse(new PayementResource($payement), 'Payment updated successfully', 200);
     }
 
     public function destroy(Payement $payement)
     {
         $payement->delete();
 
-        return response()->json(null, 204);
+        return $this->successResponse(null, 'Payment deleted successfully', 204);
     }
 }

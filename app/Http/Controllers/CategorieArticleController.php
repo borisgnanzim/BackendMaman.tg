@@ -4,18 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCategorieArticleRequest;
 use App\Http\Requests\UpdateCategorieArticleRequest;
+use App\Http\Resources\CategorieArticleResource;
 use App\Models\CategorieArticle;
+use App\Traits\JsonResponseTrait;
 use Illuminate\Http\Request;
 
 class CategorieArticleController extends Controller
 {
+    use JsonResponseTrait;
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
-        return CategorieArticle::all();
+        $categories = CategorieArticle::with('categorie','article')->get();
+        return $this->successResponse(CategorieArticleResource::collection($categories));
     }
 
     /**
@@ -23,10 +27,9 @@ class CategorieArticleController extends Controller
      */
     public function store(StoreCategorieArticleRequest $request)
     {
-        //
         $validateData = $request->validated();
         $categorieArticle = CategorieArticle::create($validateData);
-        return response()->json($categorieArticle, 201);
+        return $this->successResponse(new CategorieArticleResource($categorieArticle), 'CategorieArticle created successfully.', 201);
     }
 
     /**
@@ -34,8 +37,7 @@ class CategorieArticleController extends Controller
      */
     public function show(CategorieArticle $categorieArticle)
     {
-        //
-        return $categorieArticle;
+        return $this->successResponse(new CategorieArticleResource($categorieArticle));
     }
 
     /**
@@ -43,10 +45,9 @@ class CategorieArticleController extends Controller
      */
     public function update(UpdateCategorieArticleRequest $request, CategorieArticle $categorieArticle)
     {
-        //
         $validateData = $request->validated();
-        $categorieArticle -> update($validateData);
-        return response()->json($categorieArticle, 201);
+        $categorieArticle->update($validateData);
+        return $this->successResponse(new CategorieArticleResource($categorieArticle), 'CategorieArticle updated successfully.', 200);
     }
 
     /**
@@ -54,8 +55,7 @@ class CategorieArticleController extends Controller
      */
     public function destroy(CategorieArticle $categorieArticle)
     {
-        //
-        $categorieArticle ->delete();
-        return response()->json(null, 204);
+        $categorieArticle->delete();
+        return $this->successResponse(null, 'CategorieArticle deleted successfully.', 204);
     }
 }

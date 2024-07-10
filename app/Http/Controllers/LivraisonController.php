@@ -6,10 +6,13 @@ use App\Http\Requests\StoreLivraisonRequest;
 use App\Http\Requests\UpdateLivraisonRequest;
 use App\Http\Resources\LivraisonResource;
 use App\Repositories\LivraisonRepositoryInterface;
+use App\Traits\JsonResponseTrait;
 use Illuminate\Http\Request;
 
 class LivraisonController extends Controller
 {
+    use JsonResponseTrait;
+
     protected $livraisonRepository;
 
     public function __construct(LivraisonRepositoryInterface $livraisonRepository)
@@ -20,20 +23,20 @@ class LivraisonController extends Controller
     public function index()
     {
         $livraisons = $this->livraisonRepository->all();
-        return LivraisonResource::collection($livraisons);
+        return $this->successResponse(LivraisonResource::collection($livraisons));
     }
 
     public function store(StoreLivraisonRequest $request)
     {
         $validatedData = $request->validated();
         $livraison = $this->livraisonRepository->create($validatedData);
-        return new LivraisonResource($livraison);
+        return $this->successResponse(new LivraisonResource($livraison), 'Livraison created successfully.', 201);
     }
 
     public function show($id)
     {
         $livraison = $this->livraisonRepository->find($id);
-        return new LivraisonResource($livraison);
+        return $this->successResponse(new LivraisonResource($livraison));
     }
 
     public function update(UpdateLivraisonRequest $request, $id)
@@ -41,19 +44,19 @@ class LivraisonController extends Controller
         $validatedData = $request->validated();
         $livraison = $this->livraisonRepository->find($id);
         $updatedLivraison = $this->livraisonRepository->update($livraison, $validatedData);
-        return new LivraisonResource($updatedLivraison);
+        return $this->successResponse(new LivraisonResource($updatedLivraison), 'Livraison updated successfully.', 200);
     }
 
     public function destroy($id)
     {
         $livraison = $this->livraisonRepository->find($id);
         $this->livraisonRepository->delete($livraison);
-        return response()->json(null, 204);
+        return $this->successResponse(null, 'Livraison deleted successfully.', 204);
     }
 
     public function getCommande($livraison_id)
     {
         $livraison = $this->livraisonRepository->find($livraison_id);
-        return response()->json($livraison->commande);
+        return $this->successResponse($livraison->commande);
     }
 }

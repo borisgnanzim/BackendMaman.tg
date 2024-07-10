@@ -1,17 +1,23 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreImageRequest;
 use App\Http\Requests\UpdateImageRequest;
+use App\Traits\JsonResponseTrait;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Resources\ImageResource;
 
 class ImageController extends Controller
 {
+    use JsonResponseTrait;
+
     public function index()
     {
-        return Image::all();
+        $images = Image::all();
+        return $this->successResponse(ImageResource::collection($images));
     }
 
     public function store(StoreImageRequest $request)
@@ -20,7 +26,6 @@ class ImageController extends Controller
 
         if ($request->hasFile('image')) {
             $article_id = $request->article_id;
-            // Stocker l'image dans un dossier basé sur l'ID de l'article
             $path = $request->file('image')->store("images/{$article_id}", 'public');
 
             $image = Image::create([
@@ -30,52 +35,31 @@ class ImageController extends Controller
                 'article_id' => $article_id,
             ]);
 
-            return response()->json($image, 201);
+            return $this->successResponse(new ImageResource($image), 'Image created successfully', 201);
         }
 
-        return response()->json(['error' => 'Image not uploaded'], 400);
+        return $this->errorResponse('Image not uploaded');
     }
 
     public function show(Image $image)
     {
-        // Chemin relatif de l'image dans le stockage public
         $relativePath = $image->path;
-    
-        // Vérifier si l'image existe dans le stockage
+
         if (!Storage::exists($relativePath)) {
-            return response()->json(['message' => 'Image not found'], 404);
+            return $this->errorResponse('Image not found', 404);
         }
-    
-        // Construire le chemin complet du fichier image
+
         $filePath = storage_path('app/public/' . $relativePath);
-    
-        // Renvoyer le fichier image
         return response()->file($filePath);
     }
-
 
     public function update(UpdateImageRequest $request, Image $image)
     {
         $validatedData = $request->validated();
 
-        // if ($request->hasFile('image')) {
-        //     Storage::disk('public')->delete($image->path);
-        //     $path = $request->file('image')->store('images', 'public');
-        //     $image->update([
-        //         'titre' => $request->titre ?? $image->titre,
-        //         'description' => $request->description ?? $image->description,
-        //         'path' => $path,
-        //         'article_id' => $request->article_id ?? $image->article_id,
-        //     ]);
-        // } else {
-        //     $image->update($request->only(['titre', 'description', 'article_id']));
-        // }
-
         if ($request->hasFile('image')) {
-            // Supprimer l'ancienne image
             Storage::disk('public')->delete($image->path);
             $article_id = $request->article_id ?? $image->article_id;
-            // Stocker la nouvelle image dans le bon dossier
             $path = $request->file('image')->store("images/{$article_id}", 'public');
             $image->update([
                 'titre' => $request->titre ?? $image->titre,
@@ -87,7 +71,7 @@ class ImageController extends Controller
             $image->update($request->only(['titre', 'description', 'article_id']));
         }
 
-        return response()->json($image, 200);
+        return $this->successResponse(new ImageResource($image), 'Image updated successfully');
     }
 
     public function destroy(Image $image)
@@ -95,7 +79,7 @@ class ImageController extends Controller
         Storage::disk('public')->delete($image->path);
         $image->delete();
 
-        return response()->json(null, 204);
+        return $this->successResponse(null, 'Image deleted successfully', 204);
     }
 
     public function download(Image $image)
@@ -105,7 +89,7 @@ class ImageController extends Controller
         if (file_exists($filePath)) {
             return response()->download($filePath);
         } else {
-            return response()->json(['error' => 'File not found'], 404);
+            return $this->errorResponse('File not found', 404);
         }
     }
 }

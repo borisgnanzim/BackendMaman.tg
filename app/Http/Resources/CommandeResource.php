@@ -14,6 +14,24 @@ class CommandeResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'titre' => $this->titre,
+            'date' => $this->date,
+            'montant' => $this->montant,
+            'statut' => $this->statut,
+            'reference' => $this->reference,
+            'latitude' => $this->latitude,
+            'longitude' => $this->longitude,
+            'created_at' => $this->created_at,
+            'user' => [
+                'nom' => $this->user->nom,
+                'prenom' => $this->user->prenom,
+                'adresse' => $this->user->adresse,
+                'email' => $this->user->email,
+            ],
+            'lignesCommande' => LigneCommandeResource::collection($this->whenLoaded('lignesCommande')),
+            //'updated_at' => $this->updated_at,
+        ];
     }
 }

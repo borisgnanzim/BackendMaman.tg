@@ -8,7 +8,7 @@ class EloquentArticleRepository implements ArticleRepositoryInterface
 {
     public function all()
     {
-        return Article::with('images')->get();
+        return Article::with('images','categories')->get();
     }
 
     public function find($id)
