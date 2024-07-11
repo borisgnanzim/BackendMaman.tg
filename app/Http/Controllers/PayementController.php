@@ -18,14 +18,12 @@ class PayementController extends Controller
     public function index()
     {
         // Récupérer tous les paiements avec les informations utilisateur et commande
-        $payements = Payement::with(['user', 'commande'])->get();
-
-        // Transformer les données pour inclure le nom de l'utilisateur et la référence de la commande
-        $payements = $payements->map(function($payement) {
-            return new PayementResource($payement);
-        });
-
-        return $this->successResponse($payements);
+        $payements = Payement::with(['user', 'commande'])->orderBy('created_at', 'desc')->paginate(20);
+        
+        return PayementResource::collection($payements)->additional(['meta' => [
+            'total_pages' => $payements->lastPage(),
+            'total_items' => $payements->total(),
+        ]]);        
     }
 
     public function store(StorePayementRequest $request)

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('prenom')->default('');  // Ajout d'une valeur par défaut
             $table->string('adresse')->default('');  // Ajout d'une valeur par défaut
             $table->string('coordonne_geographique')->default('');  // Ajout d'une valeur par défaut
+            $table->string('telephone')->nullable();
             //$table->string('role');
             $table->timestamps();
         });

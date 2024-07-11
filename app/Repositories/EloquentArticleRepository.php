@@ -10,6 +10,10 @@ class EloquentArticleRepository implements ArticleRepositoryInterface
     {
         return Article::with('images','categories')->get();
     }
+    public function paginate($perPage)
+    {
+        return Article::with('images','categories')->orderBy('created_at', 'desc')->paginate($perPage);
+    }
 
     public function find($id)
     {

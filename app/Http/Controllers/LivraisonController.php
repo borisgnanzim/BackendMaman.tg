@@ -20,11 +20,22 @@ class LivraisonController extends Controller
         $this->livraisonRepository = $livraisonRepository;
     }
 
+    // public function index()
+    // {
+    //     $livraisons = $this->livraisonRepository->all();
+    //     return $this->successResponse(LivraisonResource::collection($livraisons));
+    // }
+
     public function index()
     {
-        $livraisons = $this->livraisonRepository->all();
-        return $this->successResponse(LivraisonResource::collection($livraisons));
+        $livraisons = $this->livraisonRepository->paginate(20); // Fetch articles with pagination and sorting
+        return LivraisonResource::collection($livraisons)->additional(['meta' => [
+            'current_page' => $livraisons->currentPage(),
+            'total_pages' => $livraisons->lastPage(),
+            'total_items' => $livraisons->total(),
+        ]]);
     }
+
 
     public function store(StoreLivraisonRequest $request)
     {

@@ -29,8 +29,9 @@ class UpdateUserRequest extends FormRequest
             'email' => 'sometimes|required|string|email|max:255|unique:users,email,',
             'adresse' => 'nullable|string|max:255',
             'coordonne_geographique' => 'nullable|string|max:255',
+            'telephone' => 'required|string|max:255|unique:users,telephone',
             //'role' => 'nullable|string|max:255',
-            'name' => 'sometimes|required|string|max:255|unique:users,login,',
+            'name' => 'sometimes|required|string|max:255|unique:users,name,',
             'password' => 'nullable|string|min:8'
         ];
     }

@@ -10,6 +10,10 @@ class EloquentLivraisonRepository implements LivraisonRepositoryInterface
     {
         return Livraison::with(['commande:id,reference'])->get();
     }
+    public function paginate($perPage)
+    {
+        return Livraison::orderBy('created_at', 'desc')->paginate($perPage);
+    }
 
     public function find($id)
     {

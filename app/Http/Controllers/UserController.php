@@ -16,8 +16,12 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::with('role')->get();
-        return $this->successResponse(UserResource::collection($users));
+        $users = User::with('role')->orderBy('created_at', 'desc')->paginate(20);
+        return UserResource::collection($users)->additional(['meta' => [
+            'total_pages' => $users->lastPage(),
+            'total_items' => $users->total(),
+        ]]);
+
     }
 
     public function store(StoreUserRequest $request)

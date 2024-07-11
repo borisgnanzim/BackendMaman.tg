@@ -22,10 +22,19 @@ class ArticleController extends Controller
         $this->articleRepository = $articleRepository;
     }
 
+    // public function index()
+    // {
+    //     $articles = $this->articleRepository->all();
+    //     return $this->successResponse(ArticleResource::collection($articles));
+    // }
     public function index()
     {
-        $articles = $this->articleRepository->all();
-        return $this->successResponse(ArticleResource::collection($articles));
+        $articles = $this->articleRepository->paginate(30); // Fetch articles with pagination and sorting
+        return ArticleResource::collection($articles)->additional(['meta' => [
+            //'current_page' => $articles->currentPage(),
+            'total_pages' => $articles->lastPage(),
+            'total_items' => $articles->total(),
+        ]]);
     }
 
     public function store(StoreArticleRequest $request)

@@ -8,6 +8,8 @@ interface ArticleRepositoryInterface
 
     public function find($id);
 
+    public function paginate($perPage);
+
     public function create(array $data);
 
     public function update($id, array $data);

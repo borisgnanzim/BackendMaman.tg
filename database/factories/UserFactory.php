@@ -39,6 +39,7 @@ class UserFactory extends Factory
             'adresse' => $this->faker->address,
             'coordonne_geographique' => $this->faker->address,
             'role_id' => $this->faker->numberBetween(1, 2),
+            'telephone' =>$this->faker->phoneNumber(),
             //'login' => $this->faker->unique()->userName,
         ];
     }

@@ -8,6 +8,7 @@ interface LivraisonRepositoryInterface
 {
     public function all();
     public function find($id);
+    public function paginate($perPage);
     public function create(array $data);
     public function update(Livraison $livraison, array $data);
     public function delete(Livraison $livraison);
