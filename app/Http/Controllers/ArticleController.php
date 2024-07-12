@@ -30,11 +30,24 @@ class ArticleController extends Controller
     public function index()
     {
         $articles = $this->articleRepository->paginate(30); // Fetch articles with pagination and sorting
-        return ArticleResource::collection($articles)->additional(['meta' => [
-            //'current_page' => $articles->currentPage(),
-            'total_pages' => $articles->lastPage(),
-            'total_items' => $articles->total(),
-        ]]);
+        return $this-> successResponse([
+            'articles' =>ArticleResource::collection($articles),
+            'links' => [
+            'first' => $articles->url(1),
+            'last' => $articles->url($articles->lastPage()),
+            'prev' => $articles->previousPageUrl(),
+            'next' => $articles->nextPageUrl(),
+        ],
+        'meta' => [
+            'current_page' => $articles->currentPage(),
+            'from' => $articles->firstItem(),
+            'last_page' => $articles->lastPage(),
+            'path' => $articles->path(),
+            'per_page' => $articles->perPage(),
+            'to' => $articles->lastItem(),
+            'total' => $articles->total(),
+        ]
+        ]);
     }
 
     public function store(StoreArticleRequest $request)

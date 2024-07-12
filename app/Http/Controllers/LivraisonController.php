@@ -29,11 +29,24 @@ class LivraisonController extends Controller
     public function index()
     {
         $livraisons = $this->livraisonRepository->paginate(20); // Fetch articles with pagination and sorting
-        return LivraisonResource::collection($livraisons)->additional(['meta' => [
+        return $this-> successResponse([
+            'articles' =>LivraisonResource::collection($livraisons),
+            'links' => [
+            'first' => $livraisons->url(1),
+            'last' => $livraisons->url($livraisons->lastPage()),
+            'prev' => $livraisons->previousPageUrl(),
+            'next' => $livraisons->nextPageUrl(),
+        ],
+        'meta' => [
             'current_page' => $livraisons->currentPage(),
-            'total_pages' => $livraisons->lastPage(),
-            'total_items' => $livraisons->total(),
-        ]]);
+            'from' => $livraisons->firstItem(),
+            'last_page' => $livraisons->lastPage(),
+            'path' => $livraisons->path(),
+            'per_page' => $livraisons->perPage(),
+            'to' => $livraisons->lastItem(),
+            'total' => $livraisons->total(),
+        ]
+        ]);
     }
 
 

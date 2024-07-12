@@ -17,10 +17,24 @@ class UserController extends Controller
     public function index()
     {
         $users = User::with('role')->orderBy('created_at', 'desc')->paginate(20);
-        return UserResource::collection($users)->additional(['meta' => [
-            'total_pages' => $users->lastPage(),
-            'total_items' => $users->total(),
-        ]]);
+        return $this-> successResponse([
+            'articles' =>UserResource::collection($users),
+            'links' => [
+            'first' => $users->url(1),
+            'last' => $users->url($users->lastPage()),
+            'prev' => $users->previousPageUrl(),
+            'next' => $users->nextPageUrl(),
+        ],
+        'meta' => [
+            'current_page' => $users->currentPage(),
+            'from' => $users->firstItem(),
+            'last_page' => $users->lastPage(),
+            'path' => $users->path(),
+            'per_page' => $users->perPage(),
+            'to' => $users->lastItem(),
+            'total' => $users->total(),
+        ]
+        ]);    
 
     }
 

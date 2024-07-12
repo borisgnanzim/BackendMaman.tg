@@ -20,13 +20,25 @@ class CommandeController extends Controller
     public function index()
     {
         $commandes = Commande::with(['user','lignecommandes'])->orderBy('created_at', 'desc')->paginate(20);
-        return CommandeResource::collection($commandes)->additional(['meta' => [
-            //'current_page' => $commandes->currentPage(),
-            'total_pages' => $commandes->lastPage(),
-            'total_items' => $commandes->total(),
-        ]]);
+        return $this-> successResponse([
+            'articles' =>CommandeResource::collection($commandes),
+            'links' => [
+            'first' => $commandes->url(1),
+            'last' => $commandes->url($commandes->lastPage()),
+            'prev' => $commandes->previousPageUrl(),
+            'next' => $commandes->nextPageUrl(),
+        ],
+        'meta' => [
+            'current_page' => $commandes->currentPage(),
+            'from' => $commandes->firstItem(),
+            'last_page' => $commandes->lastPage(),
+            'path' => $commandes->path(),
+            'per_page' => $commandes->perPage(),
+            'to' => $commandes->lastItem(),
+            'total' => $commandes->total(),
+        ]
+        ]);
         
-        //return $this->successResponse($data);
     }
 
     // public function index()
@@ -34,28 +46,6 @@ class CommandeController extends Controller
     //     $commandes = Commande::with(['user','lignecommandes'])->get();
     //     return $this->successResponse(CommandeResource::collection($commandes));
     // }
-
-    // public function index()
-    // {
-    //     $commandes = Commande::with(['user', 'lignecommandes'])
-    //         ->orderBy('created_at', 'desc')
-    //         ->paginate(25);
-
-    //     $commandeResourceCollection = CommandeResource::collection($commandes);
-
-    //     $data = [
-    //         'data' => $commandeResourceCollection,
-    //         'meta' => [
-    //             'current_page' => $commandes->currentPage(),
-    //             'total_pages' => $commandes->lastPage(),
-    //             'total_items' => $commandes->total(),
-    //             'per_page' => $commandes->perPage(),
-    //         ],
-    //     ];
-
-    //     return $this->successResponse($data);
-    // }
-
 
     public function store(StoreCommandeRequest $request)
     {

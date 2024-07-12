@@ -20,10 +20,24 @@ class PayementController extends Controller
         // Récupérer tous les paiements avec les informations utilisateur et commande
         $payements = Payement::with(['user', 'commande'])->orderBy('created_at', 'desc')->paginate(20);
         
-        return PayementResource::collection($payements)->additional(['meta' => [
-            'total_pages' => $payements->lastPage(),
-            'total_items' => $payements->total(),
-        ]]);        
+        return $this-> successResponse([
+            'articles' =>PayementResource::collection($payements),
+            'links' => [
+            'first' => $payements->url(1),
+            'last' => $payements->url($payements->lastPage()),
+            'prev' => $payements->previousPageUrl(),
+            'next' => $payements->nextPageUrl(),
+        ],
+        'meta' => [
+            'current_page' => $payements->currentPage(),
+            'from' => $payements->firstItem(),
+            'last_page' => $payements->lastPage(),
+            'path' => $payements->path(),
+            'per_page' => $payements->perPage(),
+            'to' => $payements->lastItem(),
+            'total' => $payements->total(),
+        ]
+        ]);       
     }
 
     public function store(StorePayementRequest $request)
