@@ -10,6 +10,8 @@ use Illuminate\Support\Str;
 
 class PasswordResetController extends Controller
 {
+    // aspect mot de passe oublie 
+
     public function sendResetLinkEmail(Request $request)
     {
         $request->validate(['email' => 'required|email']);

@@ -23,20 +23,20 @@ class CommandeController extends Controller
         return $this-> successResponse([
             'articles' =>CommandeResource::collection($commandes),
             'links' => [
-            'first' => $commandes->url(1),
-            'last' => $commandes->url($commandes->lastPage()),
-            'prev' => $commandes->previousPageUrl(),
-            'next' => $commandes->nextPageUrl(),
-        ],
-        'meta' => [
-            'current_page' => $commandes->currentPage(),
-            'from' => $commandes->firstItem(),
-            'last_page' => $commandes->lastPage(),
-            'path' => $commandes->path(),
-            'per_page' => $commandes->perPage(),
-            'to' => $commandes->lastItem(),
-            'total' => $commandes->total(),
-        ]
+                'first' => $commandes->url(1),
+                'last' => $commandes->url($commandes->lastPage()),
+                'prev' => $commandes->previousPageUrl(),
+                'next' => $commandes->nextPageUrl(),
+            ],
+            'meta' => [
+                'current_page' => $commandes->currentPage(),
+                'from' => $commandes->firstItem(),
+                'last_page' => $commandes->lastPage(),
+                'path' => $commandes->path(),
+                'per_page' => $commandes->perPage(),
+                'to' => $commandes->lastItem(),
+                'total' => $commandes->total(),
+            ]
         ]);
         
     }
@@ -56,7 +56,7 @@ class CommandeController extends Controller
                 return $this->errorResponse(
                     "Quantité demandée supérieure à la quantité disponible pour l\'article: " . $article->nom,
                     400,
-                    ['article_id' => $article->id, 'quantite_disponible' => $article->quantite]
+                    ['article_titre' => $article->titre, 'quantite_disponible' => $article->quantite]
                 );
             }
         }

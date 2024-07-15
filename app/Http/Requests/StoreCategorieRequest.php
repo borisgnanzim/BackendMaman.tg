@@ -27,7 +27,22 @@ class StoreCategorieRequest extends FormRequest
             //
             'nom' => 'required|string|max:255',
             'description' => 'nullable|string',
-            'super_categorie' => 'nullable|exists:categories,id'
+            'superCategorie_id' => 'nullable|exists:categories,id'
+        ];
+    }
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'nom.required' => 'Le champ nom est obligatoire.',
+            'nom.string' => 'Le champ nom doit être une chaîne de caractères.',
+            'nom.max' => 'Le champ nom ne peut pas dépasser 255 caractères.',
+            'description.string' => 'Le champ description doit être une chaîne de caractères.',
+            'superCategorie_id.exists' => 'La super-catégorie sélectionnée n\'existe pas.'
         ];
     }
 }

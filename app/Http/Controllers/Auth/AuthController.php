@@ -1,6 +1,7 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -47,9 +48,9 @@ class AuthController extends Controller
         ]);  
 
         if (!Auth::attempt($credentials)) {
-            throw ValidationException::withMessages([
-                'email' => ['The provided credentials are incorrect.'],
-            ]);
+            return response()->json([
+                'message' => 'Invalid credentials',
+            ], 401);
         }
 
         $user = $request->user();
@@ -64,7 +65,6 @@ class AuthController extends Controller
                 'email' => $user->email
             ],
             'token' => $token,
-            'cookie' => $cookie,
         
         ])->cookie($cookie);
     }
@@ -78,6 +78,6 @@ class AuthController extends Controller
         return response()->json(['message' => 'Logged out successfully'])->withCookie($cookie);
     }
 
-    // aspect mot de passe oublie 
+    
 
 }

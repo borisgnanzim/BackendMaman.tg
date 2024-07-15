@@ -13,7 +13,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 //
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -145,15 +145,15 @@ Route::get('/images/{image}', [ImageController::class, 'show']);
 
 
 // temp
-    Route::apiResource('categories', CategorieController::class);
-    Route::apiResource('categorieArticles', CategorieArticleController::class);
-    Route::apiResource('articles', ArticleController::class);
-    Route::apiResource('images', ImageController::class);
-    Route::apiResource('ligneCommandes', LigneCommandeController::class);
-    Route::apiResource('commandes', CommandeController::class);
-    Route::apiResource('payements', PayementController::class);
-    Route::apiResource('users', UserController::class);
-    Route::apiResource('livraisons', LivraisonController::class);
+    // Route::apiResource('categories', CategorieController::class);
+    // Route::apiResource('categorieArticles', CategorieArticleController::class);
+    // Route::apiResource('articles', ArticleController::class);
+    // Route::apiResource('images', ImageController::class);
+    // Route::apiResource('ligneCommandes', LigneCommandeController::class);
+    // Route::apiResource('commandes', CommandeController::class);
+    // Route::apiResource('payements', PayementController::class);
+    // Route::apiResource('users', UserController::class);
+    // Route::apiResource('livraisons', LivraisonController::class);
 // temp
 
 // routes pour mot de passe oublié 
