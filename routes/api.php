@@ -86,7 +86,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     //
 });
 
-Route::middleware(['role:user'])->group(function () {
+Route::middleware(['auth:sanctum','role:user'])->group(function () {
    // Route::get('/profile', [UserController::class, 'show']);
     //
    Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
@@ -102,8 +102,9 @@ Route::middleware(['role:user'])->group(function () {
 
     Route::get('categories/{categorie}/articles',[CategorieController::class, 'getArticles'])->name('categorie.articles.forRoleUser');
 
+    Route::apiResource('commandes', CommandeController::class);
 
-    Route::post('/commandes', [CommandeController::class, 'store'])->name('post.commande.forRoleUser');
+    //Route::post('/commandes', [CommandeController::class, 'store'])->name('post.commande.forRoleUser');
 
     Route::post('/lignecommandes',[LigneCommandeController::class,'store'])->name('post.ligneCommandes.forRoleUser');
 
@@ -130,12 +131,6 @@ Route::get('categories/{categorie}/articles',[CategorieController::class, 'getAr
 
 Route::get('/categories',[CategorieController::class,'index']);
 
-Route::post('/commandes', [CommandeController::class, 'store']);
-
-Route::post('/lignecommandes',[LigneCommandeController::class,'store']);
-
-Route::post('/payements',[PayementController::class, 'store']);
-
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
@@ -154,6 +149,9 @@ Route::get('/images/{image}', [ImageController::class, 'show']);
     // Route::apiResource('payements', PayementController::class);
     // Route::apiResource('users', UserController::class);
     // Route::apiResource('livraisons', LivraisonController::class);
+    // Route::post('/commandes', [CommandeController::class, 'store']);
+    // Route::post('/lignecommandes',[LigneCommandeController::class,'store']);
+    // Route::post('/payements',[PayementController::class, 'store']);
 // temp
 
 // routes pour mot de passe oublié 

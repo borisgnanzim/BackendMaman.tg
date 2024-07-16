@@ -7,6 +7,7 @@ use App\Models\Commande;
 use App\Models\LigneCommande;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\StoreCommandeRequest;
 use App\Http\Requests\UpdateCommandeRequest;
 use App\Traits\JsonResponseTrait;
@@ -19,9 +20,9 @@ class CommandeController extends Controller
 
     public function index()
     {
-        $commandes = Commande::with(['user','lignecommandes'])->orderBy('created_at', 'desc')->paginate(20);
-        return $this-> successResponse([
-            'articles' =>CommandeResource::collection($commandes),
+        $commandes = Commande::with(['user', 'lignecommandes'])->orderBy('created_at', 'desc')->paginate(20);
+        return $this->successResponse([
+            'commandes' => CommandeResource::collection($commandes),
             'links' => [
                 'first' => $commandes->url(1),
                 'last' => $commandes->url($commandes->lastPage()),
@@ -38,53 +39,56 @@ class CommandeController extends Controller
                 'total' => $commandes->total(),
             ]
         ]);
-        
     }
-
-    // public function index()
-    // {
-    //     $commandes = Commande::with(['user','lignecommandes'])->get();
-    //     return $this->successResponse(CommandeResource::collection($commandes));
-    // }
 
     public function store(StoreCommandeRequest $request)
     {
         $validatedData = $request->validated();
-        foreach ($validatedData['articles'] as $articleData) {
-            $article = Article::find($articleData['article_id']);
-            if ($article->quantite < $articleData['quantite']) {
-                return $this->errorResponse(
-                    "Quantité demandée supérieure à la quantité disponible pour l\'article: " . $article->nom,
-                    400,
-                    ['article_titre' => $article->titre, 'quantite_disponible' => $article->quantite]
-                );
+
+        DB::beginTransaction();
+        try {
+            // Vérification des quantités disponibles
+            foreach ($validatedData['articles'] as $articleData) {
+                $article = Article::findOrFail($articleData['article_id']);
+                if ($article->quantite < $articleData['quantite']) {
+                    return $this->errorResponse(
+                        "Quantité demandée supérieure à la quantité disponible pour l'article: " . $article->nom,
+                        400,
+                        ['article_titre' => $article->nom, 'quantite_disponible' => $article->quantite]
+                    );
+                }
             }
-        }
 
-        $commande = Commande::create([
-            'titre' => $validatedData['titre'],
-            'date' => $validatedData['date'],
-            'montant' => $validatedData['montant'],
-            'statut' => $validatedData['statut'],
-            'latitude' => $validatedData['latitude'],
-            'longitude' => $validatedData['longitude'],
-            'user_id' => Auth::id(),
-        ]);
-
-        foreach ($validatedData['articles'] as $articleData) {
-            $article = Article::find($articleData['article_id']);
-            LigneCommande::create([
-                'commande_id' => $commande->id,
-                'article_id' => $articleData['article_id'],
-                'quantite' => $articleData['quantite'],
-                'titre' => $article->nom,
-                'prix' => $article->prix,
+            // Création de la commande
+            $commande = Commande::create([
+                'titre' => $validatedData['titre'],
+                'date' => $validatedData['date'],
+                'montant' => $validatedData['montant'],
+                'statut' => 'attente',
+                'latitude' => $validatedData['latitude'],
+                'longitude' => $validatedData['longitude'],
+                'user_id' => Auth::id(),
             ]);
-            $article->quantite -= $articleData['quantite'];
-            $article->save();
-        }
+            // Création des lignes de commande et mise à jour des quantités des articles
+            foreach ($validatedData['articles'] as $articleData) {
+                $article = Article::findOrFail($articleData['article_id']);
+                LigneCommande::create([
+                    'commande_id' => $commande->id,
+                    'article_id' => $articleData['article_id'],
+                    'quantite' => $articleData['quantite'],
+                    'titre' => $article->nom,
+                    'prix' => $article->prix,
+                ]);
+                $article->quantite -= $articleData['quantite'];
+                $article->save();
+            }
 
-        return $this->successResponse(new CommandeResource($commande), 'Commande created successfully.', 201);
+            DB::commit();
+            return $this->successResponse(new CommandeResource($commande), 'Commande created successfully.', 201);
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return $this->errorResponse('An error occurred while creating the order.', 500, ['error' => $e->getMessage()]);
+        }
     }
 
     public function show(Commande $commande)
@@ -105,9 +109,9 @@ class CommandeController extends Controller
         return $this->successResponse(null, 'Commande deleted successfully.', 204);
     }
 
-    public function getLignesCommande($categorie_id)
+    public function getLignesCommande($commande_id)
     {
-        $commande = Commande::findOrFail($categorie_id);
-        return $this->successResponse(LigneCommandeResource::collection($commande->lignesCommande));
+        $commande = Commande::findOrFail($commande_id);
+        return $this->successResponse(LigneCommandeResource::collection($commande->lignecommandes));
     }
 }

@@ -14,6 +14,7 @@ class StoreCommandeRequest extends FormRequest
     {
         // Autoriser uniquement les utilisateurs authentifiés
         return Auth::check();
+        //return true ;
     }
 
     /**
@@ -28,12 +29,12 @@ class StoreCommandeRequest extends FormRequest
             'titre' => 'required|string|max:255',
             'date' => 'required|date',
             'montant' => 'required|numeric',
-            'statut' => 'required|string|max:25',
+            //'statut' => 'required|string|max:25',
             'latitude' => 'nullable|numeric',
             'longitude' => 'nullable|numeric',
             'articles' => 'required|array',
             'articles.*.article_id' => 'required|exists:articles,id',
-            'articles.*.quantite' => 'required|integer|min=1',
+            'articles.*.quantite' => 'required|integer',
         ];
     }
 }

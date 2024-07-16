@@ -17,10 +17,10 @@ class LigneCommandeResource extends JsonResource
         return [
             'id' => $this->id,
             'titre' => $this->titre,
-            'quantité' => $this->quantité,
+            'quantite' => $this->quantite,
             'prix' => $this->prix,
             'article' => [
-                'id' => $this->id,
+                'id' => $this->article->id,
                 'nom' => $this->article->nom
             ],
            'commande' => [ 

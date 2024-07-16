@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('ligne_commandes', function (Blueprint $table) {
             $table->id();
             $table->string('titre');
-            $table->unsignedInteger('quantite');
+            $table->unsignedInteger('quantite')->default(0);
             $table->float('prix');
             //$table->unsignedBigInteger('article_id');
             //$table->unsignedBigInteger('commande_id');

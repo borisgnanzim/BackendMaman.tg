@@ -19,7 +19,7 @@ class CommandeResource extends JsonResource
             'titre' => $this->titre,
             'date' => $this->date,
             'montant' => $this->montant,
-            'statut' => $this->statut,
+            'statut' => $this-> statut,
             'reference' => $this->reference,
             'latitude' => $this->latitude,
             'longitude' => $this->longitude,
@@ -30,8 +30,21 @@ class CommandeResource extends JsonResource
                 'adresse' => $this->user->adresse,
                 'email' => $this->user->email,
             ],
-            'lignesCommande' => LigneCommandeResource::collection($this->whenLoaded('lignesCommande')),
+            //'ligneCommandes' => LigneCommandeResource::collection($this->whenLoaded('ligneCommandes')),
             //'updated_at' => $this->updated_at,
+            //'ligneCommandes' => $this->ligneCommandes,
+            'ligneCommandes' => LigneCommandeResource::collection($this->ligneCommandes),
+            // 'ligneCommandes' => [
+            //     'id' => $this->ligneCommandes->id,
+            //     'titre' => $this->ligneCommandes->titre,
+            //     'quantite' => $this->ligneCommandes->quantité,
+            //     'prix' => $this->ligneCommandes->prix,
+            //     'article' => [
+            //         'id' => $this->ligneCommandes->article->id,
+            //         'nom' => $this->ligneCommandes->article->nom,
+            //     ],
+            //     'created_at' => $this->created_at,
+            // ],
         ];
     }
 }
