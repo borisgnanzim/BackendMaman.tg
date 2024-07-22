@@ -16,7 +16,7 @@ class ImageController extends Controller
 
     public function index()
     {
-        $images = Image::all();
+        $images = Image::orderBy('created_at', 'desc')->get();
         return $this->successResponse(ImageResource::collection($images));
     }
 

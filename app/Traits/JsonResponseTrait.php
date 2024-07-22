@@ -21,7 +21,28 @@ trait JsonResponseTrait
             'message' => $message,
             'data' => $data,
         ], $code);
-    }
+    } 
+
+    protected function sucessResponseWithPaginate($ressourceCollectionClass, $paginatedCollection ,$collectionName = 'data') {
+        return $this-> successResponse([
+            "$collectionName" => $ressourceCollectionClass::collection($paginatedCollection),
+            'links' => [
+                'first' => $paginatedCollection->url(1),
+                'last' => $paginatedCollection->url($paginatedCollection->lastPage()),
+                'prev' => $paginatedCollection->previousPageUrl(),
+                'next' => $paginatedCollection->nextPageUrl(),
+            ],
+            'meta' => [
+                'current_page' => $paginatedCollection->currentPage(),
+                'from' => $paginatedCollection->firstItem(),
+                'last_page' => $paginatedCollection->lastPage(),
+                'path' => $paginatedCollection->path(),
+                'per_page' => $paginatedCollection->perPage(),
+                'to' => $paginatedCollection->lastItem(),
+                'total' => $paginatedCollection->total(),
+            ]
+        ]);
+    } 
 
     /**
      * Error response method.

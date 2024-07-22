@@ -20,33 +20,11 @@ class LivraisonController extends Controller
         $this->livraisonRepository = $livraisonRepository;
     }
 
-    // public function index()
-    // {
-    //     $livraisons = $this->livraisonRepository->all();
-    //     return $this->successResponse(LivraisonResource::collection($livraisons));
-    // }
-
     public function index()
     {
-        $livraisons = $this->livraisonRepository->paginate(20); // Fetch articles with pagination and sorting
-        return $this-> successResponse([
-            'articles' =>LivraisonResource::collection($livraisons),
-            'links' => [
-            'first' => $livraisons->url(1),
-            'last' => $livraisons->url($livraisons->lastPage()),
-            'prev' => $livraisons->previousPageUrl(),
-            'next' => $livraisons->nextPageUrl(),
-        ],
-        'meta' => [
-            'current_page' => $livraisons->currentPage(),
-            'from' => $livraisons->firstItem(),
-            'last_page' => $livraisons->lastPage(),
-            'path' => $livraisons->path(),
-            'per_page' => $livraisons->perPage(),
-            'to' => $livraisons->lastItem(),
-            'total' => $livraisons->total(),
-        ]
-        ]);
+
+        return $this->sucessResponseWithPaginate(LivraisonResource::class, $this->livraisonRepository->paginate(20) , 'livraisons');
+
     }
 
 
@@ -54,12 +32,20 @@ class LivraisonController extends Controller
     {
         $validatedData = $request->validated();
         $livraison = $this->livraisonRepository->create($validatedData);
+        if ($livraison ==null)
+        {
+            return $this-> errorResponse("livraison not found");
+        }
         return $this->successResponse(new LivraisonResource($livraison), 'Livraison created successfully.', 201);
     }
 
     public function show($id)
     {
         $livraison = $this->livraisonRepository->find($id);
+        if ($livraison ==null)
+        {
+            return $this-> errorResponse("livraison not found");
+        }
         return $this->successResponse(new LivraisonResource($livraison));
     }
 
@@ -67,6 +53,10 @@ class LivraisonController extends Controller
     {
         $validatedData = $request->validated();
         $livraison = $this->livraisonRepository->find($id);
+        if ($livraison ==null)
+        {
+            return $this-> errorResponse("livraison not found");
+        }
         $updatedLivraison = $this->livraisonRepository->update($livraison, $validatedData);
         return $this->successResponse(new LivraisonResource($updatedLivraison), 'Livraison updated successfully.', 200);
     }
@@ -74,13 +64,21 @@ class LivraisonController extends Controller
     public function destroy($id)
     {
         $livraison = $this->livraisonRepository->find($id);
+        if ($livraison ==null)
+        {
+            return $this-> errorResponse("livraison not found");
+        }
         $this->livraisonRepository->delete($livraison);
         return $this->successResponse(null, 'Livraison deleted successfully.', 204);
     }
 
-    public function getCommande($livraison_id)
+    public function getCommande($id)
     {
-        $livraison = $this->livraisonRepository->find($livraison_id);
+        $livraison = $this->livraisonRepository->find($id);
+        if ($livraison ==null)
+        {
+            return $this-> errorResponse("livraison not found");
+        }
         return $this->successResponse($livraison->commande);
     }
 }

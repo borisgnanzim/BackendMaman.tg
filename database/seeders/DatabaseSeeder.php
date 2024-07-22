@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
             RolesSeeder::class,
             UserSeeder::class,
             CategorieSeeder::class,
-            ArticleSeeder::class,
+           // ArticleSeeder::class,
             CategorieArticleSeeder::class,
             ImageSeeder::class,
             LigneCommandeSeeder::class,

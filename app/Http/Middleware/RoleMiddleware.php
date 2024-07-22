@@ -18,7 +18,8 @@ class RoleMiddleware
     public function handle(Request $request, Closure $next, $role): Response
     {
         if (!Auth::check()) {
-            return redirect('login');// ou une réponse JSON d'erreur
+           //return redirect('login');// ou une réponse JSON d'erreur
+           return response()->json(['message' => 'Unauthorized'], 403);
         }
 
         $user = Auth::user();

@@ -7,8 +7,8 @@ use App\Models\Livraison;
 class EloquentLivraisonRepository implements LivraisonRepositoryInterface
 {
     public function all()
-    {
-        return Livraison::with(['commande:id,reference'])->get();
+    { 
+        return Livraison::with(['commande'])->get();
     }
     public function paginate($perPage)
     {
@@ -17,7 +17,7 @@ class EloquentLivraisonRepository implements LivraisonRepositoryInterface
 
     public function find($id)
     {
-        return Livraison::findOrFail($id);
+        return Livraison::find($id);
     }
 
     public function create(array $data)
@@ -25,14 +25,16 @@ class EloquentLivraisonRepository implements LivraisonRepositoryInterface
         return Livraison::create($data);
     }
 
-    public function update(Livraison $livraison, array $data)
+    public function update(array $data , $id)
     {
+        $livraison = Livraison::find($id);
         $livraison->update($data);
         return $livraison;
     }
 
-    public function delete(Livraison $livraison)
+    public function delete($id)
     {
+        $livraison = Livraison::findOrFail($id);
         $livraison->delete();
         return response()->json(null, 204);
     }

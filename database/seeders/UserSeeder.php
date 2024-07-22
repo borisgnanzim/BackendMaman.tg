@@ -20,14 +20,14 @@ class UserSeeder extends Seeder
         User::create([
             'name' => 'Admin User',
             'email' => 'admin@example.com',
-            'password' => Hash::make('password'),
+            'password' => 'password',
             'role_id' => 3,
         ]);
 
         User::create([
             'name' => 'Qwerty',
             'email' => 'qwertydom296@gmail.com',
-            'password' => Hash::make('password'),
+            'password' => 'password',
             'role_id' => 2,
         ]);
         User::factory()->count(5)->create();

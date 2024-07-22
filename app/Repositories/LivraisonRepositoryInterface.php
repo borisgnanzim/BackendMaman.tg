@@ -2,7 +2,7 @@
 
 namespace App\Repositories;
 
-use App\Models\Livraison;
+//use App\Models\Livraison;
 
 interface LivraisonRepositoryInterface
 {
@@ -10,6 +10,6 @@ interface LivraisonRepositoryInterface
     public function find($id);
     public function paginate($perPage);
     public function create(array $data);
-    public function update(Livraison $livraison, array $data);
-    public function delete(Livraison $livraison);
+    public function update(array $data, $id);
+    public function delete($id);
 }

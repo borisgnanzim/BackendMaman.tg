@@ -2,6 +2,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -77,6 +78,12 @@ class AuthController extends Controller
         $cookie = Cookie::forget('auth_token');
 
         return response()->json(['message' => 'Logged out successfully'])->withCookie($cookie);
+    }
+    
+    public function profile(Request $request)
+    {
+        $user= $request->user();
+        return response()->json(new UserResource($user));
     }
 
     

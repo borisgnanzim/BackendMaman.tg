@@ -17,57 +17,52 @@ class PayementController extends Controller
 
     public function index()
     {
-        // Récupérer tous les paiements avec les informations utilisateur et commande
-        $payements = Payement::with(['user', 'commande'])->orderBy('created_at', 'desc')->paginate(20);
-        
-        return $this-> successResponse([
-            'articles' =>PayementResource::collection($payements),
-            'links' => [
-            'first' => $payements->url(1),
-            'last' => $payements->url($payements->lastPage()),
-            'prev' => $payements->previousPageUrl(),
-            'next' => $payements->nextPageUrl(),
-        ],
-        'meta' => [
-            'current_page' => $payements->currentPage(),
-            'from' => $payements->firstItem(),
-            'last_page' => $payements->lastPage(),
-            'path' => $payements->path(),
-            'per_page' => $payements->perPage(),
-            'to' => $payements->lastItem(),
-            'total' => $payements->total(),
-        ]
-        ]);       
+
+        return $this->sucessResponseWithPaginate(
+            PayementResource::class, 
+            Payement::with(['user', 'commande'])->orderBy('created_at', 'desc')->paginate(20), 
+            'payements'
+            );
+
     }
 
     public function store(StorePayementRequest $request)
     {
-        $validatedData = $request->validated();
-
-        $payement = Payement::create($validatedData);
+        $payement = Payement::create($request->all());
         event(new PayementReceived($payement->commande_id));
 
         return $this->successResponse(new PayementResource($payement), 'Payment received and status updated.', 201);
     }
 
-    public function show(Payement $payement)
+    public function show($id)
     {
+        $payement =Payement::find($id);
+        if ($payement==null)
+        {
+            return $this-> errorResponse("Payement not found");
+        }
         return $this->successResponse(new PayementResource($payement));
     }
 
-    public function update(UpdatePayementRequest $request, Payement $payement)
+    public function update(UpdatePayementRequest $request, $id)
     {
-        $validatedData = $request->validated();
-
-        $payement->update($validatedData);
-
+        $payement =Payement::find($id);
+        if ($payement==null)
+        {
+            return $this-> errorResponse("Payement not found");
+        }
+        $payement->update($request->all());
         return $this->successResponse(new PayementResource($payement), 'Payment updated successfully', 200);
     }
 
-    public function destroy(Payement $payement)
+    public function destroy($id)
     {
+        $payement =Payement::find($id);
+        if ($payement==null)
+        {
+            return $this-> errorResponse("Payement not found");
+        }
         $payement->delete();
-
         return $this->successResponse(null, 'Payment deleted successfully', 204);
     }
 }

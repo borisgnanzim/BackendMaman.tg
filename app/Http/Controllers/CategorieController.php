@@ -30,9 +30,7 @@ class CategorieController extends Controller
      */
     public function store(StoreCategorieRequest $request)
     {
-        $validatedData = $request->validated();
-        $categorie = Categorie::create($validatedData);
-        return $this->successResponse(new CategorieResource($categorie), 'Categorie created successfully.', 201);
+        return $this->successResponse(new CategorieResource(Categorie::create($request->all())), 'Categorie created successfully.', 201);
     }
 
     /**

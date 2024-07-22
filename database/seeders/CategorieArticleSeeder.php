@@ -14,6 +14,6 @@ class CategorieArticleSeeder extends Seeder
     public function run(): void
     {
         //
-        CategorieArticle::factory()->count(10)->create();
+        CategorieArticle::factory()->count(50)->create();
     }
 }

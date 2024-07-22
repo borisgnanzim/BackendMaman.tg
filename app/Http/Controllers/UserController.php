@@ -16,53 +16,55 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::with('role')->orderBy('created_at', 'desc')->paginate(20);
-        return $this-> successResponse([
-            'articles' =>UserResource::collection($users),
-            'links' => [
-            'first' => $users->url(1),
-            'last' => $users->url($users->lastPage()),
-            'prev' => $users->previousPageUrl(),
-            'next' => $users->nextPageUrl(),
-        ],
-        'meta' => [
-            'current_page' => $users->currentPage(),
-            'from' => $users->firstItem(),
-            'last_page' => $users->lastPage(),
-            'path' => $users->path(),
-            'per_page' => $users->perPage(),
-            'to' => $users->lastItem(),
-            'total' => $users->total(),
-        ]
-        ]);    
-
+        $users = User::with('role')->orderBy('created_at', 'desc')->paginate(20) ;
+        return $this-> sucessResponseWithPaginate(UserResource::class, $users, 'users') ;
     }
 
     public function store(StoreUserRequest $request)
     {
-        $validatedData = $request->validated();
-        $validatedData['password'] = Hash::make($validatedData['password']);
-        $user = User::create($validatedData);
-        return $this->successResponse(new UserResource($user), 'User created successfully', 201);
+        //$validatedData = $request->except(["password"]);
+        //$validatedData['password'] = Hash::make($request->input("password"));
+       // $user = User::create( array_merge($request->except(["password"]) , ["password" =>Hash::make($request->input("password"))]));
+
+        return $this->successResponse(new UserResource(User::create( $request->all() )), 'User created successfully', 201);
     }
 
-    public function show(User $user)
+    public function show($id)
     {
+        $user =User::find($id);
+        if ($user==null)
+        {
+            return $this-> errorResponse("User not found");
+        }
         return $this->successResponse(new UserResource($user));
     }
 
-    public function update(UpdateUserRequest $request, User $user)
+    public function update(UpdateUserRequest $request, $id)
     {
-        $validatedData = $request->validated();
-        if (isset($validatedData['password'])) {
-            $validatedData['password'] = Hash::make($validatedData['password']);
+        $validatedData = $request;
+        // if (isset($validatedData['password'])) {
+        //     $validatedData['password'] = Hash::make($validatedData['password']);
+        // }
+        //$user->update($request->all());
+       // return $request->all() ;
+        $user =User::find($id);
+        if ($user==null)
+        {
+            return $this-> errorResponse("User not found");
         }
-        $user->update($validatedData);
+        //$user->update($request->except(['password']));
+        $user->update([$validatedData]);
+
         return $this->successResponse(new UserResource($user), 'User updated successfully');
     }
 
-    public function destroy(User $user)
+    public function destroy($id)
     {
+        $user =User::find($id);
+        if ($user==null)
+        {
+            return $this-> errorResponse("User not found");
+        }
         $user->delete();
         return $this->successResponse(null, 'User deleted successfully', 204);
     }

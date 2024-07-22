@@ -56,18 +56,92 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //
 // Groupes de routes pour les administrateurs
     Route::middleware(['auth:sanctum','role:admin'])->group(function () {
-    //Route::resource('articles', ArticleController::class);
 
     //
-    Route::apiResource('categories', CategorieController::class);
-    Route::apiResource('categorieArticles', CategorieArticleController::class);
-    Route::apiResource('articles', ArticleController::class);
-    Route::apiResource('images', ImageController::class);
-    Route::apiResource('ligneCommandes', LigneCommandeController::class);
-    Route::apiResource('commandes', CommandeController::class);
-    Route::apiResource('payements', PayementController::class);
-    Route::apiResource('users', UserController::class);
-    Route::apiResource('livraisons', LivraisonController::class);
+    //Route::apiResource('categories', CategorieController::class);
+    //Route::apiResource('categorieArticles', CategorieArticleController::class);
+    //Route::apiResource('articles', ArticleController::class);
+    //Route::apiResource('images', ImageController::class);
+    //Route::apiResource('ligneCommandes', LigneCommandeController::class);
+    //Route::apiResource('commandes', CommandeController::class);
+    //Route::apiResource('payements', PayementController::class);
+    //Route::apiResource('users', UserController::class);
+    //Route::apiResource('livraisons', LivraisonController::class);
+
+    //
+    Route::prefix('admin.categories')->name('admin.categories')->group(function () {
+        Route::get('/', [CategorieController::class, 'index']);
+        Route::get('/{id}', [CategorieController::class, 'show']);
+        Route::post('/', [CategorieController::class, 'store']);
+        Route::put('/{id}', [CategorieController::class, 'update']);
+        Route::delete('/{id}', [CategorieController::class, 'destroy']);
+    });
+
+    Route::prefix('admin.categorieArticles')->name('admin.categorieArticles')->group(function () {
+        Route::get('/', [CategorieArticleController::class, 'index']);
+        Route::get('/{id}', [CategorieArticleController::class, 'show']);
+        Route::post('/', [CategorieArticleController::class, 'store']);
+        Route::put('/{id}', [CategorieArticleController::class, 'update']);
+        Route::delete('/{id}', [CategorieArticleController::class, 'destroy']); 
+    });
+
+    Route::prefix('admin.articles')->name('admin.articles')->group(function () {
+        Route::get('/', [ArticleController::class, 'index']);
+        Route::get('/{id}', [ArticleController::class, 'show']);
+        Route::post('/', [ArticleController::class, 'store']);
+        Route::put('/{id}', [ArticleController::class, 'update']);
+        Route::delete('/{id}', [ArticleController::class, 'destroy']); 
+    });
+
+    Route::prefix('admin.images')->name('admin.images')->group(function () {
+        Route::get('/', [ImageController::class, 'index']);
+        Route::get('/{id}', [ImageController::class, 'show']);
+        Route::post('/', [ImageController::class, 'store']);
+        Route::put('/{id}', [ImageController::class, 'update']);
+        Route::delete('/{id}', [ImageController::class, 'destroy']); 
+    });
+    
+
+    Route::prefix('admin.ligneCommandes')->name('admin.ligneCommandes')->group(function () {
+        Route::get('/', [LigneCommandeController::class, 'index']);
+        Route::get('/{id}', [LigneCommandeController::class, 'show']);
+        Route::post('/', [LigneCommandeController::class, 'store']);
+        Route::put('/{id}', [LigneCommandeController::class, 'update']);
+        Route::delete('/{id}', [LigneCommandeController::class, 'destroy']); 
+    });   
+
+    Route::prefix('admin.users')->name('admin.users')->group(function () {
+        Route::get('/', [UserController::class, 'index']);
+        Route::get('/{id}', [UserController::class, 'show']);
+        Route::post('/', [UserController::class, 'store']);
+        Route::put('/{id}', [UserController::class, 'update']);
+        Route::delete('/{id}', [UserController::class, 'destroy']); 
+    });
+    Route::prefix('admin.livraisons')->name('admin.livraisons')->group(function () {
+        Route::get('/', [LivraisonController::class, 'index']);
+        Route::get('/{id}', [LivraisonController::class, 'show']);
+        Route::post('/', [LivraisonController::class, 'store']);
+        Route::put('/{id}', [LivraisonController::class, 'update']);
+        Route::delete('/{id}', [LivraisonController::class, 'destroy']); 
+    });
+
+    Route::prefix('admin.commandes')->name('admin.commandes')->group(function () {
+        Route::get('/', [CommandeController::class, 'index']);
+        Route::get('/{id}', [CommandeController::class, 'show']);
+        Route::post('/', [CommandeController::class, 'store']);
+        Route::put('/{id}', [CommandeController::class, 'update']);
+        Route::delete('/{id}', [CommandeController::class, 'destroy']); 
+    });
+
+    Route::prefix('admin.payements')->name('admin.payements')->group(function () {
+        Route::get('/', [PayementController::class, 'index']);
+        Route::get('/{id}', [PayementController::class, 'show']);
+        Route::post('/', [PayementController::class, 'store']);
+        Route::put('/{id}', [PayementController::class, 'update']);
+        Route::delete('/{id}', [PayementController::class, 'destroy']); 
+    });
+
+    //
 
     Route::get('images/{image}/download', [ImageController::class, 'download'])->name('images.download');
     //
@@ -81,15 +155,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
     Route::get('livraisons/{livraison}/commande',[LivraisonController::class,'getCommande'])->name('livraison.commande');
 
+    Route::get('/profiles', [AuthController::class, 'profile'])->name('admin.profile');
+
     Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
+    
 
     //
 });
 
 Route::middleware(['auth:sanctum','role:user'])->group(function () {
-   // Route::get('/profile', [UserController::class, 'show']);
+
+    Route::get('/profile', [AuthController::class, 'profile']);
     //
-   Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
+    Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
 
     Route::get('/articles', [ArticleController::class, 'index']);
     Route::get('/articles/{article}', [ArticleController::class, 'show']);
@@ -102,9 +180,9 @@ Route::middleware(['auth:sanctum','role:user'])->group(function () {
 
     Route::get('categories/{categorie}/articles',[CategorieController::class, 'getArticles'])->name('categorie.articles.forRoleUser');
 
-    Route::apiResource('commandes', CommandeController::class);
+    //Route::apiResource('commandes', CommandeController::class);
 
-    //Route::post('/commandes', [CommandeController::class, 'store'])->name('post.commande.forRoleUser');
+    Route::post('/commandes', [CommandeController::class, 'store'])->name('post.commande.forRoleUser');
 
     Route::post('/lignecommandes',[LigneCommandeController::class,'store'])->name('post.ligneCommandes.forRoleUser');
 
@@ -118,7 +196,7 @@ Route::middleware(['auth:sanctum','role:user'])->group(function () {
 
 // route public
 
-Route::get('/articles', [ArticleController::class, 'index']);
+Route::get('/articles', [ArticleController::class, 'index'])->name('articles');
 Route::get('/articles/{article}', [ArticleController::class, 'show']);
 
 Route::get('images/{image}/download', [ImageController::class, 'download'])->name('images.download');
@@ -131,13 +209,14 @@ Route::get('categories/{categorie}/articles',[CategorieController::class, 'getAr
 
 Route::get('/categories',[CategorieController::class,'index']);
 
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+// Route::post('/login', [AuthController::class, 'login']);
+
 Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
 
 //Route::apiResource('images', ImageController::class);
 Route::get('/images/{image}', [ImageController::class, 'show']);
-
 
 // temp
     // Route::apiResource('categories', CategorieController::class);

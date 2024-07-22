@@ -19,22 +19,40 @@ class CategorieFactory extends Factory
      */
 
     protected $model = Categorie::class;
+    // public function definition(): array
+    // {
+    //     return [
+    //         //
+    //         'nom' => $this->faker->word,
+    //         'description' => $this->faker->sentence,
+    //         'superCategorie_id' => function () {
+    //             // $cat=Categorie::all();
+    //             // if (isNull($cat)) {
+    //             //     return null;
+    //             // }
+    //             // else
+    //             //  return Categorie::factory()->create()->id;
+    //             $categorie = Categorie::inRandomOrder()->first();
+    //             return optional($categorie)->id;
+    //         }
+    //     ];
+    // }
+
     public function definition(): array
     {
         return [
-            //
             'nom' => $this->faker->word,
-            'description' => $this->faker->sentence,
-            'superCategorie_id' => function () {
-                // $cat=Categorie::all();
-                // if (isNull($cat)) {
-                //     return null;
-                // }
-                // else
-                //  return Categorie::factory()->create()->id;
-                $categorie = Categorie::inRandomOrder()->first();
-                return optional($categorie)->id;
-            }
+            //'description' => $this->faker->sentence,
+            'superCategorie_id' => null, // Default to null for parent categories
         ];
+    }
+    
+    public function withParent(Categorie $parent)
+    {
+        return $this->state(function (array $attributes) use ($parent) {
+            return [
+                'superCategorie_id' => $parent->id,
+            ];
+        });
     }
 }

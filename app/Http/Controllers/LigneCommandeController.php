@@ -15,8 +15,10 @@ class LigneCommandeController extends Controller
 
     public function index()
     {
-        $lignesCommande = LigneCommande::all();
-        return $this->successResponse(LigneCommandeResource::collection($lignesCommande));
+        // Fetch ligneCommandes with pagination, ordered by creation date in descending order
+        $ligneCommandes = LigneCommande::orderBy('created_at', 'desc')->paginate(20);
+
+        return $this->sucessResponseWithPaginate(LigneCommandeResource::class, $ligneCommandes,'ligneCommandes');
     }
 
     public function store(StoreLigneCommandeRequest $request)

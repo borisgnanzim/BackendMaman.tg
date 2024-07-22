@@ -21,24 +21,7 @@ class CommandeController extends Controller
     public function index()
     {
         $commandes = Commande::with(['user', 'lignecommandes'])->orderBy('created_at', 'desc')->paginate(20);
-        return $this->successResponse([
-            'commandes' => CommandeResource::collection($commandes),
-            'links' => [
-                'first' => $commandes->url(1),
-                'last' => $commandes->url($commandes->lastPage()),
-                'prev' => $commandes->previousPageUrl(),
-                'next' => $commandes->nextPageUrl(),
-            ],
-            'meta' => [
-                'current_page' => $commandes->currentPage(),
-                'from' => $commandes->firstItem(),
-                'last_page' => $commandes->lastPage(),
-                'path' => $commandes->path(),
-                'per_page' => $commandes->perPage(),
-                'to' => $commandes->lastItem(),
-                'total' => $commandes->total(),
-            ]
-        ]);
+        return $this->sucessResponseWithPaginate(CommandeResource::class, $commandes, 'commandes');
     }
 
     public function store(StoreCommandeRequest $request)

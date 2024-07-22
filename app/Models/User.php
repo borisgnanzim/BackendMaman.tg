@@ -8,6 +8,7 @@ use App\Notifications\ResetPasswordNotification;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -27,7 +28,7 @@ class User extends Authenticatable
         'prenom', 
         'adresse', 
         'telephone',
-        'coordonne_geographique', 
+        //'coordonne_geographique', 
         'role_id'
     ];
 
@@ -51,7 +52,10 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = Hash::make($value); 
+    }
     public function commandes()
     {
         return $this->hasMany(Commande::class);

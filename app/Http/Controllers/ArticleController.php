@@ -29,43 +29,25 @@ class ArticleController extends Controller
     // }
     public function index()
     {
-        $articles = $this->articleRepository->paginate(30); // Fetch articles with pagination and sorting
-        return $this-> successResponse([
-            'articles' =>ArticleResource::collection($articles),
-            'links' => [
-            'first' => $articles->url(1),
-            'last' => $articles->url($articles->lastPage()),
-            'prev' => $articles->previousPageUrl(),
-            'next' => $articles->nextPageUrl(),
-        ],
-        'meta' => [
-            'current_page' => $articles->currentPage(),
-            'from' => $articles->firstItem(),
-            'last_page' => $articles->lastPage(),
-            'path' => $articles->path(),
-            'per_page' => $articles->perPage(),
-            'to' => $articles->lastItem(),
-            'total' => $articles->total(),
-        ]
-        ]);
+        return $this->sucessResponseWithPaginate(ArticleResource::class, $this->articleRepository->paginate(30) , 'articles');
     }
 
     public function store(StoreArticleRequest $request)
     {
-        $article = $this->articleRepository->create($request->validated());
-        return $this->successResponse(new ArticleResource($article), 'Article created successfully', 201);
+        //$article = $this->articleRepository->create($request->validated());
+        return $this->successResponse(new ArticleResource($this->articleRepository->create($request->validated())), 'Article created successfully', 201);
     }
 
     public function show($id)
     { 
-        $article = $this->articleRepository->find($id);
-        return $this->successResponse(new ArticleResource($article));
+       // $article = $this->articleRepository->find($id);
+        return $this->successResponse(new ArticleResource($this->articleRepository->find($id)));
     }
 
     public function update(UpdateArticleRequest $request, $id)
     {
-        $article = $this->articleRepository->update($id, $request->validated());
-        return $this->successResponse(new ArticleResource($article), 'Article updated successfully', 200);
+        //$article = $this->articleRepository->update($id, $request->validated());
+        return $this->successResponse(new ArticleResource($this->articleRepository->update($id, $request->validated())), 'Article updated successfully', 200);
     }
 
     public function destroy($id)

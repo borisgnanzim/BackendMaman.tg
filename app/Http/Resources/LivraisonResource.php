@@ -27,6 +27,13 @@ class LivraisonResource extends JsonResource
             'commande' => [
                 'commande_id' => $this->commande->id,
                 'commande_reference' => $this->commande->reference,
+                'user' => [
+                    'id' => $this->commande->user->id,
+                    'nom' => $this->commande->user->nom,
+                    'prenom' => $this->commande->user->prenom,
+                    'adresse' => $this->commande->user->adresse,
+                    'email' => $this->commande->user->email,
+                ],
             ],
         ];
     }

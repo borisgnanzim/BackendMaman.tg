@@ -11,8 +11,9 @@ class UpdateUserRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        $user = Auth::user();
-        return $user && $user->role->name =='admin' ;
+        // $user = Auth::user();
+        // return $user && $user->role->name =='admin' ;
+        return Auth::check() ;
     }
 
     /**
@@ -20,19 +21,19 @@ class UpdateUserRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
+    public function rules(): array  
     {
         return [
             //
             'nom' => 'sometimes|required|string|max:255',
             'prenom' => 'sometimes|required|string|max:255',
-            'email' => 'sometimes|required|string|email|max:255|unique:users,email,',
+            'email' => 'sometimes|required|string|email|max:255|unique:users,email',
             'adresse' => 'nullable|string|max:255',
-            'coordonne_geographique' => 'nullable|string|max:255',
-            'telephone' => 'required|string|max:255|unique:users,telephone',
-            //'role' => 'nullable|string|max:255',
-            'name' => 'sometimes|required|string|max:255|unique:users,name,',
-            'password' => 'nullable|string|min:8'
+            //'coordonne_geographique' => 'nullable|string|max:255',
+            'telephone' => 'sometimes|required|string|max:255|unique:users,telephone',
+            'role_id' => 'nullable|integer|max:25|exists:roles,id',
+            'name' => 'sometimes|required|string|max:255|unique:users,name',
+            //'password' => 'nullable|string|min:8|confirmed'
         ];
     }
 }

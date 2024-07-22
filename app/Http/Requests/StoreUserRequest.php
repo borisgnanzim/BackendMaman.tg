@@ -31,7 +31,7 @@ class StoreUserRequest extends FormRequest
             'adresse' => 'nullable|string|max:255',
             'telephone' => 'required|string|max:255',
             'coordonne_geographique' => 'nullable|string|max:255',
-            'role' => 'nullable|string|max:255',
+            'role_id' => 'nullable|string|max:255|exists:roles,id',
             'name' => 'required|string|max:255|unique:users',
             'password' => 'required|string|min:8',
         ];
