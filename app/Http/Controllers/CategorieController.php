@@ -38,6 +38,7 @@ class CategorieController extends Controller
      */
     public function show(Categorie $categorie)
     {
+        $categorie->load('superCategorie', 'sousCategories');
         return $this->successResponse(new CategorieResource($categorie));
     }
 

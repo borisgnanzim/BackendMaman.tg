@@ -21,10 +21,13 @@ class CategorieSeeder extends Seeder
     {
         // Define categories and subcategories
         $categories = [
-            'Futur Maman' => ['Robes', 'chemises', 'Pulls', 'Pantalons', 'Accessoires', 'Détergents'],
-            'Bébé' => ['Survêtements', 'Sous vêtements', 'Ensembles', 'Pulls', 'Accessoires', 'chaussures'],
-            'Allaitement' => ['Biberons', 'Tire-Lait', 'lait', 'Accessoire'],
-            'Espaces Jouets' => ['Jouets bébé', 'jeux de créativité', 'Autres']
+            'Futur Maman' => ['Robes', 'Chemises', 'Pulls', 'Pantalons', 'Accessoires', 'Détergents'],
+            'Bébé' => ['Survêtements', 'Sous-vêtements', 'Ensembles', 'Pulls', 'Accessoires', 'Chaussures'],
+            'Allaitement' => ['Biberons', 'Tire-lait', 'Lait', 'Accessoires'],
+            'Espaces Jouets' => ['Jouets bébé', 'Jeux de créativité', 'Autres'],
+            'Vêtements Garçons' => ['T-shirts', 'Pantalons', 'Ensembles', 'Autres'],
+            'Vêtements Filles' => ['Robes Filles', 'Hauts & Sous-vêtements', 'Jupes', 'Accessoires'],
+            'Chambre Bébé' => ['Lits & Berceaux', 'Décorations', 'Accessoires', 'Linges'],
         ];
 
         foreach ($categories as $parentName => $subCategories) {
