@@ -11,6 +11,13 @@ use Illuminate\Support\Facades\Auth;
 use App\Traits\JsonResponseTrait;
 use App\Http\Resources\PayementResource;
 
+
+
+/**
+ * @group Payement Management
+ * 
+ * APIs to manage the Payements ressource
+ **/
 class PayementController extends Controller
 {
     use JsonResponseTrait;

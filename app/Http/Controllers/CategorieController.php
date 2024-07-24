@@ -10,6 +10,12 @@ use App\Traits\JsonResponseTrait;
 use Illuminate\Http\Request;
 use App\Http\Resources\CategorieResource;
 
+/**
+ * @group Catégorie Management
+ * 
+ * APIs to manage the catégorie ressource
+ **/
+
 class CategorieController extends Controller
 {
     use JsonResponseTrait;

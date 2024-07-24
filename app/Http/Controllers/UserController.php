@@ -10,6 +10,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Traits\JsonResponseTrait;
 
+
+
+/**
+ * @group User Management
+ * 
+ * APIs to manage the User ressource
+ **/
 class UserController extends Controller
 {
     use JsonResponseTrait;

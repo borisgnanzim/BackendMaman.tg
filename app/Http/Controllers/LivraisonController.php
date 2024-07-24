@@ -9,6 +9,14 @@ use App\Repositories\LivraisonRepositoryInterface;
 use App\Traits\JsonResponseTrait;
 use Illuminate\Http\Request;
 
+
+
+/**
+ * @group Livraison Management
+ * 
+ * APIs to manage the livraisons ressource
+ **/
+
 class LivraisonController extends Controller
 {
     use JsonResponseTrait;

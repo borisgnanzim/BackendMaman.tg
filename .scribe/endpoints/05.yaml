@@ -1,13 +1,17 @@
-name: Endpoints
-description: ''
+name: 'LigneCommande Management'
+description: |-
+
+  APIs to manage the LigneCommandes ressource
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/user
+    uri: api/admin.ligneCommandes
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'LigneCommande Management'
+      groupDescription: |-
+
+        APIs to manage the LigneCommandes ressource
       subgroup: ''
       subgroupDescription: ''
       title: ''
@@ -43,10 +47,12 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/profiles
+    uri: 'api/admin.ligneCommandes/{id}'
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'LigneCommande Management'
+      groupDescription: |-
+
+        APIs to manage the LigneCommandes ressource
       subgroup: ''
       subgroupDescription: ''
       title: ''
@@ -56,8 +62,18 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the admin.ligneCommande.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -82,10 +98,12 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/logout
+    uri: api/admin.ligneCommandes
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'LigneCommande Management'
+      groupDescription: |-
+
+        APIs to manage the LigneCommandes ressource
       subgroup: ''
       subgroupDescription: ''
       title: ''
@@ -97,6 +115,190 @@ endpoints:
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      titre:
+        name: titre
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: rmyxn
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      quantite:
+        name: quantite
+        description: ''
+        required: true
+        example: 12
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      prix:
+        name: prix
+        description: ''
+        required: true
+        example: 80.287175612
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      article_id:
+        name: article_id
+        description: ''
+        required: true
+        example: laborum
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      commande_id:
+        name: commande_id
+        description: ''
+        required: true
+        example: vel
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      titre: rmyxn
+      quantite: 12
+      prix: 80.287175612
+      article_id: laborum
+      commande_id: vel
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/admin.ligneCommandes/{id}'
+    metadata:
+      groupName: 'LigneCommande Management'
+      groupDescription: |-
+
+        APIs to manage the LigneCommandes ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the admin.ligneCommande.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      titre:
+        name: titre
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: vazghrqjanrcndayjmudkwav
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      quantite:
+        name: quantite
+        description: ''
+        required: true
+        example: 5
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      prix:
+        name: prix
+        description: ''
+        required: true
+        example: 596243354.17206
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      article_id:
+        name: article_id
+        description: ''
+        required: true
+        example: consequuntur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      commande_id:
+        name: commande_id
+        description: ''
+        required: true
+        example: quae
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      titre: vazghrqjanrcndayjmudkwav
+      quantite: 5
+      prix: 596243354.17206
+      article_id: consequuntur
+      commande_id: quae
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/admin.ligneCommandes/{id}'
+    metadata:
+      groupName: 'LigneCommande Management'
+      groupDescription: |-
+
+        APIs to manage the LigneCommandes ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the admin.ligneCommande.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -111,50 +313,13 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - GET
-    uri: api/profile
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          vary: Origin
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
       - POST
-    uri: api/register
+    uri: api/lignecommandes
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'LigneCommande Management'
+      groupDescription: |-
+
+        APIs to manage the LigneCommandes ressource
       subgroup: ''
       subgroupDescription: ''
       title: ''
@@ -169,207 +334,57 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      nom:
-        name: nom
+      titre:
+        name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: lyilczfqwdesdc
+        example: zdztflhuxqfozipeie
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      prenom:
-        name: prenom
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: ilqwjibwgtszmkmb
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      name:
-        name: name
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: ehojfkr
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      email:
-        name: email
-        description: 'Must be a valid email address. Must not be greater than 255 characters.'
-        required: true
-        example: aglae.stoltenberg@example.org
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      password:
-        name: password
-        description: 'Must be at least 8 characters.'
-        required: true
-        example: '0?$$\".Gx=:m@@!'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      nom: lyilczfqwdesdc
-      prenom: ilqwjibwgtszmkmb
-      name: ehojfkr
-      email: aglae.stoltenberg@example.org
-      password: '0?$$\".Gx=:m@@!'
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/login
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      email:
-        name: email
-        description: 'Must be a valid email address.'
-        required: true
-        example: ashleigh67@example.net
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      password:
-        name: password
+      quantite:
+        name: quantite
         description: ''
         required: true
-        example: '3ki^2nZ5d$vu2Nf[B}"'
-        type: string
+        example: 14
+        type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanBodyParameters:
-      email: ashleigh67@example.net
-      password: '3ki^2nZ5d$vu2Nf[B}"'
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/forgot-password
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      email:
-        name: email
-        description: 'Must be a valid email address.'
-        required: true
-        example: oortiz@example.org
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      email: oortiz@example.org
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/reset-password
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      token:
-        name: token
+      prix:
+        name: prix
         description: ''
         required: true
-        example: corporis
+        example: 522522.40524
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      article_id:
+        name: article_id
+        description: ''
+        required: true
+        example: deserunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      email:
-        name: email
-        description: 'Must be a valid email address.'
+      commande_id:
+        name: commande_id
+        description: ''
         required: true
-        example: telly27@example.com
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      password:
-        name: password
-        description: 'Must be at least 8 characters.'
-        required: true
-        example: JA@a(dq2/0Q
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      token: corporis
-      email: telly27@example.com
-      password: JA@a(dq2/0Q
+      titre: zdztflhuxqfozipeie
+      quantite: 14
+      prix: 522522.40524
+      article_id: deserunt
+      commande_id: ut
     fileParameters: []
     responses: []
     responseFields: []

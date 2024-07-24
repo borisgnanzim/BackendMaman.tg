@@ -14,6 +14,12 @@ use App\Traits\JsonResponseTrait;
 use App\Http\Resources\CommandeResource;
 use App\Http\Resources\LigneCommandeResource;
 
+
+/**
+ * @group Commande Management
+ * 
+ * APIs to manage the Commandes ressource
+ **/
 class CommandeController extends Controller
 {
     use JsonResponseTrait;

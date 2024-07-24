@@ -9,6 +9,11 @@ use App\Models\CategorieArticle;
 use App\Traits\JsonResponseTrait;
 use Illuminate\Http\Request;
 
+/**
+ * @group CategorieArticle Management
+ * 
+ * APIs to manage the CategorieArticles ressource
+ **/
 class CategorieArticleController extends Controller
 {
     use JsonResponseTrait;

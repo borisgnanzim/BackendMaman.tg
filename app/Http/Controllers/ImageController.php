@@ -10,6 +10,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Resources\ImageResource;
 
+
+
+/**
+ * @group Image Management
+ * 
+ * APIs to manage the Images ressource
+ **/
 class ImageController extends Controller
 {
     use JsonResponseTrait;

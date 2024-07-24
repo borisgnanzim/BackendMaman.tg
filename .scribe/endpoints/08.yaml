@@ -1,0 +1,510 @@
+name: 'Commande Management'
+description: |-
+
+  APIs to manage the Commandes ressource
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/admin.commandes
+    metadata:
+      groupName: 'Commande Management'
+      groupDescription: |-
+
+        APIs to manage the Commandes ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/admin.commandes/{id}'
+    metadata:
+      groupName: 'Commande Management'
+      groupDescription: |-
+
+        APIs to manage the Commandes ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the admin.commande.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/admin.commandes
+    metadata:
+      groupName: 'Commande Management'
+      groupDescription: |-
+
+        APIs to manage the Commandes ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      titre:
+        name: titre
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: umsmaixuntqaszwvmbzqvgwvk
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      date:
+        name: date
+        description: 'Must be a valid date.'
+        required: true
+        example: '2024-07-24T17:09:39'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      montant:
+        name: montant
+        description: ''
+        required: true
+        example: 91828.329996
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      latitude:
+        name: latitude
+        description: ''
+        required: false
+        example: 220455.5288
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      longitude:
+        name: longitude
+        description: ''
+        required: false
+        example: 2654.0887
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      articles:
+        name: articles
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'articles[].article_id':
+        name: 'articles[].article_id'
+        description: ''
+        required: true
+        example: aut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'articles[].quantite':
+        name: 'articles[].quantite'
+        description: ''
+        required: true
+        example: 3
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      titre: umsmaixuntqaszwvmbzqvgwvk
+      date: '2024-07-24T17:09:39'
+      montant: 91828.329996
+      latitude: 220455.5288
+      longitude: 2654.0887
+      articles:
+        -
+          article_id: aut
+          quantite: 3
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/admin.commandes/{id}'
+    metadata:
+      groupName: 'Commande Management'
+      groupDescription: |-
+
+        APIs to manage the Commandes ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the admin.commande.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      titre:
+        name: titre
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: ictunpqztrpguid
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      date:
+        name: date
+        description: 'Must be a valid date.'
+        required: true
+        example: '2024-07-24T17:09:39'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      montant:
+        name: montant
+        description: ''
+        required: true
+        example: 4319511.846
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      statut:
+        name: statut
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: kat
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      reference:
+        name: reference
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: meuusjkhqttlqhhzkrf
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      titre: ictunpqztrpguid
+      date: '2024-07-24T17:09:39'
+      montant: 4319511.846
+      statut: kat
+      reference: meuusjkhqttlqhhzkrf
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/admin.commandes/{id}'
+    metadata:
+      groupName: 'Commande Management'
+      groupDescription: |-
+
+        APIs to manage the Commandes ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the admin.commande.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/commandes/{commande}/lignescommande'
+    metadata:
+      groupName: 'Commande Management'
+      groupDescription: |-
+
+        APIs to manage the Commandes ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      commande:
+        name: commande
+        description: 'The commande.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      commande: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/commandes
+    metadata:
+      groupName: 'Commande Management'
+      groupDescription: |-
+
+        APIs to manage the Commandes ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      titre:
+        name: titre
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: eymvnayaswzxnkjpcx
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      date:
+        name: date
+        description: 'Must be a valid date.'
+        required: true
+        example: '2024-07-24T17:09:39'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      montant:
+        name: montant
+        description: ''
+        required: true
+        example: 6992669.2
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      latitude:
+        name: latitude
+        description: ''
+        required: false
+        example: 14587778.1691
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      longitude:
+        name: longitude
+        description: ''
+        required: false
+        example: 68108.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      articles:
+        name: articles
+        description: ''
+        required: true
+        example:
+          - []
+        type: 'object[]'
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'articles[].article_id':
+        name: 'articles[].article_id'
+        description: ''
+        required: true
+        example: doloribus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      'articles[].quantite':
+        name: 'articles[].quantite'
+        description: ''
+        required: true
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      titre: eymvnayaswzxnkjpcx
+      date: '2024-07-24T17:09:39'
+      montant: 6992669.2
+      latitude: 14587778.1691
+      longitude: 68108.0
+      articles:
+        -
+          article_id: doloribus
+          quantite: 15
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

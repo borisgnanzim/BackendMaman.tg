@@ -13,6 +13,11 @@ use App\Traits\JsonResponseTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
+/**
+ * @group Article Management
+ * 
+ * APIs to manage the articles ressource
+ **/
 class ArticleController extends Controller
 {
     use JsonResponseTrait;

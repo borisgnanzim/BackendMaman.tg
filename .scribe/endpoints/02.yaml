@@ -1,0 +1,273 @@
+name: 'CategorieArticle Management'
+description: |-
+
+  APIs to manage the CategorieArticles ressource
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/admin.categorieArticles
+    metadata:
+      groupName: 'CategorieArticle Management'
+      groupDescription: |-
+
+        APIs to manage the CategorieArticles ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display a listing of the resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/admin.categorieArticles/{id}'
+    metadata:
+      groupName: 'CategorieArticle Management'
+      groupDescription: |-
+
+        APIs to manage the CategorieArticles ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Display the specified resource.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the admin.categorieArticle.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/admin.categorieArticles
+    metadata:
+      groupName: 'CategorieArticle Management'
+      groupDescription: |-
+
+        APIs to manage the CategorieArticles ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Store a newly created resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      titre:
+        name: titre
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: vspfwtepzxzeuetod
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      article_id:
+        name: article_id
+        description: ''
+        required: true
+        example: quibusdam
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      categorie_id:
+        name: categorie_id
+        description: ''
+        required: true
+        example: et
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      titre: vspfwtepzxzeuetod
+      article_id: quibusdam
+      categorie_id: et
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/admin.categorieArticles/{id}'
+    metadata:
+      groupName: 'CategorieArticle Management'
+      groupDescription: |-
+
+        APIs to manage the CategorieArticles ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Update the specified resource in storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the admin.categorieArticle.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      titre:
+        name: titre
+        description: 'Must not be greater than 255 characters.'
+        required: false
+        example: qdem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      article_id:
+        name: article_id
+        description: ''
+        required: true
+        example: autem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      categorie_id:
+        name: categorie_id
+        description: ''
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      titre: qdem
+      article_id: autem
+      categorie_id: consequatur
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/admin.categorieArticles/{id}'
+    metadata:
+      groupName: 'CategorieArticle Management'
+      groupDescription: |-
+
+        APIs to manage the CategorieArticles ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: 'Remove the specified resource from storage.'
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the admin.categorieArticle.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []

@@ -9,6 +9,12 @@ use App\Traits\JsonResponseTrait;
 use Illuminate\Http\Request;
 use App\Http\Resources\LigneCommandeResource;
 
+
+/**
+ * @group LigneCommande Management
+ * 
+ * APIs to manage the LigneCommandes ressource
+ **/
 class LigneCommandeController extends Controller
 {
     use JsonResponseTrait;

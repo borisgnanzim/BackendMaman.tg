@@ -1,13 +1,17 @@
-name: Endpoints
-description: ''
+name: 'Payement Management'
+description: |-
+
+  APIs to manage the Payements ressource
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/user
+    uri: api/admin.payements
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'Payement Management'
+      groupDescription: |-
+
+        APIs to manage the Payements ressource
       subgroup: ''
       subgroupDescription: ''
       title: ''
@@ -43,10 +47,12 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/profiles
+    uri: 'api/admin.payements/{id}'
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'Payement Management'
+      groupDescription: |-
+
+        APIs to manage the Payements ressource
       subgroup: ''
       subgroupDescription: ''
       title: ''
@@ -56,8 +62,18 @@ endpoints:
     headers:
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the admin.payement.'
+        required: true
+        example: ducimus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: ducimus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -82,10 +98,12 @@ endpoints:
   -
     httpMethods:
       - POST
-    uri: api/logout
+    uri: api/admin.payements
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'Payement Management'
+      groupDescription: |-
+
+        APIs to manage the Payements ressource
       subgroup: ''
       subgroupDescription: ''
       title: ''
@@ -97,6 +115,190 @@ endpoints:
       Accept: application/json
     urlParameters: []
     cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      titre:
+        name: titre
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: olyrfzjetde
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      solde:
+        name: solde
+        description: ''
+        required: true
+        example: 4.3
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      modePayement:
+        name: modePayement
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: rtpcqdmdrdcrbo
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      date:
+        name: date
+        description: 'Must be a valid date.'
+        required: true
+        example: '2024-07-24T17:09:39'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      commande_id:
+        name: commande_id
+        description: ''
+        required: true
+        example: voluptatem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      titre: olyrfzjetde
+      solde: 4.3
+      modePayement: rtpcqdmdrdcrbo
+      date: '2024-07-24T17:09:39'
+      commande_id: voluptatem
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/admin.payements/{id}'
+    metadata:
+      groupName: 'Payement Management'
+      groupDescription: |-
+
+        APIs to manage the Payements ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the admin.payement.'
+        required: true
+        example: rem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: rem
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      titre:
+        name: titre
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: jcexcnogcim
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      solde:
+        name: solde
+        description: ''
+        required: true
+        example: 6.2
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      modePayement:
+        name: modePayement
+        description: 'Must not be greater than 255 characters.'
+        required: true
+        example: h
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      date:
+        name: date
+        description: 'Must be a valid date.'
+        required: true
+        example: '2024-07-24T17:09:39'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      commande_id:
+        name: commande_id
+        description: ''
+        required: true
+        example: deleniti
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      titre: jcexcnogcim
+      solde: 6.2
+      modePayement: h
+      date: '2024-07-24T17:09:39'
+      commande_id: deleniti
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/admin.payements/{id}'
+    metadata:
+      groupName: 'Payement Management'
+      groupDescription: |-
+
+        APIs to manage the Payements ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the admin.payement.'
+        required: true
+        example: vel
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: vel
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -111,50 +313,13 @@ endpoints:
     custom: []
   -
     httpMethods:
-      - GET
-    uri: api/profile
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 401
-        content: '{"message":"Unauthenticated."}'
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          vary: Origin
-        description: null
-        custom: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
       - POST
-    uri: api/register
+    uri: api/payements
     metadata:
-      groupName: Endpoints
-      groupDescription: ''
+      groupName: 'Payement Management'
+      groupDescription: |-
+
+        APIs to manage the Payements ressource
       subgroup: ''
       subgroupDescription: ''
       title: ''
@@ -169,207 +334,57 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      nom:
-        name: nom
+      titre:
+        name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: lyilczfqwdesdc
+        example: swdzo
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      prenom:
-        name: prenom
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: ilqwjibwgtszmkmb
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      name:
-        name: name
-        description: 'Must not be greater than 255 characters.'
-        required: true
-        example: ehojfkr
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      email:
-        name: email
-        description: 'Must be a valid email address. Must not be greater than 255 characters.'
-        required: true
-        example: aglae.stoltenberg@example.org
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      password:
-        name: password
-        description: 'Must be at least 8 characters.'
-        required: true
-        example: '0?$$\".Gx=:m@@!'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-    cleanBodyParameters:
-      nom: lyilczfqwdesdc
-      prenom: ilqwjibwgtszmkmb
-      name: ehojfkr
-      email: aglae.stoltenberg@example.org
-      password: '0?$$\".Gx=:m@@!'
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/login
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      email:
-        name: email
-        description: 'Must be a valid email address.'
-        required: true
-        example: ashleigh67@example.net
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      password:
-        name: password
+      solde:
+        name: solde
         description: ''
         required: true
-        example: '3ki^2nZ5d$vu2Nf[B}"'
-        type: string
+        example: 114.581582757
+        type: number
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanBodyParameters:
-      email: ashleigh67@example.net
-      password: '3ki^2nZ5d$vu2Nf[B}"'
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/forgot-password
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      email:
-        name: email
-        description: 'Must be a valid email address.'
+      modePayement:
+        name: modePayement
+        description: 'Must not be greater than 255 characters.'
         required: true
-        example: oortiz@example.org
+        example: quz
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-    cleanBodyParameters:
-      email: oortiz@example.org
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth: []
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/reset-password
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: ''
-      description: ''
-      authenticated: false
-      custom: []
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      token:
-        name: token
+      date:
+        name: date
+        description: 'Must be a valid date.'
+        required: true
+        example: '2024-07-24T17:09:39'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      commande_id:
+        name: commande_id
         description: ''
         required: true
-        example: corporis
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      email:
-        name: email
-        description: 'Must be a valid email address.'
-        required: true
-        example: telly27@example.com
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      password:
-        name: password
-        description: 'Must be at least 8 characters.'
-        required: true
-        example: JA@a(dq2/0Q
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      token: corporis
-      email: telly27@example.com
-      password: JA@a(dq2/0Q
+      titre: swdzo
+      solde: 114.581582757
+      modePayement: quz
+      date: '2024-07-24T17:09:39'
+      commande_id: aut
     fileParameters: []
     responses: []
     responseFields: []
