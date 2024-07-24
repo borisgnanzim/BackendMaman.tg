@@ -28,7 +28,9 @@ class PayementController extends Controller
 
     public function store(StorePayementRequest $request)
     {
-        $payement = Payement::create($request->all());
+        $payementData = $request->all();
+        $payementData['user_id'] = Auth::id();
+        $payement = Payement::create($payementData);
         event(new PayementReceived($payement->commande_id));
 
         return $this->successResponse(new PayementResource($payement), 'Payment received and status updated.', 201);
@@ -46,12 +48,14 @@ class PayementController extends Controller
 
     public function update(UpdatePayementRequest $request, $id)
     {
+        $payementData = $request->all();
+        $payementData['user_id'] = Auth::id();
         $payement =Payement::find($id);
         if ($payement==null)
         {
             return $this-> errorResponse("Payement not found");
         }
-        $payement->update($request->all());
+        $payement->update($payementData);
         return $this->successResponse(new PayementResource($payement), 'Payment updated successfully', 200);
     }
 

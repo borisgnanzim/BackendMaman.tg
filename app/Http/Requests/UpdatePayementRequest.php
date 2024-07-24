@@ -29,7 +29,7 @@ class UpdatePayementRequest extends FormRequest
             'solde' => 'required|numeric',
             'modePayement' => 'required|string|max:255',
             'date' => 'required|date',
-            'user_id' => Auth::id(),
+            //'user_id' => Auth::id(),
             'commande_id' => 'required|exists:commandes,id'
         ];
     }

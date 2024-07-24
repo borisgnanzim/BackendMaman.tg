@@ -209,6 +209,8 @@ Route::get('categories/{categorie}/articles',[CategorieController::class, 'getAr
 
 Route::get('/categories',[CategorieController::class,'index']);
 
+Route::get('/categories/{categorie}',[CategorieController::class,'show']);
+
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 // Route::post('/login', [AuthController::class, 'login']);
