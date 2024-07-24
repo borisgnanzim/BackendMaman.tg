@@ -8,7 +8,9 @@ use App\Http\Requests\UpdateArticleRequest;
 use App\Http\Resources\ArticleResource;
 use App\Http\Resources\CategorieResource;
 use App\Http\Resources\ImageResource;
+use App\Models\Article;
 use App\Traits\JsonResponseTrait;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class ArticleController extends Controller
@@ -46,12 +48,23 @@ class ArticleController extends Controller
 
     public function update(UpdateArticleRequest $request, $id)
     {
-        //$article = $this->articleRepository->update($id, $request->validated());
-        return $this->successResponse(new ArticleResource($this->articleRepository->update($id, $request->validated())), 'Article updated successfully', 200);
+        $validatedData = $request->validated();
+        $article = $this->articleRepository->find($id);
+        if($article == null)
+        {
+            return $this->errorResponse("Article not found");
+        }
+        $updatedarticle = $this->articleRepository->update($validatedData, $id);
+        return $this->successResponse(new ArticleResource($updatedarticle), 'Article updated successfully', 200);
     }
 
     public function destroy($id)
     {
+        $article = $this->articleRepository->find($id);
+        if($article == null)
+        {
+            return $this->errorResponse("Article not found");
+        }
         $this->articleRepository->delete($id);
         return $this->successResponse(null, 'Article deleted successfully', 204);
     }

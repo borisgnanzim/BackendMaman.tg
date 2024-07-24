@@ -25,7 +25,8 @@ class CategorieArticleFactory extends Factory
         return [
             //
             'titre' => $this->faker->sentence,
-            'categorie_id' => Categorie::factory(),
+            //'categorie_id' => Categorie::factory(),
+            'categorie_id' => Categorie::inRandomOrder()->first(),
             'article_id' => Article::factory(),
         ];
     }

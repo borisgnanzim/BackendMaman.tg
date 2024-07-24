@@ -25,17 +25,19 @@ class EloquentArticleRepository implements ArticleRepositoryInterface
         return Article::create($data);
     }
 
-    public function update($id, array $data)
+    public function update(array $data, $id)
     {
         $article = Article::find($id);
         if ($article) {
             if (isset($data['prix']) && $article->prix != $data['prix']) {
                 $data['ancienPrix'] = $article->prix;
-            }
+            } 
+
             $article->update($data);
             return $article;
         }
         return null;
+        //return response()->json(["message"=>" article non mis à jour"]);
     }
 
     public function delete($id)
