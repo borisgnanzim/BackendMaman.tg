@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('livraisons', function (Blueprint $table) {
             $table->id();
-            $table->string('titre');
-            $table->dateTime('date');
-            $table->string('nomClient');
+            $table->string('titre')->nullable();
+           // $table->dateTime('date')->nullable();
+            $table->string('nomClient')->nullable();
             $table->string('ville')->nullable();
             $table->string('adresse');
             $table->string('reference')->unique();

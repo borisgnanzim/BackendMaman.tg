@@ -25,7 +25,7 @@ class LivraisonFactory extends Factory
         return [
             //
             'titre' => $this->faker->sentence,
-            'date' => $this->faker->date,
+            //'date' => $this->faker->date,
             'nomClient' => $this->faker->name,
             'ville' => $this->faker->optional($weight = 0.5)->city,
             'adresse' => $this->faker->address,

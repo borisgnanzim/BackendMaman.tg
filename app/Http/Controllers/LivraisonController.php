@@ -59,13 +59,13 @@ class LivraisonController extends Controller
 
     public function update(UpdateLivraisonRequest $request, $id)
     {
-        $validatedData = $request->validated();
+        $data = $request->validated();
         $livraison = $this->livraisonRepository->find($id);
         if ($livraison ==null)
         {
             return $this-> errorResponse("livraison not found");
         }
-        $updatedLivraison = $this->livraisonRepository->update($livraison, $validatedData);
+        $updatedLivraison = $this->livraisonRepository->update($data, $id);
         return $this->successResponse(new LivraisonResource($updatedLivraison), 'Livraison updated successfully.', 200);
     }
 

@@ -27,9 +27,19 @@ class EloquentLivraisonRepository implements LivraisonRepositoryInterface
 
     public function update(array $data , $id)
     {
+        // $livraison = Livraison::find($id);
+        // $livraison->update($data);
+        // return $livraison;
+
+        // Trouver l'instance unique du modèle Livraison par son ID
         $livraison = Livraison::find($id);
+
+        if ($livraison) {
+        // Mettre à jour le modèle avec les nouvelles données
         $livraison->update($data);
         return $livraison;
+        }
+        return null;
     }
 
     public function delete($id)

@@ -25,8 +25,8 @@ class StoreLivraisonRequest extends FormRequest
     {
         return [
             //
-            'titre' => 'required|string|max:255',
-            'date' => 'required|date',
+            'titre' => 'nullable|string|max:255',
+            //'date' => 'nullable|date',
             'nomClient' => 'required|string|max:255',
             'ville' => 'nullable|string|max:255', // Permettre à ville d'être null
             'adresse' => 'required|string|max:255',

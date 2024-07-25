@@ -24,13 +24,21 @@ class UpdateLivraisonRequest extends FormRequest
     {
         return [
             //
-            'titre' => 'sometimes|required|string|max:255',
-            'date' => 'sometimes|required|date',
-            'nomClient' => 'sometimes|required|string|max:255',
+            // 'titre' => 'string|max:255',
+            // //'date' => 'sometimes|required|date',
+            // 'nomClient' => 'nullable|string|max:255',
+            // 'ville' => 'nullable|string|max:255', // Permettre à ville d'être null
+            // 'adresse' => 'string|max:255',
+            // 'destinataire' => 'nullable|string|max:10',
+            // 'commande_id' => 'exists:commandes,id'
+
+            'titre' => 'nullable|string|max:255',
+            //'date' => 'nullable|date',
+            'nomClient' => 'nullable|string|max:255',
             'ville' => 'nullable|string|max:255', // Permettre à ville d'être null
-            'adresse' => 'sometimes|required|string|max:255',
+            'adresse' => 'nullable|string|max:255',
             'destinataire' => 'nullable|string|max:10',
-            'commande_id' => 'sometimes|required|exists:commandes,id'
+            'commande_id' => 'nullable|exists:commandes,id'
         ];
     }
 }
