@@ -25,15 +25,15 @@ class UpdateUserRequest extends FormRequest
     {
         return [
             //
-            'nom' => 'sometimes|required|string|max:255',
-            'prenom' => 'sometimes|required|string|max:255',
-            'email' => 'sometimes|required|string|email|max:255|unique:users,email',
+            'nom' => 'required|string|max:255',
+            'prenom' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
             'adresse' => 'nullable|string|max:255',
-            //'coordonne_geographique' => 'nullable|string|max:255',
-            'telephone' => 'sometimes|required|string|max:255|unique:users,telephone',
-            'role_id' => 'nullable|integer|max:25|exists:roles,id',
-            'name' => 'sometimes|required|string|max:255|unique:users,name',
-            //'password' => 'nullable|string|min:8|confirmed'
+            'telephone' => 'required|string|max:255',
+            'coordonne_geographique' => 'nullable|string|max:255',
+            'role_id' => 'nullable|string|max:255|exists:roles,id',
+            'name' => 'required|string|max:255|unique:users',
+            //'password' => 'required|string|min:8',
         ];
     }
 }

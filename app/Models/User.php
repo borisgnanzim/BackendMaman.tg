@@ -28,7 +28,7 @@ class User extends Authenticatable
         'prenom', 
         'adresse', 
         'telephone',
-        //'coordonne_geographique', 
+        'coordonne_geographique', 
         'role_id'
     ];
 

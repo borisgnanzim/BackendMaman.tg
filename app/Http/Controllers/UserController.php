@@ -48,19 +48,19 @@ class UserController extends Controller
 
     public function update(UpdateUserRequest $request, $id)
     {
-        $validatedData = $request;
+        $validatedData = $request->validated();
         // if (isset($validatedData['password'])) {
         //     $validatedData['password'] = Hash::make($validatedData['password']);
         // }
         //$user->update($request->all());
        // return $request->all() ;
         $user =User::find($id);
-        if ($user==null)
+        if ($user == null)
         {
-            return $this-> errorResponse("User not found");
+            return $this->errorResponse("User not found");
         }
         //$user->update($request->except(['password']));
-        $user->update([$validatedData]);
+        $user->update($validatedData);
 
         return $this->successResponse(new UserResource($user), 'User updated successfully');
     }

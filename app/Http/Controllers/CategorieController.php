@@ -42,8 +42,13 @@ class CategorieController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Categorie $categorie)
+    public function show($id)
     {
+        $categorie = Categorie::find($id) ;
+        if ($categorie == null)
+        {
+            return $this->errorResponse("Categorie not found");
+        }
         $categorie->load('superCategorie', 'sousCategories');
         return $this->successResponse(new CategorieResource($categorie));
     }
@@ -51,9 +56,14 @@ class CategorieController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCategorieRequest $request, Categorie $categorie)
+    public function update(UpdateCategorieRequest $request, $id)
     {
-        $validatedData = $request->validated();
+        $validatedData = $request->all();
+        $categorie = Categorie::find($id) ;
+        if ($categorie == null)
+        {
+            return $this->errorResponse("Categorie not found");
+        }
         $categorie->update($validatedData);
         return $this->successResponse(new CategorieResource($categorie), 'Categorie updated successfully.', 200);
     }
@@ -61,15 +71,20 @@ class CategorieController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Categorie $categorie)
+    public function destroy($id)
     {
+        $categorie = Categorie::find($id) ;
+        if ($categorie == null)
+        {
+            return $this->errorResponse("Categorie not found");
+        }
         $categorie->delete();
         return $this->successResponse(null, 'Categorie deleted successfully.', 204);
     }
 
-    public function getArticles($categorie_id)
+    public function getArticles($id)
     {
-        $categorie = Categorie::findOrFail($categorie_id);
+        $categorie = Categorie::findOrFail($id);
         return $this->successResponse(ArticleResource::collection($categorie->articles));
     }
 }

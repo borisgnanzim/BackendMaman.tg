@@ -205,11 +205,11 @@ Route::get('articles/{article}/images', [ArticleController::class, 'getImages'])
 //
 Route::get('articles/{article}/categories', [ArticleController::class, 'getCategories'])->name('articles.categories');
 
-Route::get('categories/{categorie}/articles',[CategorieController::class, 'getArticles'])->name('categorie.articles');
+Route::get('categories/{id}/articles',[CategorieController::class, 'getArticles'])->name('categorie.articles');
 
 Route::get('/categories',[CategorieController::class,'index']);
 
-Route::get('/categories/{categorie}',[CategorieController::class,'show']);
+Route::get('/categories/{id}',[CategorieController::class,'show']);
 
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
