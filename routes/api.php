@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\DashboardController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\Auth\PasswordResetController;
 use App\Http\Controllers\CategorieArticleController;
@@ -159,6 +160,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
     Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
     
+    //
+
+    Route::get('/statistics', [DashboardController::class, 'getStatistics']);
+
 
     //
 });

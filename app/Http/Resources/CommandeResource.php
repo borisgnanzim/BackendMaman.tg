@@ -29,6 +29,7 @@ class CommandeResource extends JsonResource
                 'prenom' => $this->user->prenom,
                 'adresse' => $this->user->adresse,
                 'email' => $this->user->email,
+                'telephone' => $this->user->telephone,
             ],
             //'ligneCommandes' => LigneCommandeResource::collection($this->whenLoaded('ligneCommandes')),
             //'updated_at' => $this->updated_at,
