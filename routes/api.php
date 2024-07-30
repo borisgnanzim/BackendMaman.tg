@@ -32,45 +32,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::apiResource('categories', CategorieController::class);
-// Route::apiResource('categorieArticles', CategorieArticleController::class);
-// Route::apiResource('articles', ArticleController::class);
-// Route::apiResource('images', ImageController::class);
-// Route::apiResource('ligneCommandes', LigneCommandeController::class);
-// Route::apiResource('commandes', CommandeController::class);
-// Route::apiResource('payements', PayementController::class);
-// Route::apiResource('users', UserController::class);
-// Route::apiResource('livraisons', LivraisonController::class);
-//
-// Route::get('images/{image}/download', [ImageController::class, 'download'])->name('images.download');
-// //
-// Route::get('articles/{article}/images', [ArticleController::class, 'getImages'])->name('articles.images');
-// //
-// Route::get('articles/{article}/categories', [ArticleController::class, 'getCategories'])->name('articles.categories');
-
-// Route::get('categories/{categorie}/articles',[CategorieController::class, 'getArticles'])->name('categorie.articles');
-
-// Route::get('commandes/{commande}/lignescommande',[CommandeController::class, 'getLignesCommande'])->name('commande.lignescommande');
-
-// Route::get('livraisons/{livraison}/commande',[LivraisonController::class,'getCommande'])->name('livraison.commande');
-
 
 //
 // Groupes de routes pour les administrateurs
-    Route::middleware(['auth:sanctum','role:admin'])->group(function () {
+    Route::middleware(['auth:sanctum','ability:admin'])->group(function () {
 
-    //
-    //Route::apiResource('categories', CategorieController::class);
-    //Route::apiResource('categorieArticles', CategorieArticleController::class);
-    //Route::apiResource('articles', ArticleController::class);
-    //Route::apiResource('images', ImageController::class);
-    //Route::apiResource('ligneCommandes', LigneCommandeController::class);
-    //Route::apiResource('commandes', CommandeController::class);
-    //Route::apiResource('payements', PayementController::class);
-    //Route::apiResource('users', UserController::class);
-    //Route::apiResource('livraisons', LivraisonController::class);
-
-    //
     Route::prefix('admin.categories')->name('admin.categories')->group(function () {
         Route::get('/', [CategorieController::class, 'index']);
         Route::get('/{id}', [CategorieController::class, 'show']);
@@ -159,9 +125,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
     Route::get('/profiles', [AuthController::class, 'profile'])->name('admin.profile');
 
-    Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
+    // Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
+    Route::post('/logout', [AuthController::class, 'logout']);
+
     
-    //
+    // 
 
     Route::get('/statistics', [DashboardController::class, 'getStatistics']);
 
@@ -169,7 +137,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     //
 });
 
-Route::middleware(['auth:sanctum','role:user'])->group(function () {
+Route::middleware(['auth:sanctum','ability:user'])->group(function () {
 
     Route::get('/profile', [AuthController::class, 'profile']);
     //
@@ -186,7 +154,6 @@ Route::middleware(['auth:sanctum','role:user'])->group(function () {
 
     Route::get('categories/{categorie}/articles',[CategorieController::class, 'getArticles'])->name('categorie.articles.forRoleUser');
 
-    //Route::apiResource('commandes', CommandeController::class);
 
     Route::post('/commandes', [CommandeController::class, 'store'])->name('post.commande.forRoleUser');
 
@@ -225,21 +192,6 @@ Route::post('/logout', [AuthController::class, 'logout'])->middleware('auth:sanc
 
 //Route::apiResource('images', ImageController::class);
 Route::get('/images/{image}', [ImageController::class, 'show']);
-
-// temp
-    // Route::apiResource('categories', CategorieController::class);
-    // Route::apiResource('categorieArticles', CategorieArticleController::class);
-    // Route::apiResource('articles', ArticleController::class);
-    // Route::apiResource('images', ImageController::class);
-    // Route::apiResource('ligneCommandes', LigneCommandeController::class);
-    // Route::apiResource('commandes', CommandeController::class);
-    // Route::apiResource('payements', PayementController::class);
-    // Route::apiResource('users', UserController::class);
-    // Route::apiResource('livraisons', LivraisonController::class);
-    // Route::post('/commandes', [CommandeController::class, 'store']);
-    // Route::post('/lignecommandes',[LigneCommandeController::class,'store']);
-    // Route::post('/payements',[PayementController::class, 'store']);
-// temp
 
 // routes pour mot de passe oublié 
 Route::post('forgot-password', [PasswordResetController::class, 'sendResetLinkEmail']);

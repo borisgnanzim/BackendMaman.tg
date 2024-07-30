@@ -55,7 +55,7 @@ class AuthController extends Controller
         }
 
         $user = $request->user();
-        $token = $user->createToken('auth_token')->plainTextToken;
+        $token = $user->createToken('auth_token',[$user->role->name ?? ''])->plainTextToken;
 
         $cookie = cookie('auth_token', $token, 1440, null, null, false, true); // Sécuriser le cookie
 
