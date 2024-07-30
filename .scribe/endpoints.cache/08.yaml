@@ -124,7 +124,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: umsmaixuntqaszwvmbzqvgwvk
+        example: dxzzvrebblfzye
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -133,7 +133,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2024-07-24T17:09:39'
+        example: '2024-07-29T19:26:27'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -142,7 +142,7 @@ endpoints:
         name: montant
         description: ''
         required: true
-        example: 91828.329996
+        example: 508296078.07
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -151,7 +151,7 @@ endpoints:
         name: latitude
         description: ''
         required: false
-        example: 220455.5288
+        example: 1.6011
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -160,7 +160,7 @@ endpoints:
         name: longitude
         description: ''
         required: false
-        example: 2654.0887
+        example: 1100.0
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -179,7 +179,7 @@ endpoints:
         name: 'articles[].article_id'
         description: ''
         required: true
-        example: aut
+        example: totam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -188,21 +188,21 @@ endpoints:
         name: 'articles[].quantite'
         description: ''
         required: true
-        example: 3
+        example: 5
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: umsmaixuntqaszwvmbzqvgwvk
-      date: '2024-07-24T17:09:39'
-      montant: 91828.329996
-      latitude: 220455.5288
-      longitude: 2654.0887
+      titre: dxzzvrebblfzye
+      date: '2024-07-29T19:26:27'
+      montant: 508296078.07
+      latitude: 1.6011
+      longitude: 1100.0
       articles:
         -
-          article_id: aut
-          quantite: 3
+          article_id: totam
+          quantite: 5
     fileParameters: []
     responses: []
     responseFields: []
@@ -248,7 +248,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: ictunpqztrpguid
+        example: epvgvyaznfwh
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -257,7 +257,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2024-07-24T17:09:39'
+        example: '2024-07-29T19:26:27'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -266,7 +266,7 @@ endpoints:
         name: montant
         description: ''
         required: true
-        example: 4319511.846
+        example: 0.81
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -275,7 +275,7 @@ endpoints:
         name: statut
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: kat
+        example: nscvfdxselmyuptv
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -284,17 +284,17 @@ endpoints:
         name: reference
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: meuusjkhqttlqhhzkrf
+        example: hsjdwgdfaagsgfgma
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: ictunpqztrpguid
-      date: '2024-07-24T17:09:39'
-      montant: 4319511.846
-      statut: kat
-      reference: meuusjkhqttlqhhzkrf
+      titre: epvgvyaznfwh
+      date: '2024-07-29T19:26:27'
+      montant: 0.81
+      statut: nscvfdxselmyuptv
+      reference: hsjdwgdfaagsgfgma
     fileParameters: []
     responses: []
     responseFields: []
@@ -423,7 +423,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: eymvnayaswzxnkjpcx
+        example: cykjptfbsjnhhdhbaemejin
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -432,7 +432,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2024-07-24T17:09:39'
+        example: '2024-07-29T19:26:31'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -441,7 +441,7 @@ endpoints:
         name: montant
         description: ''
         required: true
-        example: 6992669.2
+        example: 140.570072
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -450,7 +450,7 @@ endpoints:
         name: latitude
         description: ''
         required: false
-        example: 14587778.1691
+        example: 28954402.364053
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -459,7 +459,7 @@ endpoints:
         name: longitude
         description: ''
         required: false
-        example: 68108.0
+        example: 7.03914791
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -478,7 +478,7 @@ endpoints:
         name: 'articles[].article_id'
         description: ''
         required: true
-        example: doloribus
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -487,21 +487,21 @@ endpoints:
         name: 'articles[].quantite'
         description: ''
         required: true
-        example: 15
+        example: 5
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: eymvnayaswzxnkjpcx
-      date: '2024-07-24T17:09:39'
-      montant: 6992669.2
-      latitude: 14587778.1691
-      longitude: 68108.0
+      titre: cykjptfbsjnhhdhbaemejin
+      date: '2024-07-29T19:26:31'
+      montant: 140.570072
+      latitude: 28954402.364053
+      longitude: 7.03914791
       articles:
         -
-          article_id: doloribus
-          quantite: 15
+          article_id: et
+          quantite: 5
     fileParameters: []
     responses: []
     responseFields: []

@@ -20,3 +20,4 @@ class Authenticate extends Middleware
     //     abort(response()->json(['message' => 'Unauthenticated.'], 401));
     // }
 }
+

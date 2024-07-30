@@ -124,7 +124,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: vspfwtepzxzeuetod
+        example: jzmxiyick
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -133,7 +133,7 @@ endpoints:
         name: article_id
         description: ''
         required: true
-        example: quibusdam
+        example: eligendi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -142,15 +142,15 @@ endpoints:
         name: categorie_id
         description: ''
         required: true
-        example: et
+        example: dolorem
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: vspfwtepzxzeuetod
-      article_id: quibusdam
-      categorie_id: et
+      titre: jzmxiyick
+      article_id: eligendi
+      categorie_id: dolorem
     fileParameters: []
     responses: []
     responseFields: []
@@ -196,7 +196,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: qdem
+        example: drkeflujjsloxtonqzrttl
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -205,7 +205,7 @@ endpoints:
         name: article_id
         description: ''
         required: true
-        example: autem
+        example: rem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -214,15 +214,15 @@ endpoints:
         name: categorie_id
         description: ''
         required: true
-        example: consequatur
+        example: eos
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: qdem
-      article_id: autem
-      categorie_id: consequatur
+      titre: drkeflujjsloxtonqzrttl
+      article_id: rem
+      categorie_id: eos
     fileParameters: []
     responses: []
     responseFields: []

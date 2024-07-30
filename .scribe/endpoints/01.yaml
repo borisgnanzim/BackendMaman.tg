@@ -67,13 +67,13 @@ endpoints:
         name: id
         description: 'The ID of the admin.category.'
         required: true
-        example: 1
-        type: integer
+        example: dolore
+        type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: dolore
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -122,7 +122,7 @@ endpoints:
         name: nom
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: nirkmiugokdvpfynalthshrjs
+        example: eeuvkljqfvbcnbzcswc
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -131,7 +131,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Dicta natus qui ut pariatur harum porro rem.'
+        example: 'Magni occaecati aperiam quas.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -146,8 +146,8 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      nom: nirkmiugokdvpfynalthshrjs
-      description: 'Dicta natus qui ut pariatur harum porro rem.'
+      nom: eeuvkljqfvbcnbzcswc
+      description: 'Magni occaecati aperiam quas.'
     fileParameters: []
     responses: []
     responseFields: []
@@ -179,13 +179,13 @@ endpoints:
         name: id
         description: 'The ID of the admin.category.'
         required: true
-        example: 1
-        type: integer
+        example: non
+        type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: non
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -193,7 +193,7 @@ endpoints:
         name: nom
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: atxvarpdqclkkkdswrulngt
+        example: puroddoeynevodxwly
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -202,13 +202,13 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Qui natus non maiores eveniet.'
+        example: 'Doloremque deserunt repellat ipsum nesciunt eum.'
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
-      super_categorie:
-        name: super_categorie
+      superCategorie_id:
+        name: superCategorie_id
         description: ''
         required: false
         example: null
@@ -217,8 +217,8 @@ endpoints:
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      nom: atxvarpdqclkkkdswrulngt
-      description: 'Qui natus non maiores eveniet.'
+      nom: puroddoeynevodxwly
+      description: 'Doloremque deserunt repellat ipsum nesciunt eum.'
     fileParameters: []
     responses: []
     responseFields: []
@@ -250,13 +250,13 @@ endpoints:
         name: id
         description: 'The ID of the admin.category.'
         required: true
-        example: 1
-        type: integer
+        example: magni
+        type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: 1
+      id: magni
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -292,13 +292,13 @@ endpoints:
         name: categorie
         description: ''
         required: true
-        example: dolor
+        example: harum
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      categorie: dolor
+      categorie: harum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -306,469 +306,62 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 404
-        content: |-
-          {
-              "message": "No query results for model [App\\Models\\Categorie] dolor",
-              "exception": "Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException",
-              "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php",
-              "line": 487,
-              "trace": [
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php",
-                      "line": 463,
-                      "function": "prepareException",
-                      "class": "Illuminate\\Foundation\\Exceptions\\Handler",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\nunomaduro\\collision\\src\\Adapters\\Laravel\\ExceptionHandler.php",
-                      "line": 54,
-                      "function": "render",
-                      "class": "Illuminate\\Foundation\\Exceptions\\Handler",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php",
-                      "line": 51,
-                      "function": "render",
-                      "class": "NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 146,
-                      "function": "handleException",
-                      "class": "Illuminate\\Routing\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php",
-                      "line": 50,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
-                      "line": 159,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
-                      "line": 135,
-                      "function": "handleRequest",
-                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
-                      "line": 87,
-                      "function": "handleRequestUsingNamedLimiter",
-                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\sanctum\\src\\Http\\Middleware\\EnsureFrontendRequestsAreStateful.php",
-                      "line": 25,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 144,
-                      "function": "Laravel\\Sanctum\\Http\\Middleware\\{closure}",
-                      "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 119,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\sanctum\\src\\Http\\Middleware\\EnsureFrontendRequestsAreStateful.php",
-                      "line": 26,
-                      "function": "then",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 119,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-                      "line": 807,
-                      "function": "then",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-                      "line": 784,
-                      "function": "runRouteWithinStack",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-                      "line": 748,
-                      "function": "runRoute",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
-                      "line": 737,
-                      "function": "dispatchToRoute",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-                      "line": 200,
-                      "function": "dispatch",
-                      "class": "Illuminate\\Routing\\Router",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 144,
-                      "function": "Illuminate\\Foundation\\Http\\{closure}",
-                      "class": "Illuminate\\Foundation\\Http\\Kernel",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
-                      "line": 21,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php",
-                      "line": 31,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
-                      "line": 21,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php",
-                      "line": 40,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\TrimStrings",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php",
-                      "line": 27,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php",
-                      "line": 99,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php",
-                      "line": 62,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Illuminate\\Http\\Middleware\\HandleCors",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php",
-                      "line": 39,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 183,
-                      "function": "handle",
-                      "class": "Illuminate\\Http\\Middleware\\TrustProxies",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
-                      "line": 119,
-                      "function": "Illuminate\\Pipeline\\{closure}",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-                      "line": 175,
-                      "function": "then",
-                      "class": "Illuminate\\Pipeline\\Pipeline",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
-                      "line": 144,
-                      "function": "sendRequestThroughRouter",
-                      "class": "Illuminate\\Foundation\\Http\\Kernel",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-                      "line": 310,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Http\\Kernel",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-                      "line": 298,
-                      "function": "callLaravelOrLumenRoute",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-                      "line": 91,
-                      "function": "makeApiCall",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-                      "line": 44,
-                      "function": "makeResponseCall",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
-                      "line": 35,
-                      "function": "makeResponseCallIfConditionsPass",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php",
-                      "line": 236,
-                      "function": "__invoke",
-                      "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php",
-                      "line": 166,
-                      "function": "iterateThroughStrategies",
-                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php",
-                      "line": 95,
-                      "function": "fetchResponses",
-                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php",
-                      "line": 125,
-                      "function": "processRoute",
-                      "class": "Knuckles\\Scribe\\Extracting\\Extractor",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php",
-                      "line": 72,
-                      "function": "extractEndpointsInfoFromLaravelApp",
-                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php",
-                      "line": 50,
-                      "function": "extractEndpointsInfoAndWriteToDisk",
-                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
-                      "line": 53,
-                      "function": "get",
-                      "class": "Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-                      "line": 36,
-                      "function": "handle",
-                      "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php",
-                      "line": 41,
-                      "function": "Illuminate\\Container\\{closure}",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-                      "line": 93,
-                      "function": "unwrapIfClosure",
-                      "class": "Illuminate\\Container\\Util",
-                      "type": "::"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
-                      "line": 37,
-                      "function": "callBoundMethod",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
-                      "line": 662,
-                      "function": "call",
-                      "class": "Illuminate\\Container\\BoundMethod",
-                      "type": "::"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
-                      "line": 211,
-                      "function": "call",
-                      "class": "Illuminate\\Container\\Container",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\symfony\\console\\Command\\Command.php",
-                      "line": 326,
-                      "function": "execute",
-                      "class": "Illuminate\\Console\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
-                      "line": 181,
-                      "function": "run",
-                      "class": "Symfony\\Component\\Console\\Command\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\symfony\\console\\Application.php",
-                      "line": 1096,
-                      "function": "run",
-                      "class": "Illuminate\\Console\\Command",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\symfony\\console\\Application.php",
-                      "line": 324,
-                      "function": "doRunCommand",
-                      "class": "Symfony\\Component\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\symfony\\console\\Application.php",
-                      "line": 175,
-                      "function": "doRun",
-                      "class": "Symfony\\Component\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php",
-                      "line": 201,
-                      "function": "run",
-                      "class": "Symfony\\Component\\Console\\Application",
-                      "type": "->"
-                  },
-                  {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\artisan",
-                      "line": 37,
-                      "function": "handle",
-                      "class": "Illuminate\\Foundation\\Console\\Kernel",
-                      "type": "->"
-                  }
-              ]
-          }
+        status: 401
+        content: '{"message":"Unauthenticated."}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '56'
+          vary: Origin
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/categories/{id}/articles'
+    metadata:
+      groupName: 'Catégorie Management'
+      groupDescription: |-
+
+        APIs to manage the catégorie ressource
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the category.'
+        required: true
+        example: ut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: ut
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
           vary: Origin
         description: null
         custom: []
@@ -806,12 +399,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"success":true,"message":"","data":[{"id":1,"nom":"Futur Maman","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":null,"sousCategories":[{"id":2,"nom":"Robes","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":1},{"id":3,"nom":"Chemises","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":1},{"id":4,"nom":"Pulls","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":1},{"id":5,"nom":"Pantalons","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":1},{"id":6,"nom":"Accessoires","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":1},{"id":7,"nom":"D\u00e9tergents","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":1}]},{"id":8,"nom":"B\u00e9b\u00e9","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":null,"sousCategories":[{"id":9,"nom":"Surv\u00eatements","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":8},{"id":10,"nom":"Sous-v\u00eatements","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":8},{"id":11,"nom":"Ensembles","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":8},{"id":12,"nom":"Pulls","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":8},{"id":13,"nom":"Accessoires","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":8},{"id":14,"nom":"Chaussures","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":8}]},{"id":15,"nom":"Allaitement","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":null,"sousCategories":[{"id":16,"nom":"Biberons","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":15},{"id":17,"nom":"Tire-lait","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":15},{"id":18,"nom":"Lait","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":15},{"id":19,"nom":"Accessoires","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":15}]},{"id":20,"nom":"Espaces Jouets","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":null,"sousCategories":[{"id":21,"nom":"Jouets b\u00e9b\u00e9","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":20},{"id":22,"nom":"Jeux de cr\u00e9ativit\u00e9","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":20},{"id":23,"nom":"Autres","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":20}]},{"id":24,"nom":"V\u00eatements Gar\u00e7ons","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":null,"sousCategories":[{"id":25,"nom":"T-shirts","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":24},{"id":26,"nom":"Pantalons","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":24},{"id":27,"nom":"Ensembles","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":24},{"id":28,"nom":"Autres","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":24}]},{"id":29,"nom":"V\u00eatements Filles","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":null,"sousCategories":[{"id":30,"nom":"Robes Filles","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":29},{"id":31,"nom":"Hauts & Sous-v\u00eatements","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":29},{"id":32,"nom":"Jupes","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":29},{"id":33,"nom":"Accessoires","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":29}]},{"id":34,"nom":"Chambre B\u00e9b\u00e9","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":null,"sousCategories":[{"id":35,"nom":"Lits & Berceaux","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":34},{"id":36,"nom":"D\u00e9corations","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":34},{"id":37,"nom":"Accessoires","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":34},{"id":38,"nom":"Linges","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":34}]}]}'
+        content: '{"success":true,"message":"","data":[{"id":1,"nom":"Futur Maman","description":null,"created_at":"2024-07-25T10:16:14.000000Z","superCategorie_id":null,"sousCategories":[{"id":2,"nom":"Robes","description":null,"created_at":"2024-07-25T10:16:14.000000Z","superCategorie_id":1},{"id":3,"nom":"Chemises","description":null,"created_at":"2024-07-25T10:16:14.000000Z","superCategorie_id":1},{"id":4,"nom":"Pulls","description":null,"created_at":"2024-07-25T10:16:14.000000Z","superCategorie_id":1},{"id":5,"nom":"Pantalons","description":null,"created_at":"2024-07-25T10:16:14.000000Z","superCategorie_id":1},{"id":6,"nom":"Accessoires","description":null,"created_at":"2024-07-25T10:16:14.000000Z","superCategorie_id":1},{"id":7,"nom":"D\u00e9tergents","description":null,"created_at":"2024-07-25T10:16:14.000000Z","superCategorie_id":1}]},{"id":8,"nom":"B\u00e9b\u00e9","description":null,"created_at":"2024-07-25T10:16:14.000000Z","superCategorie_id":null,"sousCategories":[{"id":9,"nom":"Surv\u00eatements","description":null,"created_at":"2024-07-25T10:16:14.000000Z","superCategorie_id":8},{"id":10,"nom":"Sous-v\u00eatements","description":null,"created_at":"2024-07-25T10:16:14.000000Z","superCategorie_id":8},{"id":11,"nom":"Ensembles","description":null,"created_at":"2024-07-25T10:16:14.000000Z","superCategorie_id":8},{"id":12,"nom":"Pulls","description":null,"created_at":"2024-07-25T10:16:14.000000Z","superCategorie_id":8},{"id":13,"nom":"Accessoires","description":null,"created_at":"2024-07-25T10:16:14.000000Z","superCategorie_id":8},{"id":14,"nom":"Chaussures","description":null,"created_at":"2024-07-25T10:16:14.000000Z","superCategorie_id":8}]},{"id":15,"nom":"Allaitement","description":null,"created_at":"2024-07-25T10:16:14.000000Z","superCategorie_id":null,"sousCategories":[{"id":16,"nom":"Biberons","description":null,"created_at":"2024-07-25T10:16:14.000000Z","superCategorie_id":15},{"id":17,"nom":"Tire-lait","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":15},{"id":18,"nom":"Lait","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":15},{"id":19,"nom":"Accessoires","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":15}]},{"id":20,"nom":"Espaces Jouets","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":null,"sousCategories":[{"id":21,"nom":"Jouets b\u00e9b\u00e9","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":20},{"id":22,"nom":"Jeux de cr\u00e9ativit\u00e9","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":20},{"id":23,"nom":"Autres","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":20}]},{"id":24,"nom":"V\u00eatements Gar\u00e7ons","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":null,"sousCategories":[{"id":25,"nom":"T-shirts","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":24},{"id":26,"nom":"Pantalons","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":24},{"id":27,"nom":"Ensembles","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":24},{"id":28,"nom":"Autres","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":24}]},{"id":29,"nom":"V\u00eatements Filles","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":null,"sousCategories":[{"id":30,"nom":"Robes Filles","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":29},{"id":31,"nom":"Hauts & Sous-v\u00eatements","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":29},{"id":32,"nom":"Jupes","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":29},{"id":33,"nom":"Accessoires","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":29}]},{"id":34,"nom":"Chambre B\u00e9b\u00e9","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":null,"sousCategories":[{"id":35,"nom":"Lits & Berceaux","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":34},{"id":36,"nom":"D\u00e9corations","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":34},{"id":37,"nom":"Accessoires","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":34},{"id":38,"nom":"Linges","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":34}]}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '52'
+          x-ratelimit-remaining: '53'
           vary: Origin
         description: null
         custom: []
@@ -824,7 +417,7 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: 'api/categories/{categorie_id}'
+    uri: 'api/categories/{id}'
     metadata:
       groupName: 'Catégorie Management'
       groupDescription: |-
@@ -840,17 +433,17 @@ endpoints:
       Content-Type: application/json
       Accept: application/json
     urlParameters:
-      categorie_id:
-        name: categorie_id
-        description: 'The ID of the categorie.'
+      id:
+        name: id
+        description: 'The ID of the category.'
         required: true
-        example: 1
-        type: integer
+        example: voluptas
+        type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      categorie_id: 1
+      id: voluptas
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -858,13 +451,13 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 200
-        content: '{"success":true,"message":"","data":{"id":1,"nom":"Futur Maman","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":null,"superCategorie":null,"sousCategories":[{"id":2,"nom":"Robes","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":1},{"id":3,"nom":"Chemises","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":1},{"id":4,"nom":"Pulls","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":1},{"id":5,"nom":"Pantalons","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":1},{"id":6,"nom":"Accessoires","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":1},{"id":7,"nom":"D\u00e9tergents","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":1}]}}'
+        status: 400
+        content: '{"success":false,"message":"Categorie not found","data":null}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '51'
+          x-ratelimit-remaining: '52'
           vary: Origin
         description: null
         custom: []

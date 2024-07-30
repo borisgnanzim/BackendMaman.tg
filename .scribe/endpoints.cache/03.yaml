@@ -69,13 +69,13 @@ endpoints:
         name: id
         description: 'The ID of the admin.article.'
         required: true
-        example: at
+        example: officiis
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: at
+      id: officiis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -124,7 +124,7 @@ endpoints:
         name: nom
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: nlnqadlqqxiyzrvwlw
+        example: geperi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -133,7 +133,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Consequatur nemo omnis dignissimos dignissimos unde.'
+        example: 'Ad iusto in neque cumque accusamus.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -142,7 +142,7 @@ endpoints:
         name: mini_description
         description: ''
         required: false
-        example: aut
+        example: eos
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -151,7 +151,7 @@ endpoints:
         name: prix
         description: ''
         required: true
-        example: 4456955.889157
+        example: 1951.211984
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -160,17 +160,17 @@ endpoints:
         name: quantite
         description: ''
         required: true
-        example: 11
+        example: 14
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      nom: nlnqadlqqxiyzrvwlw
-      description: 'Consequatur nemo omnis dignissimos dignissimos unde.'
-      mini_description: aut
-      prix: 4456955.889157
-      quantite: 11
+      nom: geperi
+      description: 'Ad iusto in neque cumque accusamus.'
+      mini_description: eos
+      prix: 1951.211984
+      quantite: 14
     fileParameters: []
     responses: []
     responseFields: []
@@ -202,13 +202,13 @@ endpoints:
         name: id
         description: 'The ID of the admin.article.'
         required: true
-        example: eos
+        example: dicta
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: eos
+      id: dicta
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -216,7 +216,7 @@ endpoints:
         name: nom
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: hyzyhadaotjmqp
+        example: niorepytycqdqmydkpysj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -225,7 +225,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Aliquam enim molestiae distinctio dolor beatae.'
+        example: 'Consequatur repellat autem consectetur odit est nostrum sit.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -234,7 +234,7 @@ endpoints:
         name: mini_description
         description: ''
         required: false
-        example: sed
+        example: harum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -243,7 +243,7 @@ endpoints:
         name: prix
         description: ''
         required: true
-        example: 37130993.668209
+        example: 37.00499
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -252,17 +252,17 @@ endpoints:
         name: quantite
         description: ''
         required: true
-        example: 14
+        example: 18
         type: integer
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      nom: hyzyhadaotjmqp
-      description: 'Aliquam enim molestiae distinctio dolor beatae.'
-      mini_description: sed
-      prix: 37130993.668209
-      quantite: 14
+      nom: niorepytycqdqmydkpysj
+      description: 'Consequatur repellat autem consectetur odit est nostrum sit.'
+      mini_description: harum
+      prix: 37.00499
+      quantite: 18
     fileParameters: []
     responses: []
     responseFields: []
@@ -294,13 +294,13 @@ endpoints:
         name: id
         description: 'The ID of the admin.article.'
         required: true
-        example: consectetur
+        example: rem
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: consectetur
+      id: rem
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -336,13 +336,13 @@ endpoints:
         name: article
         description: 'The article.'
         required: true
-        example: quis
+        example: enim
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      article: quis
+      article: enim
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -355,8 +355,8 @@ endpoints:
           {
               "message": "Attempt to read property \"images\" on null",
               "exception": "ErrorException",
-              "file": "C:\\laragon\\www\\BackendMaman.tg\\app\\Http\\Controllers\\ArticleController.php",
-              "line": 80,
+              "file": "C:\\laragon\\www\\BackendMaman.tg\\app\\Http\\Controllers\\API\\ArticleController.php",
+              "line": 81,
               "trace": [
                   {
                       "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php",
@@ -366,8 +366,8 @@ endpoints:
                       "type": "->"
                   },
                   {
-                      "file": "C:\\laragon\\www\\BackendMaman.tg\\app\\Http\\Controllers\\ArticleController.php",
-                      "line": 80,
+                      "file": "C:\\laragon\\www\\BackendMaman.tg\\app\\Http\\Controllers\\API\\ArticleController.php",
+                      "line": 81,
                       "function": "Illuminate\\Foundation\\Bootstrap\\{closure}",
                       "class": "Illuminate\\Foundation\\Bootstrap\\HandleExceptions",
                       "type": "->"
@@ -376,7 +376,7 @@ endpoints:
                       "file": "C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php",
                       "line": 54,
                       "function": "getImages",
-                      "class": "App\\Http\\Controllers\\ArticleController",
+                      "class": "App\\Http\\Controllers\\API\\ArticleController",
                       "type": "->"
                   },
                   {
@@ -888,7 +888,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"success":true,"message":"","data":[{"id":23,"nom":"Autres","description":null,"created_at":"2024-07-24T15:40:13.000000Z","superCategorie_id":20}]}'
+        content: '{"success":true,"message":"","data":[{"id":35,"nom":"Lits & Berceaux","description":null,"created_at":"2024-07-25T10:16:15.000000Z","superCategorie_id":34}]}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -931,12 +931,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"success":true,"message":"","data":{"articles":[{"id":210,"nom":"fugiat","description":"Eos expedita dolores minima molestiae reiciendis.","mini_description":"Voluptatibus aut magni earum eligendi.","ancienPrix":87.59,"prix":57.72,"quantite":46,"created_at":"2024-07-24T15:40:36.000000Z","images":[],"categories":[]},{"id":209,"nom":"enim","description":"Et quos dolor ducimus iste dolorem et culpa.","mini_description":"Autem voluptate velit error quam aliquid dolores numquam nisi.","ancienPrix":10.48,"prix":44.82,"quantite":59,"created_at":"2024-07-24T15:40:36.000000Z","images":[],"categories":[]},{"id":208,"nom":"natus","description":"Officia quos dignissimos ad non et.","mini_description":"Dolorum sit rerum ab aut sit animi omnis modi.","ancienPrix":72.69,"prix":52.33,"quantite":61,"created_at":"2024-07-24T15:40:36.000000Z","images":[],"categories":[]},{"id":207,"nom":"eligendi","description":"Fugit ea aut id at cupiditate tempore eos.","mini_description":"Est quibusdam esse sed perspiciatis voluptatem eos in.","ancienPrix":57.71,"prix":12.13,"quantite":97,"created_at":"2024-07-24T15:40:35.000000Z","images":[],"categories":[]},{"id":206,"nom":"aut","description":"Error magni sit corrupti ut.","mini_description":"Illo hic praesentium nobis aliquam quae quo modi error.","ancienPrix":18.6,"prix":42.79,"quantite":62,"created_at":"2024-07-24T15:40:35.000000Z","images":[],"categories":[]},{"id":204,"nom":"ratione","description":"Quis error alias voluptatum hic dolore.","mini_description":"Tempora aut culpa qui et.","ancienPrix":84.02,"prix":26.53,"quantite":64,"created_at":"2024-07-24T15:40:34.000000Z","images":[],"categories":[]},{"id":205,"nom":"corrupti","description":"Natus ipsum explicabo dolor impedit facere.","mini_description":"Laborum eligendi sunt error ut praesentium a.","ancienPrix":22.54,"prix":53.69,"quantite":81,"created_at":"2024-07-24T15:40:34.000000Z","images":[],"categories":[]},{"id":203,"nom":"omnis","description":"Enim ad natus saepe neque est cupiditate dignissimos molestias.","mini_description":"Explicabo aut fugiat vel sunt quia consequatur et.","ancienPrix":66.85,"prix":81.76,"quantite":92,"created_at":"2024-07-24T15:40:34.000000Z","images":[],"categories":[]},{"id":202,"nom":"nesciunt","description":"Qui delectus nisi possimus nulla.","mini_description":"Dolorem dolor iure libero sed voluptas perspiciatis.","ancienPrix":18.54,"prix":17.91,"quantite":11,"created_at":"2024-07-24T15:40:33.000000Z","images":[],"categories":[]},{"id":201,"nom":"esse","description":"Sint numquam adipisci suscipit rerum quo sunt.","mini_description":"Laborum itaque eum magnam fugiat aliquam.","ancienPrix":91.33,"prix":84.03,"quantite":48,"created_at":"2024-07-24T15:40:33.000000Z","images":[],"categories":[]},{"id":200,"nom":"reprehenderit","description":"Eius consectetur praesentium ea doloribus aspernatur beatae.","mini_description":"Dolor cum aut dolore amet.","ancienPrix":97.96,"prix":68.11,"quantite":55,"created_at":"2024-07-24T15:40:33.000000Z","images":[],"categories":[]},{"id":199,"nom":"consequatur","description":"Quo nemo temporibus aut sequi ut quasi culpa.","mini_description":"Quaerat non eveniet eum qui ut occaecati.","ancienPrix":48.17,"prix":37.89,"quantite":88,"created_at":"2024-07-24T15:40:32.000000Z","images":[],"categories":[]},{"id":198,"nom":"officia","description":"Soluta molestias quis et magnam nulla molestias.","mini_description":"Qui dolores quia vitae sapiente consequatur vel necessitatibus ut.","ancienPrix":80.58,"prix":13.22,"quantite":78,"created_at":"2024-07-24T15:40:32.000000Z","images":[],"categories":[]},{"id":197,"nom":"eum","description":"Sed distinctio delectus non id minima.","mini_description":"Non aliquam id et et harum.","ancienPrix":43.98,"prix":90.34,"quantite":46,"created_at":"2024-07-24T15:40:31.000000Z","images":[],"categories":[]},{"id":196,"nom":"illo","description":"Quibusdam aut quia ea qui similique non enim sequi.","mini_description":"Occaecati et iusto et optio vel itaque.","ancienPrix":14.89,"prix":64.93,"quantite":66,"created_at":"2024-07-24T15:40:31.000000Z","images":[],"categories":[]},{"id":195,"nom":"quia","description":"Consectetur corporis architecto voluptatibus quia omnis.","mini_description":"Perferendis non qui explicabo veritatis.","ancienPrix":15.64,"prix":17.07,"quantite":58,"created_at":"2024-07-24T15:40:31.000000Z","images":[],"categories":[]},{"id":194,"nom":"aliquid","description":"Harum enim quisquam beatae illum natus deserunt.","mini_description":"Totam assumenda ex eos necessitatibus eos maxime fuga.","ancienPrix":99.79,"prix":25.69,"quantite":25,"created_at":"2024-07-24T15:40:30.000000Z","images":[],"categories":[]},{"id":193,"nom":"eligendi","description":"Eveniet eaque quam magnam ea ullam assumenda et.","mini_description":"Illum et sunt provident alias est.","ancienPrix":32.22,"prix":38.94,"quantite":82,"created_at":"2024-07-24T15:40:30.000000Z","images":[],"categories":[]},{"id":192,"nom":"eos","description":"Sit autem vel voluptatum aut.","mini_description":"Voluptas deserunt voluptatem blanditiis et modi.","ancienPrix":90.44,"prix":64.86,"quantite":34,"created_at":"2024-07-24T15:40:30.000000Z","images":[],"categories":[]},{"id":191,"nom":"velit","description":"Quod necessitatibus reprehenderit sit.","mini_description":"Error id voluptatem quis autem voluptate.","ancienPrix":30.07,"prix":48.59,"quantite":19,"created_at":"2024-07-24T15:40:29.000000Z","images":[],"categories":[]},{"id":190,"nom":"animi","description":"Molestiae alias ad ut et quidem hic modi et.","mini_description":"Voluptatem ea blanditiis distinctio ut eum numquam qui.","ancienPrix":78.63,"prix":95.15,"quantite":33,"created_at":"2024-07-24T15:40:29.000000Z","images":[],"categories":[]},{"id":189,"nom":"est","description":"Et dicta voluptatibus similique quibusdam ab.","mini_description":"Quidem accusamus ipsum ipsum quaerat.","ancienPrix":14.16,"prix":32.76,"quantite":67,"created_at":"2024-07-24T15:40:29.000000Z","images":[],"categories":[]},{"id":188,"nom":"consectetur","description":"In aut sit consequuntur voluptate.","mini_description":"Necessitatibus ut iusto nihil.","ancienPrix":27.23,"prix":94.22,"quantite":59,"created_at":"2024-07-24T15:40:28.000000Z","images":[],"categories":[]},{"id":187,"nom":"necessitatibus","description":"Consectetur dolor doloremque rem quos vel dolorem.","mini_description":"Ut autem et aut eos id.","ancienPrix":22.34,"prix":45.24,"quantite":46,"created_at":"2024-07-24T15:40:28.000000Z","images":[],"categories":[]},{"id":184,"nom":"qui","description":"Labore qui rerum consequatur fuga aut sunt officia.","mini_description":"Nam consequuntur corrupti quaerat cupiditate.","ancienPrix":31.4,"prix":35.23,"quantite":87,"created_at":"2024-07-24T15:40:27.000000Z","images":[],"categories":[]},{"id":186,"nom":"aliquid","description":"Culpa tempore ut cupiditate quisquam.","mini_description":"Ut dolorum perspiciatis velit reiciendis.","ancienPrix":78.59,"prix":62.29,"quantite":86,"created_at":"2024-07-24T15:40:27.000000Z","images":[],"categories":[]},{"id":185,"nom":"vitae","description":"Delectus excepturi facilis cupiditate repellendus sint dolores sed quasi.","mini_description":"Aut neque voluptatem quasi nihil laboriosam.","ancienPrix":52.38,"prix":42.7,"quantite":65,"created_at":"2024-07-24T15:40:27.000000Z","images":[],"categories":[]},{"id":183,"nom":"omnis","description":"Iure est qui qui officia.","mini_description":"Quaerat eos sunt enim quod esse.","ancienPrix":86.74,"prix":32.53,"quantite":38,"created_at":"2024-07-24T15:40:26.000000Z","images":[],"categories":[]},{"id":182,"nom":"omnis","description":"Minus consequuntur quo alias placeat fugit.","mini_description":"Et et voluptatem odit nostrum dolor repellat.","ancienPrix":51.98,"prix":96.17,"quantite":64,"created_at":"2024-07-24T15:40:26.000000Z","images":[],"categories":[]},{"id":181,"nom":"et","description":"Corrupti quae suscipit et quia porro recusandae.","mini_description":"Aut maxime aspernatur fugiat sit ratione ea.","ancienPrix":54.06,"prix":86.13,"quantite":56,"created_at":"2024-07-24T15:40:26.000000Z","images":[],"categories":[]}],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/articles?page=1","last":"http:\/\/127.0.0.1:8000\/api\/articles?page=7","prev":null,"next":"http:\/\/127.0.0.1:8000\/api\/articles?page=2"},"meta":{"current_page":1,"from":1,"last_page":7,"path":"http:\/\/127.0.0.1:8000\/api\/articles","per_page":30,"to":30,"total":210}}}'
+        content: '{"success":true,"message":"","data":{"articles":[{"id":209,"nom":"voluptatem","description":"Omnis veritatis velit reiciendis fugiat at recusandae earum repellat.","mini_description":"Fugit quia ut reiciendis et provident autem.","ancienPrix":60.3,"prix":37.63,"quantite":57,"created_at":"2024-07-25T10:16:43.000000Z","images":[],"categories":[]},{"id":210,"nom":"vitae","description":"Voluptates ipsum impedit soluta possimus iste iusto.","mini_description":"Sed reprehenderit dolore quis ad.","ancienPrix":68.5,"prix":67.89,"quantite":29,"created_at":"2024-07-25T10:16:43.000000Z","images":[],"categories":[]},{"id":207,"nom":"quisquam","description":"Ut doloremque quam voluptatem aut facere harum eius sit.","mini_description":"Error ea rerum recusandae labore placeat molestiae corporis.","ancienPrix":84.98,"prix":38.25,"quantite":4,"created_at":"2024-07-25T10:16:42.000000Z","images":[],"categories":[]},{"id":206,"nom":"delectus","description":"Eligendi et sit et ut deleniti inventore modi.","mini_description":"Aspernatur ut neque quas dolores aut.","ancienPrix":51.62,"prix":46.45,"quantite":40,"created_at":"2024-07-25T10:16:42.000000Z","images":[],"categories":[]},{"id":208,"nom":"vitae","description":"Ut nihil quia saepe qui odio velit.","mini_description":"Sed rerum est culpa aperiam et autem eos.","ancienPrix":60.88,"prix":68.89,"quantite":3,"created_at":"2024-07-25T10:16:42.000000Z","images":[],"categories":[]},{"id":205,"nom":"et","description":"Maiores inventore sit earum nihil occaecati aliquid quo.","mini_description":"Aut sapiente laboriosam magni et placeat laborum harum.","ancienPrix":85.31,"prix":96.95,"quantite":86,"created_at":"2024-07-25T10:16:41.000000Z","images":[],"categories":[]},{"id":204,"nom":"dolores","description":"Quis sed dolores et impedit.","mini_description":"Quis sit odio rerum sequi impedit.","ancienPrix":44.64,"prix":45.56,"quantite":29,"created_at":"2024-07-25T10:16:41.000000Z","images":[],"categories":[]},{"id":203,"nom":"quam","description":"Voluptatem provident id possimus.","mini_description":"Quia officiis velit illo necessitatibus facere omnis natus.","ancienPrix":13.98,"prix":58.75,"quantite":86,"created_at":"2024-07-25T10:16:40.000000Z","images":[],"categories":[]},{"id":202,"nom":"officiis","description":"Et rem sed sequi ut repellat voluptatibus.","mini_description":"Modi beatae ut non voluptatem aut quo.","ancienPrix":61.56,"prix":41.81,"quantite":74,"created_at":"2024-07-25T10:16:40.000000Z","images":[],"categories":[]},{"id":199,"nom":"vero","description":"Quisquam dicta quis velit a.","mini_description":"Consectetur minima est et voluptatem qui.","ancienPrix":60.19,"prix":45.07,"quantite":34,"created_at":"2024-07-25T10:16:39.000000Z","images":[],"categories":[]},{"id":201,"nom":"quis","description":"Ipsam similique excepturi eum at quasi deserunt.","mini_description":"Quasi et corrupti amet qui ut sed repellat.","ancienPrix":24.37,"prix":52.8,"quantite":12,"created_at":"2024-07-25T10:16:39.000000Z","images":[],"categories":[]},{"id":200,"nom":"quo","description":"Autem voluptas magnam vel corrupti aut unde placeat.","mini_description":"Rem magnam nesciunt nemo eum fugit saepe error.","ancienPrix":88.88,"prix":13.97,"quantite":42,"created_at":"2024-07-25T10:16:39.000000Z","images":[],"categories":[]},{"id":197,"nom":"et","description":"Ipsum omnis qui molestias qui qui voluptatum.","mini_description":"Enim enim a nobis quis.","ancienPrix":23.69,"prix":94.26,"quantite":33,"created_at":"2024-07-25T10:16:38.000000Z","images":[],"categories":[]},{"id":198,"nom":"aspernatur","description":"Delectus exercitationem cumque ut et explicabo tenetur eos.","mini_description":"Itaque et reiciendis expedita mollitia soluta qui odit.","ancienPrix":74.75,"prix":71.44,"quantite":49,"created_at":"2024-07-25T10:16:38.000000Z","images":[],"categories":[]},{"id":196,"nom":"impedit","description":"Dolorum nam aut ea soluta.","mini_description":"Praesentium molestias est voluptas quia corporis.","ancienPrix":48.23,"prix":28.95,"quantite":35,"created_at":"2024-07-25T10:16:37.000000Z","images":[],"categories":[]},{"id":195,"nom":"est","description":"Exercitationem ut ut sed corporis architecto aut dignissimos voluptas.","mini_description":"Vitae odit aliquam doloribus animi quae sunt perferendis.","ancienPrix":39.51,"prix":92.43,"quantite":49,"created_at":"2024-07-25T10:16:37.000000Z","images":[],"categories":[]},{"id":194,"nom":"dicta","description":"Ex blanditiis est sit at quis.","mini_description":"Qui itaque minus rerum et autem et.","ancienPrix":12.99,"prix":35.54,"quantite":89,"created_at":"2024-07-25T10:16:36.000000Z","images":[],"categories":[]},{"id":193,"nom":"ducimus","description":"Optio sed enim vitae sed placeat repellat.","mini_description":"Quod quia est eum aut atque et.","ancienPrix":59.1,"prix":98.64,"quantite":94,"created_at":"2024-07-25T10:16:36.000000Z","images":[],"categories":[]},{"id":192,"nom":"recusandae","description":"Qui possimus culpa ut non sed dolore.","mini_description":"Rem et corporis et quas placeat eos autem sit.","ancienPrix":87.71,"prix":47.73,"quantite":90,"created_at":"2024-07-25T10:16:36.000000Z","images":[],"categories":[]},{"id":190,"nom":"vitae","description":"Officia voluptas quos facilis eaque odit explicabo.","mini_description":"Modi qui quam temporibus voluptate necessitatibus.","ancienPrix":47.22,"prix":93.25,"quantite":43,"created_at":"2024-07-25T10:16:35.000000Z","images":[],"categories":[]},{"id":191,"nom":"et","description":"Pariatur eaque libero amet.","mini_description":"Sit numquam aliquid porro.","ancienPrix":27.17,"prix":23.53,"quantite":40,"created_at":"2024-07-25T10:16:35.000000Z","images":[],"categories":[]},{"id":188,"nom":"ducimus","description":"Optio sed rerum et qui et.","mini_description":"Aliquam vel minus accusantium blanditiis exercitationem odit.","ancienPrix":71.46,"prix":96.9,"quantite":51,"created_at":"2024-07-25T10:16:34.000000Z","images":[],"categories":[]},{"id":189,"nom":"natus","description":"Cum voluptatibus aspernatur dolor ab asperiores.","mini_description":"Vel sunt pariatur delectus soluta veritatis omnis dolores.","ancienPrix":22.73,"prix":40.05,"quantite":4,"created_at":"2024-07-25T10:16:34.000000Z","images":[],"categories":[]},{"id":186,"nom":"eos","description":"Est voluptas consectetur perferendis quisquam repellat sed.","mini_description":"Fugiat tempora laudantium consequuntur nihil.","ancienPrix":41.75,"prix":19.01,"quantite":18,"created_at":"2024-07-25T10:16:33.000000Z","images":[],"categories":[]},{"id":187,"nom":"rerum","description":"Deserunt corrupti accusamus sed alias.","mini_description":"Dolores voluptatem explicabo molestias.","ancienPrix":94.61,"prix":87.23,"quantite":1,"created_at":"2024-07-25T10:16:33.000000Z","images":[],"categories":[]},{"id":185,"nom":"qui","description":"Porro ea ipsam nemo corrupti impedit sunt voluptatem in.","mini_description":"Sint atque minima voluptatem itaque.","ancienPrix":34.57,"prix":57.33,"quantite":68,"created_at":"2024-07-25T10:16:33.000000Z","images":[],"categories":[]},{"id":183,"nom":"quia","description":"Eos sit nesciunt necessitatibus.","mini_description":"Cum odit sequi commodi quia voluptas qui.","ancienPrix":33.73,"prix":45.33,"quantite":18,"created_at":"2024-07-25T10:16:32.000000Z","images":[],"categories":[]},{"id":184,"nom":"iusto","description":"Magnam vero accusamus voluptas id fuga.","mini_description":"Ipsam ipsa est inventore delectus deserunt.","ancienPrix":15.26,"prix":71.24,"quantite":69,"created_at":"2024-07-25T10:16:32.000000Z","images":[],"categories":[]},{"id":181,"nom":"ut","description":"Aut nulla unde repellat est illo.","mini_description":"Quia consequatur dolores neque laboriosam et corrupti blanditiis.","ancienPrix":72.87,"prix":47.76,"quantite":44,"created_at":"2024-07-25T10:16:31.000000Z","images":[],"categories":[]},{"id":182,"nom":"ex","description":"Necessitatibus nihil ut quisquam corrupti qui exercitationem.","mini_description":"Ut hic aut voluptatum nam porro placeat quia dolores.","ancienPrix":17.59,"prix":78.19,"quantite":24,"created_at":"2024-07-25T10:16:31.000000Z","images":[],"categories":[]}],"links":{"first":"http:\/\/127.0.0.1:8000\/api\/articles?page=1","last":"http:\/\/127.0.0.1:8000\/api\/articles?page=7","prev":null,"next":"http:\/\/127.0.0.1:8000\/api\/articles?page=2"},"meta":{"current_page":1,"from":1,"last_page":7,"path":"http:\/\/127.0.0.1:8000\/api\/articles","per_page":30,"to":30,"total":210}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '55'
+          x-ratelimit-remaining: '56'
           vary: Origin
         description: null
         custom: []
@@ -984,12 +984,12 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"success":true,"message":"","data":{"id":1,"nom":"delectus","description":"Praesentium illo unde omnis velit.","mini_description":"Nam recusandae magnam autem ea consequatur.","ancienPrix":30.57,"prix":75.54,"quantite":87,"created_at":"2024-07-24T15:40:13.000000Z","images":[]}}'
+        content: '{"success":true,"message":"","data":{"id":1,"nom":"occaecati","description":"Perspiciatis non dolor iste blanditiis.","mini_description":"Sed labore dolores non velit dolor autem.","ancienPrix":32.2,"prix":92.84,"quantite":4,"created_at":"2024-07-25T10:16:15.000000Z","images":[]}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '54'
+          x-ratelimit-remaining: '55'
           vary: Origin
         description: null
         custom: []

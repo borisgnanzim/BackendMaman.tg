@@ -145,11 +145,14 @@
                                                                                 <li class="tocify-item level-2" data-unique="categorie-management-GETapi-categories--categorie--articles">
                                 <a href="#categorie-management-GETapi-categories--categorie--articles">GET api/categories/{categorie}/articles</a>
                             </li>
+                                                                                <li class="tocify-item level-2" data-unique="categorie-management-GETapi-categories--id--articles">
+                                <a href="#categorie-management-GETapi-categories--id--articles">GET api/categories/{id}/articles</a>
+                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="categorie-management-GETapi-categories">
                                 <a href="#categorie-management-GETapi-categories">Display a listing of the resource.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="categorie-management-GETapi-categories--categorie_id-">
-                                <a href="#categorie-management-GETapi-categories--categorie_id-">Display the specified resource.</a>
+                                                                                <li class="tocify-item level-2" data-unique="categorie-management-GETapi-categories--id-">
+                                <a href="#categorie-management-GETapi-categories--id-">Display the specified resource.</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -194,6 +197,9 @@
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-POSTapi-logout">
                                 <a href="#endpoints-POSTapi-logout">POST api/logout</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-statistics">
+                                <a href="#endpoints-GETapi-statistics">GET api/statistics</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-profile">
                                 <a href="#endpoints-GETapi-profile">GET api/profile</a>
@@ -346,7 +352,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: July 24, 2024</li>
+        <li>Last updated: July 29, 2024</li>
     </ul>
 </div>
 
@@ -506,14 +512,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/admin.articles/at" \
+    --get "http://127.0.0.1:8000/api/admin.articles/officiis" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/admin.articles/at"
+    "http://127.0.0.1:8000/api/admin.articles/officiis"
 );
 
 const headers = {
@@ -622,10 +628,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-admin-articles--id-"
-               value="at"
+               value="officiis"
                data-component="url">
     <br>
-<p>The ID of the admin.article. Example: <code>at</code></p>
+<p>The ID of the admin.article. Example: <code>officiis</code></p>
             </div>
                     </form>
 
@@ -646,11 +652,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"nom\": \"nlnqadlqqxiyzrvwlw\",
-    \"description\": \"Consequatur nemo omnis dignissimos dignissimos unde.\",
-    \"mini_description\": \"aut\",
-    \"prix\": 4456955.889157,
-    \"quantite\": 11
+    \"nom\": \"geperi\",
+    \"description\": \"Ad iusto in neque cumque accusamus.\",
+    \"mini_description\": \"eos\",
+    \"prix\": 1951.211984,
+    \"quantite\": 14
 }"
 </code></pre></div>
 
@@ -666,11 +672,11 @@ const headers = {
 };
 
 let body = {
-    "nom": "nlnqadlqqxiyzrvwlw",
-    "description": "Consequatur nemo omnis dignissimos dignissimos unde.",
-    "mini_description": "aut",
-    "prix": 4456955.889157,
-    "quantite": 11
+    "nom": "geperi",
+    "description": "Ad iusto in neque cumque accusamus.",
+    "mini_description": "eos",
+    "prix": 1951.211984,
+    "quantite": 14
 };
 
 fetch(url, {
@@ -759,10 +765,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="nom"                data-endpoint="POSTapi-admin-articles"
-               value="nlnqadlqqxiyzrvwlw"
+               value="geperi"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>nlnqadlqqxiyzrvwlw</code></p>
+<p>Must not be greater than 255 characters. Example: <code>geperi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -770,10 +776,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-admin-articles"
-               value="Consequatur nemo omnis dignissimos dignissimos unde."
+               value="Ad iusto in neque cumque accusamus."
                data-component="body">
     <br>
-<p>Example: <code>Consequatur nemo omnis dignissimos dignissimos unde.</code></p>
+<p>Example: <code>Ad iusto in neque cumque accusamus.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>mini_description</code></b>&nbsp;&nbsp;
@@ -781,10 +787,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="mini_description"                data-endpoint="POSTapi-admin-articles"
-               value="aut"
+               value="eos"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>eos</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>prix</code></b>&nbsp;&nbsp;
@@ -792,10 +798,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="prix"                data-endpoint="POSTapi-admin-articles"
-               value="4456955.889157"
+               value="1951.211984"
                data-component="body">
     <br>
-<p>Example: <code>4456955.889157</code></p>
+<p>Example: <code>1951.211984</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>quantite</code></b>&nbsp;&nbsp;
@@ -803,10 +809,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="quantite"                data-endpoint="POSTapi-admin-articles"
-               value="11"
+               value="14"
                data-component="body">
     <br>
-<p>Example: <code>11</code></p>
+<p>Example: <code>14</code></p>
         </div>
         </form>
 
@@ -823,22 +829,22 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8000/api/admin.articles/eos" \
+    "http://127.0.0.1:8000/api/admin.articles/dicta" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"nom\": \"hyzyhadaotjmqp\",
-    \"description\": \"Aliquam enim molestiae distinctio dolor beatae.\",
-    \"mini_description\": \"sed\",
-    \"prix\": 37130993.668209,
-    \"quantite\": 14
+    \"nom\": \"niorepytycqdqmydkpysj\",
+    \"description\": \"Consequatur repellat autem consectetur odit est nostrum sit.\",
+    \"mini_description\": \"harum\",
+    \"prix\": 37.00499,
+    \"quantite\": 18
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/admin.articles/eos"
+    "http://127.0.0.1:8000/api/admin.articles/dicta"
 );
 
 const headers = {
@@ -847,11 +853,11 @@ const headers = {
 };
 
 let body = {
-    "nom": "hyzyhadaotjmqp",
-    "description": "Aliquam enim molestiae distinctio dolor beatae.",
-    "mini_description": "sed",
-    "prix": 37130993.668209,
-    "quantite": 14
+    "nom": "niorepytycqdqmydkpysj",
+    "description": "Consequatur repellat autem consectetur odit est nostrum sit.",
+    "mini_description": "harum",
+    "prix": 37.00499,
+    "quantite": 18
 };
 
 fetch(url, {
@@ -940,10 +946,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-admin-articles--id-"
-               value="eos"
+               value="dicta"
                data-component="url">
     <br>
-<p>The ID of the admin.article. Example: <code>eos</code></p>
+<p>The ID of the admin.article. Example: <code>dicta</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -952,10 +958,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="nom"                data-endpoint="PUTapi-admin-articles--id-"
-               value="hyzyhadaotjmqp"
+               value="niorepytycqdqmydkpysj"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>hyzyhadaotjmqp</code></p>
+<p>Must not be greater than 255 characters. Example: <code>niorepytycqdqmydkpysj</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -963,10 +969,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-admin-articles--id-"
-               value="Aliquam enim molestiae distinctio dolor beatae."
+               value="Consequatur repellat autem consectetur odit est nostrum sit."
                data-component="body">
     <br>
-<p>Example: <code>Aliquam enim molestiae distinctio dolor beatae.</code></p>
+<p>Example: <code>Consequatur repellat autem consectetur odit est nostrum sit.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>mini_description</code></b>&nbsp;&nbsp;
@@ -974,10 +980,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="mini_description"                data-endpoint="PUTapi-admin-articles--id-"
-               value="sed"
+               value="harum"
                data-component="body">
     <br>
-<p>Example: <code>sed</code></p>
+<p>Example: <code>harum</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>prix</code></b>&nbsp;&nbsp;
@@ -985,10 +991,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="prix"                data-endpoint="PUTapi-admin-articles--id-"
-               value="37130993.668209"
+               value="37.00499"
                data-component="body">
     <br>
-<p>Example: <code>37130993.668209</code></p>
+<p>Example: <code>37.00499</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>quantite</code></b>&nbsp;&nbsp;
@@ -996,10 +1002,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="quantite"                data-endpoint="PUTapi-admin-articles--id-"
-               value="14"
+               value="18"
                data-component="body">
     <br>
-<p>Example: <code>14</code></p>
+<p>Example: <code>18</code></p>
         </div>
         </form>
 
@@ -1016,14 +1022,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8000/api/admin.articles/consectetur" \
+    "http://127.0.0.1:8000/api/admin.articles/rem" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/admin.articles/consectetur"
+    "http://127.0.0.1:8000/api/admin.articles/rem"
 );
 
 const headers = {
@@ -1116,10 +1122,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-admin-articles--id-"
-               value="consectetur"
+               value="rem"
                data-component="url">
     <br>
-<p>The ID of the admin.article. Example: <code>consectetur</code></p>
+<p>The ID of the admin.article. Example: <code>rem</code></p>
             </div>
                     </form>
 
@@ -1136,14 +1142,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/articles/quis/images" \
+    --get "http://127.0.0.1:8000/api/articles/enim/images" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/articles/quis/images"
+    "http://127.0.0.1:8000/api/articles/enim/images"
 );
 
 const headers = {
@@ -1176,8 +1182,8 @@ vary: Origin
 <code class="language-json" style="max-height: 300px;">{
     &quot;message&quot;: &quot;Attempt to read property \&quot;images\&quot; on null&quot;,
     &quot;exception&quot;: &quot;ErrorException&quot;,
-    &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\app\\Http\\Controllers\\ArticleController.php&quot;,
-    &quot;line&quot;: 80,
+    &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\app\\Http\\Controllers\\API\\ArticleController.php&quot;,
+    &quot;line&quot;: 81,
     &quot;trace&quot;: [
         {
             &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php&quot;,
@@ -1187,8 +1193,8 @@ vary: Origin
             &quot;type&quot;: &quot;-&gt;&quot;
         },
         {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\app\\Http\\Controllers\\ArticleController.php&quot;,
-            &quot;line&quot;: 80,
+            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\app\\Http\\Controllers\\API\\ArticleController.php&quot;,
+            &quot;line&quot;: 81,
             &quot;function&quot;: &quot;Illuminate\\Foundation\\Bootstrap\\{closure}&quot;,
             &quot;class&quot;: &quot;Illuminate\\Foundation\\Bootstrap\\HandleExceptions&quot;,
             &quot;type&quot;: &quot;-&gt;&quot;
@@ -1197,7 +1203,7 @@ vary: Origin
             &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php&quot;,
             &quot;line&quot;: 54,
             &quot;function&quot;: &quot;getImages&quot;,
-            &quot;class&quot;: &quot;App\\Http\\Controllers\\ArticleController&quot;,
+            &quot;class&quot;: &quot;App\\Http\\Controllers\\API\\ArticleController&quot;,
             &quot;type&quot;: &quot;-&gt;&quot;
         },
         {
@@ -1735,10 +1741,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="article"                data-endpoint="GETapi-articles--article--images"
-               value="quis"
+               value="enim"
                data-component="url">
     <br>
-<p>The article. Example: <code>quis</code></p>
+<p>The article. Example: <code>enim</code></p>
             </div>
                     </form>
 
@@ -1797,11 +1803,11 @@ vary: Origin
     &quot;message&quot;: &quot;&quot;,
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 23,
-            &quot;nom&quot;: &quot;Autres&quot;,
+            &quot;id&quot;: 35,
+            &quot;nom&quot;: &quot;Lits &amp; Berceaux&quot;,
             &quot;description&quot;: null,
-            &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
-            &quot;superCategorie_id&quot;: 20
+            &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
+            &quot;superCategorie_id&quot;: 34
         }
     ]
 }</code>
@@ -1936,7 +1942,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 55
+x-ratelimit-remaining: 56
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -1946,362 +1952,362 @@ vary: Origin
     &quot;data&quot;: {
         &quot;articles&quot;: [
             {
-                &quot;id&quot;: 210,
-                &quot;nom&quot;: &quot;fugiat&quot;,
-                &quot;description&quot;: &quot;Eos expedita dolores minima molestiae reiciendis.&quot;,
-                &quot;mini_description&quot;: &quot;Voluptatibus aut magni earum eligendi.&quot;,
-                &quot;ancienPrix&quot;: 87.59,
-                &quot;prix&quot;: 57.72,
-                &quot;quantite&quot;: 46,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:36.000000Z&quot;,
-                &quot;images&quot;: [],
-                &quot;categories&quot;: []
-            },
-            {
                 &quot;id&quot;: 209,
-                &quot;nom&quot;: &quot;enim&quot;,
-                &quot;description&quot;: &quot;Et quos dolor ducimus iste dolorem et culpa.&quot;,
-                &quot;mini_description&quot;: &quot;Autem voluptate velit error quam aliquid dolores numquam nisi.&quot;,
-                &quot;ancienPrix&quot;: 10.48,
-                &quot;prix&quot;: 44.82,
-                &quot;quantite&quot;: 59,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:36.000000Z&quot;,
+                &quot;nom&quot;: &quot;voluptatem&quot;,
+                &quot;description&quot;: &quot;Omnis veritatis velit reiciendis fugiat at recusandae earum repellat.&quot;,
+                &quot;mini_description&quot;: &quot;Fugit quia ut reiciendis et provident autem.&quot;,
+                &quot;ancienPrix&quot;: 60.3,
+                &quot;prix&quot;: 37.63,
+                &quot;quantite&quot;: 57,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:43.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
-                &quot;id&quot;: 208,
-                &quot;nom&quot;: &quot;natus&quot;,
-                &quot;description&quot;: &quot;Officia quos dignissimos ad non et.&quot;,
-                &quot;mini_description&quot;: &quot;Dolorum sit rerum ab aut sit animi omnis modi.&quot;,
-                &quot;ancienPrix&quot;: 72.69,
-                &quot;prix&quot;: 52.33,
-                &quot;quantite&quot;: 61,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:36.000000Z&quot;,
+                &quot;id&quot;: 210,
+                &quot;nom&quot;: &quot;vitae&quot;,
+                &quot;description&quot;: &quot;Voluptates ipsum impedit soluta possimus iste iusto.&quot;,
+                &quot;mini_description&quot;: &quot;Sed reprehenderit dolore quis ad.&quot;,
+                &quot;ancienPrix&quot;: 68.5,
+                &quot;prix&quot;: 67.89,
+                &quot;quantite&quot;: 29,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:43.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 207,
-                &quot;nom&quot;: &quot;eligendi&quot;,
-                &quot;description&quot;: &quot;Fugit ea aut id at cupiditate tempore eos.&quot;,
-                &quot;mini_description&quot;: &quot;Est quibusdam esse sed perspiciatis voluptatem eos in.&quot;,
-                &quot;ancienPrix&quot;: 57.71,
-                &quot;prix&quot;: 12.13,
-                &quot;quantite&quot;: 97,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:35.000000Z&quot;,
+                &quot;nom&quot;: &quot;quisquam&quot;,
+                &quot;description&quot;: &quot;Ut doloremque quam voluptatem aut facere harum eius sit.&quot;,
+                &quot;mini_description&quot;: &quot;Error ea rerum recusandae labore placeat molestiae corporis.&quot;,
+                &quot;ancienPrix&quot;: 84.98,
+                &quot;prix&quot;: 38.25,
+                &quot;quantite&quot;: 4,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:42.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 206,
-                &quot;nom&quot;: &quot;aut&quot;,
-                &quot;description&quot;: &quot;Error magni sit corrupti ut.&quot;,
-                &quot;mini_description&quot;: &quot;Illo hic praesentium nobis aliquam quae quo modi error.&quot;,
-                &quot;ancienPrix&quot;: 18.6,
-                &quot;prix&quot;: 42.79,
-                &quot;quantite&quot;: 62,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:35.000000Z&quot;,
+                &quot;nom&quot;: &quot;delectus&quot;,
+                &quot;description&quot;: &quot;Eligendi et sit et ut deleniti inventore modi.&quot;,
+                &quot;mini_description&quot;: &quot;Aspernatur ut neque quas dolores aut.&quot;,
+                &quot;ancienPrix&quot;: 51.62,
+                &quot;prix&quot;: 46.45,
+                &quot;quantite&quot;: 40,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:42.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
-                &quot;id&quot;: 204,
-                &quot;nom&quot;: &quot;ratione&quot;,
-                &quot;description&quot;: &quot;Quis error alias voluptatum hic dolore.&quot;,
-                &quot;mini_description&quot;: &quot;Tempora aut culpa qui et.&quot;,
-                &quot;ancienPrix&quot;: 84.02,
-                &quot;prix&quot;: 26.53,
-                &quot;quantite&quot;: 64,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:34.000000Z&quot;,
+                &quot;id&quot;: 208,
+                &quot;nom&quot;: &quot;vitae&quot;,
+                &quot;description&quot;: &quot;Ut nihil quia saepe qui odio velit.&quot;,
+                &quot;mini_description&quot;: &quot;Sed rerum est culpa aperiam et autem eos.&quot;,
+                &quot;ancienPrix&quot;: 60.88,
+                &quot;prix&quot;: 68.89,
+                &quot;quantite&quot;: 3,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:42.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 205,
-                &quot;nom&quot;: &quot;corrupti&quot;,
-                &quot;description&quot;: &quot;Natus ipsum explicabo dolor impedit facere.&quot;,
-                &quot;mini_description&quot;: &quot;Laborum eligendi sunt error ut praesentium a.&quot;,
-                &quot;ancienPrix&quot;: 22.54,
-                &quot;prix&quot;: 53.69,
-                &quot;quantite&quot;: 81,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:34.000000Z&quot;,
+                &quot;nom&quot;: &quot;et&quot;,
+                &quot;description&quot;: &quot;Maiores inventore sit earum nihil occaecati aliquid quo.&quot;,
+                &quot;mini_description&quot;: &quot;Aut sapiente laboriosam magni et placeat laborum harum.&quot;,
+                &quot;ancienPrix&quot;: 85.31,
+                &quot;prix&quot;: 96.95,
+                &quot;quantite&quot;: 86,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:41.000000Z&quot;,
+                &quot;images&quot;: [],
+                &quot;categories&quot;: []
+            },
+            {
+                &quot;id&quot;: 204,
+                &quot;nom&quot;: &quot;dolores&quot;,
+                &quot;description&quot;: &quot;Quis sed dolores et impedit.&quot;,
+                &quot;mini_description&quot;: &quot;Quis sit odio rerum sequi impedit.&quot;,
+                &quot;ancienPrix&quot;: 44.64,
+                &quot;prix&quot;: 45.56,
+                &quot;quantite&quot;: 29,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:41.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 203,
-                &quot;nom&quot;: &quot;omnis&quot;,
-                &quot;description&quot;: &quot;Enim ad natus saepe neque est cupiditate dignissimos molestias.&quot;,
-                &quot;mini_description&quot;: &quot;Explicabo aut fugiat vel sunt quia consequatur et.&quot;,
-                &quot;ancienPrix&quot;: 66.85,
-                &quot;prix&quot;: 81.76,
-                &quot;quantite&quot;: 92,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:34.000000Z&quot;,
+                &quot;nom&quot;: &quot;quam&quot;,
+                &quot;description&quot;: &quot;Voluptatem provident id possimus.&quot;,
+                &quot;mini_description&quot;: &quot;Quia officiis velit illo necessitatibus facere omnis natus.&quot;,
+                &quot;ancienPrix&quot;: 13.98,
+                &quot;prix&quot;: 58.75,
+                &quot;quantite&quot;: 86,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:40.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 202,
-                &quot;nom&quot;: &quot;nesciunt&quot;,
-                &quot;description&quot;: &quot;Qui delectus nisi possimus nulla.&quot;,
-                &quot;mini_description&quot;: &quot;Dolorem dolor iure libero sed voluptas perspiciatis.&quot;,
-                &quot;ancienPrix&quot;: 18.54,
-                &quot;prix&quot;: 17.91,
-                &quot;quantite&quot;: 11,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:33.000000Z&quot;,
-                &quot;images&quot;: [],
-                &quot;categories&quot;: []
-            },
-            {
-                &quot;id&quot;: 201,
-                &quot;nom&quot;: &quot;esse&quot;,
-                &quot;description&quot;: &quot;Sint numquam adipisci suscipit rerum quo sunt.&quot;,
-                &quot;mini_description&quot;: &quot;Laborum itaque eum magnam fugiat aliquam.&quot;,
-                &quot;ancienPrix&quot;: 91.33,
-                &quot;prix&quot;: 84.03,
-                &quot;quantite&quot;: 48,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:33.000000Z&quot;,
-                &quot;images&quot;: [],
-                &quot;categories&quot;: []
-            },
-            {
-                &quot;id&quot;: 200,
-                &quot;nom&quot;: &quot;reprehenderit&quot;,
-                &quot;description&quot;: &quot;Eius consectetur praesentium ea doloribus aspernatur beatae.&quot;,
-                &quot;mini_description&quot;: &quot;Dolor cum aut dolore amet.&quot;,
-                &quot;ancienPrix&quot;: 97.96,
-                &quot;prix&quot;: 68.11,
-                &quot;quantite&quot;: 55,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:33.000000Z&quot;,
+                &quot;nom&quot;: &quot;officiis&quot;,
+                &quot;description&quot;: &quot;Et rem sed sequi ut repellat voluptatibus.&quot;,
+                &quot;mini_description&quot;: &quot;Modi beatae ut non voluptatem aut quo.&quot;,
+                &quot;ancienPrix&quot;: 61.56,
+                &quot;prix&quot;: 41.81,
+                &quot;quantite&quot;: 74,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:40.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 199,
-                &quot;nom&quot;: &quot;consequatur&quot;,
-                &quot;description&quot;: &quot;Quo nemo temporibus aut sequi ut quasi culpa.&quot;,
-                &quot;mini_description&quot;: &quot;Quaerat non eveniet eum qui ut occaecati.&quot;,
-                &quot;ancienPrix&quot;: 48.17,
-                &quot;prix&quot;: 37.89,
-                &quot;quantite&quot;: 88,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:32.000000Z&quot;,
+                &quot;nom&quot;: &quot;vero&quot;,
+                &quot;description&quot;: &quot;Quisquam dicta quis velit a.&quot;,
+                &quot;mini_description&quot;: &quot;Consectetur minima est et voluptatem qui.&quot;,
+                &quot;ancienPrix&quot;: 60.19,
+                &quot;prix&quot;: 45.07,
+                &quot;quantite&quot;: 34,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:39.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
-                &quot;id&quot;: 198,
-                &quot;nom&quot;: &quot;officia&quot;,
-                &quot;description&quot;: &quot;Soluta molestias quis et magnam nulla molestias.&quot;,
-                &quot;mini_description&quot;: &quot;Qui dolores quia vitae sapiente consequatur vel necessitatibus ut.&quot;,
-                &quot;ancienPrix&quot;: 80.58,
-                &quot;prix&quot;: 13.22,
-                &quot;quantite&quot;: 78,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:32.000000Z&quot;,
+                &quot;id&quot;: 201,
+                &quot;nom&quot;: &quot;quis&quot;,
+                &quot;description&quot;: &quot;Ipsam similique excepturi eum at quasi deserunt.&quot;,
+                &quot;mini_description&quot;: &quot;Quasi et corrupti amet qui ut sed repellat.&quot;,
+                &quot;ancienPrix&quot;: 24.37,
+                &quot;prix&quot;: 52.8,
+                &quot;quantite&quot;: 12,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:39.000000Z&quot;,
+                &quot;images&quot;: [],
+                &quot;categories&quot;: []
+            },
+            {
+                &quot;id&quot;: 200,
+                &quot;nom&quot;: &quot;quo&quot;,
+                &quot;description&quot;: &quot;Autem voluptas magnam vel corrupti aut unde placeat.&quot;,
+                &quot;mini_description&quot;: &quot;Rem magnam nesciunt nemo eum fugit saepe error.&quot;,
+                &quot;ancienPrix&quot;: 88.88,
+                &quot;prix&quot;: 13.97,
+                &quot;quantite&quot;: 42,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:39.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 197,
-                &quot;nom&quot;: &quot;eum&quot;,
-                &quot;description&quot;: &quot;Sed distinctio delectus non id minima.&quot;,
-                &quot;mini_description&quot;: &quot;Non aliquam id et et harum.&quot;,
-                &quot;ancienPrix&quot;: 43.98,
-                &quot;prix&quot;: 90.34,
-                &quot;quantite&quot;: 46,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:31.000000Z&quot;,
+                &quot;nom&quot;: &quot;et&quot;,
+                &quot;description&quot;: &quot;Ipsum omnis qui molestias qui qui voluptatum.&quot;,
+                &quot;mini_description&quot;: &quot;Enim enim a nobis quis.&quot;,
+                &quot;ancienPrix&quot;: 23.69,
+                &quot;prix&quot;: 94.26,
+                &quot;quantite&quot;: 33,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:38.000000Z&quot;,
+                &quot;images&quot;: [],
+                &quot;categories&quot;: []
+            },
+            {
+                &quot;id&quot;: 198,
+                &quot;nom&quot;: &quot;aspernatur&quot;,
+                &quot;description&quot;: &quot;Delectus exercitationem cumque ut et explicabo tenetur eos.&quot;,
+                &quot;mini_description&quot;: &quot;Itaque et reiciendis expedita mollitia soluta qui odit.&quot;,
+                &quot;ancienPrix&quot;: 74.75,
+                &quot;prix&quot;: 71.44,
+                &quot;quantite&quot;: 49,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:38.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 196,
-                &quot;nom&quot;: &quot;illo&quot;,
-                &quot;description&quot;: &quot;Quibusdam aut quia ea qui similique non enim sequi.&quot;,
-                &quot;mini_description&quot;: &quot;Occaecati et iusto et optio vel itaque.&quot;,
-                &quot;ancienPrix&quot;: 14.89,
-                &quot;prix&quot;: 64.93,
-                &quot;quantite&quot;: 66,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:31.000000Z&quot;,
+                &quot;nom&quot;: &quot;impedit&quot;,
+                &quot;description&quot;: &quot;Dolorum nam aut ea soluta.&quot;,
+                &quot;mini_description&quot;: &quot;Praesentium molestias est voluptas quia corporis.&quot;,
+                &quot;ancienPrix&quot;: 48.23,
+                &quot;prix&quot;: 28.95,
+                &quot;quantite&quot;: 35,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:37.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 195,
-                &quot;nom&quot;: &quot;quia&quot;,
-                &quot;description&quot;: &quot;Consectetur corporis architecto voluptatibus quia omnis.&quot;,
-                &quot;mini_description&quot;: &quot;Perferendis non qui explicabo veritatis.&quot;,
-                &quot;ancienPrix&quot;: 15.64,
-                &quot;prix&quot;: 17.07,
-                &quot;quantite&quot;: 58,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:31.000000Z&quot;,
+                &quot;nom&quot;: &quot;est&quot;,
+                &quot;description&quot;: &quot;Exercitationem ut ut sed corporis architecto aut dignissimos voluptas.&quot;,
+                &quot;mini_description&quot;: &quot;Vitae odit aliquam doloribus animi quae sunt perferendis.&quot;,
+                &quot;ancienPrix&quot;: 39.51,
+                &quot;prix&quot;: 92.43,
+                &quot;quantite&quot;: 49,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:37.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 194,
-                &quot;nom&quot;: &quot;aliquid&quot;,
-                &quot;description&quot;: &quot;Harum enim quisquam beatae illum natus deserunt.&quot;,
-                &quot;mini_description&quot;: &quot;Totam assumenda ex eos necessitatibus eos maxime fuga.&quot;,
-                &quot;ancienPrix&quot;: 99.79,
-                &quot;prix&quot;: 25.69,
-                &quot;quantite&quot;: 25,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:30.000000Z&quot;,
+                &quot;nom&quot;: &quot;dicta&quot;,
+                &quot;description&quot;: &quot;Ex blanditiis est sit at quis.&quot;,
+                &quot;mini_description&quot;: &quot;Qui itaque minus rerum et autem et.&quot;,
+                &quot;ancienPrix&quot;: 12.99,
+                &quot;prix&quot;: 35.54,
+                &quot;quantite&quot;: 89,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:36.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 193,
-                &quot;nom&quot;: &quot;eligendi&quot;,
-                &quot;description&quot;: &quot;Eveniet eaque quam magnam ea ullam assumenda et.&quot;,
-                &quot;mini_description&quot;: &quot;Illum et sunt provident alias est.&quot;,
-                &quot;ancienPrix&quot;: 32.22,
-                &quot;prix&quot;: 38.94,
-                &quot;quantite&quot;: 82,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:30.000000Z&quot;,
+                &quot;nom&quot;: &quot;ducimus&quot;,
+                &quot;description&quot;: &quot;Optio sed enim vitae sed placeat repellat.&quot;,
+                &quot;mini_description&quot;: &quot;Quod quia est eum aut atque et.&quot;,
+                &quot;ancienPrix&quot;: 59.1,
+                &quot;prix&quot;: 98.64,
+                &quot;quantite&quot;: 94,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:36.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 192,
-                &quot;nom&quot;: &quot;eos&quot;,
-                &quot;description&quot;: &quot;Sit autem vel voluptatum aut.&quot;,
-                &quot;mini_description&quot;: &quot;Voluptas deserunt voluptatem blanditiis et modi.&quot;,
-                &quot;ancienPrix&quot;: 90.44,
-                &quot;prix&quot;: 64.86,
-                &quot;quantite&quot;: 34,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:30.000000Z&quot;,
-                &quot;images&quot;: [],
-                &quot;categories&quot;: []
-            },
-            {
-                &quot;id&quot;: 191,
-                &quot;nom&quot;: &quot;velit&quot;,
-                &quot;description&quot;: &quot;Quod necessitatibus reprehenderit sit.&quot;,
-                &quot;mini_description&quot;: &quot;Error id voluptatem quis autem voluptate.&quot;,
-                &quot;ancienPrix&quot;: 30.07,
-                &quot;prix&quot;: 48.59,
-                &quot;quantite&quot;: 19,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:29.000000Z&quot;,
+                &quot;nom&quot;: &quot;recusandae&quot;,
+                &quot;description&quot;: &quot;Qui possimus culpa ut non sed dolore.&quot;,
+                &quot;mini_description&quot;: &quot;Rem et corporis et quas placeat eos autem sit.&quot;,
+                &quot;ancienPrix&quot;: 87.71,
+                &quot;prix&quot;: 47.73,
+                &quot;quantite&quot;: 90,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:36.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 190,
-                &quot;nom&quot;: &quot;animi&quot;,
-                &quot;description&quot;: &quot;Molestiae alias ad ut et quidem hic modi et.&quot;,
-                &quot;mini_description&quot;: &quot;Voluptatem ea blanditiis distinctio ut eum numquam qui.&quot;,
-                &quot;ancienPrix&quot;: 78.63,
-                &quot;prix&quot;: 95.15,
-                &quot;quantite&quot;: 33,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:29.000000Z&quot;,
+                &quot;nom&quot;: &quot;vitae&quot;,
+                &quot;description&quot;: &quot;Officia voluptas quos facilis eaque odit explicabo.&quot;,
+                &quot;mini_description&quot;: &quot;Modi qui quam temporibus voluptate necessitatibus.&quot;,
+                &quot;ancienPrix&quot;: 47.22,
+                &quot;prix&quot;: 93.25,
+                &quot;quantite&quot;: 43,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:35.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
-                &quot;id&quot;: 189,
-                &quot;nom&quot;: &quot;est&quot;,
-                &quot;description&quot;: &quot;Et dicta voluptatibus similique quibusdam ab.&quot;,
-                &quot;mini_description&quot;: &quot;Quidem accusamus ipsum ipsum quaerat.&quot;,
-                &quot;ancienPrix&quot;: 14.16,
-                &quot;prix&quot;: 32.76,
-                &quot;quantite&quot;: 67,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:29.000000Z&quot;,
+                &quot;id&quot;: 191,
+                &quot;nom&quot;: &quot;et&quot;,
+                &quot;description&quot;: &quot;Pariatur eaque libero amet.&quot;,
+                &quot;mini_description&quot;: &quot;Sit numquam aliquid porro.&quot;,
+                &quot;ancienPrix&quot;: 27.17,
+                &quot;prix&quot;: 23.53,
+                &quot;quantite&quot;: 40,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:35.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 188,
-                &quot;nom&quot;: &quot;consectetur&quot;,
-                &quot;description&quot;: &quot;In aut sit consequuntur voluptate.&quot;,
-                &quot;mini_description&quot;: &quot;Necessitatibus ut iusto nihil.&quot;,
-                &quot;ancienPrix&quot;: 27.23,
-                &quot;prix&quot;: 94.22,
-                &quot;quantite&quot;: 59,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:28.000000Z&quot;,
+                &quot;nom&quot;: &quot;ducimus&quot;,
+                &quot;description&quot;: &quot;Optio sed rerum et qui et.&quot;,
+                &quot;mini_description&quot;: &quot;Aliquam vel minus accusantium blanditiis exercitationem odit.&quot;,
+                &quot;ancienPrix&quot;: 71.46,
+                &quot;prix&quot;: 96.9,
+                &quot;quantite&quot;: 51,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:34.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
-                &quot;id&quot;: 187,
-                &quot;nom&quot;: &quot;necessitatibus&quot;,
-                &quot;description&quot;: &quot;Consectetur dolor doloremque rem quos vel dolorem.&quot;,
-                &quot;mini_description&quot;: &quot;Ut autem et aut eos id.&quot;,
-                &quot;ancienPrix&quot;: 22.34,
-                &quot;prix&quot;: 45.24,
-                &quot;quantite&quot;: 46,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:28.000000Z&quot;,
-                &quot;images&quot;: [],
-                &quot;categories&quot;: []
-            },
-            {
-                &quot;id&quot;: 184,
-                &quot;nom&quot;: &quot;qui&quot;,
-                &quot;description&quot;: &quot;Labore qui rerum consequatur fuga aut sunt officia.&quot;,
-                &quot;mini_description&quot;: &quot;Nam consequuntur corrupti quaerat cupiditate.&quot;,
-                &quot;ancienPrix&quot;: 31.4,
-                &quot;prix&quot;: 35.23,
-                &quot;quantite&quot;: 87,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:27.000000Z&quot;,
+                &quot;id&quot;: 189,
+                &quot;nom&quot;: &quot;natus&quot;,
+                &quot;description&quot;: &quot;Cum voluptatibus aspernatur dolor ab asperiores.&quot;,
+                &quot;mini_description&quot;: &quot;Vel sunt pariatur delectus soluta veritatis omnis dolores.&quot;,
+                &quot;ancienPrix&quot;: 22.73,
+                &quot;prix&quot;: 40.05,
+                &quot;quantite&quot;: 4,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:34.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 186,
-                &quot;nom&quot;: &quot;aliquid&quot;,
-                &quot;description&quot;: &quot;Culpa tempore ut cupiditate quisquam.&quot;,
-                &quot;mini_description&quot;: &quot;Ut dolorum perspiciatis velit reiciendis.&quot;,
-                &quot;ancienPrix&quot;: 78.59,
-                &quot;prix&quot;: 62.29,
-                &quot;quantite&quot;: 86,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:27.000000Z&quot;,
+                &quot;nom&quot;: &quot;eos&quot;,
+                &quot;description&quot;: &quot;Est voluptas consectetur perferendis quisquam repellat sed.&quot;,
+                &quot;mini_description&quot;: &quot;Fugiat tempora laudantium consequuntur nihil.&quot;,
+                &quot;ancienPrix&quot;: 41.75,
+                &quot;prix&quot;: 19.01,
+                &quot;quantite&quot;: 18,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:33.000000Z&quot;,
+                &quot;images&quot;: [],
+                &quot;categories&quot;: []
+            },
+            {
+                &quot;id&quot;: 187,
+                &quot;nom&quot;: &quot;rerum&quot;,
+                &quot;description&quot;: &quot;Deserunt corrupti accusamus sed alias.&quot;,
+                &quot;mini_description&quot;: &quot;Dolores voluptatem explicabo molestias.&quot;,
+                &quot;ancienPrix&quot;: 94.61,
+                &quot;prix&quot;: 87.23,
+                &quot;quantite&quot;: 1,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:33.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 185,
-                &quot;nom&quot;: &quot;vitae&quot;,
-                &quot;description&quot;: &quot;Delectus excepturi facilis cupiditate repellendus sint dolores sed quasi.&quot;,
-                &quot;mini_description&quot;: &quot;Aut neque voluptatem quasi nihil laboriosam.&quot;,
-                &quot;ancienPrix&quot;: 52.38,
-                &quot;prix&quot;: 42.7,
-                &quot;quantite&quot;: 65,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:27.000000Z&quot;,
+                &quot;nom&quot;: &quot;qui&quot;,
+                &quot;description&quot;: &quot;Porro ea ipsam nemo corrupti impedit sunt voluptatem in.&quot;,
+                &quot;mini_description&quot;: &quot;Sint atque minima voluptatem itaque.&quot;,
+                &quot;ancienPrix&quot;: 34.57,
+                &quot;prix&quot;: 57.33,
+                &quot;quantite&quot;: 68,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:33.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 183,
-                &quot;nom&quot;: &quot;omnis&quot;,
-                &quot;description&quot;: &quot;Iure est qui qui officia.&quot;,
-                &quot;mini_description&quot;: &quot;Quaerat eos sunt enim quod esse.&quot;,
-                &quot;ancienPrix&quot;: 86.74,
-                &quot;prix&quot;: 32.53,
-                &quot;quantite&quot;: 38,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:26.000000Z&quot;,
+                &quot;nom&quot;: &quot;quia&quot;,
+                &quot;description&quot;: &quot;Eos sit nesciunt necessitatibus.&quot;,
+                &quot;mini_description&quot;: &quot;Cum odit sequi commodi quia voluptas qui.&quot;,
+                &quot;ancienPrix&quot;: 33.73,
+                &quot;prix&quot;: 45.33,
+                &quot;quantite&quot;: 18,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:32.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
-                &quot;id&quot;: 182,
-                &quot;nom&quot;: &quot;omnis&quot;,
-                &quot;description&quot;: &quot;Minus consequuntur quo alias placeat fugit.&quot;,
-                &quot;mini_description&quot;: &quot;Et et voluptatem odit nostrum dolor repellat.&quot;,
-                &quot;ancienPrix&quot;: 51.98,
-                &quot;prix&quot;: 96.17,
-                &quot;quantite&quot;: 64,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:26.000000Z&quot;,
+                &quot;id&quot;: 184,
+                &quot;nom&quot;: &quot;iusto&quot;,
+                &quot;description&quot;: &quot;Magnam vero accusamus voluptas id fuga.&quot;,
+                &quot;mini_description&quot;: &quot;Ipsam ipsa est inventore delectus deserunt.&quot;,
+                &quot;ancienPrix&quot;: 15.26,
+                &quot;prix&quot;: 71.24,
+                &quot;quantite&quot;: 69,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:32.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             },
             {
                 &quot;id&quot;: 181,
-                &quot;nom&quot;: &quot;et&quot;,
-                &quot;description&quot;: &quot;Corrupti quae suscipit et quia porro recusandae.&quot;,
-                &quot;mini_description&quot;: &quot;Aut maxime aspernatur fugiat sit ratione ea.&quot;,
-                &quot;ancienPrix&quot;: 54.06,
-                &quot;prix&quot;: 86.13,
-                &quot;quantite&quot;: 56,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:26.000000Z&quot;,
+                &quot;nom&quot;: &quot;ut&quot;,
+                &quot;description&quot;: &quot;Aut nulla unde repellat est illo.&quot;,
+                &quot;mini_description&quot;: &quot;Quia consequatur dolores neque laboriosam et corrupti blanditiis.&quot;,
+                &quot;ancienPrix&quot;: 72.87,
+                &quot;prix&quot;: 47.76,
+                &quot;quantite&quot;: 44,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:31.000000Z&quot;,
+                &quot;images&quot;: [],
+                &quot;categories&quot;: []
+            },
+            {
+                &quot;id&quot;: 182,
+                &quot;nom&quot;: &quot;ex&quot;,
+                &quot;description&quot;: &quot;Necessitatibus nihil ut quisquam corrupti qui exercitationem.&quot;,
+                &quot;mini_description&quot;: &quot;Ut hic aut voluptatum nam porro placeat quia dolores.&quot;,
+                &quot;ancienPrix&quot;: 17.59,
+                &quot;prix&quot;: 78.19,
+                &quot;quantite&quot;: 24,
+                &quot;created_at&quot;: &quot;2024-07-25T10:16:31.000000Z&quot;,
                 &quot;images&quot;: [],
                 &quot;categories&quot;: []
             }
@@ -2442,7 +2448,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 54
+x-ratelimit-remaining: 55
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -2451,13 +2457,13 @@ vary: Origin
     &quot;message&quot;: &quot;&quot;,
     &quot;data&quot;: {
         &quot;id&quot;: 1,
-        &quot;nom&quot;: &quot;delectus&quot;,
-        &quot;description&quot;: &quot;Praesentium illo unde omnis velit.&quot;,
-        &quot;mini_description&quot;: &quot;Nam recusandae magnam autem ea consequatur.&quot;,
-        &quot;ancienPrix&quot;: 30.57,
-        &quot;prix&quot;: 75.54,
-        &quot;quantite&quot;: 87,
-        &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+        &quot;nom&quot;: &quot;occaecati&quot;,
+        &quot;description&quot;: &quot;Perspiciatis non dolor iste blanditiis.&quot;,
+        &quot;mini_description&quot;: &quot;Sed labore dolores non velit dolor autem.&quot;,
+        &quot;ancienPrix&quot;: 32.2,
+        &quot;prix&quot;: 92.84,
+        &quot;quantite&quot;: 4,
+        &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
         &quot;images&quot;: []
     }
 }</code>
@@ -2827,9 +2833,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"titre\": \"vspfwtepzxzeuetod\",
-    \"article_id\": \"quibusdam\",
-    \"categorie_id\": \"et\"
+    \"titre\": \"jzmxiyick\",
+    \"article_id\": \"eligendi\",
+    \"categorie_id\": \"dolorem\"
 }"
 </code></pre></div>
 
@@ -2845,9 +2851,9 @@ const headers = {
 };
 
 let body = {
-    "titre": "vspfwtepzxzeuetod",
-    "article_id": "quibusdam",
-    "categorie_id": "et"
+    "titre": "jzmxiyick",
+    "article_id": "eligendi",
+    "categorie_id": "dolorem"
 };
 
 fetch(url, {
@@ -2936,10 +2942,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="titre"                data-endpoint="POSTapi-admin-categorieArticles"
-               value="vspfwtepzxzeuetod"
+               value="jzmxiyick"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vspfwtepzxzeuetod</code></p>
+<p>Must not be greater than 255 characters. Example: <code>jzmxiyick</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>article_id</code></b>&nbsp;&nbsp;
@@ -2947,10 +2953,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="article_id"                data-endpoint="POSTapi-admin-categorieArticles"
-               value="quibusdam"
+               value="eligendi"
                data-component="body">
     <br>
-<p>Example: <code>quibusdam</code></p>
+<p>Example: <code>eligendi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>categorie_id</code></b>&nbsp;&nbsp;
@@ -2958,10 +2964,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="categorie_id"                data-endpoint="POSTapi-admin-categorieArticles"
-               value="et"
+               value="dolorem"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>dolorem</code></p>
         </div>
         </form>
 
@@ -2982,9 +2988,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"titre\": \"qdem\",
-    \"article_id\": \"autem\",
-    \"categorie_id\": \"consequatur\"
+    \"titre\": \"drkeflujjsloxtonqzrttl\",
+    \"article_id\": \"rem\",
+    \"categorie_id\": \"eos\"
 }"
 </code></pre></div>
 
@@ -3000,9 +3006,9 @@ const headers = {
 };
 
 let body = {
-    "titre": "qdem",
-    "article_id": "autem",
-    "categorie_id": "consequatur"
+    "titre": "drkeflujjsloxtonqzrttl",
+    "article_id": "rem",
+    "categorie_id": "eos"
 };
 
 fetch(url, {
@@ -3103,10 +3109,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="titre"                data-endpoint="PUTapi-admin-categorieArticles--id-"
-               value="qdem"
+               value="drkeflujjsloxtonqzrttl"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>qdem</code></p>
+<p>Must not be greater than 255 characters. Example: <code>drkeflujjsloxtonqzrttl</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>article_id</code></b>&nbsp;&nbsp;
@@ -3114,10 +3120,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="article_id"                data-endpoint="PUTapi-admin-categorieArticles--id-"
-               value="autem"
+               value="rem"
                data-component="body">
     <br>
-<p>Example: <code>autem</code></p>
+<p>Example: <code>rem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>categorie_id</code></b>&nbsp;&nbsp;
@@ -3125,10 +3131,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="categorie_id"                data-endpoint="PUTapi-admin-categorieArticles--id-"
-               value="consequatur"
+               value="eos"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Example: <code>eos</code></p>
         </div>
         </form>
 
@@ -3393,14 +3399,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/admin.categories/1" \
+    --get "http://127.0.0.1:8000/api/admin.categories/dolore" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/admin.categories/1"
+    "http://127.0.0.1:8000/api/admin.categories/dolore"
 );
 
 const headers = {
@@ -3505,14 +3511,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="GETapi-admin-categories--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-admin-categories--id-"
+               value="dolore"
                data-component="url">
     <br>
-<p>The ID of the admin.category. Example: <code>1</code></p>
+<p>The ID of the admin.category. Example: <code>dolore</code></p>
             </div>
                     </form>
 
@@ -3533,8 +3539,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"nom\": \"nirkmiugokdvpfynalthshrjs\",
-    \"description\": \"Dicta natus qui ut pariatur harum porro rem.\"
+    \"nom\": \"eeuvkljqfvbcnbzcswc\",
+    \"description\": \"Magni occaecati aperiam quas.\"
 }"
 </code></pre></div>
 
@@ -3550,8 +3556,8 @@ const headers = {
 };
 
 let body = {
-    "nom": "nirkmiugokdvpfynalthshrjs",
-    "description": "Dicta natus qui ut pariatur harum porro rem."
+    "nom": "eeuvkljqfvbcnbzcswc",
+    "description": "Magni occaecati aperiam quas."
 };
 
 fetch(url, {
@@ -3640,10 +3646,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="nom"                data-endpoint="POSTapi-admin-categories"
-               value="nirkmiugokdvpfynalthshrjs"
+               value="eeuvkljqfvbcnbzcswc"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>nirkmiugokdvpfynalthshrjs</code></p>
+<p>Must not be greater than 255 characters. Example: <code>eeuvkljqfvbcnbzcswc</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -3651,10 +3657,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-admin-categories"
-               value="Dicta natus qui ut pariatur harum porro rem."
+               value="Magni occaecati aperiam quas."
                data-component="body">
     <br>
-<p>Example: <code>Dicta natus qui ut pariatur harum porro rem.</code></p>
+<p>Example: <code>Magni occaecati aperiam quas.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>superCategorie_id</code></b>&nbsp;&nbsp;
@@ -3682,19 +3688,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8000/api/admin.categories/1" \
+    "http://127.0.0.1:8000/api/admin.categories/non" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"nom\": \"atxvarpdqclkkkdswrulngt\",
-    \"description\": \"Qui natus non maiores eveniet.\"
+    \"nom\": \"puroddoeynevodxwly\",
+    \"description\": \"Doloremque deserunt repellat ipsum nesciunt eum.\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/admin.categories/1"
+    "http://127.0.0.1:8000/api/admin.categories/non"
 );
 
 const headers = {
@@ -3703,8 +3709,8 @@ const headers = {
 };
 
 let body = {
-    "nom": "atxvarpdqclkkkdswrulngt",
-    "description": "Qui natus non maiores eveniet."
+    "nom": "puroddoeynevodxwly",
+    "description": "Doloremque deserunt repellat ipsum nesciunt eum."
 };
 
 fetch(url, {
@@ -3789,14 +3795,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="PUTapi-admin-categories--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-admin-categories--id-"
+               value="non"
                data-component="url">
     <br>
-<p>The ID of the admin.category. Example: <code>1</code></p>
+<p>The ID of the admin.category. Example: <code>non</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -3805,10 +3811,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="nom"                data-endpoint="PUTapi-admin-categories--id-"
-               value="atxvarpdqclkkkdswrulngt"
+               value="puroddoeynevodxwly"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>atxvarpdqclkkkdswrulngt</code></p>
+<p>Must not be greater than 255 characters. Example: <code>puroddoeynevodxwly</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -3816,17 +3822,17 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-admin-categories--id-"
-               value="Qui natus non maiores eveniet."
+               value="Doloremque deserunt repellat ipsum nesciunt eum."
                data-component="body">
     <br>
-<p>Example: <code>Qui natus non maiores eveniet.</code></p>
+<p>Example: <code>Doloremque deserunt repellat ipsum nesciunt eum.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>super_categorie</code></b>&nbsp;&nbsp;
+            <b style="line-height: 2;"><code>superCategorie_id</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
-                              name="super_categorie"                data-endpoint="PUTapi-admin-categories--id-"
+                              name="superCategorie_id"                data-endpoint="PUTapi-admin-categories--id-"
                value=""
                data-component="body">
     <br>
@@ -3847,14 +3853,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8000/api/admin.categories/1" \
+    "http://127.0.0.1:8000/api/admin.categories/magni" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/admin.categories/1"
+    "http://127.0.0.1:8000/api/admin.categories/magni"
 );
 
 const headers = {
@@ -3943,14 +3949,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="DELETEapi-admin-categories--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-admin-categories--id-"
+               value="magni"
                data-component="url">
     <br>
-<p>The ID of the admin.category. Example: <code>1</code></p>
+<p>The ID of the admin.category. Example: <code>magni</code></p>
             </div>
                     </form>
 
@@ -3967,14 +3973,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/categories/dolor/articles" \
+    --get "http://127.0.0.1:8000/api/categories/harum/articles" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/categories/dolor/articles"
+    "http://127.0.0.1:8000/api/categories/harum/articles"
 );
 
 const headers = {
@@ -3991,7 +3997,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-categories--categorie--articles">
             <blockquote>
-            <p>Example response (404):</p>
+            <p>Example response (401):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -3999,466 +4005,11 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
-x-ratelimit-limit: 60
-x-ratelimit-remaining: 56
 vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;No query results for model [App\\Models\\Categorie] dolor&quot;,
-    &quot;exception&quot;: &quot;Symfony\\Component\\HttpKernel\\Exception\\NotFoundHttpException&quot;,
-    &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php&quot;,
-    &quot;line&quot;: 487,
-    &quot;trace&quot;: [
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Exceptions\\Handler.php&quot;,
-            &quot;line&quot;: 463,
-            &quot;function&quot;: &quot;prepareException&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Exceptions\\Handler&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\nunomaduro\\collision\\src\\Adapters\\Laravel\\ExceptionHandler.php&quot;,
-            &quot;line&quot;: 54,
-            &quot;function&quot;: &quot;render&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Exceptions\\Handler&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php&quot;,
-            &quot;line&quot;: 51,
-            &quot;function&quot;: &quot;render&quot;,
-            &quot;class&quot;: &quot;NunoMaduro\\Collision\\Adapters\\Laravel\\ExceptionHandler&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 146,
-            &quot;function&quot;: &quot;handleException&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php&quot;,
-            &quot;line&quot;: 50,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\SubstituteBindings&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
-            &quot;line&quot;: 159,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
-            &quot;line&quot;: 135,
-            &quot;function&quot;: &quot;handleRequest&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php&quot;,
-            &quot;line&quot;: 87,
-            &quot;function&quot;: &quot;handleRequestUsingNamedLimiter&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Middleware\\ThrottleRequests&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\sanctum\\src\\Http\\Middleware\\EnsureFrontendRequestsAreStateful.php&quot;,
-            &quot;line&quot;: 25,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 144,
-            &quot;function&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\{closure}&quot;,
-            &quot;class&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 119,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\sanctum\\src\\Http\\Middleware\\EnsureFrontendRequestsAreStateful.php&quot;,
-            &quot;line&quot;: 26,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Laravel\\Sanctum\\Http\\Middleware\\EnsureFrontendRequestsAreStateful&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 119,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
-            &quot;line&quot;: 807,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
-            &quot;line&quot;: 784,
-            &quot;function&quot;: &quot;runRouteWithinStack&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
-            &quot;line&quot;: 748,
-            &quot;function&quot;: &quot;runRoute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php&quot;,
-            &quot;line&quot;: 737,
-            &quot;function&quot;: &quot;dispatchToRoute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
-            &quot;line&quot;: 200,
-            &quot;function&quot;: &quot;dispatch&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Routing\\Router&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 144,
-            &quot;function&quot;: &quot;Illuminate\\Foundation\\Http\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php&quot;,
-            &quot;line&quot;: 21,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php&quot;,
-            &quot;line&quot;: 31,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php&quot;,
-            &quot;line&quot;: 21,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php&quot;,
-            &quot;line&quot;: 40,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\TrimStrings&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php&quot;,
-            &quot;line&quot;: 27,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php&quot;,
-            &quot;line&quot;: 99,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php&quot;,
-            &quot;line&quot;: 62,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\HandleCors&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php&quot;,
-            &quot;line&quot;: 39,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 183,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Http\\Middleware\\TrustProxies&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php&quot;,
-            &quot;line&quot;: 119,
-            &quot;function&quot;: &quot;Illuminate\\Pipeline\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
-            &quot;line&quot;: 175,
-            &quot;function&quot;: &quot;then&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Pipeline\\Pipeline&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php&quot;,
-            &quot;line&quot;: 144,
-            &quot;function&quot;: &quot;sendRequestThroughRouter&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
-            &quot;line&quot;: 310,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Http\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
-            &quot;line&quot;: 298,
-            &quot;function&quot;: &quot;callLaravelOrLumenRoute&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
-            &quot;line&quot;: 91,
-            &quot;function&quot;: &quot;makeApiCall&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
-            &quot;line&quot;: 44,
-            &quot;function&quot;: &quot;makeResponseCall&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php&quot;,
-            &quot;line&quot;: 35,
-            &quot;function&quot;: &quot;makeResponseCallIfConditionsPass&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
-            &quot;line&quot;: 236,
-            &quot;function&quot;: &quot;__invoke&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
-            &quot;line&quot;: 166,
-            &quot;function&quot;: &quot;iterateThroughStrategies&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Extractor.php&quot;,
-            &quot;line&quot;: 95,
-            &quot;function&quot;: &quot;fetchResponses&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 125,
-            &quot;function&quot;: &quot;processRoute&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Extracting\\Extractor&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 72,
-            &quot;function&quot;: &quot;extractEndpointsInfoFromLaravelApp&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\GroupedEndpoints\\GroupedEndpointsFromApp.php&quot;,
-            &quot;line&quot;: 50,
-            &quot;function&quot;: &quot;extractEndpointsInfoAndWriteToDisk&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php&quot;,
-            &quot;line&quot;: 53,
-            &quot;function&quot;: &quot;get&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\GroupedEndpoints\\GroupedEndpointsFromApp&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
-            &quot;line&quot;: 36,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Knuckles\\Scribe\\Commands\\GenerateDocumentation&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php&quot;,
-            &quot;line&quot;: 41,
-            &quot;function&quot;: &quot;Illuminate\\Container\\{closure}&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
-            &quot;line&quot;: 93,
-            &quot;function&quot;: &quot;unwrapIfClosure&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\Util&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php&quot;,
-            &quot;line&quot;: 37,
-            &quot;function&quot;: &quot;callBoundMethod&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php&quot;,
-            &quot;line&quot;: 662,
-            &quot;function&quot;: &quot;call&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\BoundMethod&quot;,
-            &quot;type&quot;: &quot;::&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php&quot;,
-            &quot;line&quot;: 211,
-            &quot;function&quot;: &quot;call&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Container\\Container&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\symfony\\console\\Command\\Command.php&quot;,
-            &quot;line&quot;: 326,
-            &quot;function&quot;: &quot;execute&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php&quot;,
-            &quot;line&quot;: 181,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Command\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\symfony\\console\\Application.php&quot;,
-            &quot;line&quot;: 1096,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Console\\Command&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\symfony\\console\\Application.php&quot;,
-            &quot;line&quot;: 324,
-            &quot;function&quot;: &quot;doRunCommand&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\symfony\\console\\Application.php&quot;,
-            &quot;line&quot;: 175,
-            &quot;function&quot;: &quot;doRun&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php&quot;,
-            &quot;line&quot;: 201,
-            &quot;function&quot;: &quot;run&quot;,
-            &quot;class&quot;: &quot;Symfony\\Component\\Console\\Application&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        },
-        {
-            &quot;file&quot;: &quot;C:\\laragon\\www\\BackendMaman.tg\\artisan&quot;,
-            &quot;line&quot;: 37,
-            &quot;function&quot;: &quot;handle&quot;,
-            &quot;class&quot;: &quot;Illuminate\\Foundation\\Console\\Kernel&quot;,
-            &quot;type&quot;: &quot;-&gt;&quot;
-        }
-    ]
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
 }</code>
  </pre>
     </span>
@@ -4538,10 +4089,146 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="categorie"                data-endpoint="GETapi-categories--categorie--articles"
-               value="dolor"
+               value="harum"
                data-component="url">
     <br>
-<p>Example: <code>dolor</code></p>
+<p>Example: <code>harum</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="categorie-management-GETapi-categories--id--articles">GET api/categories/{id}/articles</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-categories--id--articles">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/categories/ut/articles" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/categories/ut/articles"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-categories--id--articles">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-categories--id--articles" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-categories--id--articles"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-categories--id--articles"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-categories--id--articles" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-categories--id--articles">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-categories--id--articles" data-method="GET"
+      data-path="api/categories/{id}/articles"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-categories--id--articles', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-categories--id--articles"
+                    onclick="tryItOut('GETapi-categories--id--articles');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-categories--id--articles"
+                    onclick="cancelTryOut('GETapi-categories--id--articles');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-categories--id--articles"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/categories/{id}/articles</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-categories--id--articles"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-categories--id--articles"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-categories--id--articles"
+               value="ut"
+               data-component="url">
+    <br>
+<p>The ID of the category. Example: <code>ut</code></p>
             </div>
                     </form>
 
@@ -4591,7 +4278,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 52
+x-ratelimit-remaining: 53
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -4603,49 +4290,49 @@ vary: Origin
             &quot;id&quot;: 1,
             &quot;nom&quot;: &quot;Futur Maman&quot;,
             &quot;description&quot;: null,
-            &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2024-07-25T10:16:14.000000Z&quot;,
             &quot;superCategorie_id&quot;: null,
             &quot;sousCategories&quot;: [
                 {
                     &quot;id&quot;: 2,
                     &quot;nom&quot;: &quot;Robes&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:14.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 1
                 },
                 {
                     &quot;id&quot;: 3,
                     &quot;nom&quot;: &quot;Chemises&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:14.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 1
                 },
                 {
                     &quot;id&quot;: 4,
                     &quot;nom&quot;: &quot;Pulls&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:14.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 1
                 },
                 {
                     &quot;id&quot;: 5,
                     &quot;nom&quot;: &quot;Pantalons&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:14.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 1
                 },
                 {
                     &quot;id&quot;: 6,
                     &quot;nom&quot;: &quot;Accessoires&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:14.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 1
                 },
                 {
                     &quot;id&quot;: 7,
                     &quot;nom&quot;: &quot;D&eacute;tergents&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:14.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 1
                 }
             ]
@@ -4654,49 +4341,49 @@ vary: Origin
             &quot;id&quot;: 8,
             &quot;nom&quot;: &quot;B&eacute;b&eacute;&quot;,
             &quot;description&quot;: null,
-            &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2024-07-25T10:16:14.000000Z&quot;,
             &quot;superCategorie_id&quot;: null,
             &quot;sousCategories&quot;: [
                 {
                     &quot;id&quot;: 9,
                     &quot;nom&quot;: &quot;Surv&ecirc;tements&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:14.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 8
                 },
                 {
                     &quot;id&quot;: 10,
                     &quot;nom&quot;: &quot;Sous-v&ecirc;tements&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:14.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 8
                 },
                 {
                     &quot;id&quot;: 11,
                     &quot;nom&quot;: &quot;Ensembles&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:14.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 8
                 },
                 {
                     &quot;id&quot;: 12,
                     &quot;nom&quot;: &quot;Pulls&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:14.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 8
                 },
                 {
                     &quot;id&quot;: 13,
                     &quot;nom&quot;: &quot;Accessoires&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:14.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 8
                 },
                 {
                     &quot;id&quot;: 14,
                     &quot;nom&quot;: &quot;Chaussures&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:14.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 8
                 }
             ]
@@ -4705,35 +4392,35 @@ vary: Origin
             &quot;id&quot;: 15,
             &quot;nom&quot;: &quot;Allaitement&quot;,
             &quot;description&quot;: null,
-            &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2024-07-25T10:16:14.000000Z&quot;,
             &quot;superCategorie_id&quot;: null,
             &quot;sousCategories&quot;: [
                 {
                     &quot;id&quot;: 16,
                     &quot;nom&quot;: &quot;Biberons&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:14.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 15
                 },
                 {
                     &quot;id&quot;: 17,
                     &quot;nom&quot;: &quot;Tire-lait&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 15
                 },
                 {
                     &quot;id&quot;: 18,
                     &quot;nom&quot;: &quot;Lait&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 15
                 },
                 {
                     &quot;id&quot;: 19,
                     &quot;nom&quot;: &quot;Accessoires&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 15
                 }
             ]
@@ -4742,28 +4429,28 @@ vary: Origin
             &quot;id&quot;: 20,
             &quot;nom&quot;: &quot;Espaces Jouets&quot;,
             &quot;description&quot;: null,
-            &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
             &quot;superCategorie_id&quot;: null,
             &quot;sousCategories&quot;: [
                 {
                     &quot;id&quot;: 21,
                     &quot;nom&quot;: &quot;Jouets b&eacute;b&eacute;&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 20
                 },
                 {
                     &quot;id&quot;: 22,
                     &quot;nom&quot;: &quot;Jeux de cr&eacute;ativit&eacute;&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 20
                 },
                 {
                     &quot;id&quot;: 23,
                     &quot;nom&quot;: &quot;Autres&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 20
                 }
             ]
@@ -4772,35 +4459,35 @@ vary: Origin
             &quot;id&quot;: 24,
             &quot;nom&quot;: &quot;V&ecirc;tements Gar&ccedil;ons&quot;,
             &quot;description&quot;: null,
-            &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
             &quot;superCategorie_id&quot;: null,
             &quot;sousCategories&quot;: [
                 {
                     &quot;id&quot;: 25,
                     &quot;nom&quot;: &quot;T-shirts&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 24
                 },
                 {
                     &quot;id&quot;: 26,
                     &quot;nom&quot;: &quot;Pantalons&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 24
                 },
                 {
                     &quot;id&quot;: 27,
                     &quot;nom&quot;: &quot;Ensembles&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 24
                 },
                 {
                     &quot;id&quot;: 28,
                     &quot;nom&quot;: &quot;Autres&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 24
                 }
             ]
@@ -4809,35 +4496,35 @@ vary: Origin
             &quot;id&quot;: 29,
             &quot;nom&quot;: &quot;V&ecirc;tements Filles&quot;,
             &quot;description&quot;: null,
-            &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
             &quot;superCategorie_id&quot;: null,
             &quot;sousCategories&quot;: [
                 {
                     &quot;id&quot;: 30,
                     &quot;nom&quot;: &quot;Robes Filles&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 29
                 },
                 {
                     &quot;id&quot;: 31,
                     &quot;nom&quot;: &quot;Hauts &amp; Sous-v&ecirc;tements&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 29
                 },
                 {
                     &quot;id&quot;: 32,
                     &quot;nom&quot;: &quot;Jupes&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 29
                 },
                 {
                     &quot;id&quot;: 33,
                     &quot;nom&quot;: &quot;Accessoires&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 29
                 }
             ]
@@ -4846,35 +4533,35 @@ vary: Origin
             &quot;id&quot;: 34,
             &quot;nom&quot;: &quot;Chambre B&eacute;b&eacute;&quot;,
             &quot;description&quot;: null,
-            &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+            &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
             &quot;superCategorie_id&quot;: null,
             &quot;sousCategories&quot;: [
                 {
                     &quot;id&quot;: 35,
                     &quot;nom&quot;: &quot;Lits &amp; Berceaux&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 34
                 },
                 {
                     &quot;id&quot;: 36,
                     &quot;nom&quot;: &quot;D&eacute;corations&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 34
                 },
                 {
                     &quot;id&quot;: 37,
                     &quot;nom&quot;: &quot;Accessoires&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 34
                 },
                 {
                     &quot;id&quot;: 38,
                     &quot;nom&quot;: &quot;Linges&quot;,
                     &quot;description&quot;: null,
-                    &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
+                    &quot;created_at&quot;: &quot;2024-07-25T10:16:15.000000Z&quot;,
                     &quot;superCategorie_id&quot;: 34
                 }
             ]
@@ -4954,27 +4641,27 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="categorie-management-GETapi-categories--categorie_id-">Display the specified resource.</h2>
+                    <h2 id="categorie-management-GETapi-categories--id-">Display the specified resource.</h2>
 
 <p>
 </p>
 
 
 
-<span id="example-requests-GETapi-categories--categorie_id-">
+<span id="example-requests-GETapi-categories--id-">
 <blockquote>Example request:</blockquote>
 
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/categories/1" \
+    --get "http://127.0.0.1:8000/api/categories/voluptas" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/categories/1"
+    "http://127.0.0.1:8000/api/categories/voluptas"
 );
 
 const headers = {
@@ -4989,9 +4676,9 @@ fetch(url, {
 
 </span>
 
-<span id="example-responses-GETapi-categories--categorie_id-">
+<span id="example-responses-GETapi-categories--id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (400):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -5000,105 +4687,54 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 51
+x-ratelimit-remaining: 52
 vary: Origin
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: true,
-    &quot;message&quot;: &quot;&quot;,
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;nom&quot;: &quot;Futur Maman&quot;,
-        &quot;description&quot;: null,
-        &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
-        &quot;superCategorie_id&quot;: null,
-        &quot;superCategorie&quot;: null,
-        &quot;sousCategories&quot;: [
-            {
-                &quot;id&quot;: 2,
-                &quot;nom&quot;: &quot;Robes&quot;,
-                &quot;description&quot;: null,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
-                &quot;superCategorie_id&quot;: 1
-            },
-            {
-                &quot;id&quot;: 3,
-                &quot;nom&quot;: &quot;Chemises&quot;,
-                &quot;description&quot;: null,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
-                &quot;superCategorie_id&quot;: 1
-            },
-            {
-                &quot;id&quot;: 4,
-                &quot;nom&quot;: &quot;Pulls&quot;,
-                &quot;description&quot;: null,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
-                &quot;superCategorie_id&quot;: 1
-            },
-            {
-                &quot;id&quot;: 5,
-                &quot;nom&quot;: &quot;Pantalons&quot;,
-                &quot;description&quot;: null,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
-                &quot;superCategorie_id&quot;: 1
-            },
-            {
-                &quot;id&quot;: 6,
-                &quot;nom&quot;: &quot;Accessoires&quot;,
-                &quot;description&quot;: null,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
-                &quot;superCategorie_id&quot;: 1
-            },
-            {
-                &quot;id&quot;: 7,
-                &quot;nom&quot;: &quot;D&eacute;tergents&quot;,
-                &quot;description&quot;: null,
-                &quot;created_at&quot;: &quot;2024-07-24T15:40:13.000000Z&quot;,
-                &quot;superCategorie_id&quot;: 1
-            }
-        ]
-    }
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;Categorie not found&quot;,
+    &quot;data&quot;: null
 }</code>
  </pre>
     </span>
-<span id="execution-results-GETapi-categories--categorie_id-" hidden>
+<span id="execution-results-GETapi-categories--id-" hidden>
     <blockquote>Received response<span
-                id="execution-response-status-GETapi-categories--categorie_id-"></span>:
+                id="execution-response-status-GETapi-categories--id-"></span>:
     </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-categories--categorie_id-"
+    <pre class="json"><code id="execution-response-content-GETapi-categories--id-"
       data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
 </span>
-<span id="execution-error-GETapi-categories--categorie_id-" hidden>
+<span id="execution-error-GETapi-categories--id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-categories--categorie_id-">
+    <pre><code id="execution-error-message-GETapi-categories--id-">
 
 Tip: Check that you&#039;re properly connected to the network.
 If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
 You can check the Dev Tools console for debugging information.</code></pre>
 </span>
-<form id="form-GETapi-categories--categorie_id-" data-method="GET"
-      data-path="api/categories/{categorie_id}"
+<form id="form-GETapi-categories--id-" data-method="GET"
+      data-path="api/categories/{id}"
       data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-categories--categorie_id-', this);">
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-categories--id-', this);">
     <h3>
         Request&nbsp;&nbsp;&nbsp;
                     <button type="button"
                     style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-categories--categorie_id-"
-                    onclick="tryItOut('GETapi-categories--categorie_id-');">Try it out ⚡
+                    id="btn-tryout-GETapi-categories--id-"
+                    onclick="tryItOut('GETapi-categories--id-');">Try it out ⚡
             </button>
             <button type="button"
                     style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-categories--categorie_id-"
-                    onclick="cancelTryOut('GETapi-categories--categorie_id-');" hidden>Cancel 🛑
+                    id="btn-canceltryout-GETapi-categories--id-"
+                    onclick="cancelTryOut('GETapi-categories--id-');" hidden>Cancel 🛑
             </button>&nbsp;&nbsp;
             <button type="submit"
                     style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-categories--categorie_id-"
+                    id="btn-executetryout-GETapi-categories--id-"
                     data-initial-text="Send Request 💥"
                     data-loading-text="⏱ Sending..."
                     hidden>Send Request 💥
@@ -5106,7 +4742,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </h3>
             <p>
             <small class="badge badge-green">GET</small>
-            <b><code>api/categories/{categorie_id}</code></b>
+            <b><code>api/categories/{id}</code></b>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
@@ -5114,7 +4750,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-categories--categorie_id-"
+                              name="Content-Type"                data-endpoint="GETapi-categories--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -5125,7 +4761,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 &nbsp;
  &nbsp;
                 <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-categories--categorie_id-"
+                              name="Accept"                data-endpoint="GETapi-categories--id-"
                value="application/json"
                data-component="header">
     <br>
@@ -5133,15 +4769,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>categorie_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+                <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="categorie_id"                data-endpoint="GETapi-categories--categorie_id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-categories--id-"
+               value="voluptas"
                data-component="url">
     <br>
-<p>The ID of the categorie. Example: <code>1</code></p>
+<p>The ID of the category. Example: <code>voluptas</code></p>
             </div>
                     </form>
 
@@ -5426,15 +5062,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"titre\": \"umsmaixuntqaszwvmbzqvgwvk\",
-    \"date\": \"2024-07-24T17:09:39\",
-    \"montant\": 91828.329996,
-    \"latitude\": 220455.5288,
-    \"longitude\": 2654.0887,
+    \"titre\": \"dxzzvrebblfzye\",
+    \"date\": \"2024-07-29T19:26:27\",
+    \"montant\": 508296078.07,
+    \"latitude\": 1.6011,
+    \"longitude\": 1100,
     \"articles\": [
         {
-            \"article_id\": \"aut\",
-            \"quantite\": 3
+            \"article_id\": \"totam\",
+            \"quantite\": 5
         }
     ]
 }"
@@ -5452,15 +5088,15 @@ const headers = {
 };
 
 let body = {
-    "titre": "umsmaixuntqaszwvmbzqvgwvk",
-    "date": "2024-07-24T17:09:39",
-    "montant": 91828.329996,
-    "latitude": 220455.5288,
-    "longitude": 2654.0887,
+    "titre": "dxzzvrebblfzye",
+    "date": "2024-07-29T19:26:27",
+    "montant": 508296078.07,
+    "latitude": 1.6011,
+    "longitude": 1100,
     "articles": [
         {
-            "article_id": "aut",
-            "quantite": 3
+            "article_id": "totam",
+            "quantite": 5
         }
     ]
 };
@@ -5551,10 +5187,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="titre"                data-endpoint="POSTapi-admin-commandes"
-               value="umsmaixuntqaszwvmbzqvgwvk"
+               value="dxzzvrebblfzye"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>umsmaixuntqaszwvmbzqvgwvk</code></p>
+<p>Must not be greater than 255 characters. Example: <code>dxzzvrebblfzye</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -5562,10 +5198,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-admin-commandes"
-               value="2024-07-24T17:09:39"
+               value="2024-07-29T19:26:27"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-07-24T17:09:39</code></p>
+<p>Must be a valid date. Example: <code>2024-07-29T19:26:27</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>montant</code></b>&nbsp;&nbsp;
@@ -5573,10 +5209,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="montant"                data-endpoint="POSTapi-admin-commandes"
-               value="91828.329996"
+               value="508296078.07"
                data-component="body">
     <br>
-<p>Example: <code>91828.329996</code></p>
+<p>Example: <code>508296078.07</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>latitude</code></b>&nbsp;&nbsp;
@@ -5584,10 +5220,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="latitude"                data-endpoint="POSTapi-admin-commandes"
-               value="220455.5288"
+               value="1.6011"
                data-component="body">
     <br>
-<p>Example: <code>220455.5288</code></p>
+<p>Example: <code>1.6011</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>longitude</code></b>&nbsp;&nbsp;
@@ -5595,10 +5231,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="longitude"                data-endpoint="POSTapi-admin-commandes"
-               value="2654.0887"
+               value="1100"
                data-component="body">
     <br>
-<p>Example: <code>2654.0887</code></p>
+<p>Example: <code>1100</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -5615,10 +5251,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="articles.0.article_id"                data-endpoint="POSTapi-admin-commandes"
-               value="aut"
+               value="totam"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>totam</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>quantite</code></b>&nbsp;&nbsp;
@@ -5626,10 +5262,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="articles.0.quantite"                data-endpoint="POSTapi-admin-commandes"
-               value="3"
+               value="5"
                data-component="body">
     <br>
-<p>Example: <code>3</code></p>
+<p>Example: <code>5</code></p>
                     </div>
                                     </details>
         </div>
@@ -5652,11 +5288,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"titre\": \"ictunpqztrpguid\",
-    \"date\": \"2024-07-24T17:09:39\",
-    \"montant\": 4319511.846,
-    \"statut\": \"kat\",
-    \"reference\": \"meuusjkhqttlqhhzkrf\"
+    \"titre\": \"epvgvyaznfwh\",
+    \"date\": \"2024-07-29T19:26:27\",
+    \"montant\": 0.81,
+    \"statut\": \"nscvfdxselmyuptv\",
+    \"reference\": \"hsjdwgdfaagsgfgma\"
 }"
 </code></pre></div>
 
@@ -5672,11 +5308,11 @@ const headers = {
 };
 
 let body = {
-    "titre": "ictunpqztrpguid",
-    "date": "2024-07-24T17:09:39",
-    "montant": 4319511.846,
-    "statut": "kat",
-    "reference": "meuusjkhqttlqhhzkrf"
+    "titre": "epvgvyaznfwh",
+    "date": "2024-07-29T19:26:27",
+    "montant": 0.81,
+    "statut": "nscvfdxselmyuptv",
+    "reference": "hsjdwgdfaagsgfgma"
 };
 
 fetch(url, {
@@ -5777,10 +5413,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="titre"                data-endpoint="PUTapi-admin-commandes--id-"
-               value="ictunpqztrpguid"
+               value="epvgvyaznfwh"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>ictunpqztrpguid</code></p>
+<p>Must not be greater than 255 characters. Example: <code>epvgvyaznfwh</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -5788,10 +5424,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="PUTapi-admin-commandes--id-"
-               value="2024-07-24T17:09:39"
+               value="2024-07-29T19:26:27"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-07-24T17:09:39</code></p>
+<p>Must be a valid date. Example: <code>2024-07-29T19:26:27</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>montant</code></b>&nbsp;&nbsp;
@@ -5799,10 +5435,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="montant"                data-endpoint="PUTapi-admin-commandes--id-"
-               value="4319511.846"
+               value="0.81"
                data-component="body">
     <br>
-<p>Example: <code>4319511.846</code></p>
+<p>Example: <code>0.81</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>statut</code></b>&nbsp;&nbsp;
@@ -5810,10 +5446,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="statut"                data-endpoint="PUTapi-admin-commandes--id-"
-               value="kat"
+               value="nscvfdxselmyuptv"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>kat</code></p>
+<p>Must not be greater than 255 characters. Example: <code>nscvfdxselmyuptv</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>reference</code></b>&nbsp;&nbsp;
@@ -5821,10 +5457,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="reference"                data-endpoint="PUTapi-admin-commandes--id-"
-               value="meuusjkhqttlqhhzkrf"
+               value="hsjdwgdfaagsgfgma"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>meuusjkhqttlqhhzkrf</code></p>
+<p>Must not be greater than 255 characters. Example: <code>hsjdwgdfaagsgfgma</code></p>
         </div>
         </form>
 
@@ -6101,15 +5737,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"titre\": \"eymvnayaswzxnkjpcx\",
-    \"date\": \"2024-07-24T17:09:39\",
-    \"montant\": 6992669.2,
-    \"latitude\": 14587778.1691,
-    \"longitude\": 68108,
+    \"titre\": \"cykjptfbsjnhhdhbaemejin\",
+    \"date\": \"2024-07-29T19:26:31\",
+    \"montant\": 140.570072,
+    \"latitude\": 28954402.3640535,
+    \"longitude\": 7.03914791,
     \"articles\": [
         {
-            \"article_id\": \"doloribus\",
-            \"quantite\": 15
+            \"article_id\": \"et\",
+            \"quantite\": 5
         }
     ]
 }"
@@ -6127,15 +5763,15 @@ const headers = {
 };
 
 let body = {
-    "titre": "eymvnayaswzxnkjpcx",
-    "date": "2024-07-24T17:09:39",
-    "montant": 6992669.2,
-    "latitude": 14587778.1691,
-    "longitude": 68108,
+    "titre": "cykjptfbsjnhhdhbaemejin",
+    "date": "2024-07-29T19:26:31",
+    "montant": 140.570072,
+    "latitude": 28954402.3640535,
+    "longitude": 7.03914791,
     "articles": [
         {
-            "article_id": "doloribus",
-            "quantite": 15
+            "article_id": "et",
+            "quantite": 5
         }
     ]
 };
@@ -6226,10 +5862,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="titre"                data-endpoint="POSTapi-commandes"
-               value="eymvnayaswzxnkjpcx"
+               value="cykjptfbsjnhhdhbaemejin"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>eymvnayaswzxnkjpcx</code></p>
+<p>Must not be greater than 255 characters. Example: <code>cykjptfbsjnhhdhbaemejin</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -6237,10 +5873,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-commandes"
-               value="2024-07-24T17:09:39"
+               value="2024-07-29T19:26:31"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-07-24T17:09:39</code></p>
+<p>Must be a valid date. Example: <code>2024-07-29T19:26:31</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>montant</code></b>&nbsp;&nbsp;
@@ -6248,10 +5884,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="montant"                data-endpoint="POSTapi-commandes"
-               value="6992669.2"
+               value="140.570072"
                data-component="body">
     <br>
-<p>Example: <code>6992669.2</code></p>
+<p>Example: <code>140.570072</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>latitude</code></b>&nbsp;&nbsp;
@@ -6259,10 +5895,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="latitude"                data-endpoint="POSTapi-commandes"
-               value="14587778.1691"
+               value="28954402.364053"
                data-component="body">
     <br>
-<p>Example: <code>14587778.1691</code></p>
+<p>Example: <code>28954402.364053</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>longitude</code></b>&nbsp;&nbsp;
@@ -6270,10 +5906,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="longitude"                data-endpoint="POSTapi-commandes"
-               value="68108"
+               value="7.03914791"
                data-component="body">
     <br>
-<p>Example: <code>68108</code></p>
+<p>Example: <code>7.03914791</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -6290,10 +5926,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="articles.0.article_id"                data-endpoint="POSTapi-commandes"
-               value="doloribus"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>doloribus</code></p>
+<p>Example: <code>et</code></p>
                     </div>
                                                                 <div style="margin-left: 14px; clear: unset;">
                         <b style="line-height: 2;"><code>quantite</code></b>&nbsp;&nbsp;
@@ -6301,10 +5937,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="articles.0.quantite"                data-endpoint="POSTapi-commandes"
-               value="15"
+               value="5"
                data-component="body">
     <br>
-<p>Example: <code>15</code></p>
+<p>Example: <code>5</code></p>
                     </div>
                                     </details>
         </div>
@@ -6670,6 +6306,130 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
+                    <h2 id="endpoints-GETapi-statistics">GET api/statistics</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-statistics">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/statistics" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/statistics"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-statistics">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+vary: Origin
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-statistics" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-statistics"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-statistics"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-statistics" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-statistics">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-statistics" data-method="GET"
+      data-path="api/statistics"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-statistics', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-statistics"
+                    onclick="tryItOut('GETapi-statistics');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-statistics"
+                    onclick="cancelTryOut('GETapi-statistics');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-statistics"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/statistics</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-statistics"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-statistics"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
                     <h2 id="endpoints-GETapi-profile">GET api/profile</h2>
 
 <p>
@@ -6811,11 +6571,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"nom\": \"lyilczfqwdesdc\",
-    \"prenom\": \"ilqwjibwgtszmkmb\",
-    \"name\": \"ehojfkr\",
-    \"email\": \"aglae.stoltenberg@example.org\",
-    \"password\": \"0?$$\\\\\\\".Gx=:m@@!\"
+    \"nom\": \"ursrfsqml\",
+    \"prenom\": \"hzola\",
+    \"name\": \"cgplgovfuteveyluqvtinvgfl\",
+    \"email\": \"ywhite@example.net\",
+    \"password\": \"\\\\7#^%~%!Z;rO6B*I\'B\"
 }"
 </code></pre></div>
 
@@ -6831,11 +6591,11 @@ const headers = {
 };
 
 let body = {
-    "nom": "lyilczfqwdesdc",
-    "prenom": "ilqwjibwgtszmkmb",
-    "name": "ehojfkr",
-    "email": "aglae.stoltenberg@example.org",
-    "password": "0?$$\\\".Gx=:m@@!"
+    "nom": "ursrfsqml",
+    "prenom": "hzola",
+    "name": "cgplgovfuteveyluqvtinvgfl",
+    "email": "ywhite@example.net",
+    "password": "\\7#^%~%!Z;rO6B*I'B"
 };
 
 fetch(url, {
@@ -6924,10 +6684,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="nom"                data-endpoint="POSTapi-register"
-               value="lyilczfqwdesdc"
+               value="ursrfsqml"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>lyilczfqwdesdc</code></p>
+<p>Must not be greater than 255 characters. Example: <code>ursrfsqml</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>prenom</code></b>&nbsp;&nbsp;
@@ -6935,10 +6695,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="prenom"                data-endpoint="POSTapi-register"
-               value="ilqwjibwgtszmkmb"
+               value="hzola"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>ilqwjibwgtszmkmb</code></p>
+<p>Must not be greater than 255 characters. Example: <code>hzola</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -6946,10 +6706,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-register"
-               value="ehojfkr"
+               value="cgplgovfuteveyluqvtinvgfl"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>ehojfkr</code></p>
+<p>Must not be greater than 255 characters. Example: <code>cgplgovfuteveyluqvtinvgfl</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -6957,10 +6717,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-register"
-               value="aglae.stoltenberg@example.org"
+               value="ywhite@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>aglae.stoltenberg@example.org</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>ywhite@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -6968,10 +6728,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-register"
-               value="0?$$\".Gx=:m@@!"
+               value="\7#^%~%!Z;rO6B*I'B"
                data-component="body">
     <br>
-<p>Must be at least 8 characters. Example: <code>0?$$\".Gx=:m@@!</code></p>
+<p>Must be at least 8 characters. Example: <code>\7#^%~%!Z;rO6B*I'B</code></p>
         </div>
         </form>
 
@@ -6992,8 +6752,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"ashleigh67@example.net\",
-    \"password\": \"3ki^2nZ5d$vu2Nf[B}\\\"\"
+    \"email\": \"kub.madie@example.org\",
+    \"password\": \"%-TP{@Dc\"
 }"
 </code></pre></div>
 
@@ -7009,8 +6769,8 @@ const headers = {
 };
 
 let body = {
-    "email": "ashleigh67@example.net",
-    "password": "3ki^2nZ5d$vu2Nf[B}\""
+    "email": "kub.madie@example.org",
+    "password": "%-TP{@Dc"
 };
 
 fetch(url, {
@@ -7099,10 +6859,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-login"
-               value="ashleigh67@example.net"
+               value="kub.madie@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>ashleigh67@example.net</code></p>
+<p>Must be a valid email address. Example: <code>kub.madie@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -7110,10 +6870,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-login"
-               value="3ki^2nZ5d$vu2Nf[B}""
+               value="%-TP{@Dc"
                data-component="body">
     <br>
-<p>Example: <code>3ki^2nZ5d$vu2Nf[B}"</code></p>
+<p>Example: <code>%-TP{@Dc</code></p>
         </div>
         </form>
 
@@ -7134,7 +6894,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"oortiz@example.org\"
+    \"email\": \"rutherford.zella@example.net\"
 }"
 </code></pre></div>
 
@@ -7150,7 +6910,7 @@ const headers = {
 };
 
 let body = {
-    "email": "oortiz@example.org"
+    "email": "rutherford.zella@example.net"
 };
 
 fetch(url, {
@@ -7239,10 +6999,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-forgot-password"
-               value="oortiz@example.org"
+               value="rutherford.zella@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>oortiz@example.org</code></p>
+<p>Must be a valid email address. Example: <code>rutherford.zella@example.net</code></p>
         </div>
         </form>
 
@@ -7263,9 +7023,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"token\": \"corporis\",
-    \"email\": \"telly27@example.com\",
-    \"password\": \"JA@a(dq2\\/0Q\"
+    \"token\": \"amet\",
+    \"email\": \"rice.joesph@example.org\",
+    \"password\": \"TAJe1G\\/\"
 }"
 </code></pre></div>
 
@@ -7281,9 +7041,9 @@ const headers = {
 };
 
 let body = {
-    "token": "corporis",
-    "email": "telly27@example.com",
-    "password": "JA@a(dq2\/0Q"
+    "token": "amet",
+    "email": "rice.joesph@example.org",
+    "password": "TAJe1G\/"
 };
 
 fetch(url, {
@@ -7372,10 +7132,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="token"                data-endpoint="POSTapi-reset-password"
-               value="corporis"
+               value="amet"
                data-component="body">
     <br>
-<p>Example: <code>corporis</code></p>
+<p>Example: <code>amet</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -7383,10 +7143,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-reset-password"
-               value="telly27@example.com"
+               value="rice.joesph@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>telly27@example.com</code></p>
+<p>Must be a valid email address. Example: <code>rice.joesph@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -7394,10 +7154,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-reset-password"
-               value="JA@a(dq2/0Q"
+               value="TAJe1G/"
                data-component="body">
     <br>
-<p>Must be at least 8 characters. Example: <code>JA@a(dq2/0Q</code></p>
+<p>Must be at least 8 characters. Example: <code>TAJe1G/</code></p>
         </div>
         </form>
 
@@ -7681,10 +7441,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/admin.images" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "titre=bebiewtrchtdxohwmz"\
-    --form "description=Veritatis qui quibusdam incidunt quos."\
-    --form "article_id=aut"\
-    --form "image=@C:\Users\B\AppData\Local\Temp\php2FB2.tmp" </code></pre></div>
+    --form "titre=twxxfjy"\
+    --form "description=Sit nemo vel officia est."\
+    --form "article_id=repellendus"\
+    --form "image=@C:\Users\B\AppData\Local\Temp\php8EF4.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -7698,9 +7458,9 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('titre', 'bebiewtrchtdxohwmz');
-body.append('description', 'Veritatis qui quibusdam incidunt quos.');
-body.append('article_id', 'aut');
+body.append('titre', 'twxxfjy');
+body.append('description', 'Sit nemo vel officia est.');
+body.append('article_id', 'repellendus');
 body.append('image', document.querySelector('input[name="image"]').files[0]);
 
 fetch(url, {
@@ -7789,10 +7549,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="titre"                data-endpoint="POSTapi-admin-images"
-               value="bebiewtrchtdxohwmz"
+               value="twxxfjy"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>bebiewtrchtdxohwmz</code></p>
+<p>Must not be greater than 255 characters. Example: <code>twxxfjy</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -7800,10 +7560,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-admin-images"
-               value="Veritatis qui quibusdam incidunt quos."
+               value="Sit nemo vel officia est."
                data-component="body">
     <br>
-<p>Example: <code>Veritatis qui quibusdam incidunt quos.</code></p>
+<p>Example: <code>Sit nemo vel officia est.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
@@ -7814,7 +7574,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>C:\Users\B\AppData\Local\Temp\php2FB2.tmp</code></p>
+<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>C:\Users\B\AppData\Local\Temp\php8EF4.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>article_id</code></b>&nbsp;&nbsp;
@@ -7822,10 +7582,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="article_id"                data-endpoint="POSTapi-admin-images"
-               value="aut"
+               value="repellendus"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>repellendus</code></p>
         </div>
         </form>
 
@@ -7845,10 +7605,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
     "http://127.0.0.1:8000/api/admin.images/1" \
     --header "Content-Type: multipart/form-data" \
     --header "Accept: application/json" \
-    --form "titre=h"\
-    --form "description=Quis nisi deserunt quidem voluptatem et est."\
-    --form "article_id=expedita"\
-    --form "image=@C:\Users\B\AppData\Local\Temp\php2FE3.tmp" </code></pre></div>
+    --form "titre=eszgfmwfjwwbbmixvdnhk"\
+    --form "description=Facilis mollitia in quia beatae ut autem ut qui."\
+    --form "article_id=quia"\
+    --form "image=@C:\Users\B\AppData\Local\Temp\php900F.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -7862,9 +7622,9 @@ const headers = {
 };
 
 const body = new FormData();
-body.append('titre', 'h');
-body.append('description', 'Quis nisi deserunt quidem voluptatem et est.');
-body.append('article_id', 'expedita');
+body.append('titre', 'eszgfmwfjwwbbmixvdnhk');
+body.append('description', 'Facilis mollitia in quia beatae ut autem ut qui.');
+body.append('article_id', 'quia');
 body.append('image', document.querySelector('input[name="image"]').files[0]);
 
 fetch(url, {
@@ -7965,10 +7725,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="titre"                data-endpoint="PUTapi-admin-images--id-"
-               value="h"
+               value="eszgfmwfjwwbbmixvdnhk"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>h</code></p>
+<p>Must not be greater than 255 characters. Example: <code>eszgfmwfjwwbbmixvdnhk</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -7976,10 +7736,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-admin-images--id-"
-               value="Quis nisi deserunt quidem voluptatem et est."
+               value="Facilis mollitia in quia beatae ut autem ut qui."
                data-component="body">
     <br>
-<p>Example: <code>Quis nisi deserunt quidem voluptatem et est.</code></p>
+<p>Example: <code>Facilis mollitia in quia beatae ut autem ut qui.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>image</code></b>&nbsp;&nbsp;
@@ -7990,7 +7750,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>C:\Users\B\AppData\Local\Temp\php2FE3.tmp</code></p>
+<p>Must be an image. Must not be greater than 2048 kilobytes. Example: <code>C:\Users\B\AppData\Local\Temp\php900F.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>article_id</code></b>&nbsp;&nbsp;
@@ -7998,10 +7758,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="article_id"                data-endpoint="PUTapi-admin-images--id-"
-               value="expedita"
+               value="quia"
                data-component="body">
     <br>
-<p>Example: <code>expedita</code></p>
+<p>Example: <code>quia</code></p>
         </div>
         </form>
 
@@ -8311,7 +8071,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 53
+x-ratelimit-remaining: 54
 vary: Origin
  </code></pre></details>         <pre>
 
@@ -8686,11 +8446,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"titre\": \"rmyxn\",
-    \"quantite\": 12,
-    \"prix\": 80.287175612,
-    \"article_id\": \"laborum\",
-    \"commande_id\": \"vel\"
+    \"titre\": \"kdjejyimj\",
+    \"quantite\": 17,
+    \"prix\": 43.711738,
+    \"article_id\": \"consequatur\",
+    \"commande_id\": \"error\"
 }"
 </code></pre></div>
 
@@ -8706,11 +8466,11 @@ const headers = {
 };
 
 let body = {
-    "titre": "rmyxn",
-    "quantite": 12,
-    "prix": 80.287175612,
-    "article_id": "laborum",
-    "commande_id": "vel"
+    "titre": "kdjejyimj",
+    "quantite": 17,
+    "prix": 43.711738,
+    "article_id": "consequatur",
+    "commande_id": "error"
 };
 
 fetch(url, {
@@ -8799,10 +8559,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="titre"                data-endpoint="POSTapi-admin-ligneCommandes"
-               value="rmyxn"
+               value="kdjejyimj"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>rmyxn</code></p>
+<p>Must not be greater than 255 characters. Example: <code>kdjejyimj</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>quantite</code></b>&nbsp;&nbsp;
@@ -8810,10 +8570,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="quantite"                data-endpoint="POSTapi-admin-ligneCommandes"
-               value="12"
+               value="17"
                data-component="body">
     <br>
-<p>Example: <code>12</code></p>
+<p>Example: <code>17</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>prix</code></b>&nbsp;&nbsp;
@@ -8821,10 +8581,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="prix"                data-endpoint="POSTapi-admin-ligneCommandes"
-               value="80.287175612"
+               value="43.711738"
                data-component="body">
     <br>
-<p>Example: <code>80.287175612</code></p>
+<p>Example: <code>43.711738</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>article_id</code></b>&nbsp;&nbsp;
@@ -8832,10 +8592,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="article_id"                data-endpoint="POSTapi-admin-ligneCommandes"
-               value="laborum"
+               value="consequatur"
                data-component="body">
     <br>
-<p>Example: <code>laborum</code></p>
+<p>Example: <code>consequatur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>commande_id</code></b>&nbsp;&nbsp;
@@ -8843,10 +8603,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="commande_id"                data-endpoint="POSTapi-admin-ligneCommandes"
-               value="vel"
+               value="error"
                data-component="body">
     <br>
-<p>Example: <code>vel</code></p>
+<p>Example: <code>error</code></p>
         </div>
         </form>
 
@@ -8867,11 +8627,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"titre\": \"vazghrqjanrcndayjmudkwav\",
-    \"quantite\": 5,
-    \"prix\": 596243354.1720614,
-    \"article_id\": \"consequuntur\",
-    \"commande_id\": \"quae\"
+    \"titre\": \"objdu\",
+    \"quantite\": 12,
+    \"prix\": 21236971.302,
+    \"article_id\": \"qui\",
+    \"commande_id\": \"sit\"
 }"
 </code></pre></div>
 
@@ -8887,11 +8647,11 @@ const headers = {
 };
 
 let body = {
-    "titre": "vazghrqjanrcndayjmudkwav",
-    "quantite": 5,
-    "prix": 596243354.1720614,
-    "article_id": "consequuntur",
-    "commande_id": "quae"
+    "titre": "objdu",
+    "quantite": 12,
+    "prix": 21236971.302,
+    "article_id": "qui",
+    "commande_id": "sit"
 };
 
 fetch(url, {
@@ -8992,10 +8752,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="titre"                data-endpoint="PUTapi-admin-ligneCommandes--id-"
-               value="vazghrqjanrcndayjmudkwav"
+               value="objdu"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vazghrqjanrcndayjmudkwav</code></p>
+<p>Must not be greater than 255 characters. Example: <code>objdu</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>quantite</code></b>&nbsp;&nbsp;
@@ -9003,10 +8763,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="quantite"                data-endpoint="PUTapi-admin-ligneCommandes--id-"
-               value="5"
+               value="12"
                data-component="body">
     <br>
-<p>Example: <code>5</code></p>
+<p>Example: <code>12</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>prix</code></b>&nbsp;&nbsp;
@@ -9014,10 +8774,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="prix"                data-endpoint="PUTapi-admin-ligneCommandes--id-"
-               value="596243354.17206"
+               value="21236971.302"
                data-component="body">
     <br>
-<p>Example: <code>596243354.17206</code></p>
+<p>Example: <code>21236971.302</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>article_id</code></b>&nbsp;&nbsp;
@@ -9025,10 +8785,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="article_id"                data-endpoint="PUTapi-admin-ligneCommandes--id-"
-               value="consequuntur"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>consequuntur</code></p>
+<p>Example: <code>qui</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>commande_id</code></b>&nbsp;&nbsp;
@@ -9036,10 +8796,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="commande_id"                data-endpoint="PUTapi-admin-ligneCommandes--id-"
-               value="quae"
+               value="sit"
                data-component="body">
     <br>
-<p>Example: <code>quae</code></p>
+<p>Example: <code>sit</code></p>
         </div>
         </form>
 
@@ -9180,11 +8940,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"titre\": \"zdztflhuxqfozipeie\",
-    \"quantite\": 14,
-    \"prix\": 522522.40524,
-    \"article_id\": \"deserunt\",
-    \"commande_id\": \"ut\"
+    \"titre\": \"gqdghwuykmicvwusvnl\",
+    \"quantite\": 16,
+    \"prix\": 1678220.8306075684,
+    \"article_id\": \"ad\",
+    \"commande_id\": \"quo\"
 }"
 </code></pre></div>
 
@@ -9200,11 +8960,11 @@ const headers = {
 };
 
 let body = {
-    "titre": "zdztflhuxqfozipeie",
-    "quantite": 14,
-    "prix": 522522.40524,
-    "article_id": "deserunt",
-    "commande_id": "ut"
+    "titre": "gqdghwuykmicvwusvnl",
+    "quantite": 16,
+    "prix": 1678220.8306075684,
+    "article_id": "ad",
+    "commande_id": "quo"
 };
 
 fetch(url, {
@@ -9293,10 +9053,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="titre"                data-endpoint="POSTapi-lignecommandes"
-               value="zdztflhuxqfozipeie"
+               value="gqdghwuykmicvwusvnl"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>zdztflhuxqfozipeie</code></p>
+<p>Must not be greater than 255 characters. Example: <code>gqdghwuykmicvwusvnl</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>quantite</code></b>&nbsp;&nbsp;
@@ -9304,10 +9064,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="quantite"                data-endpoint="POSTapi-lignecommandes"
-               value="14"
+               value="16"
                data-component="body">
     <br>
-<p>Example: <code>14</code></p>
+<p>Example: <code>16</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>prix</code></b>&nbsp;&nbsp;
@@ -9315,10 +9075,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="prix"                data-endpoint="POSTapi-lignecommandes"
-               value="522522.40524"
+               value="1678220.8306076"
                data-component="body">
     <br>
-<p>Example: <code>522522.40524</code></p>
+<p>Example: <code>1678220.8306076</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>article_id</code></b>&nbsp;&nbsp;
@@ -9326,10 +9086,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="article_id"                data-endpoint="POSTapi-lignecommandes"
-               value="deserunt"
+               value="ad"
                data-component="body">
     <br>
-<p>Example: <code>deserunt</code></p>
+<p>Example: <code>ad</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>commande_id</code></b>&nbsp;&nbsp;
@@ -9337,10 +9097,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="commande_id"                data-endpoint="POSTapi-lignecommandes"
-               value="ut"
+               value="quo"
                data-component="body">
     <br>
-<p>Example: <code>ut</code></p>
+<p>Example: <code>quo</code></p>
         </div>
         </form>
 
@@ -9485,14 +9245,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/admin.livraisons/harum" \
+    --get "http://127.0.0.1:8000/api/admin.livraisons/corporis" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/admin.livraisons/harum"
+    "http://127.0.0.1:8000/api/admin.livraisons/corporis"
 );
 
 const headers = {
@@ -9601,10 +9361,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-admin-livraisons--id-"
-               value="harum"
+               value="corporis"
                data-component="url">
     <br>
-<p>The ID of the admin.livraison. Example: <code>harum</code></p>
+<p>The ID of the admin.livraison. Example: <code>corporis</code></p>
             </div>
                     </form>
 
@@ -9625,13 +9385,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"titre\": \"kllgaafdblglxctbdqwfodm\",
-    \"date\": \"2024-07-24T17:09:39\",
-    \"nomClient\": \"adyvtxhxinmwrjibhtyo\",
-    \"ville\": \"rfafsymfbn\",
-    \"adresse\": \"dmrzwvrxedqtyrbsenpsqwtiy\",
-    \"destinataire\": \"bwzt\",
-    \"commande_id\": \"eos\"
+    \"titre\": \"aqx\",
+    \"nomClient\": \"dcfcklermfwbj\",
+    \"ville\": \"dovwxsqhwcmnriya\",
+    \"adresse\": \"yzpnwavsrgxi\",
+    \"destinataire\": \"wkckzspalt\",
+    \"commande_id\": \"quo\"
 }"
 </code></pre></div>
 
@@ -9647,13 +9406,12 @@ const headers = {
 };
 
 let body = {
-    "titre": "kllgaafdblglxctbdqwfodm",
-    "date": "2024-07-24T17:09:39",
-    "nomClient": "adyvtxhxinmwrjibhtyo",
-    "ville": "rfafsymfbn",
-    "adresse": "dmrzwvrxedqtyrbsenpsqwtiy",
-    "destinataire": "bwzt",
-    "commande_id": "eos"
+    "titre": "aqx",
+    "nomClient": "dcfcklermfwbj",
+    "ville": "dovwxsqhwcmnriya",
+    "adresse": "yzpnwavsrgxi",
+    "destinataire": "wkckzspalt",
+    "commande_id": "quo"
 };
 
 fetch(url, {
@@ -9739,24 +9497,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>titre</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
- &nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="titre"                data-endpoint="POSTapi-admin-livraisons"
-               value="kllgaafdblglxctbdqwfodm"
+               value="aqx"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>kllgaafdblglxctbdqwfodm</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="date"                data-endpoint="POSTapi-admin-livraisons"
-               value="2024-07-24T17:09:39"
-               data-component="body">
-    <br>
-<p>Must be a valid date. Example: <code>2024-07-24T17:09:39</code></p>
+<p>Must not be greater than 255 characters. Example: <code>aqx</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>nomClient</code></b>&nbsp;&nbsp;
@@ -9764,10 +9511,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="nomClient"                data-endpoint="POSTapi-admin-livraisons"
-               value="adyvtxhxinmwrjibhtyo"
+               value="dcfcklermfwbj"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>adyvtxhxinmwrjibhtyo</code></p>
+<p>Must not be greater than 255 characters. Example: <code>dcfcklermfwbj</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>ville</code></b>&nbsp;&nbsp;
@@ -9775,10 +9522,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="ville"                data-endpoint="POSTapi-admin-livraisons"
-               value="rfafsymfbn"
+               value="dovwxsqhwcmnriya"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>rfafsymfbn</code></p>
+<p>Must not be greater than 255 characters. Example: <code>dovwxsqhwcmnriya</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>adresse</code></b>&nbsp;&nbsp;
@@ -9786,10 +9533,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="adresse"                data-endpoint="POSTapi-admin-livraisons"
-               value="dmrzwvrxedqtyrbsenpsqwtiy"
+               value="yzpnwavsrgxi"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>dmrzwvrxedqtyrbsenpsqwtiy</code></p>
+<p>Must not be greater than 255 characters. Example: <code>yzpnwavsrgxi</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>destinataire</code></b>&nbsp;&nbsp;
@@ -9797,10 +9544,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="destinataire"                data-endpoint="POSTapi-admin-livraisons"
-               value="bwzt"
+               value="wkckzspalt"
                data-component="body">
     <br>
-<p>Must not be greater than 10 characters. Example: <code>bwzt</code></p>
+<p>Must not be greater than 10 characters. Example: <code>wkckzspalt</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>commande_id</code></b>&nbsp;&nbsp;
@@ -9808,10 +9555,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="commande_id"                data-endpoint="POSTapi-admin-livraisons"
-               value="eos"
+               value="quo"
                data-component="body">
     <br>
-<p>Example: <code>eos</code></p>
+<p>Example: <code>quo</code></p>
         </div>
         </form>
 
@@ -9828,24 +9575,22 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8000/api/admin.livraisons/incidunt" \
+    "http://127.0.0.1:8000/api/admin.livraisons/enim" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"titre\": \"nr\",
-    \"date\": \"2024-07-24T17:09:39\",
-    \"nomClient\": \"gfsdhypwft\",
-    \"ville\": \"pbywsqjcieosxppxxz\",
-    \"adresse\": \"dohjgrwdgncffyjgnilwlng\",
-    \"destinataire\": \"igtqfhvo\",
-    \"commande_id\": \"exercitationem\"
+    \"titre\": \"nsluanmyshyloph\",
+    \"nomClient\": \"rjahnjusgv\",
+    \"ville\": \"jkyromrtmx\",
+    \"adresse\": \"bct\",
+    \"destinataire\": \"hhakek\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/admin.livraisons/incidunt"
+    "http://127.0.0.1:8000/api/admin.livraisons/enim"
 );
 
 const headers = {
@@ -9854,13 +9599,11 @@ const headers = {
 };
 
 let body = {
-    "titre": "nr",
-    "date": "2024-07-24T17:09:39",
-    "nomClient": "gfsdhypwft",
-    "ville": "pbywsqjcieosxppxxz",
-    "adresse": "dohjgrwdgncffyjgnilwlng",
-    "destinataire": "igtqfhvo",
-    "commande_id": "exercitationem"
+    "titre": "nsluanmyshyloph",
+    "nomClient": "rjahnjusgv",
+    "ville": "jkyromrtmx",
+    "adresse": "bct",
+    "destinataire": "hhakek"
 };
 
 fetch(url, {
@@ -9949,44 +9692,33 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-admin-livraisons--id-"
-               value="incidunt"
+               value="enim"
                data-component="url">
     <br>
-<p>The ID of the admin.livraison. Example: <code>incidunt</code></p>
+<p>The ID of the admin.livraison. Example: <code>enim</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>titre</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
- &nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="titre"                data-endpoint="PUTapi-admin-livraisons--id-"
-               value="nr"
+               value="nsluanmyshyloph"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>nr</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="date"                data-endpoint="PUTapi-admin-livraisons--id-"
-               value="2024-07-24T17:09:39"
-               data-component="body">
-    <br>
-<p>Must be a valid date. Example: <code>2024-07-24T17:09:39</code></p>
+<p>Must not be greater than 255 characters. Example: <code>nsluanmyshyloph</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>nomClient</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
- &nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="nomClient"                data-endpoint="PUTapi-admin-livraisons--id-"
-               value="gfsdhypwft"
+               value="rjahnjusgv"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>gfsdhypwft</code></p>
+<p>Must not be greater than 255 characters. Example: <code>rjahnjusgv</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>ville</code></b>&nbsp;&nbsp;
@@ -9994,21 +9726,21 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="ville"                data-endpoint="PUTapi-admin-livraisons--id-"
-               value="pbywsqjcieosxppxxz"
+               value="jkyromrtmx"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>pbywsqjcieosxppxxz</code></p>
+<p>Must not be greater than 255 characters. Example: <code>jkyromrtmx</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>adresse</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
- &nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="adresse"                data-endpoint="PUTapi-admin-livraisons--id-"
-               value="dohjgrwdgncffyjgnilwlng"
+               value="bct"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>dohjgrwdgncffyjgnilwlng</code></p>
+<p>Must not be greater than 255 characters. Example: <code>bct</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>destinataire</code></b>&nbsp;&nbsp;
@@ -10016,21 +9748,21 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="destinataire"                data-endpoint="PUTapi-admin-livraisons--id-"
-               value="igtqfhvo"
+               value="hhakek"
                data-component="body">
     <br>
-<p>Must not be greater than 10 characters. Example: <code>igtqfhvo</code></p>
+<p>Must not be greater than 10 characters. Example: <code>hhakek</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>commande_id</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
- &nbsp;
+<i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="commande_id"                data-endpoint="PUTapi-admin-livraisons--id-"
-               value="exercitationem"
+               value=""
                data-component="body">
     <br>
-<p>Example: <code>exercitationem</code></p>
+
         </div>
         </form>
 
@@ -10047,14 +9779,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8000/api/admin.livraisons/quas" \
+    "http://127.0.0.1:8000/api/admin.livraisons/sunt" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/admin.livraisons/quas"
+    "http://127.0.0.1:8000/api/admin.livraisons/sunt"
 );
 
 const headers = {
@@ -10147,10 +9879,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-admin-livraisons--id-"
-               value="quas"
+               value="sunt"
                data-component="url">
     <br>
-<p>The ID of the admin.livraison. Example: <code>quas</code></p>
+<p>The ID of the admin.livraison. Example: <code>sunt</code></p>
             </div>
                     </form>
 
@@ -10167,14 +9899,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/livraisons/et/commande" \
+    --get "http://127.0.0.1:8000/api/livraisons/aliquam/commande" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/livraisons/et/commande"
+    "http://127.0.0.1:8000/api/livraisons/aliquam/commande"
 );
 
 const headers = {
@@ -10283,10 +10015,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="livraison"                data-endpoint="GETapi-livraisons--livraison--commande"
-               value="et"
+               value="aliquam"
                data-component="url">
     <br>
-<p>The livraison. Example: <code>et</code></p>
+<p>The livraison. Example: <code>aliquam</code></p>
             </div>
                     </form>
 
@@ -10431,14 +10163,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/admin.payements/ducimus" \
+    --get "http://127.0.0.1:8000/api/admin.payements/saepe" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/admin.payements/ducimus"
+    "http://127.0.0.1:8000/api/admin.payements/saepe"
 );
 
 const headers = {
@@ -10547,10 +10279,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-admin-payements--id-"
-               value="ducimus"
+               value="saepe"
                data-component="url">
     <br>
-<p>The ID of the admin.payement. Example: <code>ducimus</code></p>
+<p>The ID of the admin.payement. Example: <code>saepe</code></p>
             </div>
                     </form>
 
@@ -10571,11 +10303,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"titre\": \"olyrfzjetde\",
-    \"solde\": 4.3,
-    \"modePayement\": \"rtpcqdmdrdcrbo\",
-    \"date\": \"2024-07-24T17:09:39\",
-    \"commande_id\": \"voluptatem\"
+    \"titre\": \"ksjmcnjbqjmxe\",
+    \"solde\": 47614017.0451,
+    \"modePayement\": \"pwcrvonf\",
+    \"date\": \"2024-07-29T19:26:27\",
+    \"commande_id\": \"distinctio\"
 }"
 </code></pre></div>
 
@@ -10591,11 +10323,11 @@ const headers = {
 };
 
 let body = {
-    "titre": "olyrfzjetde",
-    "solde": 4.3,
-    "modePayement": "rtpcqdmdrdcrbo",
-    "date": "2024-07-24T17:09:39",
-    "commande_id": "voluptatem"
+    "titre": "ksjmcnjbqjmxe",
+    "solde": 47614017.0451,
+    "modePayement": "pwcrvonf",
+    "date": "2024-07-29T19:26:27",
+    "commande_id": "distinctio"
 };
 
 fetch(url, {
@@ -10684,10 +10416,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="titre"                data-endpoint="POSTapi-admin-payements"
-               value="olyrfzjetde"
+               value="ksjmcnjbqjmxe"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>olyrfzjetde</code></p>
+<p>Must not be greater than 255 characters. Example: <code>ksjmcnjbqjmxe</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>solde</code></b>&nbsp;&nbsp;
@@ -10695,10 +10427,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="solde"                data-endpoint="POSTapi-admin-payements"
-               value="4.3"
+               value="47614017.0451"
                data-component="body">
     <br>
-<p>Example: <code>4.3</code></p>
+<p>Example: <code>47614017.0451</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>modePayement</code></b>&nbsp;&nbsp;
@@ -10706,10 +10438,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="modePayement"                data-endpoint="POSTapi-admin-payements"
-               value="rtpcqdmdrdcrbo"
+               value="pwcrvonf"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>rtpcqdmdrdcrbo</code></p>
+<p>Must not be greater than 255 characters. Example: <code>pwcrvonf</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -10717,10 +10449,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-admin-payements"
-               value="2024-07-24T17:09:39"
+               value="2024-07-29T19:26:27"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-07-24T17:09:39</code></p>
+<p>Must be a valid date. Example: <code>2024-07-29T19:26:27</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>commande_id</code></b>&nbsp;&nbsp;
@@ -10728,10 +10460,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="commande_id"                data-endpoint="POSTapi-admin-payements"
-               value="voluptatem"
+               value="distinctio"
                data-component="body">
     <br>
-<p>Example: <code>voluptatem</code></p>
+<p>Example: <code>distinctio</code></p>
         </div>
         </form>
 
@@ -10748,22 +10480,22 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8000/api/admin.payements/rem" \
+    "http://127.0.0.1:8000/api/admin.payements/ab" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"titre\": \"jcexcnogcim\",
-    \"solde\": 6.2,
-    \"modePayement\": \"h\",
-    \"date\": \"2024-07-24T17:09:39\",
-    \"commande_id\": \"deleniti\"
+    \"titre\": \"cfuopvgjvnqowyvjyge\",
+    \"solde\": 3817958.8923657,
+    \"modePayement\": \"thvseyzfqvympcildwrso\",
+    \"date\": \"2024-07-29T19:26:27\",
+    \"commande_id\": \"enim\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/admin.payements/rem"
+    "http://127.0.0.1:8000/api/admin.payements/ab"
 );
 
 const headers = {
@@ -10772,11 +10504,11 @@ const headers = {
 };
 
 let body = {
-    "titre": "jcexcnogcim",
-    "solde": 6.2,
-    "modePayement": "h",
-    "date": "2024-07-24T17:09:39",
-    "commande_id": "deleniti"
+    "titre": "cfuopvgjvnqowyvjyge",
+    "solde": 3817958.8923657,
+    "modePayement": "thvseyzfqvympcildwrso",
+    "date": "2024-07-29T19:26:27",
+    "commande_id": "enim"
 };
 
 fetch(url, {
@@ -10865,10 +10597,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-admin-payements--id-"
-               value="rem"
+               value="ab"
                data-component="url">
     <br>
-<p>The ID of the admin.payement. Example: <code>rem</code></p>
+<p>The ID of the admin.payement. Example: <code>ab</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -10877,10 +10609,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="titre"                data-endpoint="PUTapi-admin-payements--id-"
-               value="jcexcnogcim"
+               value="cfuopvgjvnqowyvjyge"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>jcexcnogcim</code></p>
+<p>Must not be greater than 255 characters. Example: <code>cfuopvgjvnqowyvjyge</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>solde</code></b>&nbsp;&nbsp;
@@ -10888,10 +10620,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="solde"                data-endpoint="PUTapi-admin-payements--id-"
-               value="6.2"
+               value="3817958.8923657"
                data-component="body">
     <br>
-<p>Example: <code>6.2</code></p>
+<p>Example: <code>3817958.8923657</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>modePayement</code></b>&nbsp;&nbsp;
@@ -10899,10 +10631,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="modePayement"                data-endpoint="PUTapi-admin-payements--id-"
-               value="h"
+               value="thvseyzfqvympcildwrso"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>h</code></p>
+<p>Must not be greater than 255 characters. Example: <code>thvseyzfqvympcildwrso</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -10910,10 +10642,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="PUTapi-admin-payements--id-"
-               value="2024-07-24T17:09:39"
+               value="2024-07-29T19:26:27"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-07-24T17:09:39</code></p>
+<p>Must be a valid date. Example: <code>2024-07-29T19:26:27</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>commande_id</code></b>&nbsp;&nbsp;
@@ -10921,10 +10653,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="commande_id"                data-endpoint="PUTapi-admin-payements--id-"
-               value="deleniti"
+               value="enim"
                data-component="body">
     <br>
-<p>Example: <code>deleniti</code></p>
+<p>Example: <code>enim</code></p>
         </div>
         </form>
 
@@ -10941,14 +10673,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8000/api/admin.payements/vel" \
+    "http://127.0.0.1:8000/api/admin.payements/labore" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/admin.payements/vel"
+    "http://127.0.0.1:8000/api/admin.payements/labore"
 );
 
 const headers = {
@@ -11041,10 +10773,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-admin-payements--id-"
-               value="vel"
+               value="labore"
                data-component="url">
     <br>
-<p>The ID of the admin.payement. Example: <code>vel</code></p>
+<p>The ID of the admin.payement. Example: <code>labore</code></p>
             </div>
                     </form>
 
@@ -11065,11 +10797,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"titre\": \"swdzo\",
-    \"solde\": 114.581582757,
-    \"modePayement\": \"quz\",
-    \"date\": \"2024-07-24T17:09:39\",
-    \"commande_id\": \"aut\"
+    \"titre\": \"kokcebukxmtbzbsmpxtm\",
+    \"solde\": 991975.1,
+    \"modePayement\": \"xddlveaqty\",
+    \"date\": \"2024-07-29T19:26:32\",
+    \"commande_id\": \"qui\"
 }"
 </code></pre></div>
 
@@ -11085,11 +10817,11 @@ const headers = {
 };
 
 let body = {
-    "titre": "swdzo",
-    "solde": 114.581582757,
-    "modePayement": "quz",
-    "date": "2024-07-24T17:09:39",
-    "commande_id": "aut"
+    "titre": "kokcebukxmtbzbsmpxtm",
+    "solde": 991975.1,
+    "modePayement": "xddlveaqty",
+    "date": "2024-07-29T19:26:32",
+    "commande_id": "qui"
 };
 
 fetch(url, {
@@ -11178,10 +10910,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="titre"                data-endpoint="POSTapi-payements"
-               value="swdzo"
+               value="kokcebukxmtbzbsmpxtm"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>swdzo</code></p>
+<p>Must not be greater than 255 characters. Example: <code>kokcebukxmtbzbsmpxtm</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>solde</code></b>&nbsp;&nbsp;
@@ -11189,10 +10921,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="solde"                data-endpoint="POSTapi-payements"
-               value="114.581582757"
+               value="991975.1"
                data-component="body">
     <br>
-<p>Example: <code>114.581582757</code></p>
+<p>Example: <code>991975.1</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>modePayement</code></b>&nbsp;&nbsp;
@@ -11200,10 +10932,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="modePayement"                data-endpoint="POSTapi-payements"
-               value="quz"
+               value="xddlveaqty"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>quz</code></p>
+<p>Must not be greater than 255 characters. Example: <code>xddlveaqty</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
@@ -11211,10 +10943,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="date"                data-endpoint="POSTapi-payements"
-               value="2024-07-24T17:09:39"
+               value="2024-07-29T19:26:32"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2024-07-24T17:09:39</code></p>
+<p>Must be a valid date. Example: <code>2024-07-29T19:26:32</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>commande_id</code></b>&nbsp;&nbsp;
@@ -11222,10 +10954,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="commande_id"                data-endpoint="POSTapi-payements"
-               value="aut"
+               value="qui"
                data-component="body">
     <br>
-<p>Example: <code>aut</code></p>
+<p>Example: <code>qui</code></p>
         </div>
         </form>
 
@@ -11370,14 +11102,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://127.0.0.1:8000/api/admin.users/sed" \
+    --get "http://127.0.0.1:8000/api/admin.users/temporibus" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/admin.users/sed"
+    "http://127.0.0.1:8000/api/admin.users/temporibus"
 );
 
 const headers = {
@@ -11486,10 +11218,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="GETapi-admin-users--id-"
-               value="sed"
+               value="temporibus"
                data-component="url">
     <br>
-<p>The ID of the admin.user. Example: <code>sed</code></p>
+<p>The ID of the admin.user. Example: <code>temporibus</code></p>
             </div>
                     </form>
 
@@ -11510,15 +11242,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"nom\": \"pvg\",
-    \"prenom\": \"vsxvmzmghl\",
-    \"email\": \"parisian.tevin@example.com\",
-    \"adresse\": \"ycokowcrlqovtvseqgmkubkb\",
-    \"telephone\": \"cozzugyefe\",
-    \"coordonne_geographique\": \"qc\",
-    \"role_id\": \"posrkbmllabndtlild\",
-    \"name\": \"qnaanwrxyyxhakkynecfsjtmi\",
-    \"password\": \"gs{e\\/CbQpjqXjW\"
+    \"nom\": \"jpxvnvqigf\",
+    \"prenom\": \"sevlowhnceizaquyht\",
+    \"email\": \"dulce.schultz@example.net\",
+    \"adresse\": \"yuqutfoklsnmozizxxsdjic\",
+    \"telephone\": \"zuftnxvb\",
+    \"coordonne_geographique\": \"atsnssz\",
+    \"role_id\": \"cukrfoncrxyq\",
+    \"name\": \"qzilswq\",
+    \"password\": \"R\\\"r7e\'GLmFjsJyfO]q\"
 }"
 </code></pre></div>
 
@@ -11534,15 +11266,15 @@ const headers = {
 };
 
 let body = {
-    "nom": "pvg",
-    "prenom": "vsxvmzmghl",
-    "email": "parisian.tevin@example.com",
-    "adresse": "ycokowcrlqovtvseqgmkubkb",
-    "telephone": "cozzugyefe",
-    "coordonne_geographique": "qc",
-    "role_id": "posrkbmllabndtlild",
-    "name": "qnaanwrxyyxhakkynecfsjtmi",
-    "password": "gs{e\/CbQpjqXjW"
+    "nom": "jpxvnvqigf",
+    "prenom": "sevlowhnceizaquyht",
+    "email": "dulce.schultz@example.net",
+    "adresse": "yuqutfoklsnmozizxxsdjic",
+    "telephone": "zuftnxvb",
+    "coordonne_geographique": "atsnssz",
+    "role_id": "cukrfoncrxyq",
+    "name": "qzilswq",
+    "password": "R\"r7e'GLmFjsJyfO]q"
 };
 
 fetch(url, {
@@ -11631,10 +11363,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="nom"                data-endpoint="POSTapi-admin-users"
-               value="pvg"
+               value="jpxvnvqigf"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>pvg</code></p>
+<p>Must not be greater than 255 characters. Example: <code>jpxvnvqigf</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>prenom</code></b>&nbsp;&nbsp;
@@ -11642,10 +11374,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="prenom"                data-endpoint="POSTapi-admin-users"
-               value="vsxvmzmghl"
+               value="sevlowhnceizaquyht"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vsxvmzmghl</code></p>
+<p>Must not be greater than 255 characters. Example: <code>sevlowhnceizaquyht</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -11653,10 +11385,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-admin-users"
-               value="parisian.tevin@example.com"
+               value="dulce.schultz@example.net"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>parisian.tevin@example.com</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>dulce.schultz@example.net</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>adresse</code></b>&nbsp;&nbsp;
@@ -11664,10 +11396,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="adresse"                data-endpoint="POSTapi-admin-users"
-               value="ycokowcrlqovtvseqgmkubkb"
+               value="yuqutfoklsnmozizxxsdjic"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>ycokowcrlqovtvseqgmkubkb</code></p>
+<p>Must not be greater than 255 characters. Example: <code>yuqutfoklsnmozizxxsdjic</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>telephone</code></b>&nbsp;&nbsp;
@@ -11675,10 +11407,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="telephone"                data-endpoint="POSTapi-admin-users"
-               value="cozzugyefe"
+               value="zuftnxvb"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>cozzugyefe</code></p>
+<p>Must not be greater than 255 characters. Example: <code>zuftnxvb</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>coordonne_geographique</code></b>&nbsp;&nbsp;
@@ -11686,10 +11418,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="coordonne_geographique"                data-endpoint="POSTapi-admin-users"
-               value="qc"
+               value="atsnssz"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>qc</code></p>
+<p>Must not be greater than 255 characters. Example: <code>atsnssz</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>role_id</code></b>&nbsp;&nbsp;
@@ -11697,10 +11429,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="role_id"                data-endpoint="POSTapi-admin-users"
-               value="posrkbmllabndtlild"
+               value="cukrfoncrxyq"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>posrkbmllabndtlild</code></p>
+<p>Must not be greater than 255 characters. Example: <code>cukrfoncrxyq</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -11708,10 +11440,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-admin-users"
-               value="qnaanwrxyyxhakkynecfsjtmi"
+               value="qzilswq"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>qnaanwrxyyxhakkynecfsjtmi</code></p>
+<p>Must not be greater than 255 characters. Example: <code>qzilswq</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -11719,10 +11451,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-admin-users"
-               value="gs{e/CbQpjqXjW"
+               value="R"r7e'GLmFjsJyfO]q"
                data-component="body">
     <br>
-<p>Must be at least 8 characters. Example: <code>gs{e/CbQpjqXjW</code></p>
+<p>Must be at least 8 characters. Example: <code>R"r7e'GLmFjsJyfO]q</code></p>
         </div>
         </form>
 
@@ -11739,24 +11471,25 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://127.0.0.1:8000/api/admin.users/commodi" \
+    "http://127.0.0.1:8000/api/admin.users/rerum" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"nom\": \"tipnfr\",
-    \"prenom\": \"qjgvtybrq\",
-    \"email\": \"terrell50@example.com\",
-    \"adresse\": \"u\",
-    \"telephone\": \"btxoudzs\",
-    \"role_id\": 13,
-    \"name\": \"pfec\"
+    \"nom\": \"odmwxmwhpxakf\",
+    \"prenom\": \"bxznlsolxatjbpcxst\",
+    \"email\": \"rowland73@example.com\",
+    \"adresse\": \"irmwwmwanlajojymbnp\",
+    \"telephone\": \"zyo\",
+    \"coordonne_geographique\": \"whvpkeadwwai\",
+    \"role_id\": \"dcxy\",
+    \"name\": \"bdseuwzsvrfqmljayyt\"
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/admin.users/commodi"
+    "http://127.0.0.1:8000/api/admin.users/rerum"
 );
 
 const headers = {
@@ -11765,13 +11498,14 @@ const headers = {
 };
 
 let body = {
-    "nom": "tipnfr",
-    "prenom": "qjgvtybrq",
-    "email": "terrell50@example.com",
-    "adresse": "u",
-    "telephone": "btxoudzs",
-    "role_id": 13,
-    "name": "pfec"
+    "nom": "odmwxmwhpxakf",
+    "prenom": "bxznlsolxatjbpcxst",
+    "email": "rowland73@example.com",
+    "adresse": "irmwwmwanlajojymbnp",
+    "telephone": "zyo",
+    "coordonne_geographique": "whvpkeadwwai",
+    "role_id": "dcxy",
+    "name": "bdseuwzsvrfqmljayyt"
 };
 
 fetch(url, {
@@ -11860,10 +11594,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="PUTapi-admin-users--id-"
-               value="commodi"
+               value="rerum"
                data-component="url">
     <br>
-<p>The ID of the admin.user. Example: <code>commodi</code></p>
+<p>The ID of the admin.user. Example: <code>rerum</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -11872,10 +11606,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="nom"                data-endpoint="PUTapi-admin-users--id-"
-               value="tipnfr"
+               value="odmwxmwhpxakf"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>tipnfr</code></p>
+<p>Must not be greater than 255 characters. Example: <code>odmwxmwhpxakf</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>prenom</code></b>&nbsp;&nbsp;
@@ -11883,10 +11617,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="prenom"                data-endpoint="PUTapi-admin-users--id-"
-               value="qjgvtybrq"
+               value="bxznlsolxatjbpcxst"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>qjgvtybrq</code></p>
+<p>Must not be greater than 255 characters. Example: <code>bxznlsolxatjbpcxst</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -11894,10 +11628,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="PUTapi-admin-users--id-"
-               value="terrell50@example.com"
+               value="rowland73@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>terrell50@example.com</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>rowland73@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>adresse</code></b>&nbsp;&nbsp;
@@ -11905,10 +11639,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="adresse"                data-endpoint="PUTapi-admin-users--id-"
-               value="u"
+               value="irmwwmwanlajojymbnp"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>u</code></p>
+<p>Must not be greater than 255 characters. Example: <code>irmwwmwanlajojymbnp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>telephone</code></b>&nbsp;&nbsp;
@@ -11916,21 +11650,32 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="telephone"                data-endpoint="PUTapi-admin-users--id-"
-               value="btxoudzs"
+               value="zyo"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>btxoudzs</code></p>
+<p>Must not be greater than 255 characters. Example: <code>zyo</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>coordonne_geographique</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="coordonne_geographique"                data-endpoint="PUTapi-admin-users--id-"
+               value="whvpkeadwwai"
+               data-component="body">
+    <br>
+<p>Must not be greater than 255 characters. Example: <code>whvpkeadwwai</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>role_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
 <i>optional</i> &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="role_id"                data-endpoint="PUTapi-admin-users--id-"
-               value="13"
+                <input type="text" style="display: none"
+                              name="role_id"                data-endpoint="PUTapi-admin-users--id-"
+               value="dcxy"
                data-component="body">
     <br>
-<p>Must not be greater than 25. Example: <code>13</code></p>
+<p>Must not be greater than 255 characters. Example: <code>dcxy</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
@@ -11938,10 +11683,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-admin-users--id-"
-               value="pfec"
+               value="bdseuwzsvrfqmljayyt"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>pfec</code></p>
+<p>Must not be greater than 255 characters. Example: <code>bdseuwzsvrfqmljayyt</code></p>
         </div>
         </form>
 
@@ -11958,14 +11703,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://127.0.0.1:8000/api/admin.users/officiis" \
+    "http://127.0.0.1:8000/api/admin.users/commodi" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://127.0.0.1:8000/api/admin.users/officiis"
+    "http://127.0.0.1:8000/api/admin.users/commodi"
 );
 
 const headers = {
@@ -12058,10 +11803,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="id"                data-endpoint="DELETEapi-admin-users--id-"
-               value="officiis"
+               value="commodi"
                data-component="url">
     <br>
-<p>The ID of the admin.user. Example: <code>officiis</code></p>
+<p>The ID of the admin.user. Example: <code>commodi</code></p>
             </div>
                     </form>
 

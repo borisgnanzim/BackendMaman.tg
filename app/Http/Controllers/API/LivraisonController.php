@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreLivraisonRequest;
 use App\Http\Requests\UpdateLivraisonRequest;
 use App\Http\Resources\LivraisonResource;

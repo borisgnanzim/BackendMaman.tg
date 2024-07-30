@@ -124,7 +124,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: rmyxn
+        example: kdjejyimj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -133,7 +133,7 @@ endpoints:
         name: quantite
         description: ''
         required: true
-        example: 12
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -142,7 +142,7 @@ endpoints:
         name: prix
         description: ''
         required: true
-        example: 80.287175612
+        example: 43.711738
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -151,7 +151,7 @@ endpoints:
         name: article_id
         description: ''
         required: true
-        example: laborum
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -160,17 +160,17 @@ endpoints:
         name: commande_id
         description: ''
         required: true
-        example: vel
+        example: error
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: rmyxn
-      quantite: 12
-      prix: 80.287175612
-      article_id: laborum
-      commande_id: vel
+      titre: kdjejyimj
+      quantite: 17
+      prix: 43.711738
+      article_id: consequatur
+      commande_id: error
     fileParameters: []
     responses: []
     responseFields: []
@@ -216,7 +216,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: vazghrqjanrcndayjmudkwav
+        example: objdu
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -225,7 +225,7 @@ endpoints:
         name: quantite
         description: ''
         required: true
-        example: 5
+        example: 12
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -234,7 +234,7 @@ endpoints:
         name: prix
         description: ''
         required: true
-        example: 596243354.17206
+        example: 21236971.302
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -243,7 +243,7 @@ endpoints:
         name: article_id
         description: ''
         required: true
-        example: consequuntur
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -252,17 +252,17 @@ endpoints:
         name: commande_id
         description: ''
         required: true
-        example: quae
+        example: sit
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: vazghrqjanrcndayjmudkwav
-      quantite: 5
-      prix: 596243354.17206
-      article_id: consequuntur
-      commande_id: quae
+      titre: objdu
+      quantite: 12
+      prix: 21236971.302
+      article_id: qui
+      commande_id: sit
     fileParameters: []
     responses: []
     responseFields: []
@@ -340,7 +340,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: zdztflhuxqfozipeie
+        example: gqdghwuykmicvwusvnl
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -349,7 +349,7 @@ endpoints:
         name: quantite
         description: ''
         required: true
-        example: 14
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -358,7 +358,7 @@ endpoints:
         name: prix
         description: ''
         required: true
-        example: 522522.40524
+        example: 1678220.8306076
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -367,7 +367,7 @@ endpoints:
         name: article_id
         description: ''
         required: true
-        example: deserunt
+        example: ad
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -376,17 +376,17 @@ endpoints:
         name: commande_id
         description: ''
         required: true
-        example: ut
+        example: quo
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: zdztflhuxqfozipeie
-      quantite: 14
-      prix: 522522.40524
-      article_id: deserunt
-      commande_id: ut
+      titre: gqdghwuykmicvwusvnl
+      quantite: 16
+      prix: 1678220.8306076
+      article_id: ad
+      commande_id: quo
     fileParameters: []
     responses: []
     responseFields: []

@@ -1,20 +1,21 @@
 <?php
 
+use App\Http\Controllers\API\Auth\AuthController;
 use App\Http\Controllers\API\DashboardController;
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\Auth\PasswordResetController;
-use App\Http\Controllers\CategorieArticleController;
-use App\Http\Controllers\CategorieController;
-use App\Http\Controllers\CommandeController;
-use App\Http\Controllers\ImageController;
-use App\Http\Controllers\LigneCommandeController;
-use App\Http\Controllers\LivraisonController;
-use App\Http\Controllers\PayementController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\API\ArticleController;
+use App\Http\Controllers\API\Auth\PasswordResetController;
+use App\Http\Controllers\API\CategorieArticleController;
+use App\Http\Controllers\API\CategorieController;
+use App\Http\Controllers\API\CommandeController;
+use App\Http\Controllers\API\ImageController;
+use App\Http\Controllers\API\LigneCommandeController;
+use App\Http\Controllers\API\LivraisonController;
+use App\Http\Controllers\API\PayementController;
+use App\Http\Controllers\API\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 //
-use App\Http\Controllers\Auth\AuthController;
+//use App\Http\Controllers\API\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------

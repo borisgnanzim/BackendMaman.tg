@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('titre');
             $table->dateTime('date');
             $table->string('modePayement');
-            $table->unsignedFloat('solde');
+            $table->unsignedInteger('solde');
             $table->string('reference')->unique();
             //$table->unsignedBigInteger('commande_id');
             //$table->unsignedBigInteger('user_id');

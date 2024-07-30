@@ -122,7 +122,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: bebiewtrchtdxohwmz
+        example: twxxfjy
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -131,7 +131,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Veritatis qui quibusdam incidunt quos.'
+        example: 'Sit nemo vel officia est.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -149,15 +149,15 @@ endpoints:
         name: article_id
         description: ''
         required: true
-        example: aut
+        example: repellendus
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: bebiewtrchtdxohwmz
-      description: 'Veritatis qui quibusdam incidunt quos.'
-      article_id: aut
+      titre: twxxfjy
+      description: 'Sit nemo vel officia est.'
+      article_id: repellendus
     fileParameters:
       image: null
     responses: []
@@ -204,7 +204,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: h
+        example: eszgfmwfjwwbbmixvdnhk
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -213,7 +213,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Quis nisi deserunt quidem voluptatem et est.'
+        example: 'Facilis mollitia in quia beatae ut autem ut qui.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -231,15 +231,15 @@ endpoints:
         name: article_id
         description: ''
         required: true
-        example: expedita
+        example: quia
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: h
-      description: 'Quis nisi deserunt quidem voluptatem et est.'
-      article_id: expedita
+      titre: eszgfmwfjwwbbmixvdnhk
+      description: 'Facilis mollitia in quia beatae ut autem ut qui.'
+      article_id: quia
     fileParameters:
       image: null
     responses: []
@@ -387,7 +387,7 @@ endpoints:
           cache-control: 'no-cache, private'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '53'
+          x-ratelimit-remaining: '54'
           vary: Origin
         description: null
         custom: []

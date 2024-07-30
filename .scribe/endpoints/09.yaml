@@ -67,13 +67,13 @@ endpoints:
         name: id
         description: 'The ID of the admin.payement.'
         required: true
-        example: ducimus
+        example: saepe
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: ducimus
+      id: saepe
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -122,7 +122,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: olyrfzjetde
+        example: ksjmcnjbqjmxe
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -131,7 +131,7 @@ endpoints:
         name: solde
         description: ''
         required: true
-        example: 4.3
+        example: 47614017.0451
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -140,7 +140,7 @@ endpoints:
         name: modePayement
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: rtpcqdmdrdcrbo
+        example: pwcrvonf
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -149,7 +149,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2024-07-24T17:09:39'
+        example: '2024-07-29T19:26:27'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -158,17 +158,17 @@ endpoints:
         name: commande_id
         description: ''
         required: true
-        example: voluptatem
+        example: distinctio
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: olyrfzjetde
-      solde: 4.3
-      modePayement: rtpcqdmdrdcrbo
-      date: '2024-07-24T17:09:39'
-      commande_id: voluptatem
+      titre: ksjmcnjbqjmxe
+      solde: 47614017.0451
+      modePayement: pwcrvonf
+      date: '2024-07-29T19:26:27'
+      commande_id: distinctio
     fileParameters: []
     responses: []
     responseFields: []
@@ -200,13 +200,13 @@ endpoints:
         name: id
         description: 'The ID of the admin.payement.'
         required: true
-        example: rem
+        example: ab
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: rem
+      id: ab
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -214,7 +214,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: jcexcnogcim
+        example: cfuopvgjvnqowyvjyge
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -223,7 +223,7 @@ endpoints:
         name: solde
         description: ''
         required: true
-        example: 6.2
+        example: 3817958.8923657
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -232,7 +232,7 @@ endpoints:
         name: modePayement
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: h
+        example: thvseyzfqvympcildwrso
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -241,7 +241,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2024-07-24T17:09:39'
+        example: '2024-07-29T19:26:27'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -250,17 +250,17 @@ endpoints:
         name: commande_id
         description: ''
         required: true
-        example: deleniti
+        example: enim
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: jcexcnogcim
-      solde: 6.2
-      modePayement: h
-      date: '2024-07-24T17:09:39'
-      commande_id: deleniti
+      titre: cfuopvgjvnqowyvjyge
+      solde: 3817958.8923657
+      modePayement: thvseyzfqvympcildwrso
+      date: '2024-07-29T19:26:27'
+      commande_id: enim
     fileParameters: []
     responses: []
     responseFields: []
@@ -292,13 +292,13 @@ endpoints:
         name: id
         description: 'The ID of the admin.payement.'
         required: true
-        example: vel
+        example: labore
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: vel
+      id: labore
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -338,7 +338,7 @@ endpoints:
         name: titre
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: swdzo
+        example: kokcebukxmtbzbsmpxtm
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -347,7 +347,7 @@ endpoints:
         name: solde
         description: ''
         required: true
-        example: 114.581582757
+        example: 991975.1
         type: number
         enumValues: []
         exampleWasSpecified: false
@@ -356,7 +356,7 @@ endpoints:
         name: modePayement
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: quz
+        example: xddlveaqty
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -365,7 +365,7 @@ endpoints:
         name: date
         description: 'Must be a valid date.'
         required: true
-        example: '2024-07-24T17:09:39'
+        example: '2024-07-29T19:26:32'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -374,17 +374,17 @@ endpoints:
         name: commande_id
         description: ''
         required: true
-        example: aut
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: swdzo
-      solde: 114.581582757
-      modePayement: quz
-      date: '2024-07-24T17:09:39'
-      commande_id: aut
+      titre: kokcebukxmtbzbsmpxtm
+      solde: 991975.1
+      modePayement: xddlveaqty
+      date: '2024-07-29T19:26:32'
+      commande_id: qui
     fileParameters: []
     responses: []
     responseFields: []

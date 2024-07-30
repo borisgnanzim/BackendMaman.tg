@@ -69,13 +69,13 @@ endpoints:
         name: id
         description: 'The ID of the admin.livraison.'
         required: true
-        example: harum
+        example: corporis
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: harum
+      id: corporis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -123,17 +123,8 @@ endpoints:
       titre:
         name: titre
         description: 'Must not be greater than 255 characters.'
-        required: true
-        example: kllgaafdblglxctbdqwfodm
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      date:
-        name: date
-        description: 'Must be a valid date.'
-        required: true
-        example: '2024-07-24T17:09:39'
+        required: false
+        example: aqx
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -142,7 +133,7 @@ endpoints:
         name: nomClient
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: adyvtxhxinmwrjibhtyo
+        example: dcfcklermfwbj
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -151,7 +142,7 @@ endpoints:
         name: ville
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: rfafsymfbn
+        example: dovwxsqhwcmnriya
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -160,7 +151,7 @@ endpoints:
         name: adresse
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: dmrzwvrxedqtyrbsenpsqwtiy
+        example: yzpnwavsrgxi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -169,7 +160,7 @@ endpoints:
         name: destinataire
         description: 'Must not be greater than 10 characters.'
         required: true
-        example: bwzt
+        example: wkckzspalt
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -178,19 +169,18 @@ endpoints:
         name: commande_id
         description: ''
         required: true
-        example: eos
+        example: quo
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: kllgaafdblglxctbdqwfodm
-      date: '2024-07-24T17:09:39'
-      nomClient: adyvtxhxinmwrjibhtyo
-      ville: rfafsymfbn
-      adresse: dmrzwvrxedqtyrbsenpsqwtiy
-      destinataire: bwzt
-      commande_id: eos
+      titre: aqx
+      nomClient: dcfcklermfwbj
+      ville: dovwxsqhwcmnriya
+      adresse: yzpnwavsrgxi
+      destinataire: wkckzspalt
+      commande_id: quo
     fileParameters: []
     responses: []
     responseFields: []
@@ -222,30 +212,21 @@ endpoints:
         name: id
         description: 'The ID of the admin.livraison.'
         required: true
-        example: incidunt
+        example: enim
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: incidunt
+      id: enim
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
       titre:
         name: titre
         description: 'Must not be greater than 255 characters.'
-        required: true
-        example: nr
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        custom: []
-      date:
-        name: date
-        description: 'Must be a valid date.'
-        required: true
-        example: '2024-07-24T17:09:39'
+        required: false
+        example: nsluanmyshyloph
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -253,8 +234,8 @@ endpoints:
       nomClient:
         name: nomClient
         description: 'Must not be greater than 255 characters.'
-        required: true
-        example: gfsdhypwft
+        required: false
+        example: rjahnjusgv
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -263,7 +244,7 @@ endpoints:
         name: ville
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: pbywsqjcieosxppxxz
+        example: jkyromrtmx
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -271,8 +252,8 @@ endpoints:
       adresse:
         name: adresse
         description: 'Must not be greater than 255 characters.'
-        required: true
-        example: dohjgrwdgncffyjgnilwlng
+        required: false
+        example: bct
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -281,7 +262,7 @@ endpoints:
         name: destinataire
         description: 'Must not be greater than 10 characters.'
         required: false
-        example: igtqfhvo
+        example: hhakek
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -289,20 +270,18 @@ endpoints:
       commande_id:
         name: commande_id
         description: ''
-        required: true
-        example: exercitationem
+        required: false
+        example: null
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      titre: nr
-      date: '2024-07-24T17:09:39'
-      nomClient: gfsdhypwft
-      ville: pbywsqjcieosxppxxz
-      adresse: dohjgrwdgncffyjgnilwlng
-      destinataire: igtqfhvo
-      commande_id: exercitationem
+      titre: nsluanmyshyloph
+      nomClient: rjahnjusgv
+      ville: jkyromrtmx
+      adresse: bct
+      destinataire: hhakek
     fileParameters: []
     responses: []
     responseFields: []
@@ -334,13 +313,13 @@ endpoints:
         name: id
         description: 'The ID of the admin.livraison.'
         required: true
-        example: quas
+        example: sunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: quas
+      id: sunt
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -376,13 +355,13 @@ endpoints:
         name: livraison
         description: 'The livraison.'
         required: true
-        example: et
+        example: aliquam
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      livraison: et
+      livraison: aliquam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
