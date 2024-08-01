@@ -164,7 +164,7 @@ Route::middleware(['auth:sanctum','ability:user'])->group(function () {
     Route::get('/images/{image}', [ImageController::class, 'show'])->name('get.image.forRoleUser');
     //
     
-
+ 
 });
 
 // route public

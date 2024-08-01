@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('titre');
             $table->dateTime('date');
             $table->float('montant');
-            $table->enum('statut', ['attente', 'paye', 'livre']);
+            $table->enum('statut', ['non_paye', 'paye', 'livre']);
             $table->string('reference')->unique();
             $table->decimal('latitude', 10, 7)->nullable(); // geoloc
             $table->decimal('longitude', 10, 7)->nullable(); // geoloc

@@ -54,7 +54,7 @@ class CommandeController extends Controller
                 'titre' => $validatedData['titre'],
                 'date' => $validatedData['date'],
                 'montant' => $validatedData['montant'],
-                'statut' => 'attente',
+                'statut' => 'non_paye',
                 'latitude' => $validatedData['latitude'],
                 'longitude' => $validatedData['longitude'],
                 'user_id' => Auth::id(),
@@ -81,20 +81,35 @@ class CommandeController extends Controller
         }
     }
 
-    public function show(Commande $commande)
+    public function show($id)
     {
+        $commande = Commande::find($id);
+        if ($commande == null)
+        {
+            return $this->errorResponse("Commande not found ");
+        }
         return $this->successResponse(new CommandeResource($commande));
     }
 
-    public function update(UpdateCommandeRequest $request, Commande $commande)
+    public function update(UpdateCommandeRequest $request, $id)
     {
         $validatedData = $request->validated();
+        $commande = Commande::find($id);
+        if ($commande == null)
+        {
+            return $this->errorResponse("Commande not found ");
+        }
         $commande->update($validatedData + ['user_id' => Auth::id()]);
         return $this->successResponse(new CommandeResource($commande), 'Commande updated successfully.', 200);
     }
 
-    public function destroy(Commande $commande)
+    public function destroy($id)
     {
+        $commande = Commande::find($id);
+        if ($commande == null)
+        {
+            return $this->errorResponse("Commande not found ");
+        }
         $commande->delete();
         return $this->successResponse(null, 'Commande deleted successfully.', 204);
     }
